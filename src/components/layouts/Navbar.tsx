@@ -2,15 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#projects', label: 'Projects' },
-  { href: '/#about', label: 'About' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#problems', label: 'Why Automate' },
+  { href: '/#assessment', label: 'Assessment' },
+  { href: '/#credibility', label: 'About' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -31,32 +29,36 @@ export const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-[#060610]/80 backdrop-blur-md border-b border-white/5'
+          ? 'bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-soft'
           : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-end h-16 lg:h-20">
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-medium transition-colors relative text-gray-300 hover:text-white after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-cyan-500 after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/strategy-assessment/questionnaire"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all shadow-soft"
+            >
+              Start Assessment
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </nav>
-
-          {/* Empty space for balance on desktop */}
-          <div className="hidden lg:block" />
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-300 hover:bg-white/10"
+            className="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -65,18 +67,28 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden bg-[#0a0a14]/95 backdrop-blur-md rounded-2xl border border-white/10 mb-4 overflow-hidden animate-slide-up">
-            <nav className="flex flex-col p-4">
+          <div className="lg:hidden bg-white rounded-2xl border border-slate-200 mb-4 overflow-hidden shadow-soft-lg animate-fade-in">
+            <nav className="flex flex-col p-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-3 px-4 text-gray-300 hover:text-cyan-400 hover:bg-white/5 rounded-lg font-medium transition-colors"
+                  className="py-3 px-4 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-xl font-medium transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
+              <div className="p-2 pt-4 mt-2 border-t border-slate-100">
+                <Link
+                  href="/strategy-assessment/questionnaire"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-slate-900 text-white font-medium rounded-xl hover:bg-slate-800 transition-all"
+                >
+                  Start Assessment
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </nav>
           </div>
         )}

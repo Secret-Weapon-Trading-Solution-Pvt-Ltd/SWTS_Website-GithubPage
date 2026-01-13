@@ -1,26 +1,31 @@
 'use client';
 
 import { MainLayout } from '@/components/layouts';
-// import { MainHero, Services, Projects, About, Contact } from '@/components/main';
-import { MainHero } from '@/components/main';
+import {
+  FrustrationHero,
+  CredibilityStrip,
+  AssessmentExplanation,
+  CredibilitySection,
+  FinalCTA
+} from '@/components/main';
 
 export default function Home() {
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <MainHero />
+      {/* Section 1: Hero - Frustration hook with premium visual */}
+      <FrustrationHero />
 
-      {/* Services Section */}
-      {/* <Services /> */}
+      {/* Section 2: Credibility Strip - Quiet trust indicators */}
+      <CredibilityStrip />
 
-      {/* Projects Section */}
-      {/* <Projects /> */}
+      {/* Section 3: Assessment Explanation - Show the value of taking the assessment */}
+      <AssessmentExplanation />
 
-      {/* About Section */}
-      {/* <About /> */}
+      {/* Section 5: Differentiation - Why automate with SWTS */}
+      <CredibilitySection />
 
-      {/* Contact Section */}
-      {/* <Contact /> */}
+      {/* Section 6: Final CTA - Strong close with assessment push */}
+      <FinalCTA />
     </MainLayout>
   );
 }

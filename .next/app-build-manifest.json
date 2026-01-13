@@ -10,21 +10,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/strategy-assessment/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/strategy-assessment/page.js"
-    ],
-    "/strategy-assessment/questionnaire/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/strategy-assessment/questionnaire/page.js"
-    ],
-    "/strategy-assessment/results/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/strategy-assessment/results/page.js"
     ]
   }
 }

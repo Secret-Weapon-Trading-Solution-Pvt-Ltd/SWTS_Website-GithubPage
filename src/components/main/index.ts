@@ -1,4 +1,11 @@
 export { MainHero } from './MainHero';
+export { FrustrationHero } from './FrustrationHero';
+export { CredibilityStrip } from './CredibilityStrip';
+export { ProblemAgitation } from './ProblemAgitation';
+export { AssessmentExplanation } from './AssessmentExplanation';
+export { CredibilitySection } from './CredibilitySection';
+export { FinalCTA } from './FinalCTA';
+export { StickyAttentionBar } from './StickyAttentionBar';
 export { Services } from './Services';
 export { Projects } from './Projects';
 export { About } from './About';

@@ -1,76 +1,83 @@
 import { Question } from '@/types';
 
-// Simple Trading Assessment Questions (5 Questions)
+// Optimized 5-Question Trading Assessment
+// Order: Experience → Risk → Frequency → Returns → Usage Intent
+// Purpose: Qualify leads and segment for personalized follow-up
 export const assessmentQuestions: Question[] = [
+  // Q1: Experience Level - Determines UI complexity, education prompts, risk limits
   {
-    id: 'q_1',
+    id: 'q_experience',
     category: 'assessment',
     type: 'multiple_choice',
-    question: 'Describe your experience with options trading',
-    description: '',
+    question: 'What is your options trading experience?',
+    description: 'This helps us tailor recommendations to your skill level',
     required: true,
     weight: 10,
     options: [
-      { id: 'q_1_new', label: "I'm new to options trading", value: 'new', score: 4 },
-      { id: 'q_1_some', label: "I've done some options trading before", value: 'some', score: 7 },
-      { id: 'q_1_experienced', label: "I'm an experienced options trader", value: 'experienced', score: 10 },
+      { id: 'q_exp_beginner', label: 'Beginner – Just getting started', value: 'beginner', score: 4 },
+      { id: 'q_exp_intermediate', label: 'Intermediate – Some experience', value: 'intermediate', score: 7 },
+      { id: 'q_exp_advanced', label: 'Advanced – Experienced trader', value: 'advanced', score: 10 },
     ],
   },
+  // Q2: Risk Appetite - MOST CRITICAL for strategy filtering
   {
-    id: 'q_2',
+    id: 'q_risk',
     category: 'assessment',
     type: 'multiple_choice',
-    question: 'Are you interested in option buying or selling?',
-    description: '',
+    question: 'What is your risk appetite?',
+    description: 'Critical for matching you with appropriate strategies',
     required: true,
-    weight: 10,
+    weight: 15,
     options: [
-      { id: 'q_2_buying', label: 'Options Buying', value: 'buying', score: 8 },
-      { id: 'q_2_selling', label: 'Options Selling', value: 'selling', score: 8 },
-      { id: 'q_2_both', label: "I'm interested in both", value: 'both', score: 10 },
+      { id: 'q_risk_low', label: 'Low – Capital safety first', value: 'low', score: 6 },
+      { id: 'q_risk_medium', label: 'Medium – Balanced risk & reward', value: 'medium', score: 10 },
+      { id: 'q_risk_high', label: 'High – Aggressive returns', value: 'high', score: 8 },
     ],
   },
+  // Q3: Trading Frequency - Active vs casual user detection
   {
-    id: 'q_3',
+    id: 'q_frequency',
     category: 'assessment',
     type: 'multiple_choice',
-    question: 'How many trades have you done in the past month?',
-    description: '',
+    question: 'How often do you trade?',
+    description: 'Helps us understand your trading activity level',
     required: true,
     weight: 10,
     options: [
-      { id: 'q_3_zero', label: 'Zero', value: 'zero', score: 4 },
-      { id: 'q_3_less10', label: 'Less than 10', value: 'less10', score: 7 },
-      { id: 'q_3_more10', label: 'More than 10', value: 'more10', score: 10 },
+      { id: 'q_freq_rarely', label: 'Rarely / Just starting', value: 'rarely', score: 4 },
+      { id: 'q_freq_moderate', label: '1–10 trades per month', value: 'moderate', score: 7 },
+      { id: 'q_freq_active', label: 'More than 10 trades per month', value: 'active', score: 10 },
     ],
   },
+  // Q4: Return Expectations - Align expectations & prevent misuse
   {
-    id: 'q_4',
+    id: 'q_returns',
     category: 'assessment',
     type: 'multiple_choice',
-    question: 'What is your monthly return expectation from your trading activities?',
-    description: '',
+    question: 'What returns do you expect monthly?',
+    description: 'Helps us set realistic expectations together',
     required: true,
     weight: 10,
     options: [
-      { id: 'q_4_high', label: 'Greater than 5%', value: 'high', score: 10 },
-      { id: 'q_4_medium', label: 'Around 2–5%', value: 'medium', score: 8 },
-      { id: 'q_4_steady', label: 'Steady returns up to 2%', value: 'steady', score: 6 },
+      { id: 'q_ret_high', label: 'Greater than 5%', value: 'high', score: 6 },
+      { id: 'q_ret_medium', label: 'Around 2–5%', value: 'medium', score: 10 },
+      { id: 'q_ret_steady', label: 'Up to 2% (steady & safe)', value: 'steady', score: 8 },
     ],
   },
+  // Q5: Usage Intent - Feature access & onboarding path
   {
-    id: 'q_5',
+    id: 'q_usage',
     category: 'assessment',
     type: 'multiple_choice',
-    question: 'How will you use SWTS?',
-    description: '',
+    question: 'How do you want to trade using our platform?',
+    description: 'This determines which features we recommend for you',
     required: true,
     weight: 10,
     options: [
-      { id: 'q_5_manual', label: 'Manual Trading (Strategy Builder & Backtesting)', value: 'manual', score: 6 },
-      { id: 'q_5_algo', label: 'Algo Trading', value: 'algo', score: 10 },
-      { id: 'q_5_automate', label: 'I want to automate my indicator-based trading using tools like TradingView, Chartink, or Python', value: 'automate', score: 10 },
-      { id: 'q_5_notsure', label: "I'm not sure", value: 'notsure', score: 4 },
+      { id: 'q_use_manual', label: 'Manual trading', value: 'manual', score: 6 },
+      { id: 'q_use_algo', label: 'Algo trading (fully automated)', value: 'algo', score: 10 },
+      { id: 'q_use_semi', label: 'Alerts + semi-automation', value: 'semi', score: 8 },
+      { id: 'q_use_learn', label: 'Learning & backtesting only', value: 'learn', score: 4 },
     ],
   },
 ];

@@ -2,169 +2,203 @@ import { Answer, Insight, NextStep, LeadQuality } from '@/types';
 import { getQuestionById } from './questions';
 
 // Insight definitions based on question responses
+// Updated to match new question IDs: q_experience, q_risk, q_frequency, q_returns, q_usage
 const insightDefinitions: Record<string, (value: string) => Insight | null> = {
-  // Q1: Experience with options trading
-  q_1: (value) => {
-    if (value === 'new') {
+  // Q1: Experience Level
+  q_experience: (value) => {
+    if (value === 'beginner') {
       return {
-        id: 'insight_new_trader',
-        title: 'Great Starting Point',
+        id: 'insight_beginner',
+        title: 'Perfect Starting Point',
         description:
-          'As someone new to options trading, you\'re at an ideal stage to learn proper systematic trading habits from the start.',
+          'As a beginner, you have the advantage of building systematic trading habits from day one—without bad habits to unlearn.',
         recommendation:
-          'Consider starting with paper trading or small positions while learning. Our platform can help you develop discipline early.',
+          'Start with our guided onboarding and paper trading features. Build confidence before going live with real capital.',
         priority: 'high',
       };
     }
-    if (value === 'experienced') {
+    if (value === 'intermediate') {
       return {
-        id: 'insight_experienced',
-        title: 'Ready for Advanced Features',
+        id: 'insight_intermediate',
+        title: 'Ready to Level Up',
         description:
-          'Your experience in options trading positions you well to take advantage of advanced automation features.',
+          'Your trading experience gives you a solid foundation. Automation can help you execute more consistently.',
         recommendation:
-          'Explore our advanced strategy builder and backtesting tools to optimize your existing approaches.',
+          'Focus on automating your proven strategies first. This will reveal where your execution has been costing you returns.',
+        priority: 'medium',
+      };
+    }
+    if (value === 'advanced') {
+      return {
+        id: 'insight_advanced',
+        title: 'Advanced Automation Ready',
+        description:
+          'Your experience positions you perfectly for advanced automation features like multi-strategy portfolios and dynamic risk management.',
+        recommendation:
+          'Explore our API integrations and custom strategy builder to create sophisticated automated systems.',
         priority: 'low',
       };
     }
     return null;
   },
 
-  // Q2: Option buying or selling interest
-  q_2: (value) => {
-    if (value === 'buying') {
+  // Q2: Risk Appetite - Most Critical
+  q_risk: (value) => {
+    if (value === 'low') {
       return {
-        id: 'insight_option_buying',
-        title: 'Option Buying Focus',
+        id: 'insight_risk_low',
+        title: 'Capital Preservation Focus',
         description:
-          'Option buying strategies can benefit greatly from precise timing and quick execution that automation provides.',
+          'Prioritizing capital safety is wise. Automation excels at enforcing strict risk limits without emotional override.',
         recommendation:
-          'Use our tools to set alerts and auto-execute when your conditions are met, capturing opportunities you might otherwise miss.',
-        priority: 'medium',
-      };
-    }
-    if (value === 'selling') {
-      return {
-        id: 'insight_option_selling',
-        title: 'Option Selling Strategy',
-        description:
-          'Option selling requires consistent risk management and position monitoring - perfect for automation.',
-        recommendation:
-          'Automate your position management, including stop-losses and profit targets, to maintain discipline.',
-        priority: 'medium',
-      };
-    }
-    if (value === 'both') {
-      return {
-        id: 'insight_both_strategies',
-        title: 'Versatile Trading Approach',
-        description:
-          'Using both buying and selling strategies gives you flexibility across market conditions.',
-        recommendation:
-          'Our platform supports complex multi-leg strategies. Consider automating your strategy selection based on market conditions.',
-        priority: 'low',
-      };
-    }
-    return null;
-  },
-
-  // Q3: Trades in past month
-  q_3: (value) => {
-    if (value === 'zero') {
-      return {
-        id: 'insight_no_recent_trades',
-        title: 'Ready to Start Trading',
-        description:
-          'Starting fresh is a great opportunity to build good habits from day one with systematic trading.',
-        recommendation:
-          'Begin with our strategy templates and paper trading to build confidence before going live.',
+          'Use our automated stop-loss and position sizing tools to ensure your risk rules are followed every single time.',
         priority: 'high',
       };
     }
-    if (value === 'more10') {
+    if (value === 'medium') {
       return {
-        id: 'insight_active_trader',
-        title: 'Active Trader Benefits',
+        id: 'insight_risk_medium',
+        title: 'Balanced Risk Profile',
         description:
-          'Your active trading frequency means automation could save you significant time and improve execution consistency.',
+          'A balanced approach to risk and reward is sustainable long-term. Our tools can help you maintain this discipline.',
         recommendation:
-          'Automate your routine trades to focus your attention on strategy development and market analysis.',
-        priority: 'low',
+          'Consider automating your risk-reward ratios and position sizing to maintain consistency across all trades.',
+        priority: 'medium',
       };
     }
-    return null;
-  },
-
-  // Q4: Monthly return expectation
-  q_4: (value) => {
     if (value === 'high') {
       return {
-        id: 'insight_high_expectations',
-        title: 'Ambitious Goals',
+        id: 'insight_risk_high',
+        title: 'Aggressive Strategy Match',
         description:
-          'Higher return targets require disciplined execution and proper risk management - areas where automation excels.',
+          'High-risk strategies require precise execution and quick adjustments—exactly what automation provides.',
         recommendation:
-          'Use backtesting to validate your strategy can achieve these returns, and let automation ensure consistent execution.',
+          'Automation ensures you never miss an exit or hesitate on entries. Critical for managing aggressive positions.',
+        priority: 'high',
+      };
+    }
+    return null;
+  },
+
+  // Q3: Trading Frequency
+  q_frequency: (value) => {
+    if (value === 'rarely') {
+      return {
+        id: 'insight_rare_trader',
+        title: 'Quality Over Quantity',
+        description:
+          'Trading less frequently often means waiting for high-quality setups—but it\'s easy to miss them when they appear.',
+        recommendation:
+          'Set up automated alerts to notify you when your setup criteria are met, so you never miss the perfect opportunity.',
+        priority: 'high',
+      };
+    }
+    if (value === 'moderate') {
+      return {
+        id: 'insight_moderate_trader',
+        title: 'Consistent Trader',
+        description:
+          'Regular trading activity means you understand market dynamics. Automation can make your execution more consistent.',
+        recommendation:
+          'Focus on automating your entry and exit rules to eliminate the variance in your current execution.',
         priority: 'medium',
+      };
+    }
+    if (value === 'active') {
+      return {
+        id: 'insight_active_trader',
+        title: 'High-Volume Trader',
+        description:
+          'With 10+ trades per month, automation could save you hours while improving execution quality.',
+        recommendation:
+          'Automate your routine trades to free up time for strategy development and market analysis.',
+        priority: 'low',
+      };
+    }
+    return null;
+  },
+
+  // Q4: Return Expectations
+  q_returns: (value) => {
+    if (value === 'high') {
+      return {
+        id: 'insight_high_returns',
+        title: 'Ambitious Return Goals',
+        description:
+          'Targeting 5%+ monthly requires excellent strategy AND flawless execution. One without the other won\'t get you there.',
+        recommendation:
+          'Validate your strategy with thorough backtesting first, then use automation to ensure perfect execution.',
+        priority: 'high',
+      };
+    }
+    if (value === 'medium') {
+      return {
+        id: 'insight_medium_returns',
+        title: 'Realistic Targets',
+        description:
+          '2-5% monthly is achievable with good strategy and consistent execution—the exact combination automation provides.',
+        recommendation:
+          'Your expectations align well with systematic trading. Focus on consistency and let compound returns work for you.',
+        priority: 'low',
       };
     }
     if (value === 'steady') {
       return {
         id: 'insight_steady_returns',
-        title: 'Steady Returns Focus',
+        title: 'Steady Growth Approach',
         description:
-          'Targeting consistent returns is a mature approach. Automation helps maintain this consistency across all market conditions.',
+          'Targeting steady returns shows mature risk awareness. Automation helps maintain this discipline through all market conditions.',
         recommendation:
-          'Our risk management tools can help you maintain steady returns while limiting drawdowns.',
-        priority: 'low',
+          'Our risk management tools are perfect for your approach—protecting capital while capturing consistent returns.',
+        priority: 'medium',
       };
     }
     return null;
   },
 
-  // Q5: How will you use SWTS
-  q_5: (value) => {
+  // Q5: Usage Intent
+  q_usage: (value) => {
     if (value === 'manual') {
       return {
-        id: 'insight_manual_trading',
-        title: 'Strategy Building Focus',
+        id: 'insight_manual',
+        title: 'Strategy Development Focus',
         description:
-          'Our Strategy Builder and Backtesting tools will help you develop and validate your trading ideas before execution.',
+          'Using tools for manual trading and analysis is a great first step toward understanding what to automate later.',
         recommendation:
-          'Start by backtesting your current strategy to identify strengths and areas for improvement.',
+          'Start with our backtesting and strategy builder. Once you find a winning approach, we can help you automate it.',
         priority: 'medium',
       };
     }
     if (value === 'algo') {
       return {
-        id: 'insight_algo_ready',
-        title: 'Algo Trading Ready',
+        id: 'insight_algo',
+        title: 'Full Automation Ready',
         description:
-          'You\'re ready to fully automate your trading. Our platform handles everything from signal generation to execution.',
+          'You\'re ready for fully automated trading. Our platform handles everything from signal generation to order execution.',
         recommendation:
-          'Let\'s discuss your strategy requirements and set up your first automated trading system.',
+          'Let\'s discuss your strategy requirements and set up your automated trading system. We\'ll handle the technical complexity.',
         priority: 'high',
       };
     }
-    if (value === 'automate') {
+    if (value === 'semi') {
       return {
-        id: 'insight_indicator_automation',
-        title: 'Indicator Automation',
+        id: 'insight_semi',
+        title: 'Smart Semi-Automation',
         description:
-          'We specialize in converting indicator-based strategies from TradingView, Chartink, or Python into fully automated systems.',
+          'Alerts with semi-automation gives you control while eliminating emotional trading decisions.',
         recommendation:
-          'Share your indicator logic and we\'ll help you automate the entire workflow from signal to execution.',
-        priority: 'high',
+          'Our alert system integrates with TradingView and other platforms. You decide, the system executes.',
+        priority: 'medium',
       };
     }
-    if (value === 'notsure') {
+    if (value === 'learn') {
       return {
-        id: 'insight_exploration',
-        title: 'Explore Your Options',
+        id: 'insight_learn',
+        title: 'Learning & Testing Focus',
         description:
-          'Not sure where to start? That\'s perfectly fine. We offer various tools for different trading styles and experience levels.',
+          'Starting with backtesting is the smart approach. Understand your strategy deeply before risking capital.',
         recommendation:
-          'Start with our free strategy consultation to determine which approach best fits your trading goals.',
+          'Use our backtesting tools to validate ideas. When you\'re confident in your strategy, we\'re here to help you automate.',
         priority: 'high',
       };
     }
