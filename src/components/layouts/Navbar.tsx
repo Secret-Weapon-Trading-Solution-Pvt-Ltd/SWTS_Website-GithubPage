@@ -6,9 +6,13 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '/#problems', label: 'Why Automate' },
+  { href: '/', label: 'Home' },
+  { href: '/#how-it-works', label: 'How It Works' },
   { href: '/#assessment', label: 'Assessment' },
-  { href: '/#credibility', label: 'About' },
+  { href: '/#products', label: 'Products' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#about', label: 'About' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -35,8 +39,8 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-end h-16 lg:h-20">
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Right Side - All Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -47,8 +51,8 @@ export const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link
-              href="/strategy-assessment/questionnaire"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all shadow-soft"
+              href="/#assessment"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all shadow-soft ml-4"
             >
               Start Assessment
               <ArrowRight className="w-4 h-4" />
@@ -81,7 +85,7 @@ export const Navbar: React.FC = () => {
               ))}
               <div className="p-2 pt-4 mt-2 border-t border-slate-100">
                 <Link
-                  href="/strategy-assessment/questionnaire"
+                  href="/#assessment"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-3 bg-slate-900 text-white font-medium rounded-xl hover:bg-slate-800 transition-all"
                 >

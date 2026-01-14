@@ -263,7 +263,7 @@ export const AssessmentForm: React.FC = () => {
             <div className="mt-6 flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
               <Shield className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-slate-500">
-                Your data stays with us. No spam. No selling. Just insights.
+                No spam. No sales calls. Just your personalized report.
               </p>
             </div>
           </div>
@@ -297,7 +297,7 @@ export const AssessmentForm: React.FC = () => {
                 </>
               ) : (
                 <>
-                  See My Results
+                  View My Results
                   <Send className="w-4 h-4" />
                 </>
               )}
@@ -329,7 +329,7 @@ export const AssessmentForm: React.FC = () => {
         {/* Progress */}
         <div className="mb-10">
           <div className="flex justify-between text-xs text-slate-400 mb-2">
-            <span>Progress</span>
+            <span>Assessment progress</span>
             <span>{Math.round(((currentQuestionIndex + 1) / totalQuestions) * 100)}%</span>
           </div>
           <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
@@ -338,6 +338,9 @@ export const AssessmentForm: React.FC = () => {
               style={{ width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%` }}
             />
           </div>
+          <p className="text-xs text-slate-400 mt-2">
+            Your answers are private and used only to personalize results.
+          </p>
         </div>
 
         {/* Question Card */}

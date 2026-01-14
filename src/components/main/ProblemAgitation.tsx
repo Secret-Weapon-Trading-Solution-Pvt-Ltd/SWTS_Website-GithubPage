@@ -21,7 +21,7 @@ export const ProblemAgitation: React.FC = () => {
 
         {/* CTA */}
         <Link
-          href="/strategy-assessment/questionnaire"
+          href="/#assessment"
           className="group inline-flex items-center px-8 py-4 bg-slate-900 text-white rounded-full font-semibold
                    hover:bg-slate-800 transition-all shadow-button hover:shadow-soft-lg"
         >

@@ -11,7 +11,7 @@ const footerLinks = {
     { href: '/#credibility', label: 'About Us' },
   ],
   resources: [
-    { href: '/strategy-assessment/questionnaire', label: 'Free Assessment' },
+    { href: '/assessment', label: 'Free Assessment' },
     { href: 'mailto:support@secretweapon.in', label: 'Contact' },
   ],
   legal: [
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               Transform your trading strategy into a reliable automated system. Start with our free assessment.
             </p>
             <Link
-              href="/strategy-assessment/questionnaire"
+              href="/#assessment"
               className="group inline-flex items-center px-6 py-3 bg-teal-500 text-white rounded-full font-medium text-sm
                        hover:bg-teal-400 transition-all"
             >

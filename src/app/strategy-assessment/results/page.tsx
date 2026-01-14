@@ -59,7 +59,7 @@ const getSegmentedCTA = (quality: LeadQuality) => {
           text: 'See Platform Demo',
           href: 'mailto:contact@swts.in?subject=Demo%20Request',
         },
-        urgency: 'Limited spots available this month',
+        urgency: 'Consultations typically scheduled within 2–3 business days',
       };
     case 'medium':
       return {
@@ -155,8 +155,11 @@ export default function ResultsPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
-                <p className="text-sm text-slate-500 mb-1">
-                  {firstName ? `${firstName}, your` : 'Your'} Automation Readiness Score
+                <p className="text-xs uppercase tracking-wide text-slate-400 mb-1">
+                  Automation Readiness Score
+                </p>
+                <p className="text-sm text-slate-500 mb-2">
+                  {firstName ? `${firstName}, this` : 'This'} score reflects how prepared your trading approach is for systematic automation.
                 </p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-6xl font-bold text-slate-900">{result.score.percentage}</span>
@@ -204,10 +207,11 @@ export default function ResultsPage() {
           {/* Insights */}
           {result.insights.length > 0 && (
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-2">
                 <Target className="w-5 h-5 text-blue-600" />
                 <h2 className="text-xl font-semibold text-slate-900">Key Insights</h2>
               </div>
+              <p className="text-sm text-slate-500 mb-6">Personalized observations based on your responses.</p>
               <div className="space-y-4">
                 {result.insights.map((insight, index) => (
                   <div
@@ -226,7 +230,14 @@ export default function ResultsPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-slate-900 mb-1">{insight.title}</h3>
-                        <p className="text-slate-500 text-sm">{insight.description}</p>
+                        <p className="text-slate-500 text-sm mb-2">{insight.description}</p>
+                        <p className="text-xs text-slate-400 italic">
+                          {insight.priority === 'high'
+                            ? 'Why this matters: Addressing this gap can significantly improve your execution consistency.'
+                            : insight.priority === 'medium'
+                              ? 'Why this matters: This insight can help refine your trading approach.'
+                              : 'Why this matters: Building on this strength supports long-term success.'}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -236,6 +247,9 @@ export default function ResultsPage() {
           )}
 
           {/* CTA Section */}
+          <div className="text-center mb-4">
+            <p className="text-sm text-slate-500">Based on your results, here's the most effective next step.</p>
+          </div>
           <div className="bg-slate-900 rounded-2xl p-8 lg:p-10 text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-3">
               {segmentedCTA.title}
@@ -245,14 +259,19 @@ export default function ResultsPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={segmentedCTA.primaryCTA.href}
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:bg-slate-100 transition-colors"
-              >
-                <CTAIcon className="w-5 h-5" />
-                {segmentedCTA.primaryCTA.text}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-col items-center">
+                <a
+                  href={segmentedCTA.primaryCTA.href}
+                  className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:bg-slate-100 transition-colors"
+                >
+                  <CTAIcon className="w-5 h-5" />
+                  {segmentedCTA.primaryCTA.text}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <p className="text-xs text-slate-500 mt-3">
+                  Discuss your assessment and execution gaps in a 30-minute call.
+                </p>
+              </div>
               <a
                 href={segmentedCTA.secondaryCTA.href}
                 className="inline-flex items-center gap-2 px-8 py-4 text-slate-400 hover:text-white transition-colors"
@@ -262,7 +281,7 @@ export default function ResultsPage() {
             </div>
 
             {segmentedCTA.urgency && (
-              <p className="mt-6 text-sm text-amber-400">{segmentedCTA.urgency}</p>
+              <p className="mt-6 text-sm text-slate-400">{segmentedCTA.urgency}</p>
             )}
           </div>
 

@@ -4,6 +4,7 @@ import { MainLayout } from '@/components/layouts';
 import {
   FrustrationHero,
   CredibilityStrip,
+  HowItWorks,
   AssessmentExplanation,
   CredibilitySection,
   FinalCTA
@@ -18,7 +19,10 @@ export default function Home() {
       {/* Section 2: Credibility Strip - Quiet trust indicators */}
       <CredibilityStrip />
 
-      {/* Section 3: Assessment Explanation - Show the value of taking the assessment */}
+      {/* Section 3: How It Works - Process explanation */}
+      <HowItWorks />
+
+      {/* Section 4: Assessment Explanation - Show the value of taking the assessment */}
       <AssessmentExplanation />
 
       {/* Section 5: Differentiation - Why automate with SWTS */}
