@@ -1,3 +1,7 @@
 {
-  "/page": "app/page.js"
+  "/projects/page": "app/projects/page.js",
+  "/projects/ema-crossover-screener/page": "app/projects/ema-crossover-screener/page.js",
+  "/projects/delta-screener/page": "app/projects/delta-screener/page.js",
+  "/page": "app/page.js",
+  "/projects/ema-crossover-screener/technical/page": "app/projects/ema-crossover-screener/technical/page.js"
 }
