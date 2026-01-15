@@ -20,6 +20,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/projects/ema-crossover-screener/page.js"
+    ],
+    "/projects/ema-crossover-screener/technical/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/projects/ema-crossover-screener/technical/page.js"
     ]
   }
 }
