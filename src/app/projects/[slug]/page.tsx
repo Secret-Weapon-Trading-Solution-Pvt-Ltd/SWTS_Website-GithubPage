@@ -5,11 +5,15 @@ import Link from 'next/link';
 import { ArrowLeft, FileQuestion } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
-// Generate static params for all projects
+// Generate static params for projects that don't have dedicated pages
 export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  // Exclude slugs that have their own dedicated page in /projects/[name]/page.tsx
+  const dedicatedRoutes = ['ema-crossover-screener', 'delta-screener'];
+  return projects
+    .filter((project) => !dedicatedRoutes.includes(project.slug))
+    .map((project) => ({
+      slug: project.slug,
+    }));
 }
 
 interface ProjectDetailPageProps {
