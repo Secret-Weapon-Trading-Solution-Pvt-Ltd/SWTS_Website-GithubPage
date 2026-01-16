@@ -66,9 +66,13 @@ jobs:
             # Update domain in nginx config
             sed -i "s/server_name .*/server_name $DEPLOY_DOMAIN;/" nginx/conf.d/$PROJECT_CONFIG
 
-            # Stop old containers
+            # Stop old containers and force remove any conflicting ones
             echo "Stopping existing containers..."
-            \$DOCKER_CMD compose -f docker-compose.shared.yml down || true
+            \$DOCKER_CMD compose -f docker-compose.shared.yml down --remove-orphans || true
+
+            # Force remove containers if they still exist (handles naming conflicts)
+            echo "Cleaning up any leftover containers..."
+            \$DOCKER_CMD rm -f swts_app swts_certbot 2>/dev/null || true
 
             # Build and start
             echo "Building..."
