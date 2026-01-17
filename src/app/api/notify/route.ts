@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendTelegramMessage, formatLeadNotification } from '@/lib/telegram';
+import { getSubscribers } from '@/lib/subscribers';
 
 interface AssessmentData {
   name: string;
@@ -13,65 +15,44 @@ export async function POST(request: NextRequest) {
   try {
     const data: AssessmentData = await request.json();
 
-    const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    // Get all subscribers
+    const subscribers = await getSubscribers();
 
-    if (!botToken || !chatId || chatId === 'YOUR_CHAT_ID_HERE') {
-      console.error('Telegram credentials not configured');
-      // Don't fail the request, just log and continue
-      return NextResponse.json({ success: true, message: 'Notification skipped - not configured' });
+    if (subscribers.length === 0) {
+      console.warn('No Telegram subscribers configured');
+      return NextResponse.json({
+        success: true,
+        message: 'No subscribers configured',
+        subscribers: 0
+      });
     }
 
-    // Format the message
-    const qualityEmoji = data.leadQuality === 'high' ? '🔥' : data.leadQuality === 'medium' ? '⚡' : '📊';
-    const qualityText = data.leadQuality === 'high' ? 'HIGH' : data.leadQuality === 'medium' ? 'MEDIUM' : 'LOW';
+    // Format the notification message
+    const message = formatLeadNotification(data);
 
-    const message = `
-${qualityEmoji} *New Assessment Lead* ${qualityEmoji}
+    // Send to all subscribers
+    let sent = 0;
+    let failed = 0;
 
-👤 *Name:* ${escapeMarkdown(data.name)}
-📧 *Email:* ${escapeMarkdown(data.email)}
-${data.phone ? `📱 *Phone:* ${escapeMarkdown(data.phone)}` : ''}
+    for (const chatId of subscribers) {
+      const success = await sendTelegramMessage(chatId, message);
+      if (success) sent++;
+      else failed++;
+    }
 
-📊 *Score:* ${data.score}/100
-🎯 *Lead Quality:* ${qualityText}
+    console.log(`Notification sent: ${sent} success, ${failed} failed`);
 
-🕐 *Time:* ${new Date(data.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST
-
----
-_SWTS Strategy Assessment_
-    `.trim();
-
-    // Send to Telegram
-    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-    const response = await fetch(telegramUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
+    return NextResponse.json({
+      success: true,
+      sent,
+      failed,
+      total: subscribers.length
     });
-
-    const result = await response.json();
-
-    if (!result.ok) {
-      console.error('Telegram API error:', result);
-      return NextResponse.json({ success: false, error: result.description }, { status: 500 });
-    }
-
-    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Notification error:', error);
-    return NextResponse.json({ success: false, error: 'Failed to send notification' }, { status: 500 });
+    return NextResponse.json({
+      success: false,
+      error: 'Failed to send notification'
+    }, { status: 500 });
   }
-}
-
-// Escape special characters for Telegram Markdown
-function escapeMarkdown(text: string): string {
-  return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
 }
