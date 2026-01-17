@@ -104,7 +104,7 @@ export default function ResultsPage() {
     const data = storage.getAssessmentData<AssessmentResult>();
 
     if (!data) {
-      router.push('/strategy-assessment/questionnaire');
+      router.push('/strategy-assessment');
       return;
     }
 
@@ -290,7 +290,7 @@ export default function ResultsPage() {
             <button
               onClick={() => {
                 storage.clearAssessmentData();
-                router.push('/strategy-assessment/questionnaire');
+                router.push('/strategy-assessment');
               }}
               className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
             >

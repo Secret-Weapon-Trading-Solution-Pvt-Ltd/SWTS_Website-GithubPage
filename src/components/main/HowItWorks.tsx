@@ -123,7 +123,7 @@ export const HowItWorks: React.FC = () => {
                 </p>
 
                 <Link
-                  href="/strategy-assessment/questionnaire"
+                  href="/strategy-assessment"
                   className="group inline-flex items-center gap-2 px-6 py-3 bg-teal-500 text-white rounded-lg text-sm font-semibold hover:bg-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   Take Free Assessment

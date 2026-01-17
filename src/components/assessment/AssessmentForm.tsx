@@ -149,6 +149,7 @@ export const AssessmentForm: React.FC = () => {
         insights = [positiveInsight, ...insights].slice(0, 3);
       }
       const nextSteps = getNextSteps(score.leadQuality);
+      const timestamp = new Date().toISOString();
 
       const result = {
         score,
@@ -156,8 +157,27 @@ export const AssessmentForm: React.FC = () => {
         nextSteps,
         answers,
         contactInfo,
-        timestamp: new Date().toISOString(),
+        timestamp,
       };
+
+      // Send Telegram notification (don't block on failure)
+      try {
+        await fetch('/api/notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: contactInfo.name,
+            email: contactInfo.email,
+            phone: contactInfo.phone || '',
+            score: score.percentage,
+            leadQuality: score.leadQuality,
+            timestamp,
+          }),
+        });
+      } catch (notifyErr) {
+        // Don't fail the submission if notification fails
+        console.error('Notification failed:', notifyErr);
+      }
 
       storage.setAssessmentData(result);
       router.push('/strategy-assessment/results');

@@ -112,7 +112,7 @@ export const FrustrationHero: React.FC = () => {
           >
             {/* Primary CTA Button - Assessment */}
             <Link
-              href="/strategy-assessment/questionnaire"
+              href="/strategy-assessment"
               className="group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white rounded-xl
                        shadow-[0_4px_20px_rgba(13,148,136,0.25)] hover:shadow-[0_8px_30px_rgba(13,148,136,0.35)]
                        hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(13,148,136,0.2)]
