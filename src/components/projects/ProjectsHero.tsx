@@ -37,18 +37,28 @@ const DataFlowVisual = () => (
 
 export const ProjectsHero: React.FC = () => {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+      {/* Background layers */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white" />
+
+      {/* Soft radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_40%,rgba(20,184,166,0.06),transparent)]" />
+
+      {/* Soft corner accents */}
+      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-teal-100/40 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gradient-to-tl from-slate-200/50 to-transparent rounded-full blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header with abstract visual */}
         <div className="relative text-center max-w-3xl mx-auto">
           <DataFlowVisual />
           <div className="relative z-10">
-            <span className="section-label">Our Work</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mt-4 mb-6">
-              Projects & Case Studies.
-              <span className="text-slate-400"> Built to perform.</span>
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-teal-600">Our Work</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-4 mb-6">
+              <span className="text-slate-900">Projects & Case Studies.</span>
+              <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent"> Built to perform.</span>
             </h2>
-            <p className="text-xl text-slate-500 leading-relaxed">
+            <p className="text-lg lg:text-xl text-slate-600 leading-relaxed">
               Precision-engineered trading systems delivering measurable results with institutional-grade architecture.
             </p>
           </div>
