@@ -9,13 +9,7 @@ import {
   Check,
 } from 'lucide-react';
 import { ProcessFlowHorizontal } from './ProcessFlowHorizontal';
-
-const benefits = [
-  'Focuses on execution, not prediction',
-  'Reduces emotional decision-making',
-  'Aligns strategy with trader behavior',
-  'Designed for consistency and risk control',
-];
+import { WhyItWorks } from './WhyItWorks';
 
 // ============================================================================
 // Main Component
@@ -59,11 +53,18 @@ export const HowItWorks: React.FC = () => {
         {/* PRIMARY: Horizontal Process Flow */}
         {/* ================================================================ */}
         <ProcessFlowHorizontal />
+      </div>
 
+      {/* ================================================================ */}
+      {/* WHY IT WORKS - Enterprise Style Section */}
+      {/* ================================================================ */}
+      <WhyItWorks />
+
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* ================================================================ */}
         {/* SECONDARY: Choose Your Starting Point - Modern Redesign */}
         {/* ================================================================ */}
-        <div className="mb-16 mt-20 pt-10">
+        <div className="mb-16 pt-10">
           {/* Section Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100/50 mb-5">
@@ -228,89 +229,6 @@ export const HowItWorks: React.FC = () => {
               <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-slate-300" />
               <span>or</span>
               <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-slate-300" />
-            </div>
-          </div>
-        </div>
-
-        {/* ================================================================ */}
-        {/* SUPPORTING: Why This Approach Works - Premium Redesign */}
-        {/* ================================================================ */}
-        <div className="mb-12">
-          <div className="relative overflow-hidden rounded-3xl">
-            {/* Dark gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900" />
-
-            {/* Animated gradient orbs */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/15 rounded-full blur-[80px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[60px] pointer-events-none" />
-
-            {/* Grid pattern overlay */}
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            />
-
-            <div className="relative px-8 lg:px-14 py-14 lg:py-16">
-              {/* Header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-sm mb-6">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  <span className="text-xs font-semibold uppercase tracking-widest text-cyan-300">
-                    Our Philosophy
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-                  Why This Approach{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                    Works
-                  </span>
-                </h3>
-                <p className="text-slate-400 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-                  Most traders fail not from bad strategies, but from inconsistent execution.
-                  <span className="text-white font-medium"> We address that first.</span>
-                </p>
-              </div>
-
-              {/* Benefits Grid - Modern Cards */}
-              <div className="grid sm:grid-cols-2 gap-4 lg:gap-5 max-w-4xl mx-auto">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="group relative"
-                  >
-                    {/* Card glow on hover */}
-                    <div className="absolute -inset-[1px] bg-gradient-to-r from-cyan-500/50 to-blue-500/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
-
-                    {/* Card */}
-                    <div className="relative flex items-center gap-4 bg-white/[0.07] backdrop-blur-sm rounded-2xl px-6 py-5 border border-white/10 group-hover:border-white/20 group-hover:bg-white/[0.1] transition-all duration-300">
-                      {/* Number indicator */}
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                        <span className="text-white font-bold text-sm">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-
-                      {/* Text */}
-                      <span className="text-white/90 text-[15px] lg:text-base font-medium leading-snug group-hover:text-white transition-colors duration-300">
-                        {benefit}
-                      </span>
-
-                      {/* Check icon */}
-                      <div className="ml-auto flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                        <Check className="w-3.5 h-3.5 text-emerald-400" strokeWidth={3} />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom accent line */}
-              <div className="flex justify-center mt-10">
-                <div className="h-1 w-24 rounded-full bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
-              </div>
             </div>
           </div>
         </div>

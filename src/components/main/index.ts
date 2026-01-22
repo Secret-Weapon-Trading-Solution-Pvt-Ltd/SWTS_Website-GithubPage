@@ -6,6 +6,7 @@ export { AssessmentExplanation } from './AssessmentExplanation';
 export { FinalCTA } from './FinalCTA';
 export { StickyAttentionBar } from './StickyAttentionBar';
 export { HowItWorks } from './HowItWorks';
+export { WhyItWorks } from './WhyItWorks';
 export { ProcessFlowRedesign } from './ProcessFlowRedesign';
 export { DetailedStepsRedesign } from './DetailedStepsRedesign';
 export { Services } from './Services';
