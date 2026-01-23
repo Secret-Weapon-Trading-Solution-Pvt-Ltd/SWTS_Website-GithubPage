@@ -1,141 +1,25 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Crosshair, Shield, Zap } from 'lucide-react';
+import { BarChart3, Settings2, Rocket } from 'lucide-react';
 
 const pillars = [
   {
-    icon: Crosshair,
-    title: 'Precision Execution',
-    description: 'Trades fire exactly as designed. No hesitation, no emotion, no missed signals.',
+    icon: BarChart3,
+    title: 'Backtesting',
+    description: 'Validate your strategy against historical data. See how it would have performed before risking real capital.',
   },
   {
-    icon: Shield,
-    title: 'Adaptive Risk Control',
-    description: 'Dynamic sizing and stops that respond to volatility in real-time.',
+    icon: Settings2,
+    title: 'Optimization',
+    description: 'Fine-tune parameters and refine your edge. Find the optimal settings for maximum performance.',
   },
   {
-    icon: Zap,
-    title: 'Scalable Automation',
-    description: 'From one strategy to a full portfolio—systems that grow with you.',
+    icon: Rocket,
+    title: 'Live Algo Trading',
+    description: 'Deploy your proven strategy with confidence. Automated execution that runs 24/7 without emotion.',
   },
 ];
-
-/**
- * CenterVisualWithConnections
- *
- * Central image with connecting lines to the three pillars below.
- * Shows correlation between the system concept and each capability.
- */
-const CenterVisualWithConnections: React.FC = () => {
-  return (
-    <div className="relative flex flex-col items-center">
-      {/* Center image with subtle animation */}
-      <div className="relative">
-        {/* Soft glow behind image */}
-        <div
-          className="absolute inset-0 -m-4 rounded-full opacity-30"
-          style={{
-            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%)',
-            animation: 'glowPulse 8s ease-in-out infinite',
-          }}
-        />
-
-        {/* Main image */}
-        <img
-          src="/time_1636946.png"
-          alt="Continuous execution cycle"
-          className="relative w-24 h-24 md:w-28 md:h-28 object-contain"
-          style={{ animation: 'subtleFloat 20s ease-in-out infinite' }}
-        />
-      </div>
-
-      {/* Clean connection lines to pillars */}
-      <div className="relative w-full max-w-3xl mx-auto h-12 md:h-14 mt-4">
-        {/* Three vertical lines with dots */}
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 600 60"
-          fill="none"
-          preserveAspectRatio="xMidYMin meet"
-        >
-          {/* Left line - to Precision Execution */}
-          <line
-            x1="300" y1="0"
-            x2="100" y2="55"
-            stroke="url(#lineGrad1)"
-            strokeWidth="2"
-            strokeDasharray="8 4"
-            className="animate-dash"
-          />
-          <circle cx="100" cy="55" r="6" fill="#8B5CF6" fillOpacity="0.15" />
-          <circle cx="100" cy="55" r="3" fill="#8B5CF6" />
-
-          {/* Center line - to Adaptive Risk */}
-          <line
-            x1="300" y1="0"
-            x2="300" y2="55"
-            stroke="url(#lineGrad2)"
-            strokeWidth="2"
-            strokeDasharray="8 4"
-            className="animate-dash"
-            style={{ animationDelay: '0.2s' }}
-          />
-          <circle cx="300" cy="55" r="6" fill="#3B82F6" fillOpacity="0.15" />
-          <circle cx="300" cy="55" r="3" fill="#3B82F6" />
-
-          {/* Right line - to Scalable Automation */}
-          <line
-            x1="300" y1="0"
-            x2="500" y2="55"
-            stroke="url(#lineGrad3)"
-            strokeWidth="2"
-            strokeDasharray="8 4"
-            className="animate-dash"
-            style={{ animationDelay: '0.4s' }}
-          />
-          <circle cx="500" cy="55" r="6" fill="#14B8A6" fillOpacity="0.15" />
-          <circle cx="500" cy="55" r="3" fill="#14B8A6" />
-
-          <defs>
-            <linearGradient id="lineGrad1" x1="300" y1="0" x2="100" y2="55" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.3" />
-            </linearGradient>
-            <linearGradient id="lineGrad2" x1="300" y1="0" x2="300" y2="55" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.3" />
-            </linearGradient>
-            <linearGradient id="lineGrad3" x1="300" y1="0" x2="500" y2="55" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#14B8A6" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#14B8A6" stopOpacity="0.3" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      <style jsx>{`
-        @keyframes glowPulse {
-          0%, 100% { opacity: 0.25; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(1.05); }
-        }
-
-        @keyframes subtleFloat {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-4px); }
-        }
-
-        @keyframes dash {
-          to { stroke-dashoffset: -24; }
-        }
-
-        .animate-dash {
-          animation: dash 2s linear infinite;
-        }
-      `}</style>
-    </div>
-  );
-};
 
 // Pillar colors matching the visual theme
 const pillarColors = [
@@ -302,18 +186,8 @@ export const WhyItWorks: React.FC = () => {
 
           {/* Subtext */}
           <p className="text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
-            Precision, risk control, and scalability—the foundation of every successful trading system.
+            Test, refine, and deploy—the complete journey from strategy concept to live automation.
           </p>
-        </div>
-
-        {/* Center visual with connection lines to pillars */}
-        <div
-          className={`mb-4 transition-all duration-1000 ease-out ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-          }`}
-          style={{ transitionDelay: '150ms' }}
-        >
-          <CenterVisualWithConnections />
         </div>
 
         {/* Three pillars */}

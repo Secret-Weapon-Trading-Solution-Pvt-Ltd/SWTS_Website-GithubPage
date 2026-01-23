@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export const FrustrationHero: React.FC = () => {
@@ -37,6 +38,34 @@ export const FrustrationHero: React.FC = () => {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-32">
         <div className="max-w-xl">
+
+          {/* Company Logo and Name */}
+          <div
+            className="flex items-center gap-4 mb-10 opacity-0 animate-fade-in-up"
+            style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
+          >
+            <Image
+              src="/logos/logo1.png"
+              alt="SWTS Logo"
+              width={80}
+              height={80}
+              className=""
+            />
+            <div>
+              <h2
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight"
+                style={{ color: '#0F172A' }}
+              >
+                Secret Weapon Trading Solutions
+              </h2>
+              <p
+                className="text-base sm:text-lg font-medium"
+                style={{ color: '#64748B' }}
+              >
+                Private Limited
+              </p>
+            </div>
+          </div>
 
           {/* Micro label with accent line */}
           <div

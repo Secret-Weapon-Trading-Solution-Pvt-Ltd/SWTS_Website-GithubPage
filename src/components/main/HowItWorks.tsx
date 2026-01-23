@@ -70,7 +70,7 @@ export const HowItWorks: React.FC = () => {
         {/* ================================================================ */}
         {/* SECONDARY: Choose Your Starting Point - Modern Redesign */}
         {/* ================================================================ */}
-        <div className="mb-16 pt-10">
+        <div className="mb-6 pt-10">
           {/* Section Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100/50 mb-5">
@@ -229,14 +229,6 @@ export const HowItWorks: React.FC = () => {
 
           </div>
 
-          {/* Bottom connector */}
-          <div className="flex justify-center mt-10">
-            <div className="flex items-center gap-3 text-sm text-slate-400">
-              <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-slate-300" />
-              <span>or</span>
-              <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-slate-300" />
-            </div>
-          </div>
         </div>
 
       </div>

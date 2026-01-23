@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-12 lg:py-16 overflow-hidden">
       {/* Gradient background - light theme */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-teal-50/40" />
 
