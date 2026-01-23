@@ -15,46 +15,46 @@ interface ServiceItem {
 
 const serviceItems: ServiceItem[] = [
   {
-    slug: 'algo-strategy-development',
-    title: 'Strategy Automation',
+    slug: 'strategy-backtesting',
+    title: 'Strategy Backtesting',
     image: '/strategy_automation.jpg',
     gradient: 'from-violet-500/10 to-purple-500/10',
   },
   {
-    slug: 'python-algo-development',
-    title: 'Python Execution',
-    image: '/python.jpg',
-    bgColor: 'bg-slate-900',
-  },
-  {
-    slug: 'pine-script-development',
-    title: 'TradingView Automation',
-    image: '/Trading service.jpg',
-    gradient: 'from-blue-500/10 to-cyan-500/10',
-  },
-  {
-    slug: 'execution-broker-integration',
-    title: 'Execution & Integration',
-    image: '/execution.jpg',
-    gradient: 'from-teal-500/10 to-emerald-500/10',
-  },
-  {
     slug: 'strategy-optimization',
-    title: 'Strategy Validation',
+    title: 'Strategy Optimization',
     image: '/strategy validation.jpg',
     gradient: 'from-blue-500/10 to-indigo-500/10',
   },
   {
-    slug: 'risk-management-systems',
-    title: 'Risk Management',
+    slug: 'algo-strategy-development',
+    title: 'Strategy Automation',
+    image: '/execution.jpg',
+    gradient: 'from-teal-500/10 to-emerald-500/10',
+  },
+  {
+    slug: 'custom-screener',
+    title: 'Custom Screener',
+    image: '/analyze.jpg',
+    gradient: 'from-blue-500/10 to-cyan-500/10',
+  },
+  {
+    slug: 'custom-dashboard',
+    title: 'Custom Dashboard',
+    image: '/custom_platform.jpg',
+    gradient: 'from-slate-500/10 to-gray-500/10',
+  },
+  {
+    slug: 'strategy-alerts',
+    title: 'Strategy Alerts',
     image: '/risk.jpg',
     gradient: 'from-amber-500/10 to-orange-500/10',
   },
   {
-    slug: 'custom-trading-platforms',
-    title: 'Custom Platforms',
-    image: '/custom_platform.jpg',
-    gradient: 'from-slate-500/10 to-gray-500/10',
+    slug: 'paper-trading',
+    title: 'Paper Trading',
+    image: '/Trading service.jpg',
+    gradient: 'from-emerald-500/10 to-teal-500/10',
   },
 ];
 
@@ -62,7 +62,7 @@ const ServiceCard: React.FC<{ service: ServiceItem }> = ({ service }) => {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group flex-shrink-0 flex flex-col items-center mx-4"
+      className="group flex-shrink-0 flex flex-col items-center mx-3"
     >
       {/* Card with gradient border on hover */}
       <div className="relative">
@@ -70,7 +70,7 @@ const ServiceCard: React.FC<{ service: ServiceItem }> = ({ service }) => {
         <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-70 blur-lg transition-all duration-500" />
 
         {/* Main card */}
-        <div className={`relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-lg border-2 border-slate-200/80 transition-all duration-300 group-hover:border-transparent group-hover:shadow-2xl group-hover:-translate-y-2 ${service.bgColor || 'bg-white'}`}>
+        <div className={`relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-lg border-2 border-slate-200/80 transition-all duration-300 group-hover:border-transparent group-hover:shadow-2xl group-hover:-translate-y-2 ${service.bgColor || 'bg-white'}`}>
           {/* Gradient overlay */}
           {service.gradient && (
             <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} z-10 pointer-events-none`} />
@@ -79,10 +79,10 @@ const ServiceCard: React.FC<{ service: ServiceItem }> = ({ service }) => {
           <Image
             src={service.image}
             alt={service.title}
-            width={300}
-            height={300}
-            quality={100}
-            unoptimized
+            width={176}
+            height={176}
+            quality={60}
+            loading="eager"
             className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${service.bgColor ? 'object-contain p-4' : 'object-cover'}`}
           />
         </div>
@@ -103,25 +103,24 @@ export const ServicesScroller: React.FC = () => {
   const allItems = [...serviceItems, ...serviceItems];
 
   return (
-    <div className="py-16 overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
+    <div className="py-16 overflow-hidden bg-white">
       {/* Header */}
       <div className="text-center mb-12 px-4">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200/50 mb-6 shadow-sm">
-          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 animate-pulse" />
-          <span className="text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal-600 mb-6 shadow-md">
+          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <span className="text-xs font-bold uppercase tracking-widest text-white">
             What We Offer
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          <span className="text-slate-800">Our </span>
-          <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Services</span>
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900">
+          Our Services
         </h3>
 
         {/* Subtitle */}
-        <p className="text-slate-500 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+        <p className="text-gray-600 text-base sm:text-lg max-w-lg mx-auto leading-relaxed font-medium">
           Everything you need to automate and scale your trading operations
         </p>
       </div>
@@ -135,18 +134,19 @@ export const ServicesScroller: React.FC = () => {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <motion.div
-          className="flex py-6"
+          className="flex py-6 will-change-transform"
           animate={{
-            x: [0, -2016],
+            x: [0, -1456],
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: 'loop',
-              duration: 30,
+              duration: 25,
               ease: 'linear',
             },
           }}
+          style={{ backfaceVisibility: 'hidden' }}
         >
           {allItems.map((service, index) => (
             <ServiceCard key={`${service.slug}-${index}`} service={service} />
