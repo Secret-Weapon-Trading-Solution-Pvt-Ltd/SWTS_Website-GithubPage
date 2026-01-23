@@ -210,12 +210,12 @@ jobs:
             echo "Container status:"
             $DOCKER_CMD compose -f docker-compose.shared.yml ps
 
-            # Health check
+            # Health check via Docker network
             sleep 3
-            if curl -sf http://localhost:5002/ > /dev/null 2>&1; then
+            if $DOCKER_CMD exec swts_app wget --no-verbose --tries=1 --spider http://127.0.0.1:5002/ 2>/dev/null; then
               echo "Health check passed!"
             else
-              echo "Warning: Health check on localhost:5002 failed"
+              echo "Warning: Health check on swts_app:5002 failed"
               $DOCKER_CMD compose -f docker-compose.shared.yml logs --tail=20
             fi
           ENDSSH

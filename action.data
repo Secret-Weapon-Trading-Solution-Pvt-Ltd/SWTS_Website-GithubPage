@@ -1,0 +1,56 @@
+Run ssh -o StrictHostKeyChecking=no ***@*** << 'ENDSSH'
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.***.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://***.com/pro
+
+ System information as of Fri Jan 23 13:54:29 UTC 2026
+
+  System load:  0.07               Processes:             135
+  Usage of /:   78.0% of 47.39GB   Users logged in:       1
+  Memory usage: 51%                IPv4 address for enX0: 172.31.44.34
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+49 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://***.com/esm or run: sudo pro status
+
+
+Container status:
+NAME           IMAGE              COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+swts_app       swts_website-app   "docker-entrypoint.s…"   app       26 seconds ago   Up 25 seconds (healthy)   5002/tcp
+swts_certbot   certbot/certbot    "/bin/sh -c 'trap ex…"   certbot   26 seconds ago   Up 25 seconds             80/tcp, 443/tcp
+Warning: Health check on localhost:5002 failed
+swts_certbot  | 
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_certbot  | Processing /etc/letsencrypt/renewal/dockerlogs.ramdhun.in.conf
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_certbot  | Certificate not yet due for renewal
+swts_certbot  | 
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_certbot  | Processing /etc/letsencrypt/renewal/dockerlogs.secretweapon.in.conf
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_certbot  | Certificate not yet due for renewal
+swts_certbot  | 
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_certbot  | The following certificates are not due for renewal yet:
+swts_certbot  |   /etc/letsencrypt/live/arbitrage.secretweapon.in/fullchain.pem expires on 2026-04-16 (skipped)
+swts_certbot  |   /etc/letsencrypt/live/delta.secretweapon.in/fullchain.pem expires on 2026-04-15 (skipped)
+swts_certbot  |   /etc/letsencrypt/live/dev.secretweapon.in/fullchain.pem expires on 2026-04-13 (skipped)
+swts_certbot  |   /etc/letsencrypt/live/dockerlogs.ramdhun.in/fullchain.pem expires on 2026-04-07 (skipped)
+swts_certbot  |   /etc/letsencrypt/live/dockerlogs.secretweapon.in/fullchain.pem expires on 2026-04-08 (skipped)
+swts_certbot  | No renewals were attempted.
+swts_certbot  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+swts_app      |   ▲ Next.js 14.2.35
+swts_app      |   - Local:        http://localhost:5002
+swts_app      |   - Network:      http://0.0.0.0:5002
+swts_app      | 
+swts_app      |  ✓ Starting...
+swts_app      |  ✓ Ready in 349ms
