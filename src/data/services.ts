@@ -81,9 +81,9 @@ export const services: Service[] = [
     description: "We translate your trading rules into production-ready automated systems. You own the logic. We build the execution framework.",
     abstractIcon: "Cpu",
     patternType: "mesh",
-    gradientFrom: "from-violet-600",
-    gradientTo: "to-purple-700",
-    accentColor: "#7C3AED",
+    gradientFrom: "from-teal-500",
+    gradientTo: "to-cyan-600",
+    accentColor: "#14B8A6",
     brandLogos: [
       { name: "Python", src: "/logos/python.svg", alt: "Python" },
       { name: "TradingView", src: "/logos/tradingview.svg", alt: "TradingView" }
@@ -194,9 +194,9 @@ export const services: Service[] = [
     description: "We backtest YOUR rules against historical data with realistic assumptions—slippage, costs, and proper validation—so you know if your approach holds up before risking real money.",
     abstractIcon: "BarChart3",
     patternType: "grid",
-    gradientFrom: "from-violet-600",
-    gradientTo: "to-purple-700",
-    accentColor: "#7C3AED",
+    gradientFrom: "from-indigo-500",
+    gradientTo: "to-purple-600",
+    accentColor: "#6366F1",
     brandLogos: [
       { name: "Python", src: "/logos/python.svg", alt: "Python" },
       { name: "TradingView", src: "/logos/tradingview.svg", alt: "TradingView" }

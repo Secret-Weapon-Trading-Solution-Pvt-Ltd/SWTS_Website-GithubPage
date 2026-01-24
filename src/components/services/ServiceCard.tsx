@@ -187,42 +187,42 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                 style={{ background: `linear-gradient(135deg, ${service.accentColor}, transparent)` }}
               />
 
-              <div className="relative p-8 h-full flex flex-col" style={{ transform: 'translateZ(40px)' }}>
-                {/* Icon with gradient background */}
+              <div className="relative p-6 h-full flex flex-col" style={{ transform: 'translateZ(40px)' }}>
+                {/* Icon with gradient background - centered */}
                 <motion.div
-                  className="mb-6"
+                  className="mb-4 flex justify-center"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3, type: 'spring' }}
                 >
                   <div
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
                   >
-                    <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
+                    <IconComponent className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
                 </motion.div>
 
                 {/* Service title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-2 text-center group-hover:text-slate-800 transition-colors">
                   {service.shortTitle}
                 </h3>
 
                 {/* Powerful one-liner */}
                 <p
-                  className={`text-base font-medium mb-4 bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}
+                  className={`text-sm font-medium mb-3 text-center bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}
                 >
                   {service.oneLiner}
                 </p>
 
                 {/* Tagline */}
-                <p className="text-slate-500 text-sm leading-relaxed flex-grow">
+                <p className="text-slate-500 text-xs leading-relaxed flex-grow text-center">
                   {service.tagline}
                 </p>
 
                 {/* Stats preview */}
-                <div className="flex items-center gap-4 mt-6 pt-5 border-t border-slate-100">
+                <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-slate-100">
                   {service.stats.slice(0, 2).map((stat, idx) => (
-                    <div key={idx} className="flex-1">
-                      <div className={`text-lg font-bold bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}>
+                    <div key={idx} className="text-center">
+                      <div className={`text-base font-bold bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}>
                         {stat.value}
                       </div>
                       <div className="text-xs text-slate-400 mt-0.5 font-medium">
@@ -233,16 +233,12 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                 </div>
 
                 {/* CTA arrow */}
-                <div className="flex items-center justify-between mt-6">
-                  <span className="text-sm font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">
-                    Explore service
-                  </span>
+                <div className="flex items-center justify-center mt-4">
                   <motion.div
-                    className={`w-10 h-10 rounded-full bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300`}
-                    initial={{ x: -10 }}
-                    whileHover={{ x: 0 }}
+                    className={`w-9 h-9 rounded-full bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} flex items-center justify-center opacity-70 group-hover:opacity-100 transition-all duration-300`}
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <ArrowRight className="w-5 h-5 text-white" />
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </motion.div>
                 </div>
               </div>

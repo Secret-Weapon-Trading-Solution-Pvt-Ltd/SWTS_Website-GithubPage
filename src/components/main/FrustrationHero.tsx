@@ -53,17 +53,17 @@ export const FrustrationHero: React.FC = () => {
             />
             <div>
               <h2
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight"
                 style={{ color: '#0F172A' }}
               >
-                Secret Weapon Trading Solutions
+                Secret Weapon Trading Solution
+                <span
+                  className="text-sm sm:text-base lg:text-lg font-medium ml-2"
+                  style={{ color: '#64748B' }}
+                >
+                  Private Limited
+                </span>
               </h2>
-              <p
-                className="text-base sm:text-lg font-medium"
-                style={{ color: '#64748B' }}
-              >
-                Private Limited
-              </p>
             </div>
           </div>
 
@@ -87,10 +87,10 @@ export const FrustrationHero: React.FC = () => {
           {/* Main Headline */}
           <h1 className="mb-8">
             <span
-              className="block whitespace-nowrap text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl leading-[1.08] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block whitespace-nowrap text-[1.75rem] sm:text-[2rem] lg:text-[2.15rem] leading-[1.15] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
-                fontWeight: 700,
+                fontWeight: 600,
                 animationDelay: '0.4s',
                 animationFillMode: 'forwards'
               }}
@@ -98,26 +98,15 @@ export const FrustrationHero: React.FC = () => {
               Your strategy works.
             </span>
             <span
-              className="block mt-2 text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl leading-[1.08] tracking-[-0.01em] opacity-0 animate-fade-in-up"
+              className="block mt-1 text-[1.75rem] sm:text-[2rem] lg:text-[2.15rem] leading-[1.15] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#64748B',
-                fontWeight: 600,
+                fontWeight: 500,
                 animationDelay: '0.6s',
                 animationFillMode: 'forwards'
               }}
             >
-              Until you have to
-            </span>
-            <span
-              className="block text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl leading-[1.08] tracking-[-0.01em] opacity-0 animate-fade-in-up"
-              style={{
-                color: '#64748B',
-                fontWeight: 600,
-                animationDelay: '0.7s',
-                animationFillMode: 'forwards'
-              }}
-            >
-              execute it.
+              Until you have to execute it.
             </span>
           </h1>
 
@@ -131,7 +120,7 @@ export const FrustrationHero: React.FC = () => {
               animationFillMode: 'forwards'
             }}
           >
-            The analysis is sound. The backtest is profitable. But when real money is on the line, hesitation and emotion take over. Our assessment helps identify where execution breaks down — and why.
+            Stop letting fear and hesitation steal your profits. Trade with confidence.
           </p>
 
           {/* CTA Group */}

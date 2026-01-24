@@ -274,7 +274,7 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
                     <h3 className="text-base font-bold text-navy-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-navy-600 leading-relaxed mb-2 line-clamp-3">
+                    <p className="text-sm text-navy-600 leading-relaxed mb-2">
                       {step.description}
                     </p>
                     {step.duration && (
