@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
 
 // ============================================================================
 // Section Label Component
@@ -209,7 +209,7 @@ const SystemPreview: React.FC = () => {
       <div className="space-y-4">
         {/* Main Screenshot */}
         <div className="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200/60 shadow-sm">
-          <Image
+          <StaticImage
             src="/Screenshot1.png"
             alt="Signal Dashboard"
             width={1200}
@@ -223,7 +223,7 @@ const SystemPreview: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <div>
             <div className="relative overflow-hidden rounded-xl bg-slate-100 border border-slate-200/60 shadow-sm">
-              <Image
+              <StaticImage
                 src="/Screenshot 3.png"
                 alt="Watchlist Management"
                 width={600}
@@ -235,7 +235,7 @@ const SystemPreview: React.FC = () => {
           </div>
           <div>
             <div className="relative overflow-hidden rounded-xl bg-slate-100 border border-slate-200/60 shadow-sm">
-              <Image
+              <StaticImage
                 src="/Screenshot 2.png"
                 alt="App Settings"
                 width={600}

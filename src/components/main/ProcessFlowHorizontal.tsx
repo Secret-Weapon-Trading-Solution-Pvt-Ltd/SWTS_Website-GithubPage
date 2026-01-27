@@ -29,6 +29,7 @@ import {
   ChevronRight,
   ClipboardList,
 } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
 
 // ============================================================================
 // Types
@@ -322,7 +323,7 @@ const MediaContainer: React.FC<MediaContainerProps> = ({ src, mediaType, stepId 
         {mediaType === 'video' ? (
           <video
             key={stepId}
-            src={src}
+            src={getAssetPath(src)}
             autoPlay
             loop
             muted
@@ -332,7 +333,7 @@ const MediaContainer: React.FC<MediaContainerProps> = ({ src, mediaType, stepId 
         ) : (
           <img
             key={stepId}
-            src={src}
+            src={getAssetPath(src)}
             alt=""
             className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
           />
@@ -431,7 +432,7 @@ const RightPanelContent: React.FC<RightPanelContentProps> = ({ step }) => {
             {step.mediaType === 'video' ? (
               <video
                 key={step.id}
-                src={step.mediaSrc}
+                src={getAssetPath(step.mediaSrc)}
                 autoPlay
                 loop
                 muted
@@ -441,7 +442,7 @@ const RightPanelContent: React.FC<RightPanelContentProps> = ({ step }) => {
             ) : (
               <img
                 key={step.id}
-                src={step.mediaSrc}
+                src={getAssetPath(step.mediaSrc)}
                 alt=""
                 className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
               />

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
 import Link from 'next/link';
 import { Service } from '@/data/services';
 import { ArrowLeft } from 'lucide-react';
@@ -223,7 +223,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                 whileHover={{ scale: 1.02 }}
               >
-                <Image
+                <StaticImage
                   src="/cropped-hands-business-people-working-table.jpg"
                   alt="Strategy Automation - Professional trading analysis"
                   fill
@@ -242,7 +242,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 {/* Check if service has a custom hero image */}
                 {service.slug === 'python-algo-development' ? (
                   <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden">
-                    <Image
+                    <StaticImage
                       src="/python.png"
                       alt={service.title}
                       fill
@@ -252,7 +252,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                   </div>
                 ) : service.slug === 'pine-script-development' ? (
                   <div className="relative w-full aspect-[4/3] overflow-hidden -mt-2">
-                    <Image
+                    <StaticImage
                       src="/tradingview.png"
                       alt={service.title}
                       fill

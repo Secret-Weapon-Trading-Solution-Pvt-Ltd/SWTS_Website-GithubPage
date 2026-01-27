@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
+import { getAssetPath } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
 
 export const FrustrationHero: React.FC = () => {
@@ -20,7 +21,7 @@ export const FrustrationHero: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat animate-fade-in"
         style={{
-          backgroundImage: 'url(/bg_new.png)',
+          backgroundImage: `url(${getAssetPath('/bg_new.png')})`,
           animationDuration: '1s',
           animationDelay: '0.3s',
           animationFillMode: 'both'
@@ -45,7 +46,7 @@ export const FrustrationHero: React.FC = () => {
             style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
           >
             <Link href="/" className="inline-flex items-center gap-3 sm:gap-4 lg:gap-5 xl:gap-6">
-              <Image
+              <StaticImage
                 src="/logos/logo1.png"
                 alt="SWTS Logo"
                 width={100}

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
 import { motion } from 'framer-motion';
 
 interface ServiceItem {
@@ -76,7 +76,7 @@ const ServiceCard: React.FC<{ service: ServiceItem }> = ({ service }) => {
             <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} z-10 pointer-events-none`} />
           )}
 
-          <Image
+          <StaticImage
             src={service.image}
             alt={service.title}
             width={176}

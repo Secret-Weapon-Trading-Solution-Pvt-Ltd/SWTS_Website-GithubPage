@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
 import { Mail, MapPin, ArrowRight, Phone } from 'lucide-react';
 
 const footerLinks = {
@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <Image
+              <StaticImage
                 src="/logos/logo1.png"
                 alt="SWTS Logo"
                 width={50}

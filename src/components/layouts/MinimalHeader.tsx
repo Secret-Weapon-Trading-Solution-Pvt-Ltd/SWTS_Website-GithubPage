@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { StaticImage } from '@/components/ui/StaticImage';
 import { Mail } from 'lucide-react';
 
 export const MinimalHeader: React.FC = () => {
@@ -12,7 +12,7 @@ export const MinimalHeader: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Links back to main website */}
           <Link href="/" className="flex items-center">
-            <Image
+            <StaticImage
               src="/logos/logo1.jpg"
               alt="Secret Weapon Trading Solution"
               width={150}

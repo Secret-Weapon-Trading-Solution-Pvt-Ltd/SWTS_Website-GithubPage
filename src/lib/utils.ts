@@ -1,6 +1,20 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
+// Base path for GitHub Pages deployment (set via next.config.js env)
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+// Get asset path with basePath prefix for static assets (videos, raw images, etc.)
+export function getAssetPath(path: string): string {
+  if (!path) return path;
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  // Ensure path starts with /
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  return `${basePath}${normalizedPath}`;
+}
+
 // Merge Tailwind classes safely
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
