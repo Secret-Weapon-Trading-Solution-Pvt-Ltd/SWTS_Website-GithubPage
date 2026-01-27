@@ -49,21 +49,21 @@ export const FrustrationHero: React.FC = () => {
               alt="SWTS Logo"
               width={80}
               height={80}
-              className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
+              className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
             />
             <div>
               <h1
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-[40px] xl:text-[50px] font-bold leading-[1.1] tracking-tight"
                 style={{ color: '#0F172A' }}
               >
                 Secret Weapon
               </h1>
               <p
-                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight"
+                className="text-xl sm:text-2xl lg:text-[36px] xl:text-[45px] font-bold leading-[1.1] tracking-tight mt-1 lg:mt-2"
                 style={{ color: '#0F172A' }}
               >
                 Trading Solution <span
-                  className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium"
+                  className="text-sm sm:text-base lg:text-lg xl:text-xl font-medium"
                   style={{ color: '#64748B' }}
                 >Pvt Ltd</span>
               </p>
@@ -90,7 +90,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Hook/Headline - MEDIUM (smaller than company name) */}
           <h2 className="mb-8">
             <span
-              className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.2] tracking-[-0.01em] opacity-0 animate-fade-in-up"
+              className="block text-xl sm:text-2xl lg:text-[36px] xl:text-[45px] leading-[1.2] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
                 fontWeight: 600,
@@ -101,7 +101,7 @@ export const FrustrationHero: React.FC = () => {
               Your strategy works.
             </span>
             <span
-              className="block mt-2 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-[1.2] tracking-[-0.01em] opacity-0 animate-fade-in-up"
+              className="block whitespace-nowrap mt-2 text-xl sm:text-2xl lg:text-[36px] xl:text-[45px] leading-[1.2] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#64748B',
                 fontWeight: 500,
@@ -115,7 +115,7 @@ export const FrustrationHero: React.FC = () => {
 
           {/* Subtitle - SMALLEST (smaller than hook) */}
           <p
-            className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-[1.5] mb-12 max-w-2xl opacity-0 animate-fade-in-up"
+            className="text-lg sm:text-xl lg:text-[24px] xl:text-[30px] leading-[1.5] mb-12 max-w-2xl opacity-0 animate-fade-in-up"
             style={{
               color: '#475569',
               fontWeight: 400,
