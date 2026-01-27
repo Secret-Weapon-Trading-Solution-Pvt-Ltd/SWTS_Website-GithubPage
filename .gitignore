@@ -1,6 +1,7 @@
 /node_modules
 /dist
 .next/
+/out/
 
 # Environment files (contain secrets)
 .env

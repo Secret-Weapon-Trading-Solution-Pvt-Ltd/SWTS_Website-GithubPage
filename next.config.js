@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/SWTS_Website-GithubPage' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/SWTS_Website-GithubPage/' : '',
   images: {
-    domains: [],
+    unoptimized: true,
   },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
