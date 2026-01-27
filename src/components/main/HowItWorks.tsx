@@ -66,29 +66,29 @@ export const HowItWorks: React.FC = () => {
       {/* ================================================================ */}
       <ServicesScroller />
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
+      <div className="relative max-w-[1400px] 3xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* ================================================================ */}
         {/* SECONDARY: Choose Your Starting Point - Modern Redesign */}
         {/* ================================================================ */}
         <div className="mb-6 pt-4">
           {/* Section Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100/50 mb-5">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
+              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
                 Get Started
               </span>
             </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-3">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
               Ready to Begin?
             </h3>
-            <p className="text-slate-500 text-base max-w-md mx-auto">
+            <p className="text-slate-500 text-base lg:text-lg max-w-md mx-auto">
               Pick the option that works best for you
             </p>
           </div>
 
           {/* Cards Container */}
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 xl:gap-12">
 
             {/* Path A - Recommended */}
             <div className="group relative">
