@@ -59,7 +59,7 @@ export const FrustrationHero: React.FC = () => {
                 Secret Weapon
               </h1>
               <p
-                className="text-xl sm:text-2xl lg:text-[36px] xl:text-[45px] font-bold leading-[1.1] tracking-tight mt-1 lg:mt-2"
+                className="text-lg sm:text-xl lg:text-[32px] xl:text-[40px] font-bold leading-[1.1] tracking-tight mt-1 lg:mt-2"
                 style={{ color: '#0F172A' }}
               >
                 Trading Solution <span
@@ -115,7 +115,7 @@ export const FrustrationHero: React.FC = () => {
 
           {/* Subtitle - SMALLEST (smaller than hook) */}
           <p
-            className="text-lg sm:text-xl lg:text-[24px] xl:text-[30px] leading-[1.5] mb-12 max-w-2xl opacity-0 animate-fade-in-up"
+            className="text-base sm:text-lg lg:text-[20px] xl:text-[26px] leading-[1.5] mb-12 max-w-2xl opacity-0 animate-fade-in-up"
             style={{
               color: '#475569',
               fontWeight: 400,
