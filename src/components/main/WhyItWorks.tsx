@@ -54,7 +54,7 @@ const PillarCard: React.FC<{
 
         {/* Glass card for icon */}
         <div
-          className="relative w-20 h-20 rounded-2xl backdrop-blur-sm border border-white/40 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300"
+          className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-2xl backdrop-blur-sm border border-white/40 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300"
           style={{
             background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%)',
           }}
@@ -63,8 +63,8 @@ const PillarCard: React.FC<{
           <div className={`absolute inset-2 rounded-xl bg-gradient-to-br ${colors.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
 
           {/* Icon with gradient */}
-          <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-md`}>
-            <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+          <div className={`relative w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-md`}>
+            <Icon className="w-6 h-6 lg:w-7 lg:h-7 text-white" strokeWidth={2} />
           </div>
         </div>
 
@@ -76,12 +76,12 @@ const PillarCard: React.FC<{
       </div>
 
       {/* Title */}
-      <h4 className={`text-xl font-bold mb-2 tracking-tight ${colors.text}`}>
+      <h4 className={`text-xl lg:text-2xl font-bold mb-3 tracking-tight ${colors.text}`}>
         {pillar.title}
       </h4>
 
       {/* Description */}
-      <p className="text-slate-600 leading-relaxed max-w-[260px] text-[15px]">
+      <p className="text-slate-600 leading-relaxed max-w-[320px] text-base">
         {pillar.description}
       </p>
     </div>
@@ -161,7 +161,7 @@ export const WhyItWorks: React.FC = () => {
         }
       `}</style>
 
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
+      <div className="relative max-w-[1400px] 3xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Header */}
         <div
           className={`text-center mb-6 transition-all duration-700 ease-out ${
@@ -177,7 +177,7 @@ export const WhyItWorks: React.FC = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-3 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
             Built on{' '}
             <span className="bg-gradient-to-r from-violet-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
               Three Core Pillars
@@ -185,13 +185,13 @@ export const WhyItWorks: React.FC = () => {
           </h2>
 
           {/* Subtext */}
-          <p className="text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base lg:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
             Test, refine, and deploy—the complete journey from strategy concept to live automation.
           </p>
         </div>
 
         {/* Three pillars */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
           {pillars.map((pillar, index) => (
             <PillarCard
               key={pillar.title}
