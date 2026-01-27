@@ -107,20 +107,21 @@ export const ServicesScroller: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-8 px-4">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal-600 mb-6 shadow-md">
-          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          <span className="text-xs font-bold uppercase tracking-widest text-white">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 mb-6">
+          <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-teal-600">
             What We Offer
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900">
-          Our Services
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <span className="text-slate-800">Our </span>
+          <span className="text-teal-600">Services</span>
         </h3>
 
         {/* Subtitle */}
-        <p className="text-gray-600 text-base sm:text-lg max-w-lg mx-auto leading-relaxed font-medium">
+        <p className="text-slate-500 text-base lg:text-lg max-w-lg mx-auto leading-relaxed">
           Everything you need to automate and scale your trading operations
         </p>
       </div>
