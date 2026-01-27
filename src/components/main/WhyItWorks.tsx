@@ -114,7 +114,7 @@ export const WhyItWorks: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 lg:py-20 mt-12 lg:mt-16 overflow-hidden"
+      className="relative py-10 lg:py-12 mt-4 lg:mt-6 overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #faf5ff 0%, #f0f9ff 25%, #f8fafc 50%, #faf5ff 75%, #eff6ff 100%)',
       }}
@@ -164,7 +164,7 @@ export const WhyItWorks: React.FC = () => {
       <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Header */}
         <div
-          className={`text-center mb-10 transition-all duration-700 ease-out ${
+          className={`text-center mb-6 transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -204,7 +204,7 @@ export const WhyItWorks: React.FC = () => {
 
         {/* Bottom accent */}
         <div
-          className={`flex justify-center mt-10 transition-all duration-700 ease-out ${
+          className={`flex justify-center mt-6 transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ transitionDelay: '700ms' }}

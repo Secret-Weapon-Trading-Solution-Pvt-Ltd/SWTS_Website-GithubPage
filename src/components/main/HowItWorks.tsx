@@ -17,7 +17,7 @@ import { ServicesScroller } from '@/components/home/ServicesScroller';
 // ============================================================================
 export const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="relative py-16 lg:py-20 overflow-hidden">
+    <section id="how-it-works" className="relative py-10 lg:py-12 overflow-hidden">
       {/* Background - subtle gradient bands */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white" />
 
@@ -29,7 +29,7 @@ export const HowItWorks: React.FC = () => {
         {/* ================================================================ */}
         {/* Page Header - Modern Enterprise Style */}
         {/* ================================================================ */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-4">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
@@ -70,9 +70,9 @@ export const HowItWorks: React.FC = () => {
         {/* ================================================================ */}
         {/* SECONDARY: Choose Your Starting Point - Modern Redesign */}
         {/* ================================================================ */}
-        <div className="mb-6 pt-10">
+        <div className="mb-6 pt-4">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100/50 mb-5">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
               <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">

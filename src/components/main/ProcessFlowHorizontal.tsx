@@ -470,7 +470,7 @@ export const ProcessFlowHorizontal: React.FC = () => {
       {/* ================================================================ */}
       {/* PROCESS STEPS ZONE */}
       {/* ================================================================ */}
-      <div className="relative pt-6 pb-8 sm:pt-8 sm:pb-10 -mx-6 sm:-mx-10 lg:-mx-12 px-6 sm:px-10 lg:px-12 mb-6">
+      <div className="relative pt-2 pb-4 sm:pt-4 sm:pb-6 -mx-6 sm:-mx-10 lg:-mx-12 px-6 sm:px-10 lg:px-12 mb-2">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/20 to-transparent" />
 

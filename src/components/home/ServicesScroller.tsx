@@ -103,9 +103,9 @@ export const ServicesScroller: React.FC = () => {
   const allItems = [...serviceItems, ...serviceItems];
 
   return (
-    <div className="py-16 overflow-hidden bg-white">
+    <div className="py-8 overflow-hidden bg-white">
       {/* Header */}
-      <div className="text-center mb-12 px-4">
+      <div className="text-center mb-8 px-4">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal-600 mb-6 shadow-md">
           <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
@@ -155,7 +155,7 @@ export const ServicesScroller: React.FC = () => {
       </div>
 
       {/* View All Button */}
-      <div className="mt-12 flex justify-center">
+      <div className="mt-8 flex justify-center">
         <Link
           href="/services"
           className="group inline-flex items-center gap-3 px-8 py-4 text-sm font-bold text-white bg-gradient-to-r from-teal-600 to-blue-600 rounded-full shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 transition-all duration-300"
