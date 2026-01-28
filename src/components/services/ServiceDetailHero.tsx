@@ -15,7 +15,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   const isDarkTheme = service.slug === 'algo-strategy-development';
 
   return (
-    <section className={`relative pt-36 lg:pt-40 pb-10 overflow-hidden ${
+    <section className={`relative pt-28 lg:pt-32 pb-6 overflow-hidden ${
       isDarkTheme
         ? 'bg-white'
         : 'bg-gradient-to-b from-navy-50 via-white to-white'
@@ -106,7 +106,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
         )}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         {/* Back link */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -122,7 +122,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
           </Link>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left column - Content */}
           <div>
             {/* Service badge */}
@@ -146,7 +146,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-navy-800"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-4 text-navy-800"
             >
               {isDarkTheme ? (
                 <>
@@ -217,7 +217,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             {isDarkTheme ? (
               /* Strategy Automation - Animated image display */
               <motion.div
-                className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl"
+                className="relative aspect-[4/3] w-full max-w-xl lg:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-xl"
                 initial={{ opacity: 0, scale: 0.9, x: 50 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}

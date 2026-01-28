@@ -198,7 +198,7 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

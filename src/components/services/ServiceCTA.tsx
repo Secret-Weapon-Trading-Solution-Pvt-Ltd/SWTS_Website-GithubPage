@@ -132,7 +132,7 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
           <rect width="100%" height="100%" fill="url(#cta-section-grid)" />
         </svg>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

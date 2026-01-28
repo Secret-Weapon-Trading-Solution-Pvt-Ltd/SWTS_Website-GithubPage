@@ -350,7 +350,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
     <section className="relative py-14 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
       <BackgroundPattern />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
