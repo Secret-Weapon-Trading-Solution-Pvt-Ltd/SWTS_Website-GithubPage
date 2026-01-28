@@ -15,7 +15,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   const isDarkTheme = service.slug === 'algo-strategy-development';
 
   return (
-    <section className={`relative pt-28 pb-20 overflow-hidden ${
+    <section className={`relative pt-28 pb-10 overflow-hidden ${
       isDarkTheme
         ? 'bg-white'
         : 'bg-gradient-to-b from-navy-50 via-white to-white'

@@ -12,8 +12,7 @@ import ServiceCTA from '@/components/services/ServiceCTA';
 import {
   StrategyOverview,
   CapabilitiesModern,
-  ProcessFlowModern,
-  CTAModern
+  ProcessFlowModern
 } from '@/components/services/enterprise';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
@@ -87,8 +86,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           {/* Modern Process Flow with illustrations */}
           <ProcessFlowModern service={service} />
 
-          {/* Modern CTA section */}
-          <CTAModern service={service} />
+          {/* CTA section - same style as other services */}
+          <ServiceCTA service={service} />
         </>
       ) : (
         <>
@@ -109,7 +108,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </>
       )}
 
-      {/* CTA section - only for non-enterprise layout (enterprise has CTAModern) */}
+      {/* CTA section - for non-enterprise layout only (enterprise has it in its block) */}
       {!isEnterpriseLayout && <ServiceCTA service={service} />}
     </MainLayout>
   );

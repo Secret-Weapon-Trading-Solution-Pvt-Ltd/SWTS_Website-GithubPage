@@ -153,12 +153,12 @@ export const services: Service[] = [
       { id: "deploy", title: "Go Live", description: "Deploy with monitoring & alerts", icon: "Rocket" }
     ],
     howItWorks: [
-      { step: 1, title: "Strategy Documentation", description: "We conduct detailed sessions to understand YOUR trading rules—entry conditions, exit conditions, position sizing, filters. We document everything precisely.", duration: "2-3 sessions" },
-      { step: 2, title: "Technical Specification", description: "Your rules are translated into a detailed technical document. You review and approve before we write any code—no surprises.", duration: "1 week" },
-      { step: 3, title: "System Development", description: "We build your automated system with clean, documented code. Regular demos keep you informed of progress.", duration: "2-4 weeks" },
-      { step: 4, title: "Backtesting", description: "Your strategy is tested against historical data with realistic assumptions. Detailed performance reports show exactly how it would have performed.", duration: "1-2 weeks" },
-      { step: 5, title: "Paper Trading", description: "Live market testing without capital risk. Validate that the system executes exactly as intended in real-time conditions.", duration: "2-4 weeks" },
-      { step: 6, title: "Production Deployment", description: "Go live with full monitoring, alerts, and support. Your strategy, running automatically, exactly as you designed it.", duration: "Ongoing" }
+      { step: 1, title: "Strategy Documentation", description: "Document your trading rules—entries, exits, position sizing.", duration: "2-3 sessions" },
+      { step: 2, title: "Technical Specification", description: "Rules translated to technical specs. You review before coding.", duration: "1 week" },
+      { step: 3, title: "System Development", description: "Build automated system with clean, documented code.", duration: "2-4 weeks" },
+      { step: 4, title: "Backtesting", description: "Test against historical data with detailed performance reports.", duration: "1-2 weeks" },
+      { step: 5, title: "Paper Trading", description: "Live market testing without capital risk.", duration: "2-4 weeks" },
+      { step: 6, title: "Production Deployment", description: "Go live with monitoring, alerts, and support.", duration: "Ongoing" }
     ],
     useCases: [
       {

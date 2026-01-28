@@ -182,7 +182,7 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
     <section
       ref={containerRef}
       id="how-it-works"
-      className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden scroll-mt-20"
+      className="py-14 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden scroll-mt-20"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
@@ -204,42 +204,48 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm"
+          >
             <Clock className="w-4 h-4" />
             Our Proven Process
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
-            Your Journey to Automation
+          </motion.span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Your Journey to</span>
+            {' '}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Automation</span>
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
             A transparent, step-by-step methodology that ensures your strategy is properly translated, tested, and deployed
           </p>
         </motion.div>
 
         {/* Desktop Timeline - Horizontal */}
-        <div className="hidden lg:block relative mb-16">
+        <div className="hidden lg:block relative mb-10">
           {/* Progress line background */}
-          <div className="absolute top-24 left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 rounded-full" />
+          <div className="absolute top-[88px] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 rounded-full" />
 
           {/* Animated progress line */}
           <motion.div
-            className="absolute top-24 left-[8%] h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full"
+            className="absolute top-[88px] left-[8%] h-0.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full"
             style={{ width: progressWidth }}
           />
 
           {/* Animated pulse */}
           <motion.div
-            className="absolute top-24 left-[8%] w-20 h-1 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
+            className="absolute top-[88px] left-[8%] w-16 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
             animate={{ x: [0, 800, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
           />
 
           {/* Steps */}
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-6 gap-3">
             {service.howItWorks.map((step, index) => {
-              const Icon = stepIcons[index % stepIcons.length];
               const colors = stepColors[index % stepColors.length];
               const Illustration = StepIllustrations[index % StepIllustrations.length];
               const isLast = index === service.howItWorks.length - 1;
@@ -247,39 +253,38 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="relative flex flex-col items-center"
                 >
                   {/* Illustration */}
                   <motion.div
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    className="relative w-28 h-28 mb-4"
+                    whileHover={{ scale: 1.05 }}
+                    className="relative w-20 h-20 mb-3"
                   >
                     <Illustration />
-
                     {/* Step number badge */}
-                    <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center shadow-lg ${colors.shadow}`}>
-                      <span className="text-white font-bold text-sm">{step.step}</span>
+                    <div className={`absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center shadow-md`}>
+                      <span className="text-white font-bold text-xs">{step.step}</span>
                     </div>
                   </motion.div>
 
                   {/* Node on timeline */}
-                  <div className={`w-4 h-4 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} shadow-md ${colors.shadow} mb-4`} />
+                  <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} shadow-sm mb-3`} />
 
                   {/* Content */}
                   <div className="text-center">
-                    <h3 className="text-base font-bold text-navy-900 mb-2">
+                    <h3 className="text-sm font-bold text-navy-900 mb-1">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-navy-600 leading-relaxed mb-2">
+                    <p className="text-xs text-navy-600 leading-snug mb-1 line-clamp-2">
                       {step.description}
                     </p>
                     {step.duration && (
-                      <span className={`inline-flex items-center gap-1 text-xs ${colors.text} font-medium`}>
-                        <Clock className="w-3 h-3" />
+                      <span className={`inline-flex items-center gap-1 text-[10px] ${colors.text} font-medium`}>
+                        <Clock className="w-2.5 h-2.5" />
                         {step.duration}
                       </span>
                     )}
@@ -287,13 +292,9 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
 
                   {/* Arrow connector */}
                   {!isLast && (
-                    <motion.div
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.15 }}
-                      className="absolute top-24 -right-2 z-10"
-                    >
-                      <ArrowRight className="w-4 h-4 text-indigo-400" />
-                    </motion.div>
+                    <div className="absolute top-20 -right-1 z-10">
+                      <ArrowRight className="w-3 h-3 text-indigo-400" />
+                    </div>
                   )}
                 </motion.div>
               );
@@ -302,44 +303,39 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
         </div>
 
         {/* Mobile/Tablet - Vertical Cards */}
-        <div className="lg:hidden space-y-6">
+        <div className="lg:hidden space-y-3">
           {service.howItWorks.map((step, index) => {
-            const Icon = stepIcons[index % stepIcons.length];
             const colors = stepColors[index % stepColors.length];
             const Illustration = StepIllustrations[index % StepIllustrations.length];
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative bg-white rounded-2xl p-6 shadow-lg border ${colors.border}`}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={`relative bg-white rounded-xl p-4 shadow-md border ${colors.border}`}
               >
-                <div className="flex gap-5">
-                  {/* Illustration */}
-                  <div className="flex-shrink-0 w-20 h-20">
-                    <Illustration />
-                  </div>
+                <div className="flex gap-3 items-center">
+                  {/* Step number */}
+                  <span className={`w-8 h-8 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                    {step.step}
+                  </span>
 
                   {/* Content */}
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className={`w-7 h-7 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center text-white font-bold text-sm`}>
-                        {step.step}
-                      </span>
-                      <h3 className="text-lg font-bold text-navy-900">{step.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-sm font-bold text-navy-900">{step.title}</h3>
+                      {step.duration && (
+                        <span className={`text-[10px] ${colors.text} font-medium`}>
+                          {step.duration}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-navy-600 text-sm leading-relaxed mb-2">
+                    <p className="text-xs text-navy-600 line-clamp-1">
                       {step.description}
                     </p>
-                    {step.duration && (
-                      <span className={`inline-flex items-center gap-1 text-xs ${colors.text} font-medium`}>
-                        <Clock className="w-3 h-3" />
-                        {step.duration}
-                      </span>
-                    )}
                   </div>
                 </div>
               </motion.div>
@@ -352,17 +348,17 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16"
+          className="mt-10"
         >
           <div className="flex flex-col items-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-xl shadow-emerald-500/30 mb-6">
-              <CheckCircle2 className="w-8 h-8 text-white" />
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-3">
+              <CheckCircle2 className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-navy-900 mb-2 text-center">
+            <h3 className="text-lg font-bold text-navy-900 mb-1 text-center">
               Your Strategy, Fully Automated
             </h3>
-            <p className="text-navy-600 text-center max-w-xl">
-              Running 24/7 with real-time monitoring, alerts, and full support
+            <p className="text-sm text-navy-600 text-center">
+              Running 24/7 with monitoring, alerts, and support
             </p>
           </div>
         </motion.div>

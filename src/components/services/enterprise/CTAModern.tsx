@@ -35,7 +35,7 @@ const stats = [
 
 export default function CTAModern({ service }: CTAModernProps) {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="relative py-14 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div

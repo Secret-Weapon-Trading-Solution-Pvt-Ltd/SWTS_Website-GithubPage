@@ -8,6 +8,8 @@ interface StrategyOverviewProps {
   service: Service;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 // Animated background pattern
 const BackgroundPattern = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -296,7 +298,7 @@ const overviewData = {
     stats: [
       { value: "0", label: "Emotional Errors" },
       { value: "24/7", label: "Market Coverage" },
-      { value: "<1s", label: "Execution Speed" }
+      { value: "<100ms", label: "Execution Speed" }
     ]
   },
   whoShouldUse: {
@@ -354,35 +356,43 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm backdrop-blur-sm"
+          >
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></span>
             Understanding Strategy Automation
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
-            Transform Your Trading
+          </motion.span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Transform Your</span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Trading</span>
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
             Everything you need to know about automating your trading strategy
           </p>
         </motion.div>
 
         {/* What It Is + Illustration */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-14">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
-              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
               What It Is
             </div>
-            <h3 className="text-3xl font-bold text-navy-900 mb-6">
+            <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-blue-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.whatItIs.title}
             </h3>
-            <p className="text-lg text-navy-600 leading-relaxed mb-8">
+            <p className="text-lg text-navy-600/90 leading-relaxed mb-8">
               {overviewData.whatItIs.description}
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -393,12 +403,18 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="flex items-center gap-3 p-4 bg-gradient-to-br from-white to-slate-50/80 rounded-xl shadow-md shadow-slate-200/50 border border-slate-100 hover:shadow-lg hover:border-blue-100 transition-all duration-300 cursor-default group"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-white" />
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-110 bg-gradient-to-br ${
+                    index === 0 ? 'from-blue-500 to-indigo-600 shadow-blue-500/25' :
+                    index === 1 ? 'from-indigo-500 to-purple-600 shadow-indigo-500/25' :
+                    index === 2 ? 'from-cyan-500 to-blue-600 shadow-cyan-500/25' :
+                    'from-emerald-500 to-teal-600 shadow-emerald-500/25'
+                  }`}>
+                    <CheckCircle className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-sm font-medium text-navy-800">{highlight}</span>
+                  <span className="text-sm font-semibold text-navy-800">{highlight}</span>
                 </motion.div>
               ))}
             </div>
@@ -411,8 +427,18 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100">
-              <StrategyIllustration />
+            {/* Decorative glow behind */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/20 via-indigo-400/15 to-purple-400/20 rounded-[2rem] blur-2xl" />
+
+            <div className="relative aspect-[4/3] bg-gradient-to-br from-white via-blue-50/50 to-indigo-50 rounded-3xl p-6 lg:p-8 border border-white/80 shadow-xl shadow-blue-900/10 overflow-hidden">
+              {/* Subtle pattern */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-2xl" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-indigo-400/20 to-transparent rounded-full blur-2xl" />
+              </div>
+              <div className="relative h-full">
+                <StrategyIllustration />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -424,36 +450,86 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           viewport={{ once: true }}
           className="relative mb-14"
         >
-          <div className="bg-white rounded-3xl p-12 shadow-lg border border-slate-200 overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                  Why It Matters
-                </div>
-                <h3 className="text-3xl font-bold text-navy-900 mb-6">
-                  {overviewData.whyItMatters.title}
-                </h3>
-                <p className="text-lg text-navy-600 leading-relaxed">
-                  {overviewData.whyItMatters.description}
-                </p>
+          <div className="relative bg-gradient-to-br from-white via-white to-blue-50/30 rounded-2xl p-6 lg:p-8 shadow-lg shadow-blue-900/5 border border-slate-100 overflow-hidden">
+            {/* Header */}
+            <div className="relative text-center mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-full text-blue-700 text-xs font-semibold mb-3 border border-blue-200/50">
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                Why It Matters
               </div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-navy-900 mb-2">
+                {overviewData.whyItMatters.title}
+              </h3>
+              <p className="text-sm text-navy-600 max-w-2xl mx-auto">
+                Automation eliminates emotional interference, execution delays, and enables 24/7 market monitoring.
+              </p>
+            </div>
 
-              <div className="grid grid-cols-3 gap-6">
-                {overviewData.whyItMatters.stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
-                    className="text-center p-4 bg-slate-50 rounded-2xl"
-                  >
-                    <div className="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-navy-600 font-medium">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
+            {/* Stats + Benefits Combined Row */}
+            <div className="grid grid-cols-3 lg:grid-cols-7 gap-3">
+              {/* Stats */}
+              {overviewData.whyItMatters.stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
+                >
+                  <div className={`text-2xl font-bold bg-gradient-to-br ${
+                    index === 0 ? 'from-blue-600 to-indigo-600' :
+                    index === 1 ? 'from-indigo-600 to-purple-600' :
+                    'from-cyan-600 to-blue-600'
+                  } bg-clip-text text-transparent`}>{stat.value}</div>
+                  <div className="text-xs text-navy-600">{stat.label}</div>
+                </motion.div>
+              ))}
+
+              {/* Benefits */}
+              {overviewData.benefits.map((benefit, index) => (
+                <motion.div
+                  key={`benefit-${index}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (index + 3) * 0.1 }}
+                  className="hidden lg:flex flex-col items-center text-center p-3 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 bg-gradient-to-br ${
+                    index === 0 ? 'from-blue-500 to-indigo-600' :
+                    index === 1 ? 'from-indigo-500 to-purple-600' :
+                    index === 2 ? 'from-cyan-500 to-blue-600' :
+                    'from-emerald-500 to-teal-600'
+                  }`}>
+                    <benefit.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="text-xs font-semibold text-navy-800 leading-tight">{benefit.title}</div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile Benefits Grid */}
+            <div className="grid grid-cols-2 gap-3 mt-3 lg:hidden">
+              {overviewData.benefits.map((benefit, index) => (
+                <motion.div
+                  key={`benefit-mobile-${index}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-2 p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${
+                    index === 0 ? 'from-blue-500 to-indigo-600' :
+                    index === 1 ? 'from-indigo-500 to-purple-600' :
+                    index === 2 ? 'from-cyan-500 to-blue-600' :
+                    'from-emerald-500 to-teal-600'
+                  }`}>
+                    <benefit.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="text-xs font-semibold text-navy-800">{benefit.title}</div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -463,7 +539,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-16 items-center mb-14"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14"
         >
           {/* Left Side - Image */}
           <motion.div
@@ -473,18 +549,27 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Decorative background blur */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-[2rem] blur-2xl" />
+
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-indigo-900/20 ring-1 ring-white/50">
               <img
-                src="/11652.jpg"
+                src={`${basePath}/11652.jpg`}
                 alt="Trading team analyzing market data"
                 className="w-full h-auto object-cover"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/20 to-transparent" />
+              {/* Elegant overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/30 via-transparent to-blue-900/10" />
+
+              {/* Floating badge */}
+              <div className="absolute bottom-4 left-4 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-white/50">
+                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Professional Trading</span>
+              </div>
             </div>
+
             {/* Decorative elements */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl -z-10 opacity-20" />
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl -z-10 opacity-20" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl -z-10 opacity-20 blur-sm" />
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl -z-10 opacity-20 blur-sm" />
           </motion.div>
 
           {/* Right Side - Content */}
@@ -494,14 +579,14 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-4">
-              <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-5 border border-indigo-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
               Who Should Use This
             </div>
-            <h3 className="text-3xl font-bold text-navy-900 mb-6">
+            <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-navy-800 to-indigo-900 bg-clip-text text-transparent mb-8">
               {overviewData.whoShouldUse.title}
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-5">
               {overviewData.whoShouldUse.profiles.map((profile, index) => (
                 <motion.div
                   key={index}
@@ -509,14 +594,19 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex gap-4 items-start group"
+                  whileHover={{ x: 5 }}
+                  className="flex gap-5 items-start p-4 rounded-2xl bg-gradient-to-r from-white to-slate-50/80 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-100 transition-all duration-300 group cursor-default"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <profile.icon className="w-6 h-6 text-white" />
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-lg bg-gradient-to-br ${
+                    index === 0 ? 'from-blue-500 to-indigo-600 shadow-blue-500/25' :
+                    index === 1 ? 'from-indigo-500 to-purple-600 shadow-indigo-500/25' :
+                    'from-purple-500 to-pink-600 shadow-purple-500/25'
+                  }`}>
+                    <profile.icon className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-navy-900 mb-1">{profile.title}</h4>
-                    <p className="text-navy-600">{profile.description}</p>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-indigo-900 transition-colors">{profile.title}</h4>
+                    <p className="text-navy-600 leading-relaxed">{profile.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -524,106 +614,22 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           </motion.div>
         </motion.div>
 
-        {/* Why Traders Choose - Right-Left Split Layout */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
-        >
-          {/* Left Side - Visual with benefit bars */}
-          <div className="order-2 lg:order-1">
-            <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border border-emerald-100">
-              <div className="space-y-6">
-                {overviewData.benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, width: 0 }}
-                    whileInView={{ opacity: 1, width: '100%' }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15, duration: 0.5 }}
-                    className="relative"
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${
-                        index === 0 ? 'from-emerald-400 to-teal-500' :
-                        index === 1 ? 'from-teal-400 to-cyan-500' :
-                        index === 2 ? 'from-cyan-400 to-blue-500' :
-                        'from-blue-400 to-indigo-500'
-                      }`}>
-                        <benefit.icon className="w-5 h-5 text-white" />
-                      </div>
-                      <span className="text-sm font-semibold text-navy-800">{benefit.title}</span>
-                    </div>
-                    <motion.div
-                      className={`h-3 rounded-full bg-gradient-to-r ${
-                        index === 0 ? 'from-emerald-400 to-teal-400' :
-                        index === 1 ? 'from-teal-400 to-cyan-400' :
-                        index === 2 ? 'from-cyan-400 to-blue-400' :
-                        'from-blue-400 to-indigo-400'
-                      }`}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${85 + index * 5}%` }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 + 0.3, duration: 0.6 }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Content */}
-          <div className="order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 rounded-full text-emerald-700 text-sm font-medium mb-4">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              Key Benefits
-            </div>
-            <h3 className="text-3xl font-bold text-navy-900 mb-6">
-              Why Traders Choose Automation
-            </h3>
-            <div className="space-y-5">
-              {overviewData.benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex gap-4 items-start group"
-                >
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-gradient-to-br ${
-                    index === 0 ? 'from-emerald-400 to-teal-500' :
-                    index === 1 ? 'from-teal-400 to-cyan-500' :
-                    index === 2 ? 'from-cyan-400 to-blue-500' :
-                    'from-blue-400 to-indigo-500'
-                  }`}>
-                    <benefit.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-navy-900 mb-1">{benefit.title}</h4>
-                    <p className="text-navy-600 text-sm">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-14 text-center"
         >
-          <a
+          <motion.a
             href="#how-it-works"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold rounded-2xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 group"
           >
             See How It Works
-            <ArrowRight className="w-5 h-5" />
-          </a>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
         </motion.div>
       </div>
     </section>

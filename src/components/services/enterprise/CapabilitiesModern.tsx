@@ -116,15 +116,21 @@ export default function CapabilitiesModern({ service }: CapabilitiesModernProps)
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm"
+          >
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></span>
             What We Build For You
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
-            Our Capabilities
+          </motion.span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Our Capabilities</span>
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
             End-to-end solutions that transform your trading rules into production-ready automated systems
           </p>
         </motion.div>
@@ -133,67 +139,59 @@ export default function CapabilitiesModern({ service }: CapabilitiesModernProps)
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {service.capabilities.map((capability, index) => {
             const IconComponent = CapabilityIcons[index] || CapabilityIcons[0];
-            const LucideIcon = LucideIcons[index] || LucideIcons[0];
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <motion.div
                   className="group h-full"
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <div className="relative h-full bg-white rounded-3xl p-8 lg:p-10 shadow-lg border border-slate-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 overflow-hidden">
+                  <div className="relative h-full bg-white rounded-2xl p-5 lg:p-6 shadow-md border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden">
                     {/* Gradient accent on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
-                    {/* Decorative background shape */}
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
                     <div className="relative">
                       {/* Icon and number */}
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="w-20 h-20">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-14 h-14">
                           <IconComponent />
                         </div>
-                        <span className="text-5xl font-bold text-slate-100 group-hover:text-blue-100 transition-colors duration-300">
+                        <span className="text-3xl font-bold text-slate-100 group-hover:text-blue-100 transition-colors">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-navy-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                      <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-blue-700 transition-colors">
                         {capability.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-navy-600 mb-8 leading-relaxed text-lg">
+                      <p className="text-sm text-navy-600 mb-4">
                         {capability.description}
                       </p>
 
                       {/* Features */}
-                      <div className="space-y-3">
+                      <div className="space-y-2">
                         {capability.features.map((feature, featureIndex) => (
-                          <motion.div
+                          <div
                             key={featureIndex}
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.3, delay: 0.4 + featureIndex * 0.1 }}
-                            className="flex items-center gap-3"
+                            className="flex items-center gap-2"
                           >
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
-                              <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                              <Check className="w-3 h-3 text-white" strokeWidth={3} />
                             </div>
-                            <span className="text-navy-700 font-medium">
+                            <span className="text-sm text-navy-700">
                               {feature}
                             </span>
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -209,7 +207,7 @@ export default function CapabilitiesModern({ service }: CapabilitiesModernProps)
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 flex justify-center"
+          className="mt-10 flex justify-center"
         >
           <div className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-slate-100 to-blue-50 rounded-full">
             <span className="text-navy-600 font-medium">All capabilities work together seamlessly</span>

@@ -30,15 +30,15 @@ const serviceCTAContent: Record<string, {
     ]
   },
   'algo-strategy-development': {
-    badge: 'Quantify Your Edge',
-    headline: 'From idea to algorithm.',
-    subheadline: 'Systematic execution starts here.',
-    description: 'Transform your trading intuition into a rigorous, testable strategy. We build the logic that captures your edge and executes it consistently.',
-    primaryCTA: 'Start Strategy Development',
+    badge: 'Automate Your Edge',
+    headline: 'Your rules. Automated.',
+    subheadline: '24/7 execution without intervention.',
+    description: 'Transform your proven trading rules into fully automated systems. We take your manual strategy and build production-ready code that executes with precision around the clock.',
+    primaryCTA: 'Start Automation Journey',
     features: [
-      { icon: MessageSquare, title: 'Strategy Discovery', description: 'Deep-dive into your trading approach' },
-      { icon: Calendar, title: 'Development Roadmap', description: 'Clear milestones and deliverables' },
-      { icon: Zap, title: 'Rapid Iteration', description: 'Fast feedback loops on strategy performance' }
+      { icon: MessageSquare, title: 'Strategy Review', description: 'We understand your existing trading rules' },
+      { icon: Calendar, title: 'Automation Roadmap', description: 'Clear path from manual to automated' },
+      { icon: Zap, title: 'Fast Deployment', description: 'Go live with your automated system quickly' }
     ]
   },
   'pine-script-development': {
