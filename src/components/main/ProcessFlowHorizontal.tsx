@@ -28,6 +28,7 @@ import {
   Gauge,
   ChevronRight,
   ClipboardList,
+  ArrowRight,
 } from 'lucide-react';
 import { getAssetPath } from '@/lib/utils';
 
@@ -153,396 +154,278 @@ const processSteps: ProcessStep[] = [
 ];
 
 // ============================================================================
-// Vertical Step Item Component - Left Timeline
+// Horizontal Step Button Component
 // ============================================================================
-interface VerticalStepProps {
+interface HorizontalStepProps {
   step: ProcessStep;
   index: number;
   isActive: boolean;
   isCompleted: boolean;
-  isLast: boolean;
   onClick: () => void;
 }
 
-const VerticalStepItem: React.FC<VerticalStepProps> = ({
+const HorizontalStepButton: React.FC<HorizontalStepProps> = ({
   step,
   index,
   isActive,
   isCompleted,
-  isLast,
   onClick,
 }) => {
   const Icon = step.icon;
 
   return (
-    <div className="relative">
-      {/* Vertical connector line - centered on circle */}
-      {!isLast && (
-        <div className="absolute left-[41px] lg:left-[46px] top-[68px] lg:top-[74px] w-[2px] h-[calc(100%-28px)] z-0">
-          <div className="absolute inset-0 bg-slate-200 rounded-full" />
-          <div
+    <button
+      onClick={onClick}
+      className={`
+        relative flex flex-col items-center group outline-none
+        transition-all duration-300 ease-out px-2 sm:px-4 lg:px-6
+      `}
+    >
+      {/* Circle with icon */}
+      <div className="relative mb-3">
+        {/* Animated ring for active state */}
+        {isActive && (
+          <div className="absolute -inset-3 rounded-full spin-slow-animation">
+            <svg className="w-full h-full" viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="46"
+                fill="none"
+                stroke="#3b82f6"
+                strokeWidth="2"
+                strokeDasharray="8 6"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+        )}
+
+        {/* Glow effect */}
+        <div
+          className={`
+            absolute -inset-4 rounded-full transition-all duration-500
+            ${isActive ? 'bg-blue-400/25 blur-xl opacity-100' : 'opacity-0'}
+          `}
+        />
+
+        {/* Main circle */}
+        <div
+          className={`
+            relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full
+            flex items-center justify-center border-[3px]
+            transition-all duration-300 ease-out
+            ${isActive
+              ? 'bg-gradient-to-br from-blue-500 to-blue-600 border-blue-300 scale-110 shadow-2xl shadow-blue-500/40'
+              : isCompleted
+                ? 'bg-gradient-to-br from-blue-400 to-blue-500 border-blue-300/60 shadow-lg shadow-blue-500/20'
+                : 'bg-white border-slate-200 group-hover:border-blue-300 group-hover:bg-blue-50/50 shadow-md'
+            }
+          `}
+        >
+          <Icon
             className={`
-              absolute inset-0 rounded-full transition-all duration-500 ease-out
-              bg-gradient-to-b from-blue-500 to-blue-400
-              ${isCompleted ? 'opacity-100' : 'opacity-0'}
+              w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 transition-all duration-300
+              ${isActive || isCompleted ? 'text-white' : 'text-slate-400 group-hover:text-blue-500'}
             `}
-          />
-        </div>
-      )}
-
-      <button
-        onClick={onClick}
-        className={`
-          relative z-10 w-full flex items-center gap-4 p-2 lg:p-2.5 rounded-xl
-          transition-all duration-300 ease-out group outline-none
-          ${isActive
-            ? 'bg-gradient-to-r from-blue-50 to-blue-100/50 shadow-md shadow-blue-500/10'
-            : 'hover:bg-slate-50/80'
-          }
-        `}
-        aria-pressed={isActive}
-      >
-        {/* Circle with icon */}
-        <div className="relative flex-shrink-0">
-          {/* Animated ring for active state */}
-          {isActive && (
-            <div className="absolute -inset-2 rounded-full spin-slow-animation">
-              <svg className="w-full h-full" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="46"
-                  fill="none"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                  strokeDasharray="6 4"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-          )}
-
-          {/* Glow effect */}
-          <div
-            className={`
-              absolute -inset-2 rounded-full transition-all duration-500
-              ${isActive ? 'bg-blue-400/20 blur-lg opacity-100' : 'opacity-0'}
-            `}
+            strokeWidth={1.5}
           />
 
-          {/* Main circle - medium size */}
+          {/* Step number badge */}
           <div
             className={`
-              relative w-[62px] h-[62px] lg:w-[68px] lg:h-[68px] rounded-full
-              flex items-center justify-center border-[2px]
-              transition-all duration-300 ease-out
+              absolute -top-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full
+              flex items-center justify-center text-xs sm:text-sm font-bold
+              border-[3px] border-white shadow-lg transition-all duration-300
               ${isActive
-                ? 'bg-gradient-to-br from-blue-500 to-blue-600 border-blue-300 scale-105 shadow-xl shadow-blue-500/30'
+                ? 'bg-gradient-to-br from-blue-400 to-blue-600 text-white'
                 : isCompleted
-                  ? 'bg-gradient-to-br from-blue-400 to-blue-500 border-blue-300/60'
-                  : 'bg-white border-slate-200 group-hover:border-blue-200 group-hover:bg-blue-50/50'
+                  ? 'bg-blue-400 text-white'
+                  : 'bg-slate-100 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600'
               }
             `}
           >
-            <Icon
-              className={`
-                w-6 h-6 lg:w-7 lg:h-7 transition-all duration-300
-                ${isActive || isCompleted ? 'text-white' : 'text-slate-400 group-hover:text-blue-500'}
-              `}
-              strokeWidth={1.5}
-            />
-
-            {/* Step number badge */}
-            <div
-              className={`
-                absolute -top-0.5 -right-0.5 w-5 h-5 lg:w-6 lg:h-6 rounded-full
-                flex items-center justify-center text-[10px] lg:text-xs font-bold
-                border-[2px] border-white shadow-md transition-all duration-300
-                ${isActive
-                  ? 'bg-gradient-to-br from-blue-400 to-blue-600 text-white'
-                  : isCompleted
-                    ? 'bg-blue-400 text-white'
-                    : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-500'
-                }
-              `}
-            >
-              {index + 1}
-            </div>
-          </div>
-        </div>
-
-        {/* Step label and mini description */}
-        <div className="flex-1 text-left min-w-0">
-          <div className="flex items-center gap-1.5">
-            <span
-              className={`
-                text-sm lg:text-base font-bold transition-all duration-300
-                ${isActive ? 'text-blue-600' : isCompleted ? 'text-blue-500' : 'text-slate-600 group-hover:text-slate-800'}
-              `}
-            >
-              {step.label}
-            </span>
-            {isActive && (
-              <ChevronRight className="w-3.5 h-3.5 text-blue-500 animate-pulse" />
-            )}
-          </div>
-          <p
-            className={`
-              text-[11px] lg:text-xs line-clamp-1 transition-all duration-300
-              ${isActive ? 'text-blue-600/70' : 'text-slate-400 group-hover:text-slate-500'}
-            `}
-          >
-            {step.title}
-          </p>
-        </div>
-      </button>
-    </div>
-  );
-};
-
-// ============================================================================
-// Media Container Component (Video or Image)
-// ============================================================================
-interface MediaContainerProps {
-  src: string;
-  mediaType: 'video' | 'image';
-  stepId: number;
-}
-
-const MediaContainer: React.FC<MediaContainerProps> = ({ src, mediaType, stepId }) => {
-  return (
-    <div className="relative group">
-      {/* Gradient border container */}
-      <div className="absolute -inset-[3px] bg-gradient-to-br from-blue-500/50 via-blue-400/40 to-blue-600/50 rounded-2xl opacity-70 group-hover:opacity-90 transition-opacity duration-300 ease-out" />
-
-      {/* Media wrapper */}
-      <div className="relative bg-slate-900 rounded-xl overflow-hidden shadow-lg">
-        {/* Subtle inner shadow overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-slate-900/10 z-10 pointer-events-none" />
-
-        {mediaType === 'video' ? (
-          <video
-            key={stepId}
-            src={getAssetPath(src)}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-          />
-        ) : (
-          <img
-            key={stepId}
-            src={getAssetPath(src)}
-            alt=""
-            className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-          />
-        )}
-
-        {/* Status indicator overlay */}
-        <div className="absolute bottom-3 right-3 z-20">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-            <div className={`w-2 h-2 rounded-full ${mediaType === 'video' ? 'bg-blue-400 animate-pulse' : 'bg-blue-300'}`} />
-            <span className="text-[11px] font-medium text-white/90 uppercase tracking-wider">
-              {mediaType === 'video' ? 'Live Preview' : 'Preview'}
-            </span>
+            {index + 1}
           </div>
         </div>
       </div>
-    </div>
-  );
-};
 
-// ============================================================================
-// Toolkit Grid Component
-// ============================================================================
-interface ToolkitGridProps {
-  items: ToolkitItem[];
-}
+      {/* Step label */}
+      <span
+        className={`
+          text-sm sm:text-base lg:text-lg font-bold transition-all duration-300 text-center
+          ${isActive ? 'text-blue-600' : isCompleted ? 'text-blue-500' : 'text-slate-500 group-hover:text-slate-700'}
+        `}
+      >
+        {step.label}
+      </span>
 
-const ToolkitGrid: React.FC<ToolkitGridProps> = ({ items }) => {
-  return (
-    <div className="grid grid-cols-2 gap-3">
-      {items.map((item, index) => {
-        const Icon = item.icon;
-        return (
-          <div
-            key={index}
-            className="
-              flex items-center gap-3 px-4 py-3 rounded-xl
-              bg-white/70 backdrop-blur-sm border border-slate-100
-              hover:bg-white hover:shadow-[0_0_20px_rgba(59,130,246,0.12)] hover:border-blue-100
-              transition-all duration-300 ease-out group/item cursor-default
-            "
-          >
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-100/60 flex items-center justify-center flex-shrink-0 group-hover/item:border-blue-200 transition-colors duration-300">
-              <Icon className="w-4.5 h-4.5 text-blue-600" strokeWidth={1.75} />
-            </div>
-            <span className="text-sm font-medium text-slate-700 group-hover/item:text-slate-900 transition-colors duration-300">
-              {item.label}
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-// ============================================================================
-// Right Panel Content Component
-// ============================================================================
-interface RightPanelContentProps {
-  step: ProcessStep;
-}
-
-const RightPanelContent: React.FC<RightPanelContentProps> = ({ step }) => {
-  return (
-    <div key={step.id} className="animate-fadeIn">
-      {/* Step badge */}
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200/60 shadow-sm w-fit mb-3">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-          Step {String(step.id).padStart(2, '0')}
-        </span>
-        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-500 to-blue-400" />
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-          {step.label}
-        </span>
-      </div>
-
-      {/* Title */}
-      <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-slate-800 leading-tight tracking-tight mb-2">
+      {/* Mini title - hidden on small screens */}
+      <span
+        className={`
+          hidden sm:block text-xs lg:text-sm mt-1 transition-all duration-300 text-center max-w-[120px] lg:max-w-[150px]
+          ${isActive ? 'text-blue-500/80' : 'text-slate-400'}
+        `}
+      >
         {step.title}
-      </h3>
+      </span>
+    </button>
+  );
+};
 
-      {/* Description */}
-      <p className="text-sm text-slate-600 leading-relaxed mb-4">
-        {step.description}
-      </p>
+// ============================================================================
+// Connector Line Between Steps
+// ============================================================================
+interface ConnectorLineProps {
+  isCompleted: boolean;
+}
 
-      {/* Media Container - Compact */}
-      <div className="mb-4">
-        <div className="relative group max-w-[520px]">
-          {/* Gradient border container */}
-          <div className="absolute -inset-[2px] bg-gradient-to-br from-blue-500/50 via-blue-400/40 to-blue-600/50 rounded-xl opacity-70 group-hover:opacity-90 transition-opacity duration-300 ease-out" />
+const ConnectorLine: React.FC<ConnectorLineProps> = ({ isCompleted }) => {
+  return (
+    <div className="flex-1 flex items-center self-start mt-8 sm:mt-10 lg:mt-12">
+      <div className="relative w-full h-[3px] rounded-full bg-slate-200 overflow-hidden">
+        <div
+          className={`
+            absolute inset-y-0 left-0 rounded-full transition-all duration-500 ease-out
+            bg-gradient-to-r from-blue-400 to-blue-500
+            ${isCompleted ? 'w-full' : 'w-0'}
+          `}
+        />
+      </div>
+    </div>
+  );
+};
 
-          {/* Media wrapper */}
-          <div className="relative bg-slate-900 rounded-lg overflow-hidden shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-slate-900/10 z-10 pointer-events-none" />
+// ============================================================================
+// Content Panel Component
+// ============================================================================
+interface ContentPanelProps {
+  step: ProcessStep;
+  isTransitioning: boolean;
+}
 
-            {step.mediaType === 'video' ? (
-              <video
-                key={step.id}
-                src={getAssetPath(step.mediaSrc)}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-              />
-            ) : (
-              <img
-                key={step.id}
-                src={getAssetPath(step.mediaSrc)}
-                alt=""
-                className="w-full aspect-video object-cover opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-              />
-            )}
+const ContentPanel: React.FC<ContentPanelProps> = ({ step, isTransitioning }) => {
+  return (
+    <div
+      className={`
+        transition-all duration-300 ease-out
+        ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}
+      `}
+    >
+      {/* Full width content card */}
+      <div className="relative bg-gradient-to-br from-white via-slate-50/80 to-blue-50/40 rounded-3xl border border-slate-200/60 shadow-xl shadow-blue-500/5 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08)_0%,transparent_60%)] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.06)_0%,transparent_60%)] pointer-events-none" />
 
-            {/* Status indicator */}
-            <div className="absolute bottom-2 right-2 z-20">
-              <div className="flex items-center gap-1 px-2 py-0.5 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-                <div className={`w-1.5 h-1.5 rounded-full ${step.mediaType === 'video' ? 'bg-blue-400 animate-pulse' : 'bg-blue-300'}`} />
-                <span className="text-[9px] font-medium text-white/90 uppercase tracking-wider">
-                  {step.mediaType === 'video' ? 'Live' : 'Preview'}
+        <div className="relative p-6 sm:p-8 lg:p-10">
+          {/* Grid layout - Media left, Content right on large screens */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+            {/* Left: Media */}
+            <div className="order-2 lg:order-1">
+              <div className="relative group">
+                {/* Gradient border */}
+                <div className="absolute -inset-[3px] bg-gradient-to-br from-blue-500/60 via-blue-400/50 to-indigo-500/60 rounded-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Media container */}
+                <div className="relative bg-slate-900 rounded-xl overflow-hidden shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-slate-900/20 z-10 pointer-events-none" />
+
+                  {step.mediaType === 'video' ? (
+                    <video
+                      key={step.id}
+                      src={getAssetPath(step.mediaSrc)}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  ) : (
+                    <img
+                      key={step.id}
+                      src={getAssetPath(step.mediaSrc)}
+                      alt={step.title}
+                      className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  )}
+
+                  {/* Status badge */}
+                  <div className="absolute bottom-4 right-4 z-20">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/20">
+                      <div className={`w-2.5 h-2.5 rounded-full ${step.mediaType === 'video' ? 'bg-blue-400 animate-pulse' : 'bg-blue-300'}`} />
+                      <span className="text-xs font-semibold text-white uppercase tracking-wider">
+                        {step.mediaType === 'video' ? 'Live Preview' : 'Preview'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Content */}
+            <div className="order-1 lg:order-2">
+              {/* Step badge */}
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/60 border border-blue-200/70 shadow-sm mb-5">
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
+                  Step {String(step.id).padStart(2, '0')}
                 </span>
+                <span className="w-2 h-2 rounded-full bg-gradient-to-br from-blue-500 to-blue-400" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                  {step.label}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 leading-tight tracking-tight mb-4">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+                {step.description}
+              </p>
+
+              {/* Capabilities Grid */}
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
+                  Capabilities
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {step.toolkit.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={index}
+                        className="
+                          flex items-center gap-3 px-4 py-3 rounded-xl
+                          bg-white/80 backdrop-blur-sm border border-slate-100
+                          hover:bg-white hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-200
+                          transition-all duration-300 ease-out group/item
+                        "
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-100/80 flex items-center justify-center flex-shrink-0 group-hover/item:border-blue-200 transition-colors duration-300">
+                          <Icon className="w-5 h-5 text-blue-600" strokeWidth={1.75} />
+                        </div>
+                        <span className="text-sm font-semibold text-slate-700 group-hover/item:text-slate-900 transition-colors duration-300">
+                          {item.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Toolkit section - 2x2 grid compact */}
-      <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">
-          Capabilities
-        </p>
-        <div className="grid grid-cols-2 gap-2">
-          {step.toolkit.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                className="
-                  flex items-center gap-2 px-3 py-2 rounded-lg
-                  bg-white/70 backdrop-blur-sm border border-slate-100
-                  hover:bg-white hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:border-blue-100
-                  transition-all duration-300 ease-out group/item cursor-default
-                "
-              >
-                <div className="w-7 h-7 rounded-md bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-100/60 flex items-center justify-center flex-shrink-0 group-hover/item:border-blue-200 transition-colors duration-300">
-                  <Icon className="w-3.5 h-3.5 text-blue-600" strokeWidth={1.75} />
-                </div>
-                <span className="text-xs font-medium text-slate-700 group-hover/item:text-slate-900 transition-colors duration-300">
-                  {item.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
     </div>
   );
 };
 
 // ============================================================================
-// Mobile Horizontal Steps (for small screens)
-// ============================================================================
-interface MobileStepsProps {
-  activeStepId: number;
-  onStepClick: (id: number) => void;
-}
-
-const MobileSteps: React.FC<MobileStepsProps> = ({ activeStepId, onStepClick }) => {
-  return (
-    <div className="lg:hidden mb-6">
-      <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-        <div className="flex items-center gap-2 min-w-max">
-          {processSteps.map((step, index) => {
-            const Icon = step.icon;
-            const isActive = activeStepId === step.id;
-            const isCompleted = step.id < activeStepId;
-
-            return (
-              <React.Fragment key={step.id}>
-                <button
-                  onClick={() => onStepClick(step.id)}
-                  className={`
-                    flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300
-                    ${isActive
-                      ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
-                      : isCompleted
-                        ? 'bg-blue-100 text-blue-600'
-                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                    }
-                  `}
-                >
-                  <Icon className="w-4 h-4" strokeWidth={2} />
-                  <span className="text-xs font-semibold">{step.label}</span>
-                </button>
-                {index < processSteps.length - 1 && (
-                  <div className={`w-4 h-0.5 rounded-full ${isCompleted ? 'bg-blue-400' : 'bg-slate-200'}`} />
-                )}
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ============================================================================
-// Main Process Flow Component - Left-Right Layout
+// Main Process Flow Component - Horizontal Layout
 // ============================================================================
 export const ProcessFlowHorizontal: React.FC = () => {
   const [activeStepId, setActiveStepId] = useState<number>(1);
@@ -556,71 +439,38 @@ export const ProcessFlowHorizontal: React.FC = () => {
       setTimeout(() => {
         setActiveStepId(stepId);
         setIsTransitioning(false);
-      }, 150);
+      }, 200);
     }
   };
 
   return (
-    <div className="relative">
-      {/* Mobile horizontal steps */}
-      <MobileSteps activeStepId={activeStepId} onStepClick={handleStepClick} />
-
+    <div className="w-full">
       {/* ================================================================ */}
-      {/* MAIN LAYOUT - Left Steps | Right Content */}
+      {/* Horizontal Process Steps - Full Width */}
       {/* ================================================================ */}
-      <div className="relative grid lg:grid-cols-[340px_1fr] xl:grid-cols-[380px_1fr] 3xl:grid-cols-[420px_1fr] gap-6 lg:gap-10 xl:gap-12 items-start">
-
-        {/* ============================================================ */}
-        {/* LEFT SIDE - Vertical Timeline Steps */}
-        {/* ============================================================ */}
-        <div className="hidden lg:block">
-          <div className="sticky top-24">
-            {/* Steps container with subtle background */}
-            <div className="relative rounded-3xl bg-gradient-to-br from-slate-50/80 via-white to-blue-50/30 border border-slate-200/60 p-5 lg:p-6 shadow-sm">
-              {/* Decorative accent */}
-              <div className="absolute top-0 left-0 w-32 h-32 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.06)_0%,transparent_60%)] pointer-events-none rounded-tl-3xl" />
-
-              {/* Steps list */}
-              <div className="relative space-y-1">
-                {processSteps.map((step, index) => (
-                  <VerticalStepItem
-                    key={step.id}
-                    step={step}
-                    index={index}
-                    isActive={activeStepId === step.id}
-                    isCompleted={step.id < activeStepId}
-                    isLast={index === processSteps.length - 1}
-                    onClick={() => handleStepClick(step.id)}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ============================================================ */}
-        {/* RIGHT SIDE - Content Panel - Match left side height */}
-        {/* ============================================================ */}
-        <div className="relative">
-          {/* Container with gradient background */}
-          <div className="relative rounded-3xl bg-gradient-to-br from-white via-slate-50/80 to-blue-50/30 border border-slate-200/60 shadow-[0_0_40px_rgba(59,130,246,0.06)] overflow-hidden">
-            {/* Decorative corner accents */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.06)_0%,transparent_60%)] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.04)_0%,transparent_60%)] pointer-events-none" />
-
-            {/* Panel content with transition */}
-            <div
-              className={`
-                relative px-5 sm:px-6 lg:px-8 py-5 sm:py-6 lg:py-6
-                transition-opacity duration-150 ease-out
-                ${isTransitioning ? 'opacity-0' : 'opacity-100'}
-              `}
-            >
-              <RightPanelContent step={activeStep} />
-            </div>
-          </div>
+      <div className="mb-8 lg:mb-12 w-full">
+        <div className="flex items-start justify-between w-full">
+          {processSteps.map((step, index) => (
+            <React.Fragment key={step.id}>
+              <HorizontalStepButton
+                step={step}
+                index={index}
+                isActive={activeStepId === step.id}
+                isCompleted={step.id < activeStepId}
+                onClick={() => handleStepClick(step.id)}
+              />
+              {index < processSteps.length - 1 && (
+                <ConnectorLine isCompleted={step.id < activeStepId} />
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
+
+      {/* ================================================================ */}
+      {/* Content Panel - Full Width */}
+      {/* ================================================================ */}
+      <ContentPanel step={activeStep} isTransitioning={isTransitioning} />
     </div>
   );
 };

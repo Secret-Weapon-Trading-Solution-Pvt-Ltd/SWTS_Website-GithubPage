@@ -24,8 +24,8 @@ export const HowItWorks: React.FC = () => {
       {/* Radial glow behind header */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
 
+      {/* Header Container */}
       <div className="relative max-w-[1400px] 3xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-
         {/* ================================================================ */}
         {/* Page Header - Modern Enterprise Style */}
         {/* ================================================================ */}
@@ -49,10 +49,12 @@ export const HowItWorks: React.FC = () => {
             Six steps to transform your trading strategy into a live automated system
           </p>
         </div>
+      </div>
 
-        {/* ================================================================ */}
-        {/* PRIMARY: Horizontal Process Flow */}
-        {/* ================================================================ */}
+      {/* ================================================================ */}
+      {/* PRIMARY: Horizontal Process Flow - Full Width */}
+      {/* ================================================================ */}
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         <ProcessFlowHorizontal />
       </div>
 
