@@ -374,78 +374,308 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           </div>
         </motion.div>
 
-        {/* Who Should Use */}
+        {/* Who Should Use - Left-Right Split Layout */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="grid lg:grid-cols-2 gap-16 items-center mb-24"
         >
-          <div className="text-center mb-12">
+          {/* Left Side - Content */}
+          <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 rounded-full text-indigo-700 text-sm font-medium mb-4">
               <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
               Who Should Use This
             </div>
-            <h3 className="text-3xl font-bold text-navy-900">
+            <h3 className="text-3xl font-bold text-navy-900 mb-6">
               {overviewData.whoShouldUse.title}
             </h3>
+            <div className="space-y-6">
+              {overviewData.whoShouldUse.profiles.map((profile, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex gap-4 items-start group"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <profile.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1">{profile.title}</h4>
+                    <p className="text-navy-600">{profile.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {overviewData.whoShouldUse.profiles.map((profile, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+          {/* Right Side - Full Diagram */}
+          <div className="relative w-full h-[480px]">
+            <svg viewBox="0 0 520 480" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="diagramGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366F1" />
+                  <stop offset="50%" stopColor="#3B82F6" />
+                  <stop offset="100%" stopColor="#8B5CF6" />
+                </linearGradient>
+                <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Background decorative circles */}
+              <circle cx="260" cy="240" r="200" fill="none" stroke="#E0E7FF" strokeWidth="1" opacity="0.5" />
+              <circle cx="260" cy="240" r="155" fill="none" stroke="#E0E7FF" strokeWidth="1" opacity="0.3" />
+              <circle cx="260" cy="240" r="110" fill="none" stroke="#E0E7FF" strokeWidth="1" opacity="0.2" />
+
+              {/* Extra decorative elements to fill space */}
+              <motion.circle cx="480" cy="80" r="25" fill="#EEF2FF" opacity="0.6"
+                animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 4, repeat: Infinity }} />
+              <motion.circle cx="40" cy="120" r="20" fill="#EFF6FF" opacity="0.5"
+                animate={{ scale: [1.1, 1, 1.1] }} transition={{ duration: 5, repeat: Infinity }} />
+              <motion.circle cx="500" cy="380" r="18" fill="#F5F3FF" opacity="0.5"
+                animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 4.5, repeat: Infinity }} />
+              <motion.circle cx="30" cy="400" r="22" fill="#ECFDF5" opacity="0.4"
+                animate={{ scale: [1.1, 1, 1.1] }} transition={{ duration: 5.5, repeat: Infinity }} />
+
+              {/* Dotted orbit paths */}
+              <circle cx="260" cy="240" r="200" fill="none" stroke="#C7D2FE" strokeWidth="1" strokeDasharray="6,8" opacity="0.4" />
+
+              {/* Main connection lines */}
+              <motion.path
+                d="M260 55 L260 185"
+                stroke="url(#diagramGrad)"
+                strokeWidth="2.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -5 }}
-                className="group bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+                transition={{ duration: 0.6 }}
+              />
+              <motion.path
+                d="M210 270 L80 380"
+                stroke="url(#diagramGrad)"
+                strokeWidth="2.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
+              <motion.path
+                d="M310 270 L440 380"
+                stroke="url(#diagramGrad)"
+                strokeWidth="2.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
+
+              {/* Center Hub - "Your Strategy" */}
+              <motion.g
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <profile.icon className="w-7 h-7 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-navy-900 mb-3">{profile.title}</h4>
-                <p className="text-navy-600 leading-relaxed">{profile.description}</p>
-              </motion.div>
-            ))}
+                <circle cx="260" cy="240" r="60" fill="url(#diagramGrad)" filter="url(#softGlow)" />
+                <circle cx="260" cy="240" r="60" fill="none" stroke="white" strokeWidth="2" opacity="0.3" />
+                <text x="260" y="233" textAnchor="middle" fill="white" fontSize="15" fontWeight="600">Your</text>
+                <text x="260" y="253" textAnchor="middle" fill="white" fontSize="15" fontWeight="600">Strategy</text>
+              </motion.g>
+
+              {/* Node 1: Systematic Traders - Top */}
+              <motion.g
+                initial={{ y: -30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <circle cx="260" cy="55" r="50" fill="#EEF2FF" stroke="#6366F1" strokeWidth="2.5" />
+                {/* Target icon inside */}
+                <circle cx="260" cy="55" r="30" fill="none" stroke="#6366F1" strokeWidth="1.5" opacity="0.5" />
+                <circle cx="260" cy="55" r="18" fill="none" stroke="#6366F1" strokeWidth="2" />
+                <circle cx="260" cy="55" r="6" fill="#6366F1" />
+                <line x1="260" y1="25" x2="260" y2="37" stroke="#6366F1" strokeWidth="2" />
+                <line x1="260" y1="73" x2="260" y2="85" stroke="#6366F1" strokeWidth="2" />
+                <line x1="230" y1="55" x2="242" y2="55" stroke="#6366F1" strokeWidth="2" />
+                <line x1="278" y1="55" x2="290" y2="55" stroke="#6366F1" strokeWidth="2" />
+                {/* Label */}
+                <rect x="330" y="25" width="160" height="60" rx="10" fill="white" stroke="#E0E7FF" strokeWidth="1.5" />
+                <text x="410" y="50" textAnchor="middle" fill="#4F46E5" fontSize="14" fontWeight="700">Systematic</text>
+                <text x="410" y="70" textAnchor="middle" fill="#4F46E5" fontSize="14" fontWeight="700">Traders</text>
+                <line x1="310" y1="55" x2="330" y2="55" stroke="#6366F1" strokeWidth="1.5" strokeDasharray="4,3" />
+              </motion.g>
+
+              {/* Node 2: Active Traders - Bottom Left */}
+              <motion.g
+                initial={{ x: -30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <circle cx="80" cy="380" r="50" fill="#EFF6FF" stroke="#3B82F6" strokeWidth="2.5" />
+                {/* Chart icon inside */}
+                <path d="M50 405 L65 385 L80 395 L100 365 L110 355" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="65" cy="385" r="4" fill="#3B82F6" />
+                <circle cx="80" cy="395" r="4" fill="#3B82F6" />
+                <circle cx="100" cy="365" r="4" fill="#06B6D4" />
+                <circle cx="110" cy="355" r="5" fill="#06B6D4" />
+                {/* Label */}
+                <rect x="10" y="440" width="140" height="35" rx="8" fill="white" stroke="#DBEAFE" strokeWidth="1.5" />
+                <text x="80" y="463" textAnchor="middle" fill="#2563EB" fontSize="14" fontWeight="700">Active Traders</text>
+              </motion.g>
+
+              {/* Node 3: Trading Teams - Bottom Right */}
+              <motion.g
+                initial={{ x: 30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <circle cx="440" cy="380" r="50" fill="#F5F3FF" stroke="#8B5CF6" strokeWidth="2.5" />
+                {/* Team nodes icon inside */}
+                <line x1="415" y1="368" x2="465" y2="368" stroke="#8B5CF6" strokeWidth="2" />
+                <line x1="415" y1="368" x2="440" y2="400" stroke="#8B5CF6" strokeWidth="2" />
+                <line x1="465" y1="368" x2="440" y2="400" stroke="#8B5CF6" strokeWidth="2" />
+                <circle cx="415" cy="368" r="12" fill="white" stroke="#8B5CF6" strokeWidth="2" />
+                <circle cx="415" cy="368" r="5" fill="#8B5CF6" />
+                <circle cx="465" cy="368" r="12" fill="white" stroke="#8B5CF6" strokeWidth="2" />
+                <circle cx="465" cy="368" r="5" fill="#8B5CF6" />
+                <circle cx="440" cy="400" r="14" fill="white" stroke="#6366F1" strokeWidth="2" />
+                <circle cx="440" cy="400" r="6" fill="#6366F1" />
+                {/* Label */}
+                <rect x="370" y="440" width="140" height="35" rx="8" fill="white" stroke="#EDE9FE" strokeWidth="1.5" />
+                <text x="440" y="463" textAnchor="middle" fill="#7C3AED" fontSize="14" fontWeight="700">Trading Teams</text>
+              </motion.g>
+
+              {/* Small floating dots for visual interest */}
+              <motion.circle cx="150" cy="150" r="4" fill="#6366F1" opacity="0.4"
+                animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} />
+              <motion.circle cx="400" cy="180" r="3" fill="#3B82F6" opacity="0.4"
+                animate={{ y: [0, 8, 0] }} transition={{ duration: 3.5, repeat: Infinity }} />
+              <motion.circle cx="180" cy="350" r="3.5" fill="#8B5CF6" opacity="0.4"
+                animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity }} />
+              <motion.circle cx="350" cy="320" r="3" fill="#06B6D4" opacity="0.4"
+                animate={{ y: [0, 10, 0] }} transition={{ duration: 3.2, repeat: Infinity }} />
+
+              {/* Animated dots on paths */}
+              <motion.circle
+                r="5"
+                fill="#6366F1"
+                animate={{
+                  cx: [260, 260, 80],
+                  cy: [55, 240, 380],
+                  opacity: [1, 1, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.circle
+                r="5"
+                fill="#8B5CF6"
+                animate={{
+                  cx: [260, 260, 440],
+                  cy: [55, 240, 380],
+                  opacity: [1, 1, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
+              />
+            </svg>
           </div>
         </motion.div>
 
-        {/* Benefits Grid */}
+        {/* Why Traders Choose - Right-Left Split Layout */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="grid lg:grid-cols-2 gap-16 items-center"
         >
-          <div className="text-center mb-12">
+          {/* Left Side - Visual with benefit bars */}
+          <div className="order-2 lg:order-1">
+            <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border border-emerald-100">
+              <div className="space-y-6">
+                {overviewData.benefits.map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, width: 0 }}
+                    whileInView={{ opacity: 1, width: '100%' }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15, duration: 0.5 }}
+                    className="relative"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${
+                        index === 0 ? 'from-emerald-400 to-teal-500' :
+                        index === 1 ? 'from-teal-400 to-cyan-500' :
+                        index === 2 ? 'from-cyan-400 to-blue-500' :
+                        'from-blue-400 to-indigo-500'
+                      }`}>
+                        <benefit.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-sm font-semibold text-navy-800">{benefit.title}</span>
+                    </div>
+                    <motion.div
+                      className={`h-3 rounded-full bg-gradient-to-r ${
+                        index === 0 ? 'from-emerald-400 to-teal-400' :
+                        index === 1 ? 'from-teal-400 to-cyan-400' :
+                        index === 2 ? 'from-cyan-400 to-blue-400' :
+                        'from-blue-400 to-indigo-400'
+                      }`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${85 + index * 5}%` }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 + 0.3, duration: 0.6 }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Content */}
+          <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 rounded-full text-emerald-700 text-sm font-medium mb-4">
               <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
               Key Benefits
             </div>
-            <h3 className="text-3xl font-bold text-navy-900">
+            <h3 className="text-3xl font-bold text-navy-900 mb-6">
               Why Traders Choose Automation
             </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {overviewData.benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="group bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-navy-900 mb-2">{benefit.title}</h4>
-                <p className="text-sm text-navy-600 leading-relaxed">{benefit.description}</p>
-              </motion.div>
-            ))}
+            <div className="space-y-5">
+              {overviewData.benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex gap-4 items-start group"
+                >
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform bg-gradient-to-br ${
+                    index === 0 ? 'from-emerald-400 to-teal-500' :
+                    index === 1 ? 'from-teal-400 to-cyan-500' :
+                    index === 2 ? 'from-cyan-400 to-blue-500' :
+                    'from-blue-400 to-indigo-500'
+                  }`}>
+                    <benefit.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1">{benefit.title}</h4>
+                    <p className="text-navy-600 text-sm">{benefit.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
