@@ -59,7 +59,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Hook/Headline - MEDIUM (smaller than company name) */}
           <h2 className="mb-6 lg:mb-8 2xl:mb-10 3xl:mb-12">
             <span
-              className="block text-lg sm:text-xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[22px] sm:leading-[24px] lg:leading-[36px] xl:leading-[46px] 2xl:leading-[55px] 3xl:leading-[67px] 4xl:leading-[84px] tracking-[-0.01em] opacity-0 animate-fade-in-up"
+              className="block text-lg sm:text-xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[20px] sm:leading-[22px] lg:leading-[33px] xl:leading-[42px] 2xl:leading-[50px] 3xl:leading-[61px] 4xl:leading-[77px] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
                 fontWeight: 600,
@@ -70,7 +70,7 @@ export const FrustrationHero: React.FC = () => {
               Your strategy works.
             </span>
             <span
-              className="block whitespace-nowrap mt-0.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-lg sm:text-xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[22px] sm:leading-[24px] lg:leading-[36px] xl:leading-[46px] 2xl:leading-[55px] 3xl:leading-[67px] 4xl:leading-[84px] tracking-[-0.01em] opacity-0 animate-fade-in-up"
+              className="block whitespace-nowrap mt-0.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-lg sm:text-xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[20px] sm:leading-[22px] lg:leading-[33px] xl:leading-[42px] 2xl:leading-[50px] 3xl:leading-[61px] 4xl:leading-[77px] tracking-[-0.01em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#64748B',
                 fontWeight: 500,
