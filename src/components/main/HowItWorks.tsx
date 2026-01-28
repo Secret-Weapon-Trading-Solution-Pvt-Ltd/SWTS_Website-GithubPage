@@ -68,10 +68,10 @@ export const HowItWorks: React.FC = () => {
       {/* ================================================================ */}
       <ServicesScroller />
 
-      <div className="relative max-w-[1400px] 3xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-        {/* ================================================================ */}
-        {/* SECONDARY: Choose Your Starting Point - Modern Redesign */}
-        {/* ================================================================ */}
+      {/* ================================================================ */}
+      {/* SECONDARY: Choose Your Starting Point - Full Width */}
+      {/* ================================================================ */}
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         <div className="mb-6 pt-4">
           {/* Section Header */}
           <div className="text-center mb-8">

@@ -103,7 +103,7 @@ export const ServicesScroller: React.FC = () => {
   const allItems = [...serviceItems, ...serviceItems];
 
   return (
-    <div className="py-8 overflow-hidden bg-white">
+    <div className="py-8 overflow-hidden bg-white w-full">
       {/* Header */}
       <div className="text-center mb-8 px-4">
         {/* Badge */}

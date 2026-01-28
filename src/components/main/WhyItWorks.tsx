@@ -161,7 +161,7 @@ export const WhyItWorks: React.FC = () => {
         }
       `}</style>
 
-      <div className="relative max-w-[1400px] 3xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20 4xl:px-24">
         {/* Header */}
         <div
           className={`text-center mb-6 transition-all duration-700 ease-out ${
