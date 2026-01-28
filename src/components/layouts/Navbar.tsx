@@ -17,19 +17,26 @@ const navLinks = [
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      // Only show navbar when at the top of the page (within 50px)
+      const atTop = window.scrollY <= 50;
+      setIsVisible(atTop);
+
+      // Close mobile menu when scrolling down
+      if (!atTop && isOpen) {
+        setIsOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isOpen]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -46,18 +53,13 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={cn(
-        'fixed top-3 right-6 sm:right-10 lg:right-16 xl:right-20 2xl:right-24 3xl:right-32 4xl:right-40 z-50 transition-all duration-500',
-        isScrolled
-          ? 'top-2 2xl:top-3 3xl:top-4'
-          : 'top-4 2xl:top-5 3xl:top-6'
+        'fixed top-4 2xl:top-5 3xl:top-6 right-6 sm:right-10 lg:right-16 xl:right-20 2xl:right-24 3xl:right-32 4xl:right-40 z-50 transition-all duration-500',
+        isVisible
+          ? 'opacity-100 translate-y-0 pointer-events-auto'
+          : 'opacity-0 -translate-y-4 pointer-events-none'
       )}
     >
-      <div className={cn(
-        "flex items-center h-12 lg:h-14 2xl:h-16 3xl:h-20 4xl:h-24 transition-all duration-300 rounded-2xl 3xl:rounded-3xl px-4 2xl:px-6 3xl:px-8",
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg border border-slate-200/50'
-          : 'bg-white/90 backdrop-blur-md shadow-md border border-slate-200/30'
-      )}>
+      <div className="flex items-center h-12 lg:h-14 2xl:h-16 3xl:h-20 4xl:h-24 transition-all duration-300 rounded-2xl 3xl:rounded-3xl px-4 2xl:px-6 3xl:px-8 bg-white/90 backdrop-blur-md shadow-md border border-slate-200/30">
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-1 2xl:gap-2 3xl:gap-3">
           {navLinks.slice(0, 4).map((link) => (
