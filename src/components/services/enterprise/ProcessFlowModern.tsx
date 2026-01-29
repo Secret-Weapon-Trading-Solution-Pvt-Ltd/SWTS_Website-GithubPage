@@ -227,20 +227,19 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
 
         {/* Desktop Timeline - Horizontal */}
         <div className="hidden lg:block relative mb-10">
-          {/* Progress line background */}
-          <div className="absolute top-[88px] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 rounded-full" />
+          {/* Progress line background - colorful gradient for all steps */}
+          <div className="absolute top-[120px] left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-300 via-indigo-300 via-purple-300 via-fuchsia-300 to-emerald-300 rounded-full" />
 
           {/* Animated progress line */}
           <motion.div
-            className="absolute top-[88px] left-[8%] h-0.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 rounded-full"
-            style={{ width: progressWidth }}
+            className="absolute top-[120px] left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-500 via-indigo-500 via-purple-500 via-fuchsia-500 to-emerald-500 rounded-full"
           />
 
           {/* Animated pulse */}
           <motion.div
-            className="absolute top-[88px] left-[8%] w-16 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
-            animate={{ x: [0, 800, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+            className="absolute top-[120px] left-[8%] w-20 h-1 bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
+            animate={{ x: [0, 1200, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
           />
 
           {/* Steps */}
@@ -262,29 +261,29 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
                   {/* Illustration */}
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="relative w-20 h-20 mb-3"
+                    className="relative w-24 h-24 mb-4"
                   >
                     <Illustration />
                     {/* Step number badge */}
-                    <div className={`absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center shadow-md`}>
-                      <span className="text-white font-bold text-xs">{step.step}</span>
+                    <div className={`absolute -top-1 -right-1 w-7 h-7 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} flex items-center justify-center shadow-md`}>
+                      <span className="text-white font-bold text-sm">{step.step}</span>
                     </div>
                   </motion.div>
 
                   {/* Node on timeline */}
-                  <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} shadow-sm mb-3`} />
+                  <div className={`w-4 h-4 rounded-full bg-gradient-to-br ${colors.from} ${colors.to} shadow-sm mb-4`} />
 
                   {/* Content */}
                   <div className="text-center">
-                    <h3 className="text-sm font-bold text-navy-900 mb-1">
+                    <h3 className="text-base font-bold text-navy-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-navy-600 leading-snug mb-1 line-clamp-2">
+                    <p className="text-sm text-navy-600 leading-snug mb-2 line-clamp-2">
                       {step.description}
                     </p>
                     {step.duration && (
-                      <span className={`inline-flex items-center gap-1 text-[10px] ${colors.text} font-medium`}>
-                        <Clock className="w-2.5 h-2.5" />
+                      <span className={`inline-flex items-center gap-1 text-xs ${colors.text} font-medium`}>
+                        <Clock className="w-3 h-3" />
                         {step.duration}
                       </span>
                     )}
@@ -292,8 +291,8 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
 
                   {/* Arrow connector */}
                   {!isLast && (
-                    <div className="absolute top-20 -right-1 z-10">
-                      <ArrowRight className="w-3 h-3 text-indigo-400" />
+                    <div className="absolute top-[112px] right-0 translate-x-1/2 z-10">
+                      <ArrowRight className="w-5 h-5 text-white drop-shadow-md" />
                     </div>
                   )}
                 </motion.div>
@@ -326,14 +325,14 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-bold text-navy-900">{step.title}</h3>
+                      <h3 className="text-base font-bold text-navy-900">{step.title}</h3>
                       {step.duration && (
-                        <span className={`text-[10px] ${colors.text} font-medium`}>
+                        <span className={`text-xs ${colors.text} font-medium`}>
                           {step.duration}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-navy-600 line-clamp-1">
+                    <p className="text-sm text-navy-600 line-clamp-2">
                       {step.description}
                     </p>
                   </div>
@@ -351,13 +350,13 @@ export default function ProcessFlowModern({ service }: ProcessFlowModernProps) {
           className="mt-10"
         >
           <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-3">
-              <CheckCircle2 className="w-6 h-6 text-white" />
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 mb-4">
+              <CheckCircle2 className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-lg font-bold text-navy-900 mb-1 text-center">
+            <h3 className="text-xl lg:text-2xl font-bold text-navy-900 mb-2 text-center">
               Your Strategy, Fully Automated
             </h3>
-            <p className="text-sm text-navy-600 text-center">
+            <p className="text-base lg:text-lg text-navy-600 text-center">
               Running 24/7 with monitoring, alerts, and support
             </p>
           </div>

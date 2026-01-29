@@ -153,42 +153,42 @@ export default function CapabilitiesModern({ service }: CapabilitiesModernProps)
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="relative h-full bg-white rounded-2xl p-5 lg:p-6 shadow-md border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden">
+                  <div className="relative h-full bg-white rounded-2xl p-6 lg:p-8 shadow-md border border-slate-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden">
                     {/* Gradient accent on hover */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
                     <div className="relative">
                       {/* Icon and number */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="w-14 h-14">
+                      <div className="flex items-start justify-between mb-5">
+                        <div className="w-16 h-16 lg:w-18 lg:h-18">
                           <IconComponent />
                         </div>
-                        <span className="text-3xl font-bold text-slate-100 group-hover:text-blue-100 transition-colors">
+                        <span className="text-4xl font-bold text-slate-100 group-hover:text-blue-100 transition-colors">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-blue-700 transition-colors">
+                      <h3 className="text-xl lg:text-2xl font-bold text-navy-900 mb-3 group-hover:text-blue-700 transition-colors">
                         {capability.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-navy-600 mb-4">
+                      <p className="text-base lg:text-lg text-navy-600 mb-5 leading-relaxed">
                         {capability.description}
                       </p>
 
                       {/* Features */}
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         {capability.features.map((feature, featureIndex) => (
                           <div
                             key={featureIndex}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-3"
                           >
-                            <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
-                              <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                              <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
                             </div>
-                            <span className="text-sm text-navy-700">
+                            <span className="text-base text-navy-700">
                               {feature}
                             </span>
                           </div>

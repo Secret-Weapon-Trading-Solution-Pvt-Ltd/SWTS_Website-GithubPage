@@ -296,9 +296,9 @@ const overviewData = {
     title: "Why It Matters",
     description: "Manual trading has inherent limitations—emotional interference, execution delays, and the impossibility of monitoring markets around the clock. Automation eliminates these barriers, letting your strategy perform exactly as designed, every time.",
     stats: [
-      { value: "0", label: "Emotional Errors" },
-      { value: "24/7", label: "Market Coverage" },
-      { value: "<100ms", label: "Execution Speed" }
+      { value: "0", label: "Emotional Errors", description: "No fear, greed, or hesitation" },
+      { value: "24/7", label: "Market Coverage", description: "Never miss a trading opportunity" },
+      { value: "<100ms", label: "Execution Speed", description: "Faster than any manual trade" }
     ]
   },
   whoShouldUse: {
@@ -324,23 +324,23 @@ const overviewData = {
   benefits: [
     {
       icon: Zap,
-      title: "Lightning-Fast Execution",
-      description: "Execute trades in milliseconds, not minutes. Never miss an entry due to slow manual input."
+      title: "Instant Execution",
+      description: "Trades in milliseconds, never miss entry"
     },
     {
       icon: Target,
       title: "Perfect Consistency",
-      description: "Your rules execute exactly as designed, every single time. No deviation, no exceptions."
+      description: "Rules execute exactly as designed"
     },
     {
       icon: CheckCircle,
       title: "Validated Performance",
-      description: "Every strategy is backtested against historical data before going live. Know your edge."
+      description: "Backtested before going live"
     },
     {
       icon: TrendingUp,
       title: "Scalable Growth",
-      description: "Monitor 50+ symbols as easily as 5. Scale your strategy without scaling your screen time."
+      description: "Scale without scaling screen time"
     }
   ]
 };
@@ -451,15 +451,15 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
         >
           <div className="relative bg-gradient-to-br from-white via-white to-blue-50/30 rounded-2xl p-6 lg:p-8 shadow-lg shadow-blue-900/5 border border-slate-100 overflow-hidden">
             {/* Header */}
-            <div className="relative text-center mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-full text-blue-700 text-xs font-semibold mb-3 border border-blue-200/50">
-                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                Why It Matters
+            <div className="relative text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-4 border border-indigo-200/50">
+                <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
+                The Automation Advantage
               </div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-navy-900 mb-2">
+              <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-3">
                 {overviewData.whyItMatters.title}
               </h3>
-              <p className="text-sm text-navy-600 max-w-2xl mx-auto">
+              <p className="text-base lg:text-lg text-navy-600 max-w-2xl mx-auto">
                 Automation eliminates emotional interference, execution delays, and enables 24/7 market monitoring.
               </p>
             </div>
@@ -474,14 +474,15 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
+                  className="text-center p-4 bg-white rounded-xl border border-slate-100 shadow-sm"
                 >
-                  <div className={`text-2xl font-bold bg-gradient-to-br ${
+                  <div className={`text-2xl lg:text-3xl font-bold mb-3 bg-gradient-to-br ${
                     index === 0 ? 'from-blue-600 to-indigo-600' :
                     index === 1 ? 'from-indigo-600 to-purple-600' :
                     'from-cyan-600 to-blue-600'
                   } bg-clip-text text-transparent`}>{stat.value}</div>
-                  <div className="text-xs text-navy-600">{stat.label}</div>
+                  <div className="text-sm lg:text-base font-semibold text-navy-700 mb-1">{stat.label}</div>
+                  <div className="text-xs lg:text-sm text-navy-500">{stat.description}</div>
                 </motion.div>
               ))}
 
@@ -493,32 +494,33 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (index + 3) * 0.1 }}
-                  className="hidden lg:flex flex-col items-center text-center p-3 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                  className="hidden lg:flex flex-col items-center text-center p-4 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 bg-gradient-to-br ${
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${
                     index === 0 ? 'from-blue-500 to-indigo-600' :
                     index === 1 ? 'from-indigo-500 to-purple-600' :
                     index === 2 ? 'from-cyan-500 to-blue-600' :
                     'from-emerald-500 to-teal-600'
                   }`}>
-                    <benefit.icon className="w-4 h-4 text-white" />
+                    <benefit.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="text-xs font-semibold text-navy-800 leading-tight">{benefit.title}</div>
+                  <div className="text-sm lg:text-base font-semibold text-navy-800 leading-tight mt-3 mb-1">{benefit.title}</div>
+                  <div className="text-xs lg:text-sm text-navy-500 leading-relaxed">{benefit.description}</div>
                 </motion.div>
               ))}
             </div>
 
             {/* Mobile Benefits Grid */}
-            <div className="grid grid-cols-2 gap-3 mt-3 lg:hidden">
+            <div className="grid grid-cols-2 gap-3 mt-4 lg:hidden">
               {overviewData.benefits.map((benefit, index) => (
                 <motion.div
                   key={`benefit-mobile-${index}`}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-2 p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
+                  className="flex flex-col p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${
+                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-2 bg-gradient-to-br ${
                     index === 0 ? 'from-blue-500 to-indigo-600' :
                     index === 1 ? 'from-indigo-500 to-purple-600' :
                     index === 2 ? 'from-cyan-500 to-blue-600' :
@@ -526,7 +528,8 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   }`}>
                     <benefit.icon className="w-4 h-4 text-white" />
                   </div>
-                  <div className="text-xs font-semibold text-navy-800">{benefit.title}</div>
+                  <div className="text-sm font-semibold text-navy-800 mb-1">{benefit.title}</div>
+                  <div className="text-xs text-navy-500 leading-relaxed">{benefit.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -538,7 +541,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-6 mb-14"
         >
           {/* Left Side - Image */}
           <motion.div
@@ -546,16 +549,16 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative flex justify-center"
           >
             {/* Decorative background blur */}
             <div className="absolute -inset-4 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-[2rem] blur-2xl" />
 
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-indigo-900/20 ring-1 ring-white/50">
+            <div className="relative aspect-[3/2] max-w-2xl rounded-3xl overflow-hidden shadow-2xl shadow-indigo-900/20 ring-1 ring-white/50">
               <img
                 src={`${basePath}/11652.jpg`}
                 alt="Trading team analyzing market data"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Elegant overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/30 via-transparent to-blue-900/10" />
@@ -580,7 +583,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-5 border border-indigo-200/50 shadow-sm">
               <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
-              Who Should Use This
+              Ideal For
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-navy-800 to-indigo-900 bg-clip-text text-transparent mb-8">
               {overviewData.whoShouldUse.title}
