@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Search,
   Target,
@@ -27,6 +27,7 @@ import {
   Eye,
   Gauge,
   ChevronRight,
+  ChevronLeft,
   ClipboardList,
   ArrowRight,
 } from 'lucide-react';
@@ -430,6 +431,9 @@ const ContentPanel: React.FC<ContentPanelProps> = ({ step, isTransitioning }) =>
 export const ProcessFlowHorizontal: React.FC = () => {
   const [activeStepId, setActiveStepId] = useState<number>(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const activeStep = processSteps.find((s) => s.id === activeStepId) || processSteps[0];
 
@@ -443,24 +447,104 @@ export const ProcessFlowHorizontal: React.FC = () => {
     }
   };
 
+  const checkScrollPosition = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      setCanScrollLeft(container.scrollLeft > 10);
+      setCanScrollRight(
+        container.scrollLeft < container.scrollWidth - container.clientWidth - 10
+      );
+    }
+  };
+
+  const scrollLeft = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: -150, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: 150, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollPosition();
+      container.addEventListener('scroll', checkScrollPosition);
+      window.addEventListener('resize', checkScrollPosition);
+      return () => {
+        container.removeEventListener('scroll', checkScrollPosition);
+        window.removeEventListener('resize', checkScrollPosition);
+      };
+    }
+  }, []);
+
   return (
     <div className="w-full">
       {/* ================================================================ */}
       {/* Horizontal Process Steps - Full Width */}
       {/* ================================================================ */}
-      <div className="mb-8 lg:mb-12 w-full">
-        <div className="flex items-start justify-between w-full">
+      <div className="mb-8 lg:mb-12 w-full relative">
+        {/* Left scroll arrow - mobile only */}
+        <button
+          onClick={scrollLeft}
+          className={`
+            absolute left-0 top-[85px] z-20 md:hidden
+            w-9 h-9 rounded-full bg-white/95 shadow-lg border border-slate-200
+            flex items-center justify-center
+            transition-all duration-200
+            ${canScrollLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}
+          `}
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="w-5 h-5 text-slate-600" />
+        </button>
+
+        {/* Right scroll arrow - mobile only */}
+        <button
+          onClick={scrollRight}
+          className={`
+            absolute right-0 top-[85px] z-20 md:hidden
+            w-9 h-9 rounded-full bg-white/95 shadow-lg border border-slate-200
+            flex items-center justify-center
+            transition-all duration-200
+            ${canScrollRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}
+          `}
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="w-5 h-5 text-slate-600" />
+        </button>
+
+        {/* Gradient fade on edges - mobile only */}
+        <div className={`absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
+        <div className={`absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
+
+        {/* Scrollable container */}
+        <div
+          ref={scrollContainerRef}
+          className="flex items-start justify-start md:justify-between w-full overflow-x-auto md:overflow-visible scrollbar-hide px-2 md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {processSteps.map((step, index) => (
             <React.Fragment key={step.id}>
-              <HorizontalStepButton
-                step={step}
-                index={index}
-                isActive={activeStepId === step.id}
-                isCompleted={step.id < activeStepId}
-                onClick={() => handleStepClick(step.id)}
-              />
+              <div className="flex-shrink-0">
+                <HorizontalStepButton
+                  step={step}
+                  index={index}
+                  isActive={activeStepId === step.id}
+                  isCompleted={step.id < activeStepId}
+                  onClick={() => handleStepClick(step.id)}
+                />
+              </div>
               {index < processSteps.length - 1 && (
-                <ConnectorLine isCompleted={step.id < activeStepId} />
+                <div className="flex-shrink-0 w-8 sm:w-12 md:flex-1">
+                  <ConnectorLine isCompleted={step.id < activeStepId} />
+                </div>
               )}
             </React.Fragment>
           ))}

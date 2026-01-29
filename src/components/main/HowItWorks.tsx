@@ -90,15 +90,15 @@ export const HowItWorks: React.FC = () => {
           </div>
 
           {/* Cards Container */}
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 xl:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 lg:gap-10 xl:gap-12 max-w-lg md:max-w-none mx-auto">
 
             {/* Path A - Recommended */}
             <div className="group relative">
               {/* Animated gradient border */}
-              <div className="absolute -inset-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
-              <div className="absolute -inset-[1px] bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 rounded-3xl opacity-70" />
+              <div className="absolute -inset-[2px] bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+              <div className="absolute -inset-[1px] bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 rounded-2xl sm:rounded-3xl opacity-70" />
 
-              <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full">
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 h-full">
                 {/* Recommended badge */}
                 <div className="absolute -top-4 left-8">
                   <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg shadow-blue-500/25">
@@ -169,9 +169,9 @@ export const HowItWorks: React.FC = () => {
             {/* Path B - Explore */}
             <div className="group relative">
               {/* Border */}
-              <div className="absolute -inset-[1px] bg-gradient-to-br from-slate-200 to-slate-300 rounded-3xl group-hover:from-slate-300 group-hover:to-slate-400 transition-colors duration-300" />
+              <div className="absolute -inset-[1px] bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl sm:rounded-3xl group-hover:from-slate-300 group-hover:to-slate-400 transition-colors duration-300" />
 
-              <div className="relative bg-white rounded-3xl p-8 lg:p-10 h-full">
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 h-full">
                 {/* Icon */}
                 <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center shadow-xl shadow-slate-500/10 group-hover:scale-110 transition-transform duration-300">
                   <Compass className="w-8 h-8 text-white" strokeWidth={1.5} />
