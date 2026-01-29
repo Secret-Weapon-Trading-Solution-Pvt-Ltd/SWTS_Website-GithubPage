@@ -521,13 +521,13 @@ export const ProcessFlowHorizontal: React.FC = () => {
         </button>
 
         {/* Gradient fade on edges - mobile only */}
-        <div className={`absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
-        <div className={`absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
+        <div className={`absolute left-0 top-5 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
+        <div className={`absolute right-0 top-5 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none md:hidden transition-opacity ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
 
         {/* Scrollable container */}
         <div
           ref={scrollContainerRef}
-          className="flex items-start justify-start md:justify-between w-full overflow-x-auto md:overflow-visible scrollbar-hide px-2 md:px-0"
+          className="flex items-start justify-start md:justify-between w-full overflow-x-auto md:overflow-visible scrollbar-hide px-2 md:px-0 pt-5 -mt-5"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {processSteps.map((step, index) => (

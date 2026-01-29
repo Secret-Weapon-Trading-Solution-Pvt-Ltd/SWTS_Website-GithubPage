@@ -27,11 +27,11 @@ export const FrustrationHero: React.FC = () => {
         }}
       />
 
-      {/* Gradient overlay - sharp transition on desktop, full overlay on mobile for readability */}
+      {/* Gradient overlay - balanced on mobile to show image, sharp transition on desktop */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
-          background: 'linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(248,250,252,0.85) 60%, rgba(248,250,252,0.7) 100%)'
+          background: 'linear-gradient(180deg, rgba(248,250,252,0.88) 0%, rgba(248,250,252,0.75) 45%, rgba(248,250,252,0.4) 75%, rgba(248,250,252,0.2) 100%)'
         }}
       />
       <div
