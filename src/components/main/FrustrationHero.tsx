@@ -7,10 +7,10 @@ import { ArrowRight } from 'lucide-react';
 
 export const FrustrationHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#E8EDF2] lg:bg-transparent">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#E8EDF2] xl:bg-transparent">
       {/* Light background gradient - matching image background (desktop only) */}
       <div
-        className="absolute inset-0 hidden lg:block"
+        className="absolute inset-0 hidden xl:block"
         style={{
           background: '#F0F4F7'
         }}
@@ -18,7 +18,7 @@ export const FrustrationHero: React.FC = () => {
 
       {/* Background Image - Desktop: right side cover */}
       <div
-        className="absolute inset-0 bg-no-repeat animate-fade-in hidden lg:block"
+        className="absolute inset-0 bg-no-repeat animate-fade-in hidden xl:block"
         style={{
           backgroundImage: `url(${getAssetPath('/bg_new.png')})`,
           backgroundSize: 'cover',
@@ -30,7 +30,7 @@ export const FrustrationHero: React.FC = () => {
       />
       {/* Mobile & Tablet background - wave patterns visible, devices not cropped */}
       <div
-        className="absolute inset-0 bg-no-repeat animate-fade-in lg:hidden"
+        className="absolute inset-0 bg-no-repeat animate-fade-in xl:hidden"
         style={{
           backgroundImage: `url(${getAssetPath('/bg_new.png')})`,
           backgroundSize: '150% 110%',
@@ -43,20 +43,20 @@ export const FrustrationHero: React.FC = () => {
 
       {/* Gradient overlay - top area on mobile/tablet for text readability */}
       <div
-        className="absolute inset-0 lg:hidden"
+        className="absolute inset-0 xl:hidden"
         style={{
           background: 'linear-gradient(180deg, rgba(232,237,242,0.98) 0%, rgba(232,237,242,0.92) 25%, rgba(232,237,242,0.4) 40%, transparent 55%, transparent 100%)'
         }}
       />
       <div
-        className="absolute inset-0 hidden lg:block"
+        className="absolute inset-0 hidden xl:block"
         style={{
           background: 'linear-gradient(90deg, #F8FAFC 0%, #F8FAFC 35%, rgba(248,250,252,0.5) 40%, transparent 45%)'
         }}
       />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1440px] 2xl:max-w-[1600px] 3xl:max-w-[1920px] 4xl:max-w-[2400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 pt-24 pb-6 lg:py-32 2xl:py-40 3xl:py-48 min-h-screen lg:min-h-0 flex flex-col lg:block justify-start">
+      <div className="relative z-10 w-full max-w-[1440px] 2xl:max-w-[1600px] 3xl:max-w-[1920px] 4xl:max-w-[2400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 pt-24 pb-6 xl:py-32 2xl:py-40 3xl:py-48 min-h-screen xl:min-h-0 flex flex-col xl:block justify-start">
         <div className="max-w-lg lg:max-w-xl 2xl:max-w-2xl 3xl:max-w-3xl 4xl:max-w-4xl">
 
           {/* Micro label with accent line */}
@@ -117,7 +117,7 @@ export const FrustrationHero: React.FC = () => {
 
           {/* CTA Group - Desktop only (inline) */}
           <div
-            className="hidden lg:flex flex-row flex-wrap items-center gap-5 2xl:gap-6 3xl:gap-8 opacity-0 animate-fade-in-up"
+            className="hidden xl:flex flex-row flex-wrap items-center gap-5 2xl:gap-6 3xl:gap-8 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
           >
             {/* Primary CTA Button - Assessment */}
@@ -149,7 +149,7 @@ export const FrustrationHero: React.FC = () => {
 
         {/* CTA Group - Mobile & Tablet (at bottom) */}
         <div
-          className="flex lg:hidden flex-col items-stretch gap-3 mt-auto pb-6 opacity-0 animate-fade-in-up"
+          className="flex xl:hidden flex-col items-stretch gap-3 mt-auto pb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
         >
           {/* Primary CTA Button - Assessment */}
