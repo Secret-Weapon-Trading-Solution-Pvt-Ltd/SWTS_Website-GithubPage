@@ -368,8 +368,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             Understanding Strategy Automation
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Transform Your</span>
-            <br />
+            <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Transform Your</span>{' '}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Trading</span>
           </h2>
           <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
@@ -425,12 +424,12 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative flex justify-center"
           >
             {/* Decorative glow behind */}
             <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/20 via-indigo-400/15 to-purple-400/20 rounded-[2rem] blur-2xl" />
 
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-white via-blue-50/50 to-indigo-50 rounded-3xl p-6 lg:p-8 border border-white/80 shadow-xl shadow-blue-900/10 overflow-hidden">
+            <div className="relative aspect-[3/2] w-full max-w-2xl bg-gradient-to-br from-white via-blue-50/50 to-indigo-50 rounded-3xl pt-4 pb-6 px-6 lg:pt-5 lg:pb-8 lg:px-8 border border-white/80 shadow-xl shadow-blue-900/10 overflow-hidden">
               {/* Subtle pattern */}
               <div className="absolute inset-0 opacity-30">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-2xl" />
