@@ -26,6 +26,12 @@ import {
   OptimizationCapabilities,
   OptimizationProcess
 } from '@/components/services/optimization';
+// Screener-specific enterprise components
+import {
+  ScreenerOverview,
+  ScreenerCapabilities,
+  ScreenerProcess
+} from '@/components/services/screener';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
 interface ServicePageProps {
@@ -83,7 +89,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const isStrategyAutomation = service.slug === 'algo-strategy-development';
   const isBacktesting = service.slug === 'strategy-backtesting';
   const isOptimization = service.slug === 'strategy-optimization';
-  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization;
+  const isScreener = service.slug === 'custom-screener';
+  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization || isScreener;
 
   return (
     <MainLayout>
@@ -128,6 +135,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Optimization Process - Vertical timeline */}
           <OptimizationProcess service={service} />
+
+          {/* CTA section */}
+          <ServiceCTA service={service} />
+        </>
+      ) : isScreener ? (
+        <>
+          {/* Screener Overview - With alert delivery channels */}
+          <ScreenerOverview service={service} />
+
+          {/* Screener Capabilities - Full width cards */}
+          <ScreenerCapabilities service={service} />
+
+          {/* Screener Process - Horizontal timeline with background */}
+          <ScreenerProcess service={service} />
 
           {/* CTA section */}
           <ServiceCTA service={service} />

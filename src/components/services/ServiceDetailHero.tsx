@@ -17,7 +17,9 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   const isBacktesting = service.slug === 'strategy-backtesting';
   // Check if this is Strategy Optimization for blue/indigo wave style
   const isOptimization = service.slug === 'strategy-optimization';
-  const hasWaveBackground = isDarkTheme || isBacktesting || isOptimization;
+  // Check if this is Custom Screener for cyan/blue wave style
+  const isScreener = service.slug === 'custom-screener';
+  const hasWaveBackground = isDarkTheme || isBacktesting || isOptimization || isScreener;
 
   return (
     <section className={`relative pt-28 lg:pt-32 pb-6 overflow-hidden ${
@@ -35,6 +37,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 ? 'bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400'
                 : isOptimization
                 ? 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600'
+                : isScreener
+                ? 'bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-600'
                 : 'bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600'
             }`}>
               {/* Wave shape at bottom */}
@@ -69,6 +73,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                     ? 'bg-gradient-to-br from-violet-400/30 to-purple-400/20'
                     : isOptimization
                     ? 'bg-gradient-to-br from-indigo-400/30 to-blue-400/20'
+                    : isScreener
+                    ? 'bg-gradient-to-br from-cyan-400/30 to-blue-400/20'
                     : 'bg-gradient-to-br from-cyan-400/30 to-blue-400/20'
                 }`}
                 animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
@@ -83,6 +89,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                   ? 'bg-gradient-to-tr from-indigo-100/50 to-purple-100/40'
                   : isOptimization
                   ? 'bg-gradient-to-tr from-blue-100/50 to-indigo-100/40'
+                  : isScreener
+                  ? 'bg-gradient-to-tr from-cyan-100/50 to-blue-100/40'
                   : 'bg-gradient-to-tr from-blue-100/50 to-indigo-100/40'
               }`}
               animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
@@ -94,6 +102,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                   ? 'bg-gradient-to-br from-purple-100/40 to-violet-100/30'
                   : isOptimization
                   ? 'bg-gradient-to-br from-indigo-100/40 to-blue-100/30'
+                  : isScreener
+                  ? 'bg-gradient-to-br from-cyan-100/40 to-teal-100/30'
                   : 'bg-gradient-to-br from-teal-100/40 to-cyan-100/30'
               }`}
               animate={{ scale: [1.1, 1, 1.1], opacity: [0.3, 0.5, 0.3] }}
@@ -168,6 +178,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                   ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                   : isOptimization
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                  : isScreener
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                   : `bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} text-white`
               }`}>
                 {service.shortTitle}
@@ -202,6 +214,13 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                     {service.title.split(' ').slice(1).join(' ')}
                   </span>
                 </>
+              ) : isScreener ? (
+                <>
+                  {service.title.split(' ')[0]}{' '}
+                  <span className="text-cyan-600">
+                    {service.title.split(' ').slice(1).join(' ')}
+                  </span>
+                </>
               ) : (
                 service.title
               )}
@@ -233,6 +252,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                     ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white hover:from-indigo-700 hover:via-purple-700 hover:to-violet-700'
                     : isOptimization
                     ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white hover:from-blue-700 hover:via-indigo-700 hover:to-blue-700'
+                    : isScreener
+                    ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 text-white hover:from-cyan-700 hover:via-blue-700 hover:to-cyan-700'
                     : 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-600 hover:to-cyan-600'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -252,6 +273,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                     ? 'bg-white border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-400'
                     : isOptimization
                     ? 'bg-white border-2 border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-400'
+                    : isScreener
+                    ? 'bg-white border-2 border-cyan-200 text-cyan-700 hover:bg-cyan-50 hover:border-cyan-400'
                     : 'bg-white border-2 border-navy-200 text-navy-700 hover:bg-navy-50 hover:border-navy-300 shadow-sm'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -325,6 +348,25 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 />
                 {/* Subtle gradient overlay for polish */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-indigo-500/10 pointer-events-none" />
+              </motion.div>
+            ) : isScreener ? (
+              /* Custom Screener - Market scanning image */
+              <motion.div
+                className="relative aspect-[4/3] w-full max-w-xl lg:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <StaticImage
+                  src="/night-trader.jpg"
+                  alt="Custom Screener - Market scanning and alerts"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Subtle gradient overlay for polish */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-blue-500/10 pointer-events-none" />
               </motion.div>
             ) : (
               /* Other services - Card wrapper */
