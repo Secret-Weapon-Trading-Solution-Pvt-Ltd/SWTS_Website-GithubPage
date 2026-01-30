@@ -204,11 +204,14 @@ export const services: Service[] = [
     problems: [
       { title: "You've never properly validated your strategy", description: "You believe your rules work based on memory and experience. But you've never seen the actual numbers across years of data." },
       { title: "Your backtest doesn't match real trading", description: "You ran a backtest somewhere and it looked great. But live trading is different. Was slippage modeled? Transaction costs?" },
-      { title: "You don't know your real risk", description: "What's the maximum drawdown your strategy has historically experienced? What's the longest losing streak?" }
+      { title: "You don't know your real risk", description: "What's the maximum drawdown your strategy has historically experienced? What's the longest losing streak?" },
+      { title: "You're trading on hope, not data", description: "Without proper validation, every trade is a gamble. You need historical evidence that your approach works." }
     ],
     capabilities: [
-      { title: "Historical Testing", description: "Test YOUR rules with realistic assumptions", features: ["Multi-year historical testing", "Realistic slippage modeling", "Transaction cost inclusion"] },
-      { title: "Performance Metrics", description: "Clear metrics on YOUR strategy's performance", features: ["Win rate & profit factor", "Risk-adjusted returns", "Equity curve analysis"] }
+      { title: "Historical Data Analysis", description: "Test YOUR rules against years of historical market data", features: ["5-10+ years of historical data", "Multiple market conditions tested", "Bull, bear, and sideways markets"] },
+      { title: "Realistic Cost Modeling", description: "Include all the costs that eat into profits", features: ["Slippage simulation", "Brokerage & transaction costs", "Spread modeling"] },
+      { title: "Performance Metrics", description: "Complete analysis of YOUR strategy's potential", features: ["Win rate & profit factor", "Sharpe & Sortino ratios", "Maximum drawdown analysis"] },
+      { title: "Risk Assessment", description: "Understand your exposure before you trade", features: ["Drawdown duration analysis", "Worst-case scenario testing", "Risk-adjusted returns"] }
     ],
     flowchart: [
       { id: "document", title: "Document Rules", description: "Formalize YOUR trading logic", icon: "FileText" },
@@ -223,7 +226,9 @@ export const services: Service[] = [
       { step: 4, title: "Final Report", description: "Comprehensive report with all metrics and analysis.", duration: "2-3 days" }
     ],
     useCases: [
-      { title: "Momentum Strategy Validation", description: "Trader had momentum rules they'd traded manually. We backtested their exact logic across 10 years.", outcome: "Strategy confirmed profitable with clear understanding of drawdown risk", tags: ["Momentum", "Validation"] }
+      { title: "Momentum Strategy Validation", description: "Trader had momentum rules they'd traded manually for years. We backtested their exact logic across 10 years of data.", outcome: "Strategy confirmed profitable with clear understanding of drawdown risk", tags: ["Momentum", "Validation"] },
+      { title: "Mean Reversion Reality Check", description: "Client believed their mean reversion approach was profitable. Rigorous backtesting revealed hidden risks.", outcome: "Identified 35% max drawdown risk that wasn't apparent from recent trading", tags: ["Mean Reversion", "Risk Analysis"] },
+      { title: "Options Strategy Analysis", description: "Trader wanted to validate their iron condor strategy before scaling up capital allocation.", outcome: "Confirmed edge with specific market conditions where strategy underperforms", tags: ["Options", "Strategy Analysis"] }
     ],
     stats: [
       { label: "Strategies Validated", value: "300+" },

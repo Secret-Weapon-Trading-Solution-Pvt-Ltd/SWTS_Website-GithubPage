@@ -13,20 +13,27 @@ interface ServiceDetailHeroProps {
 export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
   // Check if this is the Strategy Automation service for dark theme
   const isDarkTheme = service.slug === 'algo-strategy-development';
+  // Check if this is Strategy Backtesting for similar wave style
+  const isBacktesting = service.slug === 'strategy-backtesting';
+  const hasWaveBackground = isDarkTheme || isBacktesting;
 
   return (
     <section className={`relative pt-28 lg:pt-32 pb-6 overflow-hidden ${
-      isDarkTheme
+      hasWaveBackground
         ? 'bg-white'
         : 'bg-gradient-to-b from-navy-50 via-white to-white'
     }`}>
       {/* Background decorations */}
       <div className="absolute inset-0">
-        {isDarkTheme ? (
+        {hasWaveBackground ? (
           <>
-            {/* Blue wave at top - shorter, just behind navbar */}
-            <div className="absolute top-0 left-0 right-0 h-[180px] bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600">
-              {/* Wave shape at bottom of blue section */}
+            {/* Wave at top - shorter, just behind navbar */}
+            <div className={`absolute top-0 left-0 right-0 h-[180px] ${
+              isBacktesting
+                ? 'bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400'
+                : 'bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600'
+            }`}>
+              {/* Wave shape at bottom */}
               <svg
                 className="absolute -bottom-1 left-0 w-full"
                 viewBox="0 0 1440 80"
@@ -39,7 +46,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 />
               </svg>
 
-              {/* Subtle pattern on blue area */}
+              {/* Subtle pattern */}
               <div className="absolute inset-0 opacity-10">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -51,9 +58,13 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 </svg>
               </div>
 
-              {/* Animated subtle glow on blue section */}
+              {/* Animated subtle glow */}
               <motion.div
-                className="absolute top-0 right-0 w-[300px] h-[200px] rounded-full blur-3xl bg-gradient-to-br from-cyan-400/30 to-blue-400/20"
+                className={`absolute top-0 right-0 w-[300px] h-[200px] rounded-full blur-3xl ${
+                  isBacktesting
+                    ? 'bg-gradient-to-br from-violet-400/30 to-purple-400/20'
+                    : 'bg-gradient-to-br from-cyan-400/30 to-blue-400/20'
+                }`}
                 animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               />
@@ -61,12 +72,20 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
 
             {/* Light colorful accents on white section */}
             <motion.div
-              className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl bg-gradient-to-tr from-blue-100/50 to-indigo-100/40"
+              className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl ${
+                isBacktesting
+                  ? 'bg-gradient-to-tr from-indigo-100/50 to-purple-100/40'
+                  : 'bg-gradient-to-tr from-blue-100/50 to-indigo-100/40'
+              }`}
               animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             />
             <motion.div
-              className="absolute bottom-20 right-20 w-[350px] h-[350px] rounded-full blur-3xl bg-gradient-to-br from-teal-100/40 to-cyan-100/30"
+              className={`absolute bottom-20 right-20 w-[350px] h-[350px] rounded-full blur-3xl ${
+                isBacktesting
+                  ? 'bg-gradient-to-br from-purple-100/40 to-violet-100/30'
+                  : 'bg-gradient-to-br from-teal-100/40 to-cyan-100/30'
+              }`}
               animate={{ scale: [1.1, 1, 1.1], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
             />
@@ -135,6 +154,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
               <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold shadow-lg ${
                 isDarkTheme
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                  : isBacktesting
+                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                   : `bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} text-white`
               }`}>
                 {service.shortTitle}
@@ -152,6 +173,13 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 <>
                   {service.title.split(' ')[0]}{' '}
                   <span className="text-blue-600">
+                    {service.title.split(' ').slice(1).join(' ')}
+                  </span>
+                </>
+              ) : isBacktesting ? (
+                <>
+                  {service.title.split(' ')[0]}{' '}
+                  <span className="text-indigo-600">
                     {service.title.split(' ').slice(1).join(' ')}
                   </span>
                 </>
@@ -182,6 +210,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 className={`inline-flex items-center justify-center w-fit px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl group ${
                   isDarkTheme
                     ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700'
+                    : isBacktesting
+                    ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white hover:from-indigo-700 hover:via-purple-700 hover:to-violet-700'
                     : 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-600 hover:to-cyan-600'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -197,6 +227,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 className={`inline-flex items-center justify-center w-fit px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg ${
                   isDarkTheme
                     ? 'bg-white border-2 border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-400'
+                    : isBacktesting
+                    ? 'bg-white border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-400'
                     : 'bg-white border-2 border-navy-200 text-navy-700 hover:bg-navy-50 hover:border-navy-300 shadow-sm'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -232,6 +264,25 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
                 />
                 {/* Subtle gradient overlay for polish */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
+              </motion.div>
+            ) : isBacktesting ? (
+              /* Strategy Backtesting - Trading analysis image */
+              <motion.div
+                className="relative aspect-[4/3] w-full max-w-xl lg:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <StaticImage
+                  src="/night-trader.jpg"
+                  alt="Strategy Backtesting - Trading analysis"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Subtle gradient overlay for polish */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-purple-500/10 pointer-events-none" />
               </motion.div>
             ) : (
               /* Other services - Card wrapper */

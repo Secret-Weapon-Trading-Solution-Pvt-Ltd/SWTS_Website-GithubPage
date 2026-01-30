@@ -14,6 +14,12 @@ import {
   CapabilitiesModern,
   ProcessFlowModern
 } from '@/components/services/enterprise';
+// Backtesting-specific enterprise components
+import {
+  BacktestingOverview,
+  BacktestingCapabilities,
+  BacktestingProcess
+} from '@/components/services/backtesting';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
 interface ServicePageProps {
@@ -68,14 +74,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   }
 
   // Check if this is a premium enterprise service page
-  const isEnterpriseLayout = service.slug === 'algo-strategy-development';
+  const isStrategyAutomation = service.slug === 'algo-strategy-development';
+  const isBacktesting = service.slug === 'strategy-backtesting';
+  const isEnterpriseLayout = isStrategyAutomation || isBacktesting;
 
   return (
     <MainLayout>
       {/* Hero with brand logos */}
       <ServiceDetailHero service={service} />
 
-      {isEnterpriseLayout ? (
+      {isStrategyAutomation ? (
         <>
           {/* Modern Strategy Overview - What/Why/Who/Benefits */}
           <StrategyOverview service={service} />
@@ -87,6 +95,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <ProcessFlowModern service={service} />
 
           {/* CTA section - same style as other services */}
+          <ServiceCTA service={service} />
+        </>
+      ) : isBacktesting ? (
+        <>
+          {/* Backtesting Overview - Varied layouts */}
+          <BacktestingOverview service={service} />
+
+          {/* Backtesting Capabilities - Bento grid style */}
+          <BacktestingCapabilities service={service} />
+
+          {/* Backtesting Process - Alternating timeline */}
+          <BacktestingProcess service={service} />
+
+          {/* CTA section */}
           <ServiceCTA service={service} />
         </>
       ) : (

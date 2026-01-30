@@ -65,6 +65,18 @@ const serviceCTAContent: Record<string, {
       { icon: Rocket, title: 'Multi-Broker Ready', description: 'Zerodha, IBKR, Alpaca, Binance & more' }
     ]
   },
+  'strategy-backtesting': {
+    badge: 'Validate Your Edge',
+    headline: 'Know before you trade.',
+    subheadline: 'Data-driven confidence.',
+    description: 'Stop trading on gut feeling. Get comprehensive historical analysis of YOUR strategy with realistic assumptions and actionable insights.',
+    primaryCTA: 'Get Your Strategy Tested',
+    features: [
+      { icon: MessageSquare, title: 'Strategy Review', description: 'We document your exact rules' },
+      { icon: Calendar, title: 'Historical Testing', description: 'Multi-year backtest with real costs' },
+      { icon: Zap, title: 'Clear Report', description: 'Metrics and insights you can act on' }
+    ]
+  },
   'strategy-optimization': {
     badge: 'Maximize Performance',
     headline: 'Find your optimal parameters.',
