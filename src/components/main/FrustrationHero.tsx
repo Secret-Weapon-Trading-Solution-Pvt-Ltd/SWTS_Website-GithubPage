@@ -66,11 +66,11 @@ export const FrustrationHero: React.FC = () => {
           >
             <span
               className="w-6 md:w-12 lg:w-16 2xl:w-20 3xl:w-24 h-[2px] lg:h-[3px] 2xl:h-[4px] rounded-full"
-              style={{ background: 'linear-gradient(90deg, #0D9488, #14B8A6)' }}
+              style={{ background: 'linear-gradient(90deg, #7C3AED, #3B82F6)' }}
             />
             <span
               className="text-[11px] md:text-sm lg:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-semibold tracking-wider uppercase"
-              style={{ color: '#0D9488' }}
+              style={{ color: '#4F46E5' }}
             >
               For serious traders
             </span>
@@ -124,11 +124,11 @@ export const FrustrationHero: React.FC = () => {
             <Link
               href="/strategy-assessment"
               className="group inline-flex items-center justify-center px-10 py-5 2xl:px-12 2xl:py-6 3xl:px-14 3xl:py-7 4xl:px-16 4xl:py-8 text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-medium text-white rounded-xl 2xl:rounded-2xl
-                       shadow-[0_4px_20px_rgba(13,148,136,0.25)] hover:shadow-[0_8px_30px_rgba(13,148,136,0.35)]
-                       hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(13,148,136,0.2)]
+                       shadow-[0_4px_20px_rgba(124,58,237,0.25)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.35)]
+                       hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(124,58,237,0.2)]
                        transition-all duration-200 ease-out"
               style={{
-                background: 'linear-gradient(180deg, #0D9488 0%, #0F766E 100%)',
+                background: 'linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #3B82F6 100%)',
               }}
             >
               Take Free Assessment
@@ -156,10 +156,10 @@ export const FrustrationHero: React.FC = () => {
           <Link
             href="/strategy-assessment"
             className="group inline-flex items-center justify-center px-6 py-4 text-base font-medium text-white rounded-xl
-                     shadow-[0_4px_20px_rgba(13,148,136,0.25)]
+                     shadow-[0_4px_20px_rgba(124,58,237,0.25)]
                      transition-all duration-200 ease-out"
             style={{
-              background: 'linear-gradient(180deg, #0D9488 0%, #0F766E 100%)',
+              background: 'linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #3B82F6 100%)',
             }}
           >
             Take Free Assessment
