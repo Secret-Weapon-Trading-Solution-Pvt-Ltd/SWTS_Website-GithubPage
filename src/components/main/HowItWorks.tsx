@@ -19,7 +19,7 @@ export const HowItWorks: React.FC = () => {
   return (
     <section id="how-it-works" className="relative py-10 lg:py-12 overflow-hidden">
       {/* Background - subtle gradient bands */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white pointer-events-none" />
 
       {/* Radial glow behind header */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
