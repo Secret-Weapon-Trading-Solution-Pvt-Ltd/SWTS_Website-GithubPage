@@ -29,6 +29,26 @@ export const Navbar: React.FC = () => {
   // Check if on a page with dark header (service pages)
   const isDarkHeader = pathname?.startsWith('/services/');
 
+  // Check if a nav link is active
+  const isLinkActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    // Hash links like /#about don't get highlighted (they're sections, not pages)
+    if (href.startsWith('/#')) {
+      return false;
+    }
+    return pathname === href || pathname?.startsWith(href + '/');
+  };
+
+  // Check if on any services page
+  const isServicesActive = pathname === '/services' || pathname === '/services/' || pathname?.startsWith('/services/');
+
+  // Check if on a specific service page
+  const isServicePageActive = (serviceSlug: string) => {
+    return pathname === `/services/${serviceSlug}` || pathname === `/services/${serviceSlug}/`;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       // Only show navbar when at the top of the page (within 50px)
@@ -118,7 +138,12 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200 text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              className={cn(
+                "px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
+                isLinkActive(link.href)
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              )}
             >
               {link.label}
             </Link>
@@ -128,7 +153,12 @@ export const Navbar: React.FC = () => {
           <div className="relative" ref={servicesDropdownRef}>
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="flex items-center gap-1 2xl:gap-2 px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200 text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              className={cn(
+                "flex items-center gap-1 2xl:gap-2 px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
+                isServicesActive
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              )}
             >
               Services
               <ChevronDown className={cn(
@@ -153,9 +183,17 @@ export const Navbar: React.FC = () => {
                     key={service.slug}
                     href={`/services/${service.slug}`}
                     onClick={() => setIsServicesOpen(false)}
-                    className="block px-4 py-3 3xl:px-6 3xl:py-4 hover:bg-slate-50 transition-colors mx-2 rounded-xl"
+                    className={cn(
+                      "block px-4 py-3 3xl:px-6 3xl:py-4 transition-colors mx-2 rounded-xl",
+                      isServicePageActive(service.slug)
+                        ? "bg-blue-50 border border-blue-200"
+                        : "hover:bg-slate-50"
+                    )}
                   >
-                    <span className="block text-sm 2xl:text-base 3xl:text-lg font-semibold text-slate-800">{service.shortTitle}</span>
+                    <span className={cn(
+                      "block text-sm 2xl:text-base 3xl:text-lg font-semibold",
+                      isServicePageActive(service.slug) ? "text-blue-700" : "text-slate-800"
+                    )}>{service.shortTitle}</span>
                     <span className="block text-xs 2xl:text-sm 3xl:text-base text-slate-500 mt-0.5">{service.oneLiner}</span>
                   </Link>
                 ))}
@@ -167,7 +205,12 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200 text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              className={cn(
+                "px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
+                isLinkActive(link.href)
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
+              )}
             >
               {link.label}
             </Link>
@@ -193,7 +236,12 @@ export const Navbar: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-3 px-4 text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-xl font-semibold transition-all duration-200"
+                  className={cn(
+                    "py-3 px-4 rounded-xl font-semibold transition-all duration-200",
+                    isLinkActive(link.href)
+                      ? "bg-blue-600 text-white"
+                      : "text-slate-700 bg-slate-50 hover:bg-slate-100"
+                  )}
                 >
                   {link.label}
                 </Link>
@@ -203,7 +251,12 @@ export const Navbar: React.FC = () => {
               <div>
                 <button
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="w-full flex items-center justify-between py-3 px-4 text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-xl font-semibold transition-all duration-200"
+                  className={cn(
+                    "w-full flex items-center justify-between py-3 px-4 rounded-xl font-semibold transition-all duration-200",
+                    isServicesActive
+                      ? "bg-blue-600 text-white"
+                      : "text-slate-700 bg-slate-50 hover:bg-slate-100"
+                  )}
                 >
                   Services
                   <ChevronDown className={cn(
@@ -226,7 +279,12 @@ export const Navbar: React.FC = () => {
                         key={service.slug}
                         href={`/services/${service.slug}`}
                         onClick={() => { setIsOpen(false); setIsMobileServicesOpen(false); }}
-                        className="block py-2.5 px-3 text-sm text-slate-700 bg-slate-50/50 hover:bg-slate-100 rounded-lg font-medium transition-all duration-200"
+                        className={cn(
+                          "block py-2.5 px-3 text-sm rounded-lg font-medium transition-all duration-200",
+                          isServicePageActive(service.slug)
+                            ? "bg-blue-100 text-blue-700 border border-blue-200"
+                            : "text-slate-700 bg-slate-50/50 hover:bg-slate-100"
+                        )}
                       >
                         {service.shortTitle}
                       </Link>
@@ -240,7 +298,12 @@ export const Navbar: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-3 px-4 text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-xl font-semibold transition-all duration-200"
+                  className={cn(
+                    "py-3 px-4 rounded-xl font-semibold transition-all duration-200",
+                    isLinkActive(link.href)
+                      ? "bg-blue-600 text-white"
+                      : "text-slate-700 bg-slate-50 hover:bg-slate-100"
+                  )}
                 >
                   {link.label}
                 </Link>

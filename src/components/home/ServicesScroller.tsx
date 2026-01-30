@@ -33,6 +33,12 @@ const serviceItems: ServiceItem[] = [
     gradient: 'from-teal-500/10 to-emerald-500/10',
   },
   {
+    slug: 'strategy-alerts',
+    title: 'Strategy Alerts',
+    image: '/risk.jpg',
+    gradient: 'from-amber-500/10 to-orange-500/10',
+  },
+  {
     slug: 'custom-screener',
     title: 'Custom Screener',
     image: '/analyze.jpg',
@@ -43,12 +49,6 @@ const serviceItems: ServiceItem[] = [
     title: 'Custom Dashboard',
     image: '/custom_platform.jpg',
     gradient: 'from-slate-500/10 to-gray-500/10',
-  },
-  {
-    slug: 'strategy-alerts',
-    title: 'Strategy Alerts',
-    image: '/risk.jpg',
-    gradient: 'from-amber-500/10 to-orange-500/10',
   },
   {
     slug: 'paper-trading',
