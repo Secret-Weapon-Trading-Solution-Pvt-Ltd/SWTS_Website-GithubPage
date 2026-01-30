@@ -1,8 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Orbitron, Montserrat } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['700', '800', '900'],
+  variable: '--font-orbitron',
+});
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
   title: 'Secret Weapon Trading Solution Pvt. Ltd.',
@@ -39,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${orbitron.variable} ${montserrat.variable}`}>
         <main className="min-h-screen">{children}</main>
       </body>
     </html>

@@ -27,31 +27,31 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ backgroundColor: '#0F4C4C' }}>
+    <footer style={{ background: 'linear-gradient(to right, #172554 0%, #1e3a8a 40%, #1e40af 70%, #2563eb 100%)' }}>
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6">
               <StaticImage
                 src="/logos/logo1.png"
                 alt="SWTS Logo"
-                width={50}
-                height={50}
-                className="rounded-lg"
+                width={64}
+                height={64}
+                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg"
               />
-              <div>
-                <h4 className="text-lg font-bold text-white leading-tight">
-                  Secret Weapon Trading Solution
-                </h4>
-                <p className="text-teal-200 text-xs font-medium">
-                  Private Limited
-                </p>
+              <div className="flex flex-col">
+                <span className="text-base sm:text-lg lg:text-xl font-bold italic leading-tight tracking-tight drop-shadow-sm bg-gradient-to-r from-[#2196F3] to-[#1565C0] bg-clip-text text-transparent">
+                  Secret Weapon
+                </span>
+                <span className="text-[9px] sm:text-[10px] lg:text-xs font-medium leading-tight tracking-[0.15em] text-[#00897B]">
+                  TRADING SOLUTION PVT. LTD.
+                </span>
               </div>
             </div>
-            <p className="text-teal-100 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               We help serious traders automate their edge with precision and consistency.
             </p>
           </div>
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-teal-100 hover:text-white text-sm transition-colors"
+                    className="text-white/90 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-teal-100 hover:text-white text-sm transition-colors"
+                    className="text-white/90 hover:text-white text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -103,10 +103,10 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="tel:+917083718306"
-                  className="flex items-center gap-3 text-teal-100 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
                 >
-                  <div className="w-8 h-8 bg-teal-600/30 rounded-lg flex items-center justify-center">
-                    <Phone className="w-4 h-4 text-teal-300" />
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-white/80" />
                   </div>
                   <span className="text-sm font-medium">+91 7083718306</span>
                 </a>
@@ -114,17 +114,17 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="mailto:support@secretweapon.in"
-                  className="flex items-center gap-3 text-teal-100 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
                 >
-                  <div className="w-8 h-8 bg-teal-600/30 rounded-lg flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-teal-300" />
+                  <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-white/80" />
                   </div>
                   <span className="text-sm font-medium">support@secretweapon.in</span>
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-teal-100">
-                <div className="w-8 h-8 bg-teal-600/30 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-4 h-4 text-teal-300" />
+              <li className="flex items-center gap-3 text-white/90">
+                <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-white/80" />
                 </div>
                 <span className="text-sm font-medium">India</span>
               </li>
@@ -133,19 +133,19 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-12 pt-10 border-t border-teal-700/50">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-teal-800/40 rounded-2xl p-8 border border-teal-600/30">
+        <div className="mt-12 pt-10 border-t border-white/20">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/15 rounded-2xl p-8 border border-white/15">
             <div>
               <h3 className="text-xl font-bold text-white mb-1">
                 Ready to automate your edge?
               </h3>
-              <p className="text-teal-200 text-sm">
+              <p className="text-white/90 text-sm">
                 Start with our free strategy assessment today.
               </p>
             </div>
             <Link
               href="/strategy-assessment"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-teal-400 hover:bg-teal-300 text-teal-900 font-semibold rounded-xl transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-indigo-50 text-indigo-700 font-semibold rounded-xl transition-all shadow-lg"
             >
               Take Free Assessment
               <ArrowRight className="w-4 h-4" />
@@ -155,10 +155,10 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-teal-700/50" style={{ backgroundColor: '#0A3939' }}>
+      <div className="border-t border-white/10" style={{ backgroundColor: '#172554' }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-teal-300 text-sm">
+            <p className="text-white/80 text-sm">
               © {currentYear} Secret Weapon Trading Solution Pvt. Ltd. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
@@ -166,7 +166,7 @@ export const Footer: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-teal-300 hover:text-white text-sm transition-colors"
+                  className="text-white/80 hover:text-white text-sm transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -174,7 +174,7 @@ export const Footer: React.FC = () => {
               {/* Telegram */}
               <Link
                 href="/subscribe"
-                className="w-8 h-8 bg-teal-700/50 hover:bg-teal-600/50 rounded-lg flex items-center justify-center text-teal-300 hover:text-white transition-all"
+                className="w-8 h-8 bg-white/15 hover:bg-white/20 rounded-lg flex items-center justify-center text-white/80 hover:text-white transition-all"
                 title="Get Telegram Notifications"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Disclaimer */}
-          <p className="text-teal-400/70 text-xs text-center mt-6 max-w-2xl mx-auto">
+          <p className="text-white/70 text-xs text-center mt-6 max-w-2xl mx-auto">
             Trading involves substantial risk. Past performance does not guarantee future results. We do not provide financial advice or profit guarantees.
           </p>
         </div>
