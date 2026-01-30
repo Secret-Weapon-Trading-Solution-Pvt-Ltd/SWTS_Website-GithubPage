@@ -38,9 +38,9 @@ export const Footer: React.FC = () => {
               <StaticImage
                 src="/logos/logo1.png"
                 alt="SWTS Logo"
-                width={64}
-                height={64}
-                className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg"
+                width={80}
+                height={80}
+                className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-lg"
               />
               <div className="flex flex-col">
                 <span className="text-base sm:text-lg lg:text-xl font-bold italic leading-tight tracking-tight drop-shadow-sm bg-gradient-to-r from-[#2196F3] to-[#1565C0] bg-clip-text text-transparent">

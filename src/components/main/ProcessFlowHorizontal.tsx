@@ -79,8 +79,8 @@ const processSteps: ProcessStep[] = [
     title: 'Quotation to Client',
     description:
       'Once the document is ready, we review all requirements internally. We analyze the effort, complexity, and technical needs of the project. Then we prepare a clear quotation for the client. The quotation includes pricing and project timeline.',
-    mediaSrc: '/analyze.jpg',
-    mediaType: 'image',
+    mediaSrc: '/analyze_new.mp4',
+    mediaType: 'video',
     toolkit: [
       { icon: ClipboardList, label: 'Requirement Analysis' },
       { icon: Activity, label: 'Effort Estimation' },
@@ -95,8 +95,8 @@ const processSteps: ProcessStep[] = [
     title: 'Strategy Architecture',
     description:
       'After the client approves the quotation, we move to the design phase. We plan the full architecture of the strategy or system. This includes data flow, logic structure, and execution process. The goal is to keep the system stable and scalable.',
-    mediaSrc: '/Design.jpg',
-    mediaType: 'image',
+    mediaSrc: '/design_new.mp4',
+    mediaType: 'video',
     toolkit: [
       { icon: GitBranch, label: 'Logic Structure' },
       { icon: Activity, label: 'Data Flow' },
@@ -111,8 +111,8 @@ const processSteps: ProcessStep[] = [
     title: 'System Development',
     description:
       'Once the design is finalized, our team starts development. We build the system step by step as per the approved plan. During development, we stay in regular touch with the client. We clear doubts and share progress updates continuously.',
-    mediaSrc: '/build.jpg',
-    mediaType: 'image',
+    mediaSrc: '/build.mp4',
+    mediaType: 'video',
     toolkit: [
       { icon: Code, label: 'Code Development' },
       { icon: Layers, label: 'Module Integration' },
@@ -143,7 +143,7 @@ const processSteps: ProcessStep[] = [
     title: 'Deploy & Monitor',
     description:
       'After successful testing and client approval, we deploy the system. Deployment is done on the client\'s local PC or server as required. We ensure everything is set up properly and runs smoothly. Post-deployment support is provided if needed.',
-    mediaSrc: '/Deploy.mp4',
+    mediaSrc: '/deployment.mp4',
     mediaType: 'video',
     toolkit: [
       { icon: Rocket, label: 'Deployment Setup' },
