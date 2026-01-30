@@ -20,6 +20,12 @@ import {
   BacktestingCapabilities,
   BacktestingProcess
 } from '@/components/services/backtesting';
+// Optimization-specific enterprise components
+import {
+  OptimizationOverview,
+  OptimizationCapabilities,
+  OptimizationProcess
+} from '@/components/services/optimization';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
 interface ServicePageProps {
@@ -76,7 +82,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   // Check if this is a premium enterprise service page
   const isStrategyAutomation = service.slug === 'algo-strategy-development';
   const isBacktesting = service.slug === 'strategy-backtesting';
-  const isEnterpriseLayout = isStrategyAutomation || isBacktesting;
+  const isOptimization = service.slug === 'strategy-optimization';
+  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization;
 
   return (
     <MainLayout>
@@ -107,6 +114,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Backtesting Process - Alternating timeline */}
           <BacktestingProcess service={service} />
+
+          {/* CTA section */}
+          <ServiceCTA service={service} />
+        </>
+      ) : isOptimization ? (
+        <>
+          {/* Optimization Overview - Balanced left/right layouts */}
+          <OptimizationOverview service={service} />
+
+          {/* Optimization Capabilities - Alternating layout */}
+          <OptimizationCapabilities service={service} />
+
+          {/* Optimization Process - Vertical timeline */}
+          <OptimizationProcess service={service} />
 
           {/* CTA section */}
           <ServiceCTA service={service} />

@@ -253,11 +253,14 @@ export const services: Service[] = [
     problems: [
       { title: "Your parameters were chosen arbitrarily", description: "Why 14-period RSI? Why 20-period MA? You've never tested what actually works best for YOUR strategy." },
       { title: "You're worried about overfitting", description: "You know that optimizing too much leads to curve-fitting. You need proper validation methods." },
-      { title: "Market conditions change", description: "Parameters that worked in 2020 may not work in 2024. You need adaptive optimization." }
+      { title: "Market conditions change", description: "Parameters that worked in 2020 may not work in 2024. You need adaptive optimization." },
+      { title: "You don't know your strategy's true potential", description: "Without proper optimization, you could be leaving significant performance on the table." }
     ],
     capabilities: [
       { title: "Parameter Optimization", description: "Find optimal settings for YOUR rules", features: ["Grid search optimization", "Walk-forward analysis", "Out-of-sample validation"] },
-      { title: "Robustness Testing", description: "Ensure YOUR parameters aren't overfitted", features: ["Monte Carlo simulation", "Parameter stability analysis", "Sensitivity testing"] }
+      { title: "Robustness Testing", description: "Ensure YOUR parameters aren't overfitted", features: ["Monte Carlo simulation", "Parameter stability analysis", "Sensitivity testing"] },
+      { title: "Performance Enhancement", description: "Maximize risk-adjusted returns", features: ["Sharpe ratio optimization", "Drawdown minimization", "Win rate improvement"] },
+      { title: "Adaptive Analysis", description: "Parameters that adapt to market regimes", features: ["Market regime detection", "Dynamic parameter sets", "Condition-based optimization"] }
     ],
     flowchart: [
       { id: "baseline", title: "Baseline Test", description: "Test current parameters", icon: "Play" },
@@ -272,7 +275,9 @@ export const services: Service[] = [
       { step: 4, title: "Recommendations", description: "Final report with optimal parameters.", duration: "1-2 days" }
     ],
     useCases: [
-      { title: "Moving Average Optimization", description: "Trader used 50/200 MA crossover. We found 34/144 performed 40% better out-of-sample.", outcome: "Improved risk-adjusted returns without overfitting", tags: ["Optimization", "MA Crossover"] }
+      { title: "Moving Average Optimization", description: "Trader used 50/200 MA crossover. We found 34/144 performed 40% better out-of-sample.", outcome: "Improved risk-adjusted returns without overfitting", tags: ["Optimization", "MA Crossover"] },
+      { title: "RSI Strategy Enhancement", description: "Client's RSI strategy used default 14-period. We optimized entry/exit thresholds and period.", outcome: "23% improvement in Sharpe ratio with robust out-of-sample results", tags: ["RSI", "Parameters"] },
+      { title: "Breakout System Tuning", description: "Volatility-based breakout strategy with arbitrary ATR multipliers. We found optimal settings.", outcome: "Reduced drawdown by 18% while maintaining returns", tags: ["Breakout", "Risk Management"] }
     ],
     stats: [
       { label: "Strategies Optimized", value: "200+" },
