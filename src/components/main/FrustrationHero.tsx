@@ -87,7 +87,7 @@ export const FrustrationHero: React.FC = () => {
                 animationFillMode: 'forwards'
               }}
             >
-              Your strategy works.
+              We automate your strategy
             </span>
             <span
               className="block mt-1 sm:mt-1.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-[28px] sm:text-3xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[32px] sm:leading-[34px] lg:leading-[33px] xl:leading-[42px] 2xl:leading-[50px] 3xl:leading-[61px] 4xl:leading-[77px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
@@ -98,7 +98,7 @@ export const FrustrationHero: React.FC = () => {
                 animationFillMode: 'forwards'
               }}
             >
-              Until you have to execute it.
+              so you don't need to press buy, sell buttons
             </span>
           </h2>
 
@@ -112,7 +112,7 @@ export const FrustrationHero: React.FC = () => {
               animationFillMode: 'forwards'
             }}
           >
-            Stop letting fear and hesitation steal your profits. Trade with confidence.
+            Automation is entering every industry, and trading is no exception. See how automated execution can remove manual effort and delays. No buttons, no stress — just rule-based trading.
           </p>
 
           {/* CTA Group - Desktop only (inline) */}

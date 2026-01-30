@@ -3,9 +3,9 @@
 import React from 'react';
 
 const stats = [
-  { value: '12,400+', label: 'Assessments Completed' },
-  { value: '150+', label: 'Systems Deployed' },
-  { value: '99.9%', label: 'System Uptime' },
+  { value: '1000+', label: 'projects Completed' },
+  { value: '7+', label: 'years of experience' },
+  { value: '10+', label: 'technologies' },
 ];
 
 export const CredibilityStrip: React.FC = () => {

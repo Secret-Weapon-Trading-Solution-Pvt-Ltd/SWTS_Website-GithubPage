@@ -4,6 +4,7 @@ import { MainLayout } from '@/components/layouts';
 import {
   FrustrationHero,
   CredibilityStrip,
+  PlatformIntro,
   HowItWorks,
   FinalCTA
 } from '@/components/main';
@@ -17,7 +18,10 @@ export default function Home() {
       {/* Section 2: Credibility Strip - Quiet trust indicators */}
       <CredibilityStrip />
 
-      {/* Section 3: How It Works - Process explanation (includes Services & Ready to Begin) */}
+      {/* Section 3: Platform Introduction - What we do */}
+      <PlatformIntro />
+
+      {/* Section 4: How It Works - Process explanation (includes Services & Ready to Begin) */}
       <HowItWorks />
 
       {/* Section 4: Final CTA - Strong close with assessment push */}

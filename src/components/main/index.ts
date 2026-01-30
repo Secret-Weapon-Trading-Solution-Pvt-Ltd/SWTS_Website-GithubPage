@@ -1,6 +1,7 @@
 export { MainHero } from './MainHero';
 export { FrustrationHero } from './FrustrationHero';
 export { CredibilityStrip } from './CredibilityStrip';
+export { PlatformIntro } from './PlatformIntro';
 export { ProblemAgitation } from './ProblemAgitation';
 export { AssessmentExplanation } from './AssessmentExplanation';
 export { FinalCTA } from './FinalCTA';
