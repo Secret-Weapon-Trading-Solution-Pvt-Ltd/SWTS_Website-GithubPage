@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
+                      <label htmlFor="name" className="block text-sm font-medium text-white mb-1.5">
                         Your Name *
                       </label>
                       <input
@@ -151,7 +151,7 @@ export const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
+                      <label htmlFor="email" className="block text-sm font-medium text-white mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -168,7 +168,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="subject" className="block text-sm font-medium text-white mb-1.5">
                       Subject *
                     </label>
                     <select
@@ -190,7 +190,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="message" className="block text-sm font-medium text-white mb-1.5">
                       Message *
                     </label>
                     <textarea

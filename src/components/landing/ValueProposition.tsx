@@ -33,7 +33,7 @@ export const ValueProposition: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             What Your Assessment Will Reveal
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Our comprehensive assessment evaluates three critical dimensions of your trading
             to determine automation readiness
           </p>
@@ -62,7 +62,7 @@ export const ValueProposition: React.FC = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {point.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   {point.description}
                 </p>
               </div>

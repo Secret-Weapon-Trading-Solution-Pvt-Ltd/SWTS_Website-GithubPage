@@ -27,7 +27,7 @@ export default function ProblemsSolved({ service }: ProblemsSolvedProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">
             Sound familiar?
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             These are the exact challenges our clients faced before working with us
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export default function ProblemsSolved({ service }: ProblemsSolvedProps) {
                   </h3>
 
                   {/* Problem description */}
-                  <p className="text-navy-600 leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {problem.description}
                   </p>
 
@@ -96,7 +96,7 @@ export default function ProblemsSolved({ service }: ProblemsSolvedProps) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-3 text-navy-500">
+          <div className="inline-flex items-center gap-3 text-black">
             <span className="w-12 h-px bg-gradient-to-r from-transparent to-navy-300" />
             <span className="text-sm font-medium uppercase tracking-wider">Here&apos;s how we help</span>
             <span className="w-12 h-px bg-gradient-to-l from-transparent to-navy-300" />

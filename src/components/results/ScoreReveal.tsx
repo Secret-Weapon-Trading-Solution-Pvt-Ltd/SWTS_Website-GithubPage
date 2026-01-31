@@ -43,9 +43,9 @@ export const ScoreReveal: React.FC<ScoreRevealProps> = ({ score, userName }) => 
       case 'medium':
         return 'text-blue-600';
       case 'low':
-        return 'text-slate-600';
+        return 'text-black';
       default:
-        return 'text-slate-600';
+        return 'text-black';
     }
   };
 
@@ -88,7 +88,7 @@ export const ScoreReveal: React.FC<ScoreRevealProps> = ({ score, userName }) => 
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
           {userName ? `${userName}, Your Results Are Ready` : 'Your Results Are Ready'}
         </h1>
-        <p className="text-slate-600">
+        <p className="text-black">
           Here&apos;s your personalized automation readiness score
         </p>
       </div>
@@ -135,7 +135,7 @@ export const ScoreReveal: React.FC<ScoreRevealProps> = ({ score, userName }) => 
             >
               {animatedScore}%
             </span>
-            <span className="text-sm text-slate-500 mt-1">Readiness Score</span>
+            <span className="text-sm text-black mt-1">Readiness Score</span>
           </div>
         </div>
       </div>
@@ -177,13 +177,13 @@ export const ScoreReveal: React.FC<ScoreRevealProps> = ({ score, userName }) => 
           <div className="text-2xl font-bold text-blue-600">
             {score.totalScore}
           </div>
-          <div className="text-sm text-slate-500">Your Score</div>
+          <div className="text-sm text-black">Your Score</div>
         </div>
         <div className="text-center p-4 bg-slate-50 rounded-xl">
-          <div className="text-2xl font-bold text-slate-400">
+          <div className="text-2xl font-bold text-black">
             {score.maxScore}
           </div>
-          <div className="text-sm text-slate-500">Maximum</div>
+          <div className="text-sm text-black">Maximum</div>
         </div>
       </div>
     </div>

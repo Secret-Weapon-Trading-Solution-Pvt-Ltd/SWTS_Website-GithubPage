@@ -11,10 +11,10 @@ export const ProblemAgitation: React.FC = () => {
         {/* Single powerful statement */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
           It's not your strategy.
-          <span className="block mt-2 text-slate-400">It's the execution.</span>
+          <span className="block mt-2 text-black">It's the execution.</span>
         </h2>
 
-        <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-xl text-black leading-relaxed max-w-2xl mx-auto mb-10">
           A mediocre strategy executed consistently will always outperform
           a great strategy executed randomly.
         </p>

@@ -118,7 +118,7 @@ export default function ResultsPage() {
         <div className="min-h-screen bg-slate-50 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-2 border-slate-200 border-t-blue-600 mx-auto mb-4" />
-            <p className="text-slate-500">Analyzing your responses...</p>
+            <p className="text-black">Analyzing your responses...</p>
           </div>
         </div>
       </LandingLayout>
@@ -146,7 +146,7 @@ export default function ResultsPage() {
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
               {scoreHook.hook}
             </h1>
-            <p className="text-lg text-slate-500 max-w-xl mx-auto">
+            <p className="text-lg text-black max-w-xl mx-auto">
               {scoreHook.subtext}
             </p>
           </div>
@@ -155,15 +155,15 @@ export default function ResultsPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
-                <p className="text-xs uppercase tracking-wide text-slate-400 mb-1">
+                <p className="text-xs uppercase tracking-wide text-black mb-1">
                   Automation Readiness Score
                 </p>
-                <p className="text-sm text-slate-500 mb-2">
+                <p className="text-sm text-black mb-2">
                   {firstName ? `${firstName}, this` : 'This'} score reflects how prepared your trading approach is for systematic automation.
                 </p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-6xl font-bold text-slate-900">{result.score.percentage}</span>
-                  <span className="text-2xl text-slate-400">/100</span>
+                  <span className="text-2xl text-black">/100</span>
                 </div>
               </div>
               <div className={`px-6 py-3 rounded-xl text-center ${
@@ -171,7 +171,7 @@ export default function ResultsPage() {
                   ? 'bg-emerald-50 text-emerald-700'
                   : result.score.leadQuality === 'medium'
                     ? 'bg-amber-50 text-amber-700'
-                    : 'bg-slate-100 text-slate-600'
+                    : 'bg-slate-100 text-black'
               }`}>
                 <p className="text-sm font-medium">
                   {result.score.leadQuality === 'high'
@@ -197,7 +197,7 @@ export default function ResultsPage() {
                   style={{ width: `${result.score.percentage}%` }}
                 />
               </div>
-              <div className="flex justify-between text-xs text-slate-400 mt-2">
+              <div className="flex justify-between text-xs text-black mt-2">
                 <span>0 - Not Ready</span>
                 <span>100 - Automation Ready</span>
               </div>
@@ -211,7 +211,7 @@ export default function ResultsPage() {
                 <Target className="w-5 h-5 text-blue-600" />
                 <h2 className="text-xl font-semibold text-slate-900">Key Insights</h2>
               </div>
-              <p className="text-sm text-slate-500 mb-6">Personalized observations based on your responses.</p>
+              <p className="text-sm text-black mb-6">Personalized observations based on your responses.</p>
               <div className="space-y-4">
                 {result.insights.map((insight, index) => (
                   <div
@@ -230,8 +230,8 @@ export default function ResultsPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-slate-900 mb-1">{insight.title}</h3>
-                        <p className="text-slate-500 text-sm mb-2">{insight.description}</p>
-                        <p className="text-xs text-slate-400 italic">
+                        <p className="text-black text-sm mb-2">{insight.description}</p>
+                        <p className="text-xs text-black italic">
                           {insight.priority === 'high'
                             ? 'Why this matters: Addressing this gap can significantly improve your execution consistency.'
                             : insight.priority === 'medium'
@@ -248,13 +248,13 @@ export default function ResultsPage() {
 
           {/* CTA Section */}
           <div className="text-center mb-4">
-            <p className="text-sm text-slate-500">Based on your results, here's the most effective next step.</p>
+            <p className="text-sm text-black">Based on your results, here's the most effective next step.</p>
           </div>
           <div className="bg-slate-900 rounded-2xl p-8 lg:p-10 text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-3">
               {segmentedCTA.title}
             </h3>
-            <p className="text-slate-400 mb-8 max-w-lg mx-auto">
+            <p className="text-black mb-8 max-w-lg mx-auto">
               {segmentedCTA.subtitle}
             </p>
 
@@ -268,20 +268,20 @@ export default function ResultsPage() {
                   {segmentedCTA.primaryCTA.text}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <p className="text-xs text-slate-500 mt-3">
+                <p className="text-xs text-black mt-3">
                   Discuss your assessment and execution gaps in a 30-minute call.
                 </p>
               </div>
               <a
                 href={segmentedCTA.secondaryCTA.href}
-                className="inline-flex items-center gap-2 px-8 py-4 text-slate-400 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 text-black hover:text-white transition-colors"
               >
                 {segmentedCTA.secondaryCTA.text}
               </a>
             </div>
 
             {segmentedCTA.urgency && (
-              <p className="mt-6 text-sm text-slate-400">{segmentedCTA.urgency}</p>
+              <p className="mt-6 text-sm text-black">{segmentedCTA.urgency}</p>
             )}
           </div>
 
@@ -292,14 +292,14 @@ export default function ResultsPage() {
                 storage.clearAssessmentData();
                 router.push('/strategy-assessment');
               }}
-              className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
+              className="text-sm text-black hover:text-black transition-colors"
             >
               Retake Assessment
             </button>
           </div>
 
           {/* Disclaimer */}
-          <div className="mt-12 text-center text-xs text-slate-400">
+          <div className="mt-12 text-center text-xs text-black">
             <p>
               This assessment provides educational insights only. Trading involves risk.
               Past performance does not guarantee future results.

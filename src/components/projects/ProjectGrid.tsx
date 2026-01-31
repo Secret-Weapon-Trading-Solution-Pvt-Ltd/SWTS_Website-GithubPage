@@ -41,8 +41,8 @@ export const ProjectGrid: React.FC = () => {
             style={{ background: 'linear-gradient(90deg, transparent, #CBD5E1)' }}
           />
           <div className="flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200/80 rounded-full shadow-sm">
-            <Layers className="w-3.5 h-3.5 text-slate-500" />
-            <span className="text-xs font-semibold tracking-wide uppercase text-slate-600">
+            <Layers className="w-3.5 h-3.5 text-black" />
+            <span className="text-xs font-semibold tracking-wide uppercase text-black">
               All Projects
             </span>
           </div>
@@ -62,7 +62,7 @@ export const ProjectGrid: React.FC = () => {
                 ${
                   activeCategory === cat.value
                     ? 'bg-slate-900 text-white shadow-sm'
-                    : 'bg-white text-slate-600 border border-slate-200/80 hover:border-slate-300 hover:text-slate-900 hover:shadow-sm'
+                    : 'bg-white text-black border border-slate-200/80 hover:border-slate-300 hover:text-slate-900 hover:shadow-sm'
                 }`}
             >
               {cat.label}
@@ -89,13 +89,13 @@ export const ProjectGrid: React.FC = () => {
         {/* Empty State */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-slate-500">No projects found in this category.</p>
+            <p className="text-black">No projects found in this category.</p>
           </div>
         )}
 
         {/* Results count */}
         <div className="text-center mt-10">
-          <p className="text-xs font-medium text-slate-400 uppercase tracking-wider">
+          <p className="text-xs font-medium text-black uppercase tracking-wider">
             Showing {filteredProjects.length} of {projects.length} projects
           </p>
         </div>

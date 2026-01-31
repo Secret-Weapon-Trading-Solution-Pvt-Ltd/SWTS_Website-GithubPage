@@ -63,7 +63,7 @@ export const MainHero: React.FC = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+            <p className="text-xl text-black mb-8 leading-relaxed">
               We build custom algorithmic trading systems that execute your strategy
               with precision, consistency, and zero emotional interference.
             </p>
@@ -76,10 +76,10 @@ export const MainHero: React.FC = () => {
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm transition-all duration-500 ${
                     activeFeature === index
                       ? 'bg-amber-500/20 border border-amber-500/40 text-amber-300 scale-105'
-                      : 'bg-white/5 border border-white/10 text-gray-400'
+                      : 'bg-white/5 border border-white/10 text-black'
                   }`}
                 >
-                  <CheckCircle className={`w-3.5 h-3.5 ${activeFeature === index ? 'text-amber-400' : 'text-gray-500'}`} />
+                  <CheckCircle className={`w-3.5 h-3.5 ${activeFeature === index ? 'text-amber-400' : 'text-black'}`} />
                   {feature}
                 </div>
               ))}
@@ -108,7 +108,7 @@ export const MainHero: React.FC = () => {
 
             {/* Platform Icons */}
             <div className="pt-8 border-t border-white/10">
-              <p className="text-sm text-gray-500 mb-4 uppercase tracking-wider font-medium">Platforms We Work With</p>
+              <p className="text-sm text-black mb-4 uppercase tracking-wider font-medium">Platforms We Work With</p>
               <div className="flex flex-wrap gap-3">
                 {[
                   { icon: Code2, name: 'TradingView' },
@@ -118,7 +118,7 @@ export const MainHero: React.FC = () => {
                 ].map((platform, index) => (
                   <div
                     key={platform.name}
-                    className="group flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-400 text-sm hover:border-amber-500/30 hover:text-amber-300 hover:bg-amber-500/5 transition-all cursor-pointer hover:-translate-y-1"
+                    className="group flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-black text-sm hover:border-amber-500/30 hover:text-amber-300 hover:bg-amber-500/5 transition-all cursor-pointer hover:-translate-y-1"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <platform.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -134,7 +134,7 @@ export const MainHero: React.FC = () => {
 
       {/* Bottom Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-gray-500 text-xs uppercase tracking-widest">Scroll</span>
+        <span className="text-black text-xs uppercase tracking-widest">Scroll</span>
         <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
           <div className="w-1 h-2 bg-amber-400 rounded-full animate-pulse" />
         </div>

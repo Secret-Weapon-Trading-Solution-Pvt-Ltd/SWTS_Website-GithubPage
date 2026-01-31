@@ -97,7 +97,7 @@ export const DetailedStepsRedesign: React.FC = () => {
           transition={{ duration: 2, repeat: Infinity }}
         >
           <Zap className="w-3.5 h-3.5 text-teal-600" />
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
+          <span className="text-xs font-bold uppercase tracking-wider text-black">
             Your Journey
           </span>
         </motion.div>
@@ -105,7 +105,7 @@ export const DetailedStepsRedesign: React.FC = () => {
         <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
           The Process
         </h3>
-        <p className="text-slate-500 text-sm max-w-md mx-auto">
+        <p className="text-black text-sm max-w-md mx-auto">
           Five connected stages from self-discovery to consistent execution
         </p>
       </motion.div>
@@ -275,7 +275,7 @@ export const DetailedStepsRedesign: React.FC = () => {
                     {step.title}
                   </motion.h4>
                   <motion.p
-                    className="text-xs lg:text-sm text-slate-500 leading-snug max-w-[140px] mx-auto"
+                    className="text-xs lg:text-sm text-black leading-snug max-w-[140px] mx-auto"
                     animate={{ opacity: isActive ? 1 : 0.7 }}
                   >
                     {step.description}
@@ -328,7 +328,7 @@ export const DetailedStepsRedesign: React.FC = () => {
                 <h4 className="font-bold text-slate-900 text-base mb-1">
                   {step.title}
                 </h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-black leading-relaxed">
                   {step.detail}
                 </p>
               </div>
@@ -347,7 +347,7 @@ export const DetailedStepsRedesign: React.FC = () => {
         {['5 min assessment', 'Personalized path', 'No commitment'].map((item, i) => (
           <motion.span
             key={i}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-xs font-medium text-slate-600 shadow-sm border border-slate-100"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-xs font-medium text-black shadow-sm border border-slate-100"
             whileHover={{ scale: 1.05, y: -2 }}
           >
             <span className="w-2 h-2 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400" />

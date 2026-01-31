@@ -40,7 +40,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onStartAssessment }) => 
           </span>
         </h2>
 
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
           Take the first step toward consistent, emotion-free trading. Our assessment
           will show you exactly where you stand and what to do next.
         </p>
@@ -52,7 +52,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onStartAssessment }) => 
             return (
               <div
                 key={index}
-                className="flex items-center gap-2 text-gray-300"
+                className="flex items-center gap-2 text-white"
               >
                 <Icon className="w-5 h-5 text-accent-400" />
                 <span>{benefit.text}</span>
@@ -83,7 +83,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onStartAssessment }) => 
 
         {/* Trust Seal */}
         <div className="mt-12 pt-8 border-t border-primary-700">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-black">
             Join 500+ traders who have assessed their automation readiness
           </p>
         </div>

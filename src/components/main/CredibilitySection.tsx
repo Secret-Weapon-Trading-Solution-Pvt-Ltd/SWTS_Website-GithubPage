@@ -45,11 +45,11 @@ export const CredibilitySection: React.FC = () => {
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-6">
               We've been where you are.
-              <span className="text-slate-400"> And built our way out.</span>
+              <span className="text-black"> And built our way out.</span>
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-slate-600 leading-relaxed mb-12">
+            <p className="text-lg text-black leading-relaxed mb-12">
               Our team has experienced the same execution struggles. That's why we built systems
               that remove human error from the equation—without removing human judgment from strategy.
             </p>
@@ -63,7 +63,7 @@ export const CredibilitySection: React.FC = () => {
 
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-black text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -90,7 +90,7 @@ export const CredibilitySection: React.FC = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-slate-900">{testimonial.author}</div>
-                  <div className="text-sm text-slate-500">
+                  <div className="text-sm text-black">
                     {testimonial.role} · {testimonial.location}
                   </div>
                 </div>
@@ -99,12 +99,12 @@ export const CredibilitySection: React.FC = () => {
 
             {/* Platform integrations */}
             <div className="mt-8 pt-8 border-t border-slate-100">
-              <p className="text-xs text-slate-400 uppercase tracking-wider mb-4 text-center">
+              <p className="text-xs text-black uppercase tracking-wider mb-4 text-center">
                 Platforms we integrate with
               </p>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 {['TradingView', 'AmiBroker', 'Python', 'MetaTrader', 'Zerodha'].map((platform) => (
-                  <span key={platform} className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+                  <span key={platform} className="text-sm text-black hover:text-black transition-colors">
                     {platform}
                   </span>
                 ))}

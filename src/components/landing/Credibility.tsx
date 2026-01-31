@@ -65,7 +65,7 @@ export const Credibility: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Why Trust Secret Weapon Trading Solution?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             We specialize in translating profitable manual strategies into reliable
             automated systems across multiple platforms
           </p>
@@ -78,7 +78,7 @@ export const Credibility: React.FC = () => {
               <div className="text-4xl sm:text-5xl font-bold text-primary-600 mb-2">
                 {point.metric}
               </div>
-              <div className="text-gray-600 font-medium">{point.label}</div>
+              <div className="text-black font-medium">{point.label}</div>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ export const Credibility: React.FC = () => {
                     <Icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <h4 className="font-bold text-gray-900 mb-1">{platform.name}</h4>
-                  <p className="text-sm text-gray-500">{platform.description}</p>
+                  <p className="text-sm text-black">{platform.description}</p>
                 </div>
               );
             })}
@@ -109,7 +109,7 @@ export const Credibility: React.FC = () => {
 
         {/* No Profit Guarantee Notice */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm text-black max-w-2xl mx-auto">
             <strong>Important:</strong> We help automate and systematize your trading
             strategies. Past performance does not guarantee future results. All trading
             involves risk. We do not make profit guarantees.

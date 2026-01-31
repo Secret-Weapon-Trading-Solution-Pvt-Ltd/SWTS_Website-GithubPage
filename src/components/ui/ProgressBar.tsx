@@ -41,7 +41,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     <div className={cn('w-full', className)}>
       <div className="flex justify-between items-center mb-2">
         {showSteps && (
-          <span className="text-sm font-medium text-gray-600">
+          <span className="text-sm font-medium text-black">
             Step {current} of {total}
           </span>
         )}

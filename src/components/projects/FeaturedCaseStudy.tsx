@@ -46,7 +46,7 @@ export const FeaturedCaseStudy: React.FC = () => {
           />
           <div className="flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200/80 rounded-full shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-teal-500" />
-            <span className="text-xs font-semibold tracking-wide uppercase text-slate-600">
+            <span className="text-xs font-semibold tracking-wide uppercase text-black">
               Flagship Project
             </span>
           </div>
@@ -117,14 +117,14 @@ export const FeaturedCaseStudy: React.FC = () => {
 
                 {/* Context */}
                 {featured.details?.clientContext && (
-                  <p className="text-slate-600 mb-5 leading-relaxed text-[0.95rem]">
+                  <p className="text-black mb-5 leading-relaxed text-[0.95rem]">
                     {featured.details.clientContext}
                   </p>
                 )}
 
                 {/* Challenge Preview */}
                 {featured.details?.challenge.description && (
-                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                  <p className="text-black text-sm mb-6 leading-relaxed">
                     <span className="font-semibold text-slate-700">The Challenge: </span>
                     {featured.details.challenge.description.slice(0, 160)}...
                   </p>
@@ -160,7 +160,7 @@ export const FeaturedCaseStudy: React.FC = () => {
                       <p className="text-xl lg:text-2xl font-bold text-slate-900 mb-0.5 tracking-tight">
                         {metric.value}
                       </p>
-                      <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                      <p className="text-[10px] font-semibold text-black uppercase tracking-wider">
                         {metric.label}
                       </p>
                     </div>
@@ -179,7 +179,7 @@ export const FeaturedCaseStudy: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-slate-900">{VIDEO_CONFIG.title}</p>
-                    <p className="text-xs text-slate-500">{VIDEO_CONFIG.subtitle}</p>
+                    <p className="text-xs text-black">{VIDEO_CONFIG.subtitle}</p>
                   </div>
                 </div>
               </div>

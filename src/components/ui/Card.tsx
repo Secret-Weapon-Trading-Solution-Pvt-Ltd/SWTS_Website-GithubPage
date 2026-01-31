@@ -79,7 +79,7 @@ export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraph
 export const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescriptionProps>(
   ({ className, children, ...props }, ref) => {
     return (
-      <p ref={ref} className={cn('text-gray-600 mt-1', className)} {...props}>
+      <p ref={ref} className={cn('text-black mt-1', className)} {...props}>
         {children}
       </p>
     );

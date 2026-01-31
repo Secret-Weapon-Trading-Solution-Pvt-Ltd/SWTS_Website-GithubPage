@@ -9,7 +9,7 @@ import { StaticImage } from '@/components/ui/StaticImage';
 // ============================================================================
 const SectionLabel: React.FC<{ label: string }> = ({ label }) => (
   <div className="flex items-center gap-4 mb-4">
-    <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
+    <span className="text-xs font-semibold text-black uppercase tracking-widest">
       {label}
     </span>
     <span className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent" />
@@ -27,24 +27,24 @@ const ProjectOverview: React.FC = () => {
 
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gradient-to-br from-slate-50 to-slate-100/50 border border-slate-200/60 rounded-2xl p-8 mb-10">
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Project Name</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1.5">Project Name</dt>
           <dd className="text-base font-semibold text-slate-900">Delta Exchange Crypto Screener</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Category</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1.5">Category</dt>
           <dd className="text-base font-semibold text-slate-900">Algo Trading / Real-Time Analytics</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Market Type</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1.5">Market Type</dt>
           <dd className="text-base font-semibold text-slate-900">Cryptocurrency Perpetuals</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Execution Type</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1.5">Execution Type</dt>
           <dd className="text-base font-semibold text-slate-900">Signal Generation & Alert System</dd>
         </div>
       </dl>
 
-      <p className="text-lg text-slate-600 leading-relaxed">
+      <p className="text-lg text-black leading-relaxed">
         A <span className="font-semibold text-slate-800">real-time EMA crossover detection system</span> that
         monitors cryptocurrency markets across <span className="font-semibold text-slate-800">five timeframes</span> simultaneously,
         delivering <span className="font-semibold text-slate-800">instant Telegram alerts</span> when trading signals are confirmed.
@@ -62,7 +62,7 @@ const ClientContext: React.FC = () => {
       <SectionLabel label="Client Context" />
       <h2 className="text-2xl font-bold text-slate-900 mb-8">Who Is This For?</h2>
 
-      <p className="text-lg text-slate-600 leading-relaxed mb-10">
+      <p className="text-lg text-black leading-relaxed mb-10">
         Built for <span className="font-semibold text-slate-800">active cryptocurrency traders</span> who use
         moving average crossovers as part of their trading strategy. The system serves both individual traders
         and <span className="font-semibold text-slate-800">small trading desks</span> who need centralized signal monitoring.
@@ -126,7 +126,7 @@ const Solution: React.FC = () => {
       <SectionLabel label="The Solution" />
       <h2 className="text-2xl font-bold text-slate-900 mb-6">How It Works</h2>
 
-      <p className="text-base text-slate-600 leading-relaxed mb-8">
+      <p className="text-base text-black leading-relaxed mb-8">
         A <span className="font-semibold text-slate-800">self-hosted signal detection platform</span> that
         monitors your selected pairs, calculating <span className="font-semibold text-slate-800">9/20 EMAs</span> and
         detecting crossovers in real-time.
@@ -176,15 +176,15 @@ const Solution: React.FC = () => {
       <div className="flex items-center justify-center gap-6 text-sm">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-emerald-500 rounded-full"></span>
-          <span className="text-slate-600">Bullish (9 EMA &gt; 20)</span>
+          <span className="text-black">Bullish (9 EMA &gt; 20)</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-          <span className="text-slate-600">Bearish (9 EMA &lt; 20)</span>
+          <span className="text-black">Bearish (9 EMA &lt; 20)</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-slate-400 rounded-full"></span>
-          <span className="text-slate-600">Bars since signal</span>
+          <span className="text-black">Bars since signal</span>
         </div>
       </div>
     </section>
@@ -217,7 +217,7 @@ const SystemPreview: React.FC = () => {
             className="w-full h-auto"
           />
         </div>
-        <p className="text-center text-sm text-slate-400">Signal Dashboard — Real-time crossover matrix</p>
+        <p className="text-center text-sm text-black">Signal Dashboard — Real-time crossover matrix</p>
 
         {/* Secondary Screenshots Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
@@ -231,7 +231,7 @@ const SystemPreview: React.FC = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-center text-sm text-slate-400 mt-2">Watchlist Management</p>
+            <p className="text-center text-sm text-black mt-2">Watchlist Management</p>
           </div>
           <div>
             <div className="relative overflow-hidden rounded-xl bg-slate-100 border border-slate-200/60 shadow-sm">
@@ -243,7 +243,7 @@ const SystemPreview: React.FC = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-center text-sm text-slate-400 mt-2">App Settings</p>
+            <p className="text-center text-sm text-black mt-2">App Settings</p>
           </div>
         </div>
       </div>
@@ -270,7 +270,7 @@ const CTASection: React.FC = () => {
           <h2 className="text-2xl font-bold text-white mb-3">
             Want to See the Technical Details?
           </h2>
-          <p className="text-slate-400 mb-8 max-w-md mx-auto">
+          <p className="text-black mb-8 max-w-md mx-auto">
             Explore architecture, infrastructure, performance metrics, and full visual documentation.
           </p>
           <Link
@@ -290,7 +290,7 @@ const CTASection: React.FC = () => {
         <h2 className="text-2xl font-bold text-slate-900 mb-3">
           Interested in a Similar System?
         </h2>
-        <p className="text-slate-600 mb-8 max-w-md mx-auto">
+        <p className="text-black mb-8 max-w-md mx-auto">
           We can build custom signal detection systems for different indicators, exchanges, or asset classes.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -332,7 +332,7 @@ export default function CaseStudyEMACrossoverShort() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6">
             Delta Exchange Crypto Screener
           </h1>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10">
+          <p className="text-xl text-black max-w-2xl mx-auto mb-10">
             Multi-timeframe EMA crossover detection with instant mobile alerts
           </p>
           <a

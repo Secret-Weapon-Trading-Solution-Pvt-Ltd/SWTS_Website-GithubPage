@@ -93,7 +93,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
                 {option.label}
               </span>
               {option.description && (
-                <p className="text-sm text-gray-500 mt-0.5">{option.description}</p>
+                <p className="text-sm text-black mt-0.5">{option.description}</p>
               )}
             </div>
             {value === option.value && (

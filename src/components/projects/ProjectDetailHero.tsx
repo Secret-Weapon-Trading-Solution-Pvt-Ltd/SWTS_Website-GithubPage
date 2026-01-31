@@ -39,7 +39,7 @@ export const ProjectDetailHero: React.FC<ProjectDetailHeroProps> = ({ project })
         {/* Back Link */}
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900
+          className="inline-flex items-center gap-2 text-sm font-medium text-black hover:text-slate-900
                      mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -66,14 +66,14 @@ export const ProjectDetailHero: React.FC<ProjectDetailHeroProps> = ({ project })
         </h1>
 
         {/* Outcome */}
-        <p className="text-lg sm:text-xl text-slate-600 mb-10 max-w-3xl">
+        <p className="text-lg sm:text-xl text-black mb-10 max-w-3xl">
           {project.outcome}
         </p>
 
         {/* Key Metrics */}
         {project.metrics && project.metrics.length > 0 && (
           <div className="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 shadow-soft">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-5">
+            <p className="text-xs font-semibold text-black uppercase tracking-wider mb-5">
               Key Metrics
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
@@ -85,7 +85,7 @@ export const ProjectDetailHero: React.FC<ProjectDetailHeroProps> = ({ project })
                     <p className="text-2xl lg:text-3xl font-bold text-slate-900 mb-1">
                       {metric.value}
                     </p>
-                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">
+                    <p className="text-xs font-medium text-black uppercase tracking-wide">
                       {metric.label}
                     </p>
                   </div>

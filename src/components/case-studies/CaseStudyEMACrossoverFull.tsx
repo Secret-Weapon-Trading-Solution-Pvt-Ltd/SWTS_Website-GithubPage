@@ -8,7 +8,7 @@ import Link from 'next/link';
 // ============================================================================
 const SectionLabel: React.FC<{ label: string }> = ({ label }) => (
   <div className="flex items-center gap-3 mb-3">
-    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest">
+    <span className="text-[11px] font-semibold text-black uppercase tracking-widest">
       {label}
     </span>
     <span className="flex-1 h-px bg-slate-100" />
@@ -66,7 +66,7 @@ const TableOfContents: React.FC = () => {
   return (
     <nav className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 z-40">
       <div className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-xl p-4 shadow-sm">
-        <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+        <p className="text-[10px] font-semibold text-black uppercase tracking-wider mb-3 px-2">
           Technical Docs
         </p>
         <ul className="space-y-1">
@@ -77,7 +77,7 @@ const TableOfContents: React.FC = () => {
                 className={`block w-full text-left px-3 py-1.5 text-xs rounded-lg transition-colors ${
                   activeSection === section.id
                     ? 'bg-slate-900 text-white font-medium'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                    : 'text-black hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {section.label}
@@ -100,7 +100,7 @@ const TechnicalOverview: React.FC = () => {
       <h2 className="text-2xl font-bold text-slate-900 mb-6">System Overview</h2>
 
       <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 mb-8">
-        <p className="text-slate-600 leading-relaxed mb-6">
+        <p className="text-black leading-relaxed mb-6">
           The <span className="font-semibold text-slate-800">Delta Exchange Crypto Screener</span> is a
           self-hosted signal detection platform that performs continuous EMA crossover analysis on
           cryptocurrency perpetual contracts. The system operates autonomously, polling market data
@@ -110,19 +110,19 @@ const TechnicalOverview: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="text-center">
             <p className="text-2xl font-bold text-slate-900">9/20</p>
-            <p className="text-xs text-slate-500">EMA Periods</p>
+            <p className="text-xs text-black">EMA Periods</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-slate-900">5</p>
-            <p className="text-xs text-slate-500">Timeframes</p>
+            <p className="text-xs text-black">Timeframes</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-slate-900">600</p>
-            <p className="text-xs text-slate-500">Candle Window</p>
+            <p className="text-xs text-black">Candle Window</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-slate-900">&lt;5s</p>
-            <p className="text-xs text-slate-500">Signal Latency</p>
+            <p className="text-xs text-black">Signal Latency</p>
           </div>
         </div>
       </div>
@@ -182,7 +182,7 @@ const Architecture: React.FC = () => {
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Architecture</h2>
 
       <div className="bg-slate-900 rounded-2xl p-6 mb-8 overflow-x-auto">
-        <pre className="text-sm text-slate-300 font-mono leading-relaxed">
+        <pre className="text-sm text-black font-mono leading-relaxed">
 {`┌─────────────────────────────────────────────────────────────────┐
 │                        Client Layer                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
@@ -228,11 +228,11 @@ const Architecture: React.FC = () => {
           <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
             <div className="flex items-start justify-between mb-2">
               <h4 className="font-semibold text-slate-900">{comp.name}</h4>
-              <span className="text-[10px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+              <span className="text-[10px] font-mono bg-slate-100 text-black px-2 py-0.5 rounded">
                 {comp.tech}
               </span>
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed">{comp.desc}</p>
+            <p className="text-sm text-black leading-relaxed">{comp.desc}</p>
           </div>
         ))}
       </div>
@@ -253,12 +253,12 @@ const DataPipeline: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold text-slate-800 mb-4">Data Source</h3>
           <div className="bg-slate-50 border border-slate-100 rounded-xl p-5">
-            <p className="text-sm text-slate-600 leading-relaxed mb-4">
+            <p className="text-sm text-black leading-relaxed mb-4">
               Market data is sourced from <span className="font-semibold text-slate-800">Delta Exchange India REST API</span>.
               The system fetches OHLCV (Open, High, Low, Close, Volume) candle data for each symbol/timeframe combination.
             </p>
             <div className="bg-white border border-slate-200 rounded-lg p-4 font-mono text-xs">
-              <p className="text-slate-500 mb-1"># API Endpoint</p>
+              <p className="text-black mb-1"># API Endpoint</p>
               <p className="text-slate-800">GET /v2/history/candles?symbol={'{symbol}'}&resolution={'{tf}'}</p>
             </div>
           </div>
@@ -275,7 +275,7 @@ const DataPipeline: React.FC = () => {
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-4 text-sm">
                 <span className="w-24 flex-shrink-0 font-semibold text-slate-800">{item.label}</span>
-                <span className="text-slate-600">{item.desc}</span>
+                <span className="text-black">{item.desc}</span>
               </li>
             ))}
           </ul>
@@ -299,11 +299,11 @@ const DataPipeline: React.FC = () => {
               <div key={i} className="bg-white border border-slate-200 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-semibold text-slate-900 text-sm">{filter.name}</span>
-                  <code className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono">
+                  <code className="text-[10px] bg-slate-100 text-black px-2 py-0.5 rounded font-mono">
                     {filter.rule}
                   </code>
                 </div>
-                <p className="text-xs text-slate-500">{filter.desc}</p>
+                <p className="text-xs text-black">{filter.desc}</p>
               </div>
             ))}
           </div>
@@ -326,7 +326,7 @@ const SignalEngine: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold text-slate-800 mb-4">EMA Calculation</h3>
           <div className="bg-slate-900 rounded-xl p-5 mb-4">
-            <pre className="text-sm text-slate-300 font-mono overflow-x-auto">
+            <pre className="text-sm text-black font-mono overflow-x-auto">
 {`# EMA Calculation (Python/Pandas)
 short_ema = df['close'].ewm(span=9, adjust=False).mean()
 long_ema = df['close'].ewm(span=20, adjust=False).mean()
@@ -336,7 +336,7 @@ bullish = (short_ema > long_ema) & (short_ema.shift(1) <= long_ema.shift(1))
 bearish = (short_ema < long_ema) & (short_ema.shift(1) >= long_ema.shift(1))`}
             </pre>
           </div>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-black">
             Uses pandas exponential weighted moving average with <code className="bg-slate-100 px-1 rounded">adjust=False</code> for
             recursive calculation matching traditional EMA formula.
           </p>
@@ -372,8 +372,8 @@ bearish = (short_ema < long_ema) & (short_ema.shift(1) >= long_ema.shift(1))`}
                 </svg>
               </div>
               <h4 className="font-semibold text-slate-900 mb-1">Bars Since</h4>
-              <p className="text-xs text-slate-600">Candles since last crossover</p>
-              <p className="text-xs text-slate-500 mt-2">Counter: 0, 1, 2, 3...</p>
+              <p className="text-xs text-black">Candles since last crossover</p>
+              <p className="text-xs text-black mt-2">Counter: 0, 1, 2, 3...</p>
             </div>
           </div>
         </div>
@@ -384,36 +384,36 @@ bearish = (short_ema < long_ema) & (short_ema.shift(1) >= long_ema.shift(1))`}
             <div className="flex items-center justify-between text-sm">
               <div className="text-center">
                 <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-slate-600 font-mono text-xs">POLL</span>
+                  <span className="text-black font-mono text-xs">POLL</span>
                 </div>
-                <span className="text-xs text-slate-500">Candle Close</span>
+                <span className="text-xs text-black">Candle Close</span>
               </div>
-              <svg className="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
               <div className="text-center">
                 <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-slate-600 font-mono text-xs">CALC</span>
+                  <span className="text-black font-mono text-xs">CALC</span>
                 </div>
-                <span className="text-xs text-slate-500">EMA Update</span>
+                <span className="text-xs text-black">EMA Update</span>
               </div>
-              <svg className="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
               <div className="text-center">
                 <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-slate-600 font-mono text-xs">CMP</span>
+                  <span className="text-black font-mono text-xs">CMP</span>
                 </div>
-                <span className="text-xs text-slate-500">Compare</span>
+                <span className="text-xs text-black">Compare</span>
               </div>
-              <svg className="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
               <div className="text-center">
                 <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2">
                   <span className="text-teal-600 font-mono text-xs">EMIT</span>
                 </div>
-                <span className="text-xs text-slate-500">Broadcast</span>
+                <span className="text-xs text-black">Broadcast</span>
               </div>
             </div>
           </div>
@@ -436,7 +436,7 @@ const Infrastructure: React.FC = () => {
         <div>
           <h3 className="text-lg font-semibold text-slate-800 mb-4">Container Configuration</h3>
           <div className="bg-slate-900 rounded-xl p-5">
-            <pre className="text-sm text-slate-300 font-mono overflow-x-auto">
+            <pre className="text-sm text-black font-mono overflow-x-auto">
 {`# Dockerfile
 FROM python:3.11-slim
 
@@ -455,7 +455,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`}
         <div>
           <h3 className="text-lg font-semibold text-slate-800 mb-4">Docker Compose Stack</h3>
           <div className="bg-slate-900 rounded-xl p-5">
-            <pre className="text-sm text-slate-300 font-mono overflow-x-auto">
+            <pre className="text-sm text-black font-mono overflow-x-auto">
 {`# docker-compose.yml
 version: '3.8'
 services:
@@ -498,7 +498,7 @@ services:
             ].map((tech, i) => (
               <div key={i} className="bg-white border border-slate-200 rounded-lg px-4 py-3 flex items-center justify-between">
                 <span className="text-sm font-medium text-slate-900">{tech.name}</span>
-                <span className="text-xs text-slate-400 font-mono">{tech.version}</span>
+                <span className="text-xs text-black font-mono">{tech.version}</span>
               </div>
             ))}
           </div>
@@ -516,7 +516,7 @@ services:
                 'Docker Compose pull and restart services',
                 'Health check verification',
               ].map((step, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                <li key={i} className="flex items-start gap-3 text-sm text-black">
                   <span className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-semibold text-slate-700">
                     {i + 1}
                   </span>
@@ -559,7 +559,7 @@ const Validation: React.FC = () => {
             ].map((item, i) => (
               <div key={i} className="bg-white border border-slate-200 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-slate-900 mb-1">{item.metric}</p>
-                <p className="text-xs text-slate-500">{item.label}</p>
+                <p className="text-xs text-black">{item.label}</p>
               </div>
             ))}
           </div>
@@ -574,7 +574,7 @@ const Validation: React.FC = () => {
               'Telegram alerts only sent to active users',
               'Watchlist state persisted across browser sessions',
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+              <li key={i} className="flex items-start gap-3 text-sm text-black">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mt-1.5 flex-shrink-0" />
                 <span>{item}</span>
               </li>
@@ -593,7 +593,7 @@ const Validation: React.FC = () => {
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <p className="text-sm font-semibold text-slate-900 mb-1">{item.scenario}</p>
-                <p className="text-xs text-slate-600">{item.response}</p>
+                <p className="text-xs text-black">{item.response}</p>
               </div>
             ))}
           </div>
@@ -625,16 +625,16 @@ const Visuals: React.FC = () => {
             <div className="relative bg-slate-100 border border-slate-200 rounded-xl overflow-hidden mb-3">
               <div className="aspect-video flex items-center justify-center">
                 <div className="flex flex-col items-center">
-                  <svg className="w-8 h-8 text-slate-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-xs font-medium text-slate-400">{item.title}</span>
+                  <span className="text-xs font-medium text-black">{item.title}</span>
                 </div>
               </div>
             </div>
             <figcaption>
               <h4 className="text-sm font-semibold text-slate-900 mb-1">{item.title}</h4>
-              <p className="text-xs text-slate-500">{item.desc}</p>
+              <p className="text-xs text-black">{item.desc}</p>
             </figcaption>
           </figure>
         ))}
@@ -673,7 +673,7 @@ const APIReference: React.FC = () => {
               {ep.method}
             </span>
             <code className="text-sm font-mono text-slate-800 flex-1">{ep.path}</code>
-            <span className="text-sm text-slate-500 hidden sm:block">{ep.desc}</span>
+            <span className="text-sm text-black hidden sm:block">{ep.desc}</span>
           </div>
         ))}
       </div>
@@ -702,7 +702,7 @@ export default function CaseStudyEMACrossoverFull() {
           {/* Back to Summary Link */}
           <Link
             href="/projects/delta-screener"
-            className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-900 mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-black hover:text-slate-900 mb-6 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -711,14 +711,14 @@ export default function CaseStudyEMACrossoverFull() {
           </Link>
 
           <div className="flex items-center justify-center gap-2 mb-5">
-            <span className="inline-flex px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-600 uppercase tracking-wide">
+            <span className="inline-flex px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-black uppercase tracking-wide">
               Technical Documentation
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
             Delta Exchange Crypto Screener
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-black max-w-2xl mx-auto mb-6">
             Full technical specification for engineers and technical buyers
           </p>
           <a
@@ -749,7 +749,7 @@ export default function CaseStudyEMACrossoverFull() {
           <h2 className="text-xl font-bold text-white mb-3">
             Need a Custom Implementation?
           </h2>
-          <p className="text-slate-400 text-sm mb-6 max-w-md mx-auto">
+          <p className="text-black text-sm mb-6 max-w-md mx-auto">
             This architecture can be adapted for different indicators, exchanges, or asset classes.
           </p>
           <Link

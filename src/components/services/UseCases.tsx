@@ -27,7 +27,7 @@ export default function UseCases({ service }: UseCasesProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">
             Use Cases & Outcomes
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             See how we&apos;ve helped traders like you achieve measurable results
           </p>
         </motion.div>
@@ -54,11 +54,11 @@ export default function UseCases({ service }: UseCasesProps) {
                   <div className="p-8">
                     {/* Case number */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-medium text-navy-400 uppercase tracking-wider">
+                      <span className="text-xs font-medium text-black uppercase tracking-wider">
                         Case Study #{index + 1}
                       </span>
                       <div className="w-8 h-8 rounded-lg bg-navy-100 flex items-center justify-center">
-                        <span className="text-sm font-bold text-navy-600">
+                        <span className="text-sm font-bold text-black">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                       </div>
@@ -70,7 +70,7 @@ export default function UseCases({ service }: UseCasesProps) {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-navy-600 text-sm leading-relaxed mb-6">
+                    <p className="text-black text-sm leading-relaxed mb-6">
                       {useCase.description}
                     </p>
 
@@ -100,7 +100,7 @@ export default function UseCases({ service }: UseCasesProps) {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: 0.3 + tagIndex * 0.05 }}
-                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-navy-100 text-navy-600 text-xs font-medium"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-navy-100 text-black text-xs font-medium"
                         >
                           <Tag className="w-3 h-3" />
                           {tag}
@@ -127,7 +127,7 @@ export default function UseCases({ service }: UseCasesProps) {
         >
           <a
             href="/projects"
-            className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-800 transition-colors group"
+            className="inline-flex items-center gap-2 text-black hover:text-navy-800 transition-colors group"
           >
             <span className="font-medium">View all case studies</span>
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

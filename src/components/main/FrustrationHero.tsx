@@ -169,7 +169,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Secondary CTA Button */}
           <Link
             href="/#how-it-works"
-            className="group inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-slate-600 rounded-xl
+            className="group inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-black rounded-xl
                      border border-slate-400/40
                      transition-all duration-200 ease-out"
             style={{ background: 'rgba(232,237,242,0.7)' }}

@@ -168,7 +168,7 @@ export default function HowItWorksFlow({ service }: HowItWorksFlowProps) {
                       {step.description}
                     </p>
                     {step.duration && (
-                      <span className={`inline-flex items-center gap-1 text-navy-400 ${isKey ? 'text-xs' : 'text-[10px]'}`}>
+                      <span className={`inline-flex items-center gap-1 text-black ${isKey ? 'text-xs' : 'text-[10px]'}`}>
                         <Clock className={`${isKey ? 'w-3 h-3' : 'w-2.5 h-2.5'}`} />
                         {step.duration}
                       </span>
@@ -232,7 +232,7 @@ export default function HowItWorksFlow({ service }: HowItWorksFlowProps) {
                       {step.description}
                     </p>
                     {step.duration && (
-                      <span className="inline-flex items-center gap-1 text-sm text-navy-400">
+                      <span className="inline-flex items-center gap-1 text-sm text-black">
                         <Clock className="w-4 h-4" />
                         {step.duration}
                       </span>

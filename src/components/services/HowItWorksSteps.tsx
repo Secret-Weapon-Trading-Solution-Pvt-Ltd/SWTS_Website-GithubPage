@@ -20,14 +20,14 @@ export default function HowItWorksSteps({ service }: HowItWorksStepsProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-100 text-navy-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-100 text-black text-sm font-medium mb-6">
             <Clock className="w-4 h-4" />
             How It Works
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">
             Your Journey with Us
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             A transparent, collaborative process designed for successful outcomes
           </p>
         </motion.div>
@@ -63,7 +63,7 @@ export default function HowItWorksSteps({ service }: HowItWorksStepsProps) {
                           {step.step}
                         </div>
                         {step.duration && (
-                          <span className="text-sm text-navy-500 flex items-center gap-1">
+                          <span className="text-sm text-black flex items-center gap-1">
                             <Clock className="w-3.5 h-3.5" />
                             {step.duration}
                           </span>
@@ -76,7 +76,7 @@ export default function HowItWorksSteps({ service }: HowItWorksStepsProps) {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-navy-600 leading-relaxed">
+                      <p className="text-black leading-relaxed">
                         {step.description}
                       </p>
 
@@ -116,7 +116,7 @@ export default function HowItWorksSteps({ service }: HowItWorksStepsProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span className="mt-2 text-sm font-medium text-navy-500">Complete</span>
+            <span className="mt-2 text-sm font-medium text-black">Complete</span>
           </motion.div>
         </div>
 
@@ -128,7 +128,7 @@ export default function HowItWorksSteps({ service }: HowItWorksStepsProps) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-20"
         >
-          <p className="text-navy-600 mb-6">
+          <p className="text-black mb-6">
             Ready to start your project?
           </p>
           <a

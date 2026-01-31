@@ -37,7 +37,7 @@ const SectionHeader: React.FC<{
 }> = ({ icon: Icon, label, title }) => (
   <div className="flex items-center gap-4 mb-8">
     <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center">
-      <Icon className="w-5 h-5 text-slate-600" />
+      <Icon className="w-5 h-5 text-black" />
     </div>
     <div>
       <p className="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">
@@ -53,14 +53,14 @@ const MediaPlaceholder: React.FC<{ type: 'image' | 'video' }> = ({ type }) => (
     {type === 'video' ? (
       <>
         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-soft mb-3">
-          <Play className="w-6 h-6 text-slate-400 ml-1" />
+          <Play className="w-6 h-6 text-black ml-1" />
         </div>
-        <p className="text-sm text-slate-400">Video Placeholder</p>
+        <p className="text-sm text-black">Video Placeholder</p>
       </>
     ) : (
       <>
-        <ImageIcon className="w-12 h-12 text-slate-300 mb-2" />
-        <p className="text-sm text-slate-400">Screenshot Placeholder</p>
+        <ImageIcon className="w-12 h-12 text-black mb-2" />
+        <p className="text-sm text-black">Screenshot Placeholder</p>
       </>
     )}
   </div>
@@ -73,7 +73,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
     return (
       <SectionWrapper className="bg-slate-50">
         <div className="text-center py-12">
-          <p className="text-slate-500">Detailed case study coming soon.</p>
+          <p className="text-black">Detailed case study coming soon.</p>
         </div>
       </SectionWrapper>
     );
@@ -88,7 +88,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           label="The Challenge"
           title="Understanding the Problem"
         />
-        <p className="text-slate-600 leading-relaxed mb-6">
+        <p className="text-black leading-relaxed mb-6">
           {details.challenge.description}
         </p>
         {details.challenge.painPoints.length > 0 && (
@@ -96,7 +96,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
             <p className="text-sm font-semibold text-slate-700 mb-4">Key Pain Points:</p>
             <ul className="space-y-3">
               {details.challenge.painPoints.map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-600">
+                <li key={i} className="flex items-start gap-3 text-black">
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0" />
                   {point}
                 </li>
@@ -113,7 +113,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           label="The Solution"
           title="Our Approach"
         />
-        <p className="text-slate-600 leading-relaxed mb-8">
+        <p className="text-black leading-relaxed mb-8">
           {details.solution.description}
         </p>
         {details.solution.highlights && details.solution.highlights.length > 0 && (
@@ -141,7 +141,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           label="Architecture"
           title="Technical Design"
         />
-        <p className="text-slate-600 leading-relaxed mb-8">
+        <p className="text-black leading-relaxed mb-8">
           {details.architecture.description}
         </p>
 
@@ -156,7 +156,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
                          text-sm font-medium text-slate-700"
               >
                 {tech.name}
-                <span className="ml-2 text-xs text-slate-400 capitalize">
+                <span className="ml-2 text-xs text-black capitalize">
                   {tech.category}
                 </span>
               </span>
@@ -175,7 +175,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           label="Execution"
           title="Implementation Process"
         />
-        <p className="text-slate-600 leading-relaxed mb-8">
+        <p className="text-black leading-relaxed mb-8">
           {details.execution.description}
         </p>
 
@@ -191,7 +191,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
               </div>
               <div>
                 <p className="font-semibold text-slate-900 mb-1">{phase.name}</p>
-                <p className="text-sm text-slate-600">{phase.description}</p>
+                <p className="text-sm text-black">{phase.description}</p>
               </div>
             </div>
           ))}
@@ -205,7 +205,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           label="Results"
           title="Measurable Outcomes"
         />
-        <p className="text-slate-600 leading-relaxed mb-8">
+        <p className="text-black leading-relaxed mb-8">
           {details.results.description}
         </p>
 
@@ -214,12 +214,12 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Before */}
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              <p className="text-xs font-semibold text-black uppercase tracking-wider mb-4">
                 Before
               </p>
               <ul className="space-y-3">
                 {details.results.before.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-600 text-sm">
+                  <li key={i} className="flex items-start gap-3 text-black text-sm">
                     <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-1.5 flex-shrink-0" />
                     {item}
                   </li>
@@ -253,7 +253,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
             </blockquote>
             <div>
               <p className="font-semibold">{details.results.testimonial.author}</p>
-              <p className="text-sm text-slate-400">{details.results.testimonial.role}</p>
+              <p className="text-sm text-black">{details.results.testimonial.role}</p>
             </div>
           </div>
         )}
@@ -265,7 +265,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
           <h3 className="text-2xl font-bold text-slate-900 mb-4">
             Ready to discuss your project?
           </h3>
-          <p className="text-slate-600 mb-8 max-w-lg mx-auto">
+          <p className="text-black mb-8 max-w-lg mx-auto">
             Let's explore how we can build a similar solution tailored to your specific trading requirements.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

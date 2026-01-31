@@ -84,7 +84,7 @@ export default function SubscribePage() {
           <h1 className="text-2xl font-bold text-slate-900 mb-2">
             Get Lead Notifications
           </h1>
-          <p className="text-slate-500">
+          <p className="text-black">
             Receive instant Telegram alerts when new clients complete the assessment
           </p>
         </div>
@@ -102,21 +102,21 @@ export default function SubscribePage() {
                   <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-teal-600 font-bold text-sm">1</span>
                   </div>
-                  <p className="text-slate-600">Generate a one-time PIN code</p>
+                  <p className="text-black">Generate a one-time PIN code</p>
                 </div>
 
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-slate-400 font-bold text-sm">2</span>
+                    <span className="text-black font-bold text-sm">2</span>
                   </div>
-                  <p className="text-slate-400">Send the PIN to our Telegram bot</p>
+                  <p className="text-black">Send the PIN to our Telegram bot</p>
                 </div>
 
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-slate-400 font-bold text-sm">3</span>
+                    <span className="text-black font-bold text-sm">3</span>
                   </div>
-                  <p className="text-slate-400">Done! Receive all lead notifications</p>
+                  <p className="text-black">Done! Receive all lead notifications</p>
                 </div>
               </div>
 
@@ -163,11 +163,11 @@ export default function SubscribePage() {
                     {copied ? (
                       <Check className="w-6 h-6 text-green-500" />
                     ) : (
-                      <Copy className="w-6 h-6 text-slate-400" />
+                      <Copy className="w-6 h-6 text-black" />
                     )}
                   </button>
                 </div>
-                <p className="text-center text-sm text-slate-500 mt-3">
+                <p className="text-center text-sm text-black mt-3">
                   PIN expires in {formatTime(timeLeft)}
                 </p>
               </div>
@@ -176,7 +176,7 @@ export default function SubscribePage() {
               <div className="space-y-3 mb-6">
                 <div className="flex gap-3 items-start">
                   <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-slate-600 text-sm">PIN generated successfully</p>
+                  <p className="text-black text-sm">PIN generated successfully</p>
                 </div>
                 <div className="flex gap-3 items-start">
                   <div className="w-5 h-5 rounded-full border-2 border-teal-500 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -202,7 +202,7 @@ export default function SubscribePage() {
               {/* Regenerate */}
               <button
                 onClick={generatePin}
-                className="w-full mt-3 text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                className="w-full mt-3 text-sm text-black hover:text-slate-700 transition-colors"
               >
                 Generate new PIN
               </button>
@@ -225,7 +225,7 @@ export default function SubscribePage() {
 
         {/* Back link */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+          <Link href="/" className="text-sm text-black hover:text-black transition-colors">
             ← Back to website
           </Link>
         </div>

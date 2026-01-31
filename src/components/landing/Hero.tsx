@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartAssessment }) => {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-xl sm:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto">
+        <p className="text-xl sm:text-2xl text-white mb-4 max-w-3xl mx-auto">
           Discover if your trading strategy is ready for automation
         </p>
 
@@ -50,15 +50,15 @@ export const Hero: React.FC<HeroProps> = ({ onStartAssessment }) => {
 
         {/* Pain Points */}
         <div className="flex flex-wrap justify-center gap-6 mb-10">
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center gap-2 text-black">
             <Clock className="w-5 h-5 text-red-400" />
             <span>Missing trades while away?</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center gap-2 text-black">
             <TrendingUp className="w-5 h-5 text-red-400" />
             <span>Inconsistent execution?</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center gap-2 text-black">
             <AlertTriangle className="w-5 h-5 text-red-400" />
             <span>Overtrading on impulse?</span>
           </div>
@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartAssessment }) => {
         </button>
 
         {/* Trust Indicators */}
-        <p className="mt-6 text-sm text-gray-500">
+        <p className="mt-6 text-sm text-black">
           Free assessment - Takes only 3 minutes - Instant results
         </p>
       </div>

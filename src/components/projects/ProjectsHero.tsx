@@ -58,7 +58,7 @@ export const ProjectsHero: React.FC = () => {
               <span className="text-slate-900">Projects & Case Studies.</span>
               <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent"> Built to perform.</span>
             </h2>
-            <p className="text-lg lg:text-xl text-slate-600 leading-relaxed">
+            <p className="text-lg lg:text-xl text-black leading-relaxed">
               Precision-engineered trading systems delivering measurable results with institutional-grade architecture.
             </p>
           </div>

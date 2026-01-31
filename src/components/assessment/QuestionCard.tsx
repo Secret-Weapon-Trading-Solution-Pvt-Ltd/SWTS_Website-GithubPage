@@ -108,7 +108,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           <span className="inline-flex items-center justify-center w-8 h-8 bg-amber-100 text-amber-700 rounded-full text-sm font-bold">
             {questionNumber}
           </span>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-black">
             of {totalQuestions} questions
           </span>
           {question.required && (
@@ -123,7 +123,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </h3>
 
         {question.description && (
-          <p className="text-gray-600">{question.description}</p>
+          <p className="text-black">{question.description}</p>
         )}
       </div>
 

@@ -351,7 +351,7 @@ const StepCard: React.FC<StepCardProps> = ({
           </h4>
 
           {/* Short Description */}
-          <p className="text-center text-xs lg:text-sm text-slate-600 leading-snug">
+          <p className="text-center text-xs lg:text-sm text-black leading-snug">
             {step.shortDesc}
           </p>
         </div>
@@ -404,7 +404,7 @@ const ExpandedDetail: React.FC<ExpandedDetailProps> = ({ step, onClose }) => {
           onClick={onClose}
           className="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors z-10"
         >
-          <X className="w-5 h-5 text-slate-500" />
+          <X className="w-5 h-5 text-black" />
         </button>
 
         {/* Content */}
@@ -436,7 +436,7 @@ const ExpandedDetail: React.FC<ExpandedDetailProps> = ({ step, onClose }) => {
             <h4 className="text-lg font-semibold text-slate-800 mb-2">
               {step.expandedContent.title}
             </h4>
-            <p className="text-slate-600 leading-relaxed mb-6">
+            <p className="text-black leading-relaxed mb-6">
               {step.expandedContent.description}
             </p>
           </motion.div>
@@ -619,7 +619,7 @@ export const ProcessFlowRedesign: React.FC = () => {
 
       {/* Supporting Text */}
       <motion.p
-        className="text-center text-slate-500 text-base mt-10 max-w-xl mx-auto"
+        className="text-center text-black text-base mt-10 max-w-xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.6 }}
@@ -645,7 +645,7 @@ export const ProcessFlowRedesign: React.FC = () => {
             whileHover={{ scale: 1.05, y: -2 }}
           >
             <item.icon className="w-4 h-4 text-teal-500" />
-            <span className="text-sm font-medium text-slate-600">{item.label}</span>
+            <span className="text-sm font-medium text-black">{item.label}</span>
           </motion.div>
         ))}
       </motion.div>

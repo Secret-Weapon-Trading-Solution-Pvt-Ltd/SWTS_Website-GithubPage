@@ -28,7 +28,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative">
           {leftIcon && (
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-black">
               {leftIcon}
             </div>
           )}
@@ -38,7 +38,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               'w-full px-4 py-3 rounded-lg border transition-all duration-200',
               'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
-              'placeholder:text-gray-400',
+              'placeholder:text-black',
               error
                 ? 'border-red-500 bg-red-50'
                 : 'border-gray-300 bg-white hover:border-gray-400',
@@ -49,14 +49,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
           {rightIcon && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-black">
               {rightIcon}
             </div>
           )}
         </div>
         {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
         {helperText && !error && (
-          <p className="mt-1 text-sm text-gray-500">{helperText}</p>
+          <p className="mt-1 text-sm text-black">{helperText}</p>
         )}
       </div>
     );
@@ -92,7 +92,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={cn(
             'w-full px-4 py-3 rounded-lg border transition-all duration-200',
             'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
-            'placeholder:text-gray-400 resize-none',
+            'placeholder:text-black resize-none',
             error
               ? 'border-red-500 bg-red-50'
               : 'border-gray-300 bg-white hover:border-gray-400',
@@ -103,7 +103,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         />
         {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
         {helperText && !error && (
-          <p className="mt-1 text-sm text-gray-500">{helperText}</p>
+          <p className="mt-1 text-sm text-black">{helperText}</p>
         )}
       </div>
     );

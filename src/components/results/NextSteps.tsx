@@ -65,7 +65,7 @@ export const NextSteps: React.FC<NextStepsProps> = ({ nextSteps, leadQuality }) 
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
           {getHeadlineByQuality(leadQuality)}
         </h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
+        <p className="text-black max-w-xl mx-auto">
           {getSubheadlineByQuality(leadQuality)}
         </p>
       </div>
@@ -130,12 +130,12 @@ export const NextSteps: React.FC<NextStepsProps> = ({ nextSteps, leadQuality }) 
                   className="group flex flex-col p-5 bg-gray-50 rounded-xl hover:bg-primary-50 hover:border-primary-200 border border-gray-100 transition-all duration-200"
                 >
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary-100 transition-colors">
-                    <Icon className="w-5 h-5 text-gray-600 group-hover:text-primary-600" />
+                    <Icon className="w-5 h-5 text-black group-hover:text-primary-600" />
                   </div>
                   <h4 className="font-bold text-gray-900 mb-1 group-hover:text-primary-700">
                     {step.title}
                   </h4>
-                  <p className="text-sm text-gray-600 flex-1">{step.description}</p>
+                  <p className="text-sm text-black flex-1">{step.description}</p>
                   <div className="mt-3 flex items-center text-sm font-medium text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity">
                     {step.ctaText}
                     <ArrowRight className="w-4 h-4 ml-1" />

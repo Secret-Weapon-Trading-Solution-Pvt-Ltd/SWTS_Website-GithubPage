@@ -93,7 +93,7 @@ export const TradingViewScripts: React.FC = () => {
               alt="TradingView"
               className="w-4 h-4"
             />
-            <span className="text-xs font-semibold tracking-wide uppercase text-slate-600">
+            <span className="text-xs font-semibold tracking-wide uppercase text-black">
               TradingView Scripts
             </span>
           </div>
@@ -108,7 +108,7 @@ export const TradingViewScripts: React.FC = () => {
           <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
             Premium Trading Indicators
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <p className="text-black max-w-2xl mx-auto">
             Professional-grade indicators powering thousands of traders worldwide
           </p>
         </div>
@@ -143,14 +143,14 @@ export const TradingViewScripts: React.FC = () => {
                   <div className="w-11 h-11 bg-teal-50/80 group-hover:bg-teal-100/80 rounded-xl flex items-center justify-center transition-colors duration-300">
                     <Icon className="w-5 h-5 text-teal-600" />
                   </div>
-                  <div className="flex items-center gap-1.5 text-slate-400">
+                  <div className="flex items-center gap-1.5 text-black">
                     <Heart className="w-3.5 h-3.5 fill-rose-100 text-rose-400" />
                     <span className="text-xs font-medium">{script.likes}</span>
                   </div>
                 </div>
 
                 {/* Category */}
-                <span className="inline-flex px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                <span className="inline-flex px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md text-[10px] font-semibold text-black uppercase tracking-wide mb-2">
                   {script.category}
                 </span>
 
@@ -160,16 +160,16 @@ export const TradingViewScripts: React.FC = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-slate-500 mb-4 leading-relaxed line-clamp-3">
+                <p className="text-sm text-black mb-4 leading-relaxed line-clamp-3">
                   {script.description}
                 </p>
 
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-3 border-t border-slate-100/80">
-                  <span className="text-xs font-medium text-slate-400">
+                  <span className="text-xs font-medium text-black">
                     TradingView
                   </span>
-                  <div className="flex items-center gap-1 text-slate-400 group-hover:text-teal-600 transition-colors duration-200">
+                  <div className="flex items-center gap-1 text-black group-hover:text-teal-600 transition-colors duration-200">
                     <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                       Open
                     </span>

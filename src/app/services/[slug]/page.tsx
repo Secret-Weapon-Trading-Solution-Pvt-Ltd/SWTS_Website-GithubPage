@@ -7,7 +7,6 @@ import Capabilities from '@/components/services/Capabilities';
 import ServiceFlowchart from '@/components/services/ServiceFlowchart';
 import HowItWorksSteps from '@/components/services/HowItWorksSteps';
 import UseCases from '@/components/services/UseCases';
-import ServiceCTA from '@/components/services/ServiceCTA';
 // Enterprise components for premium service pages (modern redesign)
 import {
   StrategyOverview,
@@ -118,9 +117,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Backtesting Process - Alternating timeline */}
           <BacktestingProcess service={service} />
-
-          {/* CTA section */}
-          <ServiceCTA service={service} />
         </>
       ) : isOptimization ? (
         <>
@@ -132,9 +128,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Optimization Process - Vertical timeline */}
           <OptimizationProcess service={service} />
-
-          {/* CTA section */}
-          <ServiceCTA service={service} />
         </>
       ) : isScreener ? (
         <>
@@ -146,9 +139,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Screener Process - Horizontal timeline with background */}
           <ScreenerProcess service={service} />
-
-          {/* CTA section */}
-          <ServiceCTA service={service} />
         </>
       ) : (
         <>
@@ -168,9 +158,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <UseCases service={service} />
         </>
       )}
-
-      {/* CTA section - for non-enterprise layout only (enterprise has it in its block) */}
-      {!isEnterpriseLayout && <ServiceCTA service={service} />}
     </MainLayout>
   );
 }

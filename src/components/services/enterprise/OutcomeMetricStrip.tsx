@@ -160,7 +160,7 @@ export default function OutcomeMetricStrip({ service }: OutcomeMetricStripProps)
 
                   {/* Label */}
                   <p className={`font-medium ${
-                    isMiddle ? 'text-teal-300 text-base' : 'text-navy-400 text-sm'
+                    isMiddle ? 'text-teal-300 text-base' : 'text-black text-sm'
                   }`}>
                     {stat.label}
                   </p>

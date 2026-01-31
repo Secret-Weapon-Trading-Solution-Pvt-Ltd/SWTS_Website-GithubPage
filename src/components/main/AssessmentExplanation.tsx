@@ -178,9 +178,9 @@ export const AssessmentExplanation: React.FC = () => {
             <span className="section-label">Free Assessment</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mt-4 mb-6">
               Find out where you stand.
-              <span className="text-slate-400"> In 3 minutes.</span>
+              <span className="text-black"> In 3 minutes.</span>
             </h2>
-            <p className="text-xl text-slate-500 leading-relaxed">
+            <p className="text-xl text-black leading-relaxed">
               Our assessment identifies your specific execution gaps and shows you exactly how to close them.
             </p>
           </div>
@@ -211,7 +211,7 @@ export const AssessmentExplanation: React.FC = () => {
                   <h3 className="text-xl font-semibold text-slate-900 mb-3">
                     {insight.title}
                   </h3>
-                  <p className="text-slate-500 leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {insight.description}
                   </p>
                 </div>
@@ -233,7 +233,7 @@ export const AssessmentExplanation: React.FC = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
                 Ready to close the gap?
               </h3>
-              <p className="text-slate-500 max-w-md">
+              <p className="text-black max-w-md">
                 No signup required. No sales pitch. Just honest insights about your trading execution.
               </p>
             </div>

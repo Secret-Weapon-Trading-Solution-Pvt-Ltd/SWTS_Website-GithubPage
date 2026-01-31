@@ -80,7 +80,7 @@ const TableOfContents: React.FC = () => {
                 className={`block w-full text-left px-3 py-2 text-xs rounded-xl transition-all duration-200 ${
                   activeSection === section.id
                     ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-md'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                    : 'text-black hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {section.label}
@@ -102,7 +102,7 @@ const SectionHeader: React.FC<{ label: string; title: string; subtitle?: string 
       {label}
     </span>
     <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">{title}</h2>
-    {subtitle && <p className="text-slate-500 text-base max-w-2xl">{subtitle}</p>}
+    {subtitle && <p className="text-black text-base max-w-2xl">{subtitle}</p>}
   </div>
 );
 
@@ -186,7 +186,7 @@ const Architecture: React.FC = () => {
 
               <ul className="space-y-1.5">
                 {stack.items.map((item, j) => (
-                  <li key={j} className="flex items-center gap-2 text-xs text-slate-600">
+                  <li key={j} className="flex items-center gap-2 text-xs text-black">
                     <span className={`w-1 h-1 rounded-full bg-gradient-to-r ${stack.color}`} />
                     {item}
                   </li>
@@ -305,7 +305,7 @@ const DataFlow: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">{step.title}</h4>
-                      <p className="text-sm text-slate-500">{step.desc}</p>
+                      <p className="text-sm text-black">{step.desc}</p>
                     </div>
                   </div>
                   {i < 4 && (
@@ -321,15 +321,15 @@ const DataFlow: React.FC = () => {
         <div className="mt-8 pt-6 border-t border-slate-200/60 flex flex-wrap items-center justify-center gap-6 text-sm">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 bg-emerald-500 rounded-full" />
-            <span className="text-slate-600">Bullish Signal (9 &gt; 20)</span>
+            <span className="text-black">Bullish Signal (9 &gt; 20)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 bg-red-500 rounded-full" />
-            <span className="text-slate-600">Bearish Signal (9 &lt; 20)</span>
+            <span className="text-black">Bearish Signal (9 &lt; 20)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 bg-slate-400 rounded-full" />
-            <span className="text-slate-600">Bars Since Crossover</span>
+            <span className="text-black">Bars Since Crossover</span>
           </div>
         </div>
       </div>
@@ -404,7 +404,7 @@ const KeyFeatures: React.FC = () => {
               </div>
 
               <h4 className="font-bold text-slate-900 mb-2">{feature.title}</h4>
-              <p className="text-sm text-slate-600 leading-relaxed">{feature.desc}</p>
+              <p className="text-sm text-black leading-relaxed">{feature.desc}</p>
             </div>
           );
         })}
@@ -486,7 +486,7 @@ const Performance: React.FC = () => {
               <div className="p-5 space-y-3">
                 {metric.items.map((item, j) => (
                   <div key={j} className="flex items-center justify-between text-sm">
-                    <span className="text-slate-600">{item.label}</span>
+                    <span className="text-black">{item.label}</span>
                     <span className="font-semibold text-slate-900 bg-slate-50 px-2.5 py-1 rounded-lg text-xs">
                       {item.value}
                     </span>
@@ -566,7 +566,7 @@ const Outcomes: React.FC = () => {
                 <Icon className={`w-6 h-6 ${outcome.color}`} />
               </div>
               <h4 className="font-bold text-slate-900 mb-1">{outcome.title}</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">{outcome.desc}</p>
+              <p className="text-xs text-black leading-relaxed">{outcome.desc}</p>
             </div>
           );
         })}
@@ -604,8 +604,8 @@ const IdealUsers: React.FC = () => {
             <CheckCircle2 className="w-4 h-4 text-teal-500 flex-shrink-0" />
             <div>
               <span className="font-semibold text-slate-900">{profile.title}</span>
-              <span className="text-slate-400 mx-2">—</span>
-              <span className="text-sm text-slate-600">{profile.desc}</span>
+              <span className="text-black mx-2">—</span>
+              <span className="text-sm text-black">{profile.desc}</span>
             </div>
           </div>
         ))}
@@ -637,7 +637,7 @@ const CallToAction: React.FC = () => {
           Interested in a Similar System?
         </h2>
 
-        <p className="text-slate-400 leading-relaxed max-w-xl mx-auto mb-8">
+        <p className="text-black leading-relaxed max-w-xl mx-auto mb-8">
           Custom signal detection systems can be built for different indicators, asset classes, or alert mechanisms based on your specific requirements.
         </p>
 
@@ -676,7 +676,7 @@ export default function CaseStudyEMACrossoverTechnical() {
           {/* Back Link */}
           <Link
             href="/projects/ema-crossover-screener"
-            className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-teal-600 mb-8 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-black hover:text-teal-600 mb-8 transition-colors group"
           >
             <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -699,7 +699,7 @@ export default function CaseStudyEMACrossoverTechnical() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-black max-w-2xl mx-auto mb-10">
             In-depth technical architecture, data flow, and implementation details
           </p>
 

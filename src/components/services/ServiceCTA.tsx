@@ -296,7 +296,7 @@ export default function ServiceCTA({ service }: ServiceCTAProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-navy-600"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-black"
         >
           <a href="mailto:info@swts.in" className="flex items-center gap-2 hover:text-navy-800 transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

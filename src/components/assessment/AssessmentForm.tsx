@@ -218,14 +218,14 @@ export const AssessmentForm: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
               Your results are ready.
             </h1>
-            <p className="text-slate-500">
+            <p className="text-black">
               But first—where should we send your personalized report?
             </p>
           </div>
 
           {/* Progress - complete */}
           <div className="mb-10">
-            <div className="flex justify-between text-xs text-slate-400 mb-2">
+            <div className="flex justify-between text-xs text-black mb-2">
               <span>Assessment complete</span>
               <span>100%</span>
             </div>
@@ -246,7 +246,7 @@ export const AssessmentForm: React.FC = () => {
                   value={contactInfo.name}
                   onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-slate-400"
+                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-black"
                   required
                 />
               </div>
@@ -260,29 +260,29 @@ export const AssessmentForm: React.FC = () => {
                   value={contactInfo.email}
                   onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
                   placeholder="john@example.com"
-                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-slate-400"
+                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-black"
                   required
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Phone <span className="text-slate-400 text-xs font-normal">(Optional)</span>
+                  Phone <span className="text-black text-xs font-normal">(Optional)</span>
                 </label>
                 <input
                   type="tel"
                   value={contactInfo.phone}
                   onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
                   placeholder="+91 98765 43210"
-                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-slate-400"
+                  className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-black"
                 />
               </div>
             </div>
 
             {/* Privacy */}
             <div className="mt-6 flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
-              <Shield className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-slate-500">
+              <Shield className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-black">
                 No spam. No sales calls. Just your personalized report.
               </p>
             </div>
@@ -299,7 +299,7 @@ export const AssessmentForm: React.FC = () => {
           <div className="mt-8 flex justify-between items-center">
             <button
               onClick={handlePrevious}
-              className="flex items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors"
+              className="flex items-center gap-2 text-black hover:text-black transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back
@@ -341,14 +341,14 @@ export const AssessmentForm: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
             {currentHook.hook}
           </h1>
-          <p className="text-slate-500">
+          <p className="text-black">
             {currentHook.subtext}
           </p>
         </div>
 
         {/* Progress */}
         <div className="mb-10">
-          <div className="flex justify-between text-xs text-slate-400 mb-2">
+          <div className="flex justify-between text-xs text-black mb-2">
             <span>Assessment progress</span>
             <span>{Math.round(((currentQuestionIndex + 1) / totalQuestions) * 100)}%</span>
           </div>
@@ -358,7 +358,7 @@ export const AssessmentForm: React.FC = () => {
               style={{ width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%` }}
             />
           </div>
-          <p className="text-xs text-slate-400 mt-2">
+          <p className="text-xs text-black mt-2">
             Your answers are private and used only to personalize results.
           </p>
         </div>
@@ -371,7 +371,7 @@ export const AssessmentForm: React.FC = () => {
           </h2>
 
           {currentQuestion.description && (
-            <p className="text-slate-500 text-sm mb-6 -mt-4">{currentQuestion.description}</p>
+            <p className="text-black text-sm mb-6 -mt-4">{currentQuestion.description}</p>
           )}
 
           {/* Options */}
@@ -395,7 +395,7 @@ export const AssessmentForm: React.FC = () => {
                 value={(currentAnswer?.value as string) || ''}
                 onChange={(e) => handleAnswer({ questionId: currentQuestion.id, value: e.target.value })}
                 placeholder="Type your answer here..."
-                className="w-full px-5 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none min-h-[120px] resize-none transition-all"
+                className="w-full px-5 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-900 placeholder:text-black focus:border-blue-500 focus:bg-white focus:outline-none min-h-[120px] resize-none transition-all"
               />
             )}
           </div>
@@ -413,7 +413,7 @@ export const AssessmentForm: React.FC = () => {
           <button
             onClick={handlePrevious}
             disabled={isFirstQuestion}
-            className="flex items-center gap-2 text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            className="flex items-center gap-2 text-black hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back

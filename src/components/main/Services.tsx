@@ -67,7 +67,7 @@ export const Services: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             End-to-End Trading Automation
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             From strategy conceptualization to live deployment, we handle every aspect
             of your algorithmic trading journey.
           </p>
@@ -91,14 +91,14 @@ export const Services: React.FC = () => {
                 <h3 className="text-xl font-bold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                <p className="text-black text-sm mb-4">{service.description}</p>
 
                 {/* Features */}
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs border border-white/5"
+                      className="px-3 py-1 bg-white/5 text-black rounded-full text-xs border border-white/5"
                     >
                       {feature}
                     </span>
@@ -112,7 +112,7 @@ export const Services: React.FC = () => {
         {/* CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-            <p className="text-gray-400">
+            <p className="text-black">
               Not sure which service you need?
             </p>
             <Link

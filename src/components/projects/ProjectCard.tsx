@@ -101,14 +101,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <span className="text-lg font-bold text-slate-700">
             {primaryMetric.value}
           </span>
-          <span className="text-xs font-medium text-slate-400 uppercase tracking-wide">
+          <span className="text-xs font-medium text-black uppercase tracking-wide">
             {primaryMetric.label}
           </span>
         </div>
       )}
 
       {/* Outcome - Lighter tone */}
-      <p className="text-sm text-slate-500 mb-4 leading-relaxed line-clamp-2">
+      <p className="text-sm text-black mb-4 leading-relaxed line-clamp-2">
         {project.outcome}
       </p>
 
@@ -118,13 +118,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <span
             key={tech}
             className="inline-flex px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md
-                       text-[11px] font-medium text-slate-500"
+                       text-[11px] font-medium text-black"
           >
             {tech}
           </span>
         ))}
         {project.techStack.length > 3 && (
-          <span className="inline-flex px-2 py-0.5 text-[11px] font-medium text-slate-400">
+          <span className="inline-flex px-2 py-0.5 text-[11px] font-medium text-black">
             +{project.techStack.length - 3}
           </span>
         )}
@@ -141,7 +141,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         >
           {project.status === 'completed' ? 'Completed' : 'In Progress'}
         </span>
-        <div className="flex items-center gap-1 text-slate-400 group-hover:text-teal-600 transition-colors duration-200">
+        <div className="flex items-center gap-1 text-black group-hover:text-teal-600 transition-colors duration-200">
           <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             View
           </span>

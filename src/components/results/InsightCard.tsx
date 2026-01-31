@@ -42,7 +42,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insight, index }) => {
           border: 'border-l-gray-500',
           bg: 'bg-gray-50',
           icon: Info,
-          iconColor: 'text-gray-500',
+          iconColor: 'text-black',
           badge: 'bg-gray-100 text-gray-700',
         };
     }
@@ -71,7 +71,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insight, index }) => {
             <Icon className={cn('w-5 h-5', styles.iconColor)} />
           </div>
           <div>
-            <span className="text-sm text-gray-500">Insight #{index + 1}</span>
+            <span className="text-sm text-black">Insight #{index + 1}</span>
             <h3 className="font-bold text-gray-900">{insight.title}</h3>
           </div>
         </div>
@@ -98,7 +98,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({ insight, index }) => {
           <Lightbulb className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
           <div>
             <span className="text-sm font-medium text-gray-900">Recommendation</span>
-            <p className="text-sm text-gray-600 mt-1">{insight.recommendation}</p>
+            <p className="text-sm text-black mt-1">{insight.recommendation}</p>
           </div>
         </div>
       </div>

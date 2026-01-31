@@ -48,7 +48,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
               </h1>
 
               {/* Description */}
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-black mb-8 leading-relaxed">
                 Stop guessing. Our 5-question assessment reveals your strategy&apos;s
                 automation potential with personalized insights and clear next steps.
               </p>
@@ -64,7 +64,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
               </button>
 
               {/* Trust */}
-              <div className="flex items-center gap-6 mt-8 text-sm text-gray-500">
+              <div className="flex items-center gap-6 mt-8 text-sm text-black">
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-500" />
                   No signup required
@@ -79,7 +79,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
             {/* Right Content - Pain Points Card */}
             <div className="relative">
               <div className="bg-white rounded-3xl p-8 shadow-xl shadow-gray-200/50 border border-gray-100">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">
+                <h3 className="text-sm font-semibold text-black uppercase tracking-wider mb-6">
                   Sound Familiar?
                 </h3>
 
@@ -90,7 +90,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Missing Trades</h4>
-                      <p className="text-sm text-gray-600">Perfect setups happen while you&apos;re away from the screen</p>
+                      <p className="text-sm text-black">Perfect setups happen while you&apos;re away from the screen</p>
                     </div>
                   </div>
 
@@ -100,7 +100,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Inconsistent Execution</h4>
-                      <p className="text-sm text-gray-600">Same strategy, different results every time</p>
+                      <p className="text-sm text-black">Same strategy, different results every time</p>
                     </div>
                   </div>
 
@@ -110,14 +110,14 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Emotional Decisions</h4>
-                      <p className="text-sm text-gray-600">Fear and greed override your trading plan</p>
+                      <p className="text-sm text-black">Fear and greed override your trading plan</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Arrow indicator */}
                 <div className="mt-6 text-center">
-                  <span className="text-sm text-gray-400">Find out if automation can help →</span>
+                  <span className="text-sm text-black">Find out if automation can help →</span>
                 </div>
               </div>
 
@@ -157,7 +157,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                 <h3 className="font-bold text-gray-900 text-lg mb-2">
                   Strategy Readiness Score
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed">
                   A clear score showing how well your current trading rules translate to automated systems.
                 </p>
               </div>
@@ -172,7 +172,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                 <h3 className="font-bold text-gray-900 text-lg mb-2">
                   Risk Management Analysis
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed">
                   Evaluation of your position sizing, stop-losses, and risk controls against best practices.
                 </p>
               </div>
@@ -187,7 +187,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
                 <h3 className="font-bold text-gray-900 text-lg mb-2">
                   Personalized Action Plan
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed">
                   Specific recommendations tailored to your trading style and automation goals.
                 </p>
               </div>
@@ -210,7 +210,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Ready to Discover Your Score?
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-black mb-8">
             5 questions. 2 minutes. Actionable insights.
           </p>
 
@@ -222,7 +222,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-400">
+          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-black">
             <span className="flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-400" />
               No email required to start
@@ -242,10 +242,10 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onStartAssessment }) =
       {/* Footer */}
       <footer className="py-8 px-4 bg-gray-50 border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-gray-500 font-medium">
+          <p className="text-sm text-black font-medium">
             Secret Weapon Trading Solution Pvt. Ltd.
           </p>
-          <p className="text-xs text-gray-400 mt-2">
+          <p className="text-xs text-black mt-2">
             Algorithmic Trading Services • This assessment provides educational insights only.
             Trading involves risk. We do not provide financial advice.
           </p>

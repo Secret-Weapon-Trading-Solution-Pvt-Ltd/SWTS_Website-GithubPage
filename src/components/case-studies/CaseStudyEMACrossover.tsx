@@ -8,7 +8,7 @@ import Link from 'next/link';
 // ============================================================================
 const SectionLabel: React.FC<{ label: string }> = ({ label }) => (
   <div className="flex items-center gap-3 mb-3">
-    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-widest">
+    <span className="text-[11px] font-semibold text-black uppercase tracking-widest">
       {label}
     </span>
     <span className="flex-1 h-px bg-slate-100" />
@@ -68,7 +68,7 @@ const TableOfContents: React.FC = () => {
   return (
     <nav className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 z-40">
       <div className="bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-xl p-4 shadow-sm">
-        <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+        <p className="text-[10px] font-semibold text-black uppercase tracking-wider mb-3 px-2">
           Contents
         </p>
         <ul className="space-y-1">
@@ -79,7 +79,7 @@ const TableOfContents: React.FC = () => {
                 className={`block w-full text-left px-3 py-1.5 text-xs rounded-lg transition-colors ${
                   activeSection === section.id
                     ? 'bg-slate-900 text-white font-medium'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                    : 'text-black hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {section.label}
@@ -103,24 +103,24 @@ const ProjectOverview: React.FC = () => {
 
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 bg-slate-50 border border-slate-100 rounded-2xl p-6 mb-8">
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Project Name</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1">Project Name</dt>
           <dd className="text-base font-medium text-slate-900">Delta Exchange Crypto Screener</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Category</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1">Category</dt>
           <dd className="text-base font-medium text-slate-900">Algo Trading / Real-Time Analytics</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Market Type</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1">Market Type</dt>
           <dd className="text-base font-medium text-slate-900">Cryptocurrency Perpetuals (Digital Assets)</dd>
         </div>
         <div>
-          <dt className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Execution Type</dt>
+          <dt className="text-[11px] font-semibold text-black uppercase tracking-wider mb-1">Execution Type</dt>
           <dd className="text-base font-medium text-slate-900">Signal Generation & Alert System</dd>
         </div>
       </dl>
 
-      <p className="text-slate-600 leading-relaxed">
+      <p className="text-black leading-relaxed">
         A <span className="font-semibold text-slate-800">real-time multi-timeframe EMA crossover detection system</span> built for cryptocurrency markets.
         The platform continuously monitors user-defined watchlists across <span className="font-semibold text-slate-800">five timeframes</span>,
         broadcasting live signal updates via WebSocket and delivering <span className="font-semibold text-slate-800">instant Telegram alerts</span> when crossover events are confirmed.
@@ -138,7 +138,7 @@ const ClientContext: React.FC = () => {
       <SectionLabel label="Client Context" />
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Context</h2>
 
-      <p className="text-slate-600 leading-relaxed mb-8">
+      <p className="text-black leading-relaxed mb-8">
         Built for <span className="font-semibold text-slate-800">active cryptocurrency traders</span> who rely on exponential moving average crossovers
         as a core component of their technical analysis workflow. The target environment includes
         individual traders monitoring multiple assets simultaneously, as well as <span className="font-semibold text-slate-800">small trading
@@ -154,7 +154,7 @@ const ClientContext: React.FC = () => {
           'Requirement for mobile-accessible alerts during off-desk hours',
           'Integration with Delta Exchange India for perpetual contract data',
         ].map((item, i) => (
-          <li key={i} className="flex items-start gap-4 text-slate-600">
+          <li key={i} className="flex items-start gap-4 text-black">
             <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0" />
             <span className="leading-relaxed">{item}</span>
           </li>
@@ -196,7 +196,7 @@ const ProblemStatement: React.FC = () => {
       <SectionLabel label="The Problem" />
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Problem</h2>
 
-      <p className="text-slate-600 leading-relaxed mb-8">
+      <p className="text-black leading-relaxed mb-8">
         <span className="font-semibold text-slate-800">Manual EMA crossover monitoring</span> across multiple assets and timeframes presents
         significant challenges for active traders:
       </p>
@@ -205,7 +205,7 @@ const ProblemStatement: React.FC = () => {
         {problems.map((problem, i) => (
           <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-5">
             <h4 className="font-semibold text-slate-900 mb-2">{problem.title}</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">{problem.desc}</p>
+            <p className="text-sm text-black leading-relaxed">{problem.desc}</p>
           </div>
         ))}
       </div>
@@ -246,7 +246,7 @@ const Solution: React.FC = () => {
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Solution</h2>
 
       <h3 className="text-lg font-semibold text-slate-800 mb-4">System Design</h3>
-      <p className="text-slate-600 leading-relaxed mb-10">
+      <p className="text-black leading-relaxed mb-10">
         A <span className="font-semibold text-slate-800">self-hosted signal detection platform</span> that runs continuous background analysis
         on user-selected cryptocurrency pairs. The system fetches OHLCV data from Delta Exchange,
         calculates <span className="font-semibold text-slate-800">9-period and 20-period EMAs</span> across all monitored timeframes, and detects
@@ -262,7 +262,7 @@ const Solution: React.FC = () => {
             </div>
             <div className="pt-1">
               <h4 className="font-semibold text-slate-900 mb-1">{step.title}</h4>
-              <p className="text-sm text-slate-600 leading-relaxed">{step.desc}</p>
+              <p className="text-sm text-black leading-relaxed">{step.desc}</p>
             </div>
           </div>
         ))}
@@ -280,7 +280,7 @@ const Solution: React.FC = () => {
         </div>
         <div className="bg-slate-50 border border-slate-200 rounded-xl px-5 py-4">
           <span className="text-sm font-semibold text-slate-700">Bars Since</span>
-          <p className="text-xs text-slate-600 mt-1">Candle count since crossover</p>
+          <p className="text-xs text-black mt-1">Candle count since crossover</p>
         </div>
       </div>
     </section>
@@ -359,7 +359,7 @@ const Architecture: React.FC = () => {
             </h3>
             <ul className="space-y-2.5">
               {stack.items.map((item, j) => (
-                <li key={j} className="text-xs text-slate-600 leading-relaxed">{item}</li>
+                <li key={j} className="text-xs text-black leading-relaxed">{item}</li>
               ))}
             </ul>
           </div>
@@ -413,7 +413,7 @@ const KeyFeatures: React.FC = () => {
         {features.map((feature, i) => (
           <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-5">
             <h4 className="font-semibold text-slate-900 mb-2">{feature.title}</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">{feature.desc}</p>
+            <p className="text-sm text-black leading-relaxed">{feature.desc}</p>
           </div>
         ))}
       </div>
@@ -447,7 +447,7 @@ const Performance: React.FC = () => {
               { label: 'Outlier removal', desc: '10× MAD (Median Absolute Deviation) filter applied' },
               { label: 'Rolling window', desc: '600 candles maintained per symbol/timeframe' },
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 text-sm text-slate-600">
+              <li key={i} className="flex items-start gap-4 text-sm text-black">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mt-1.5 flex-shrink-0" />
                 <span><span className="font-semibold text-slate-800">{item.label}</span> — {item.desc}</span>
               </li>
@@ -464,7 +464,7 @@ const Performance: React.FC = () => {
               { label: 'Incremental updates', desc: 'minimize API load after initial seeding' },
               { label: 'State persistence', desc: 'signal state persisted to disk for recovery after restarts' },
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 text-sm text-slate-600">
+              <li key={i} className="flex items-start gap-4 text-sm text-black">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mt-1.5 flex-shrink-0" />
                 <span><span className="font-semibold text-slate-800">{item.label}</span> — {item.desc}</span>
               </li>
@@ -480,7 +480,7 @@ const Performance: React.FC = () => {
               { label: 'Maximum 10 sessions', desc: 'per deployment' },
               { label: 'Activity-based filtering', desc: 'reduces Telegram notification noise' },
             ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 text-sm text-slate-600">
+              <li key={i} className="flex items-start gap-4 text-sm text-black">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mt-1.5 flex-shrink-0" />
                 <span><span className="font-semibold text-slate-800">{item.label}</span> — {item.desc}</span>
               </li>
@@ -548,15 +548,15 @@ const Visuals: React.FC = () => {
             {/* Placeholder overlay - remove when video is added */}
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/5">
               <div className="w-16 h-16 rounded-full bg-white/90 border border-slate-200 flex items-center justify-center mb-3 shadow-sm">
-                <svg className="w-6 h-6 text-slate-400 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
-              <span className="text-sm font-medium text-slate-500">Video Placeholder</span>
+              <span className="text-sm font-medium text-black">Video Placeholder</span>
             </div>
           </div>
         </div>
-        <p className="mt-4 text-sm text-slate-500 leading-relaxed">
+        <p className="mt-4 text-sm text-black leading-relaxed">
           A walkthrough video demonstrates the system detecting a live crossover event. The sequence shows: initial dashboard state, candle close triggering recalculation, WebSocket update pushing new signal to browser, and corresponding Telegram notification arriving on a mobile device — all within a 10-second window.
         </p>
       </div>
@@ -577,17 +577,17 @@ const Visuals: React.FC = () => {
                   />
                   {/* Placeholder overlay - remove when images are added */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50">
-                    <svg className="w-10 h-10 text-slate-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-black mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span className="text-xs font-medium text-slate-400">Screenshot</span>
+                    <span className="text-xs font-medium text-black">Screenshot</span>
                   </div>
                 </div>
               </div>
               {/* Caption */}
               <figcaption>
                 <h4 className="text-sm font-semibold text-slate-900 mb-1.5">{item.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">{item.caption}</p>
+                <p className="text-xs text-black leading-relaxed line-clamp-3">{item.caption}</p>
               </figcaption>
             </figure>
           ))}
@@ -629,7 +629,7 @@ const Outcomes: React.FC = () => {
         {outcomes.map((outcome, i) => (
           <div key={i} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-teal-300 transition-colors">
             <h4 className="font-semibold text-slate-900 mb-2">{outcome.title}</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">{outcome.desc}</p>
+            <p className="text-sm text-black leading-relaxed">{outcome.desc}</p>
           </div>
         ))}
       </div>
@@ -673,7 +673,7 @@ const IdealUsers: React.FC = () => {
         {profiles.map((profile, i) => (
           <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-5">
             <h4 className="font-semibold text-slate-900 mb-2">{profile.title}</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">{profile.desc}</p>
+            <p className="text-sm text-black leading-relaxed">{profile.desc}</p>
           </div>
         ))}
       </div>
@@ -689,7 +689,7 @@ const CallToAction: React.FC = () => {
     <section className="bg-slate-50 border border-slate-100 rounded-2xl p-8 sm:p-10 text-center">
       <h2 className="text-2xl font-bold text-slate-900 mb-4">Interested in a Similar System?</h2>
 
-      <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
+      <p className="text-black leading-relaxed max-w-2xl mx-auto mb-8">
         This screener was designed to address specific workflow challenges in cryptocurrency
         technical analysis. Similar systems can be built for different indicators, asset classes,
         or alert mechanisms based on your trading requirements.
@@ -736,7 +736,7 @@ export default function CaseStudyEMACrossover() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
             Delta Exchange Crypto Screener
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-black max-w-2xl mx-auto mb-8">
             Multi-timeframe cryptocurrency signal detection with real-time alerts
           </p>
           <a

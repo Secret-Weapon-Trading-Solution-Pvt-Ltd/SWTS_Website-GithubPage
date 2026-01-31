@@ -99,7 +99,7 @@ export const Projects: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Projects & Case Studies
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             A selection of algorithmic trading systems we&apos;ve built for clients
             across various platforms and markets.
           </p>
@@ -119,7 +119,7 @@ export const Projects: React.FC = () => {
                 'px-5 py-2.5 rounded-full font-medium transition-all',
                 filter === tab.key
                   ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/25'
-                  : 'bg-white/5 text-gray-400 border border-white/10 hover:border-white/20 hover:text-white'
+                  : 'bg-white/5 text-black border border-white/10 hover:border-white/20 hover:text-white'
               )}
             >
               {tab.label}
@@ -136,7 +136,7 @@ export const Projects: React.FC = () => {
             >
               {/* Status Badge */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-gray-500 font-medium">{project.platform}</span>
+                <span className="text-sm text-black font-medium">{project.platform}</span>
                 <span
                   className={cn(
                     'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium',
@@ -158,12 +158,12 @@ export const Projects: React.FC = () => {
               <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+              <p className="text-black text-sm mb-4">{project.description}</p>
 
               {/* Highlights */}
               <ul className="space-y-2 mb-4">
                 {project.highlights.map((highlight, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
+                  <li key={i} className="flex items-center gap-2 text-sm text-black">
                     <div className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
                     {highlight}
                   </li>
@@ -175,7 +175,7 @@ export const Projects: React.FC = () => {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 bg-white/5 text-gray-400 rounded-md text-xs border border-white/5"
+                    className="px-2.5 py-1 bg-white/5 text-black rounded-md text-xs border border-white/5"
                   >
                     {tag}
                   </span>
@@ -188,7 +188,7 @@ export const Projects: React.FC = () => {
         {/* More Projects CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col items-center gap-4 p-8 bg-white/5 rounded-2xl border border-white/10">
-            <p className="text-gray-400">
+            <p className="text-black">
               Have a similar project in mind?
             </p>
             <Link

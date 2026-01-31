@@ -31,11 +31,11 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       <MainLayout>
         <section className="min-h-[60vh] flex items-center justify-center">
           <div className="text-center px-4">
-            <FileQuestion className="w-16 h-16 text-slate-300 mx-auto mb-6" />
+            <FileQuestion className="w-16 h-16 text-black mx-auto mb-6" />
             <h1 className="text-2xl font-bold text-slate-900 mb-3">
               Project Not Found
             </h1>
-            <p className="text-slate-600 mb-8 max-w-md mx-auto">
+            <p className="text-black mb-8 max-w-md mx-auto">
               The project you&apos;re looking for doesn&apos;t exist or may have been moved.
             </p>
             <Link
