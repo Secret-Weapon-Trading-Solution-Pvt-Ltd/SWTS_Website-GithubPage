@@ -18,6 +18,9 @@ const navLinks = [
   { href: '/#contact', label: 'Contact' },
 ];
 
+// Active link gradient style
+const activeGradientStyle = { background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' };
+
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -135,9 +138,10 @@ export const Navbar: React.FC = () => {
               className={cn(
                 "px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
                 isLinkActive(link.href)
-                  ? "bg-blue-600 text-white"
+                  ? "text-white"
                   : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
               )}
+              style={isLinkActive(link.href) ? activeGradientStyle : undefined}
             >
               {link.label}
             </Link>
@@ -150,9 +154,10 @@ export const Navbar: React.FC = () => {
               className={cn(
                 "flex items-center gap-1 2xl:gap-2 px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
                 isServicesActive
-                  ? "bg-blue-600 text-white"
+                  ? "text-white"
                   : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
               )}
+              style={isServicesActive ? activeGradientStyle : undefined}
             >
               Services
               <ChevronDown className={cn(
@@ -202,9 +207,10 @@ export const Navbar: React.FC = () => {
               className={cn(
                 "px-3 py-1.5 2xl:px-4 2xl:py-2 3xl:px-5 3xl:py-3 4xl:px-6 4xl:py-4 rounded-lg 3xl:rounded-xl text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-semibold transition-all duration-200",
                 isLinkActive(link.href)
-                  ? "bg-blue-600 text-white"
+                  ? "text-white"
                   : "text-slate-700 hover:bg-slate-100 hover:text-blue-700"
               )}
+              style={isLinkActive(link.href) ? activeGradientStyle : undefined}
             >
               {link.label}
             </Link>
@@ -233,9 +239,10 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "py-3 px-4 rounded-xl font-semibold transition-all duration-200",
                     isLinkActive(link.href)
-                      ? "bg-blue-600 text-white"
+                      ? "text-white"
                       : "text-slate-700 bg-slate-50 hover:bg-slate-100"
                   )}
+                  style={isLinkActive(link.href) ? activeGradientStyle : undefined}
                 >
                   {link.label}
                 </Link>
@@ -248,9 +255,10 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "w-full flex items-center justify-between py-3 px-4 rounded-xl font-semibold transition-all duration-200",
                     isServicesActive
-                      ? "bg-blue-600 text-white"
+                      ? "text-white"
                       : "text-slate-700 bg-slate-50 hover:bg-slate-100"
                   )}
+                  style={isServicesActive ? activeGradientStyle : undefined}
                 >
                   Services
                   <ChevronDown className={cn(
@@ -295,9 +303,10 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "py-3 px-4 rounded-xl font-semibold transition-all duration-200",
                     isLinkActive(link.href)
-                      ? "bg-blue-600 text-white"
+                      ? "text-white"
                       : "text-slate-700 bg-slate-50 hover:bg-slate-100"
                   )}
+                  style={isLinkActive(link.href) ? activeGradientStyle : undefined}
                 >
                   {link.label}
                 </Link>

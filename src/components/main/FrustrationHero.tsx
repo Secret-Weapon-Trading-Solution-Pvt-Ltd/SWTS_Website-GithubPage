@@ -66,11 +66,11 @@ export const FrustrationHero: React.FC = () => {
           >
             <span
               className="w-6 md:w-12 lg:w-16 2xl:w-20 3xl:w-24 h-[2px] lg:h-[3px] 2xl:h-[4px] rounded-full"
-              style={{ background: 'linear-gradient(90deg, #7C3AED, #3B82F6)' }}
+              style={{ background: 'linear-gradient(90deg, #1565C0, #00897B)' }}
             />
             <span
               className="text-[11px] md:text-sm lg:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-semibold tracking-wider uppercase"
-              style={{ color: '#4F46E5' }}
+              style={{ color: '#00897B' }}
             >
               For serious traders
             </span>
@@ -79,7 +79,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Hook/Headline */}
           <h2 className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10 3xl:mb-12">
             <span
-              className="block text-[28px] sm:text-3xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[32px] sm:leading-[34px] lg:leading-[33px] xl:leading-[42px] 2xl:leading-[50px] 3xl:leading-[61px] 4xl:leading-[77px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block text-[24px] sm:text-[26px] lg:text-[26px] xl:text-[32px] 2xl:text-[38px] 3xl:text-[46px] 4xl:text-[56px] leading-[28px] sm:leading-[30px] lg:leading-[30px] xl:leading-[36px] 2xl:leading-[42px] 3xl:leading-[50px] 4xl:leading-[62px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
                 fontWeight: 700,
@@ -90,7 +90,7 @@ export const FrustrationHero: React.FC = () => {
               We automate your strategy
             </span>
             <span
-              className="block mt-1 sm:mt-1.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-[28px] sm:text-3xl lg:text-[30px] xl:text-[38px] 2xl:text-[46px] 3xl:text-[56px] 4xl:text-[70px] leading-[32px] sm:leading-[34px] lg:leading-[33px] xl:leading-[42px] 2xl:leading-[50px] 3xl:leading-[61px] 4xl:leading-[77px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block mt-1 sm:mt-1.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-[24px] sm:text-[26px] lg:text-[26px] xl:text-[32px] 2xl:text-[38px] 3xl:text-[46px] 4xl:text-[56px] leading-[28px] sm:leading-[30px] lg:leading-[30px] xl:leading-[36px] 2xl:leading-[42px] 3xl:leading-[50px] 4xl:leading-[62px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#64748B',
                 fontWeight: 500,
@@ -104,7 +104,7 @@ export const FrustrationHero: React.FC = () => {
 
           {/* Subtitle */}
           <p
-            className="text-[15px] sm:text-base lg:text-[16px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[28px] 4xl:text-[34px] leading-[22px] sm:leading-[24px] lg:leading-[21px] xl:leading-[26px] 2xl:leading-[31px] 3xl:leading-[36px] 4xl:leading-[44px] mb-0 md:mb-8 sm:mb-10 lg:mb-12 2xl:mb-14 3xl:mb-16 max-w-[300px] sm:max-w-xl lg:max-w-2xl 2xl:max-w-3xl 3xl:max-w-4xl opacity-0 animate-fade-in-up"
+            className="text-[14px] sm:text-[15px] lg:text-[15px] xl:text-[17px] 2xl:text-[20px] 3xl:text-[24px] 4xl:text-[28px] leading-[20px] sm:leading-[22px] lg:leading-[20px] xl:leading-[24px] 2xl:leading-[28px] 3xl:leading-[32px] 4xl:leading-[38px] mb-0 md:mb-8 sm:mb-10 lg:mb-10 2xl:mb-12 3xl:mb-14 max-w-[300px] sm:max-w-xl lg:max-w-xl 2xl:max-w-2xl 3xl:max-w-3xl opacity-0 animate-fade-in-up"
             style={{
               color: '#475569',
               fontWeight: 400,
@@ -117,28 +117,28 @@ export const FrustrationHero: React.FC = () => {
 
           {/* CTA Group - Desktop only (inline) */}
           <div
-            className="hidden xl:flex flex-row flex-wrap items-center gap-5 2xl:gap-6 3xl:gap-8 opacity-0 animate-fade-in-up"
+            className="hidden xl:flex flex-row flex-wrap items-center gap-4 2xl:gap-5 3xl:gap-6 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
           >
             {/* Primary CTA Button - Assessment */}
             <Link
               href="/strategy-assessment"
-              className="group inline-flex items-center justify-center px-10 py-5 2xl:px-12 2xl:py-6 3xl:px-14 3xl:py-7 4xl:px-16 4xl:py-8 text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-medium text-white rounded-xl 2xl:rounded-2xl
-                       shadow-[0_4px_20px_rgba(124,58,237,0.25)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.35)]
-                       hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(124,58,237,0.2)]
+              className="group inline-flex items-center justify-center px-7 py-3.5 2xl:px-9 2xl:py-4 3xl:px-10 3xl:py-5 4xl:px-12 4xl:py-6 text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium text-white rounded-xl 2xl:rounded-xl
+                       shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)]
+                       hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(0,137,123,0.2)]
                        transition-all duration-200 ease-out"
               style={{
-                background: 'linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #3B82F6 100%)',
+                background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)',
               }}
             >
               Take Free Assessment
-              <ArrowRight className="ml-3 w-6 h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="ml-2 w-5 h-5 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
 
             {/* Secondary CTA Button */}
             <Link
               href="/#how-it-works"
-              className="group inline-flex items-center justify-center px-10 py-5 2xl:px-12 2xl:py-6 3xl:px-14 3xl:py-7 4xl:px-16 4xl:py-8 text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-medium text-slate-700 rounded-xl 2xl:rounded-2xl
+              className="group inline-flex items-center justify-center px-7 py-3.5 2xl:px-9 2xl:py-4 3xl:px-10 3xl:py-5 4xl:px-12 4xl:py-6 text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium text-slate-700 rounded-xl 2xl:rounded-xl
                        bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50
                        hover:-translate-y-0.5 transition-all duration-200 ease-out"
             >
@@ -155,21 +155,21 @@ export const FrustrationHero: React.FC = () => {
           {/* Primary CTA Button - Assessment */}
           <Link
             href="/strategy-assessment"
-            className="group inline-flex items-center justify-center px-6 py-4 text-base font-medium text-white rounded-xl
-                     shadow-[0_4px_20px_rgba(124,58,237,0.25)]
+            className="group inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-white rounded-xl
+                     shadow-[0_4px_20px_rgba(0,137,123,0.25)]
                      transition-all duration-200 ease-out"
             style={{
-              background: 'linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #3B82F6 100%)',
+              background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)',
             }}
           >
             Take Free Assessment
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
 
           {/* Secondary CTA Button */}
           <Link
             href="/#how-it-works"
-            className="group inline-flex items-center justify-center px-6 py-4 text-base font-medium text-slate-600 rounded-xl
+            className="group inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-slate-600 rounded-xl
                      border border-slate-400/40
                      transition-all duration-200 ease-out"
             style={{ background: 'rgba(232,237,242,0.7)' }}
