@@ -31,6 +31,12 @@ import {
   ScreenerCapabilities,
   ScreenerProcess
 } from '@/components/services/screener';
+// Dashboard-specific enterprise components
+import {
+  DashboardOverview,
+  DashboardCapabilities,
+  DashboardProcess
+} from '@/components/services/dashboard';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
 interface ServicePageProps {
@@ -89,7 +95,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const isBacktesting = service.slug === 'strategy-backtesting';
   const isOptimization = service.slug === 'strategy-optimization';
   const isScreener = service.slug === 'custom-screener';
-  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization || isScreener;
+  const isDashboard = service.slug === 'custom-dashboard';
+  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization || isScreener || isDashboard;
 
   return (
     <MainLayout>
@@ -139,6 +146,17 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Screener Process - Horizontal timeline with background */}
           <ScreenerProcess service={service} />
+        </>
+      ) : isDashboard ? (
+        <>
+          {/* Dashboard Overview - Data unification visualization */}
+          <DashboardOverview service={service} />
+
+          {/* Dashboard Capabilities - Feature cards */}
+          <DashboardCapabilities service={service} />
+
+          {/* Dashboard Process - Development workflow */}
+          <DashboardProcess service={service} />
         </>
       ) : (
         <>
