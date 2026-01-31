@@ -129,15 +129,21 @@ export const ServicesScroller: React.FC = () => {
       </div>
 
       {/* View All Button */}
-      <div className="mt-12 flex justify-center">
+      <div className="mt-12 flex justify-center isolate">
         <Link
           href="/services/"
-          className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-medium text-white rounded-xl
-                   shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)]
-                   hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_2px_10px_rgba(0,137,123,0.2)]
-                   transition-all duration-200 ease-out"
+          className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-xl
+                   hover:-translate-y-0.5 active:translate-y-0
+                   transition-transform duration-200 ease-out
+                   ring-0 ring-offset-0 outline-none focus:ring-0 focus:outline-none focus-visible:ring-0"
           style={{
             background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)',
+            color: '#ffffff',
+            boxShadow: '0 4px 20px rgba(0, 137, 123, 0.25)',
+            outline: 'none',
+            isolation: 'isolate',
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
           }}
         >
           View All Services
