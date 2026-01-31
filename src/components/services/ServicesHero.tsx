@@ -33,7 +33,7 @@ const DataFlowVisual = () => (
 
 export default function ServicesHero() {
   return (
-    <section className="relative pt-32 pb-24 bg-slate-50 overflow-hidden">
+    <section className="relative pt-32 pb-10 bg-slate-50 overflow-hidden">
       {/* Premium layered background - light theme */}
 
       {/* Gradient overlay */}
@@ -85,9 +85,9 @@ export default function ServicesHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-10"
           >
-            <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-black leading-relaxed max-w-2xl mx-auto">
               You bring the trading logic.
-              <span className="text-slate-500"> We engineer the automation, execution, and reliability required for real capital.</span>
+              <span className="text-black"> We engineer the automation, execution, and reliability required for real capital.</span>
             </p>
           </motion.div>
 
@@ -107,7 +107,7 @@ export default function ServicesHero() {
             </a>
             <a
               href="#services-grid"
-              className="inline-flex items-center gap-2 text-slate-600 font-semibold hover:text-slate-900 transition-colors duration-200 group"
+              className="inline-flex items-center gap-2 text-black font-semibold hover:text-slate-900 transition-colors duration-200 group"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -119,7 +119,7 @@ export default function ServicesHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-sm text-slate-400"
+            className="text-base lg:text-lg text-black font-medium"
           >
             Client strategies remain fully owned and confidential.
           </motion.p>

@@ -71,7 +71,7 @@ export default function CTAModern({ service }: CTAModernProps) {
                 <span className="text-blue-600">Automated System</span>
               </h2>
 
-              <p className="text-lg text-navy-600 mb-8 leading-relaxed">
+              <p className="text-lg text-black mb-8 leading-relaxed">
                 Start with a free strategy assessment. We'll review your trading rules and show you exactly how automation can work for your approach.
               </p>
 
@@ -91,7 +91,7 @@ export default function CTAModern({ service }: CTAModernProps) {
                     </div>
                     <div>
                       <h4 className="font-semibold text-navy-900 text-sm">{feature.title}</h4>
-                      <p className="text-xs text-navy-500">{feature.description}</p>
+                      <p className="text-xs text-black">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -111,7 +111,7 @@ export default function CTAModern({ service }: CTAModernProps) {
 
                 <motion.a
                   href="/projects"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-white text-navy-700 rounded-xl font-semibold border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-xl font-semibold border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -135,14 +135,14 @@ export default function CTAModern({ service }: CTAModernProps) {
                     className="text-center p-4 bg-white rounded-2xl shadow-sm border border-slate-100"
                   >
                     <div className="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-navy-600">{stat.label}</div>
+                    <div className="text-sm text-black">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
 
               {/* Trust indicator */}
               <div className="mt-8 pt-6 border-t border-slate-200">
-                <div className="flex items-center gap-3 text-navy-600">
+                <div className="flex items-center gap-3 text-black">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-sm font-medium">Trusted by systematic traders worldwide</span>
                 </div>

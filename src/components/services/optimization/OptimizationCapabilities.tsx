@@ -105,7 +105,7 @@ export default function OptimizationCapabilities({ service }: OptimizationCapabi
             <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-navy-900 bg-clip-text text-transparent">Our Optimization</span>{' '}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Capabilities</span>
           </h2>
-          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Comprehensive optimization services that improve your strategy without overfitting
           </p>
         </motion.div>
@@ -149,7 +149,7 @@ export default function OptimizationCapabilities({ service }: OptimizationCapabi
                       </h3>
 
                       {/* Description */}
-                      <p className="text-base lg:text-lg text-navy-600 mb-5 leading-relaxed">
+                      <p className="text-base lg:text-lg text-black mb-5 leading-relaxed">
                         {capability.description}
                       </p>
 
@@ -163,7 +163,7 @@ export default function OptimizationCapabilities({ service }: OptimizationCapabi
                             <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br ${capability.gradient} flex items-center justify-center`}>
                               <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
                             </div>
-                            <span className="text-base text-navy-700">
+                            <span className="text-base text-black">
                               {feature}
                             </span>
                           </div>
@@ -185,7 +185,7 @@ export default function OptimizationCapabilities({ service }: OptimizationCapabi
           className="mt-10 flex justify-center"
         >
           <div className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full border border-blue-100">
-            <span className="text-navy-600 font-medium">All delivered with comprehensive documentation</span>
+            <span className="text-black font-medium">All delivered with comprehensive documentation</span>
             <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}

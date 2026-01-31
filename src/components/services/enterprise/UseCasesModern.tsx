@@ -150,7 +150,7 @@ export default function UseCasesModern({ service }: UseCasesModernProps) {
           <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
             Case Studies & Outcomes
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Real strategies we've automated for traders like you, with measurable results
           </p>
         </motion.div>
@@ -213,7 +213,7 @@ export default function UseCasesModern({ service }: UseCasesModernProps) {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-lg text-navy-600 leading-relaxed mb-8">
+                    <p className="text-lg text-black leading-relaxed mb-8">
                       {useCase.description}
                     </p>
 

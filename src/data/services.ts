@@ -180,8 +180,8 @@ export const services: Service[] = [
       }
     ],
     stats: [
-      { label: "Client strategies automated", value: "150+" },
-      { label: "Client retention", value: "94%" }
+      { label: "Strategies Automated", value: "500+" },
+      { label: "Client Retention", value: "95%" }
     ]
   },
   {
@@ -231,7 +231,7 @@ export const services: Service[] = [
     ],
     stats: [
       { label: "Strategies Validated", value: "300+" },
-      { label: "Client Satisfaction", value: "96%" }
+      { label: "Client Satisfaction", value: "100%" }
     ]
   },
   {
@@ -414,7 +414,7 @@ export const services: Service[] = [
     ],
     stats: [
       { label: "Alert Systems Built", value: "200+" },
-      { label: "Alerts Sent Daily", value: "5K+" }
+      { label: "Alerts Sent Daily", value: "1000+" }
     ]
   },
   {

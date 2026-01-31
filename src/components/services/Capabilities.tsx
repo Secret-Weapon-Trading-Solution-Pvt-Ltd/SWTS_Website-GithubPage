@@ -37,7 +37,7 @@ export default function Capabilities({ service }: CapabilitiesProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">
             Our Capabilities
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Comprehensive solutions engineered for your specific trading requirements
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export default function Capabilities({ service }: CapabilitiesProps) {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-navy-600 mb-6 leading-relaxed">
+                  <p className="text-black mb-6 leading-relaxed">
                     {capability.description}
                   </p>
 
@@ -90,7 +90,7 @@ export default function Capabilities({ service }: CapabilitiesProps) {
                         <div className="flex-shrink-0 w-5 h-5 rounded-full bg-teal-500 flex items-center justify-center mt-0.5">
                           <Check className="w-3 h-3 text-white" strokeWidth={3} />
                         </div>
-                        <span className="text-navy-700 text-sm">
+                        <span className="text-black text-sm">
                           {feature}
                         </span>
                       </motion.li>

@@ -32,7 +32,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy-200 shadow-sm text-navy-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy-200 shadow-sm text-black text-sm font-medium mb-6">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -41,7 +41,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-800 mb-4">
             How It All Connects
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             A complete trading system with each component engineered to work seamlessly together
           </p>
         </motion.div>
@@ -189,7 +189,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                           </h3>
 
                           {/* Description */}
-                          <p className={`${isCompact ? 'text-xs' : 'text-sm'} text-navy-600 leading-relaxed`}>
+                          <p className={`${isCompact ? 'text-xs' : 'text-sm'} text-black leading-relaxed`}>
                             {step.description}
                           </p>
 
@@ -198,7 +198,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                             className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                             animate={isActive ? { x: 0 } : { x: -5 }}
                           >
-                            <ChevronRight className={`${isCompact ? 'w-3 h-3' : 'w-4 h-4'} text-slate-400`} />
+                            <ChevronRight className={`${isCompact ? 'w-3 h-3' : 'w-4 h-4'} text-black`} />
                           </motion.div>
                         </div>
 
@@ -236,7 +236,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                 transition={{ duration: 0.5, delay: 1.2 }}
                 className="flex items-center justify-center mt-10 gap-4"
               >
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-navy-100 text-navy-700 text-sm font-medium">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-navy-100 text-black text-sm font-medium">
                   <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: service.accentColor }} />
                   <span>
                     {service.slug === 'pine-script-development'
@@ -305,7 +305,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                         <h3 className="font-bold text-navy-800 mb-2">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-navy-600 leading-relaxed">
+                        <p className="text-sm text-black leading-relaxed">
                           {step.description}
                         </p>
                       </motion.div>
@@ -336,7 +336,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                 {service.slug === 'pine-script-development' ? (
                   <>
                     <h4 className="font-semibold text-navy-800 mb-1">TradingView to Execution Bridge</h4>
-                    <p className="text-sm text-navy-600">
+                    <p className="text-sm text-black">
                       Your Pine Script strategy runs on TradingView, generating signals and alerts.
                       When conditions trigger, webhooks send JSON payloads to your execution server.
                       From there, orders flow directly to your broker—no manual intervention required.
@@ -345,7 +345,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                 ) : service.slug === 'execution-broker-integration' ? (
                   <>
                     <h4 className="font-semibold text-navy-800 mb-1">Fail-Safe by Design</h4>
-                    <p className="text-sm text-navy-600">
+                    <p className="text-sm text-black">
                       Every order passes through pre-trade risk checks before hitting the broker.
                       Circuit breakers monitor for runaway losses. Kill switches flatten positions instantly.
                       When things go wrong—and they will—the system degrades gracefully, not catastrophically.
@@ -354,7 +354,7 @@ export default function ServiceFlowchart({ service }: ServiceFlowchartProps) {
                 ) : (
                   <>
                     <h4 className="font-semibold text-navy-800 mb-1">Modular by Design</h4>
-                    <p className="text-sm text-navy-600">
+                    <p className="text-sm text-black">
                       Each component is built as an independent module with clean interfaces.
                       This means you can start with backtesting only, then add execution later—or
                       swap out your broker integration without touching your strategy logic.

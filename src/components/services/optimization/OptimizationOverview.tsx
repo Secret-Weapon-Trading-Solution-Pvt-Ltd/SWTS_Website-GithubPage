@@ -286,7 +286,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
             <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-navy-900 bg-clip-text text-transparent">Find Your</span>{' '}
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Optimal Edge</span>
           </h2>
-          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Maximize your strategy's potential with rigorous, scientifically-validated optimization
           </p>
         </motion.div>
@@ -306,7 +306,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-blue-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.whatItIs.title}
             </h3>
-            <p className="text-lg text-navy-600/90 leading-relaxed mb-8">
+            <p className="text-lg text-black leading-relaxed mb-8">
               {overviewData.whatItIs.description}
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -375,7 +375,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
                 <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-blue-900 to-navy-900 bg-clip-text text-transparent mb-4">
                   {overviewData.whyOptimize.title}
                 </h3>
-                <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+                <p className="text-lg text-black max-w-2xl mx-auto">
                   {overviewData.whyOptimize.description}
                 </p>
               </div>
@@ -402,7 +402,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
                       </div>
                     </div>
                     <h4 className="text-lg font-bold text-navy-900 mb-2">{problem.title}</h4>
-                    <p className="text-base text-navy-600 leading-relaxed">{problem.description}</p>
+                    <p className="text-base text-black leading-relaxed">{problem.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -439,7 +439,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-emerald-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.whatYouGet.title}
             </h3>
-            <p className="text-lg text-navy-600/90 leading-relaxed mb-8">
+            <p className="text-lg text-black leading-relaxed mb-8">
               Every optimization report includes comprehensive metrics and validated parameters ready for implementation.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -453,7 +453,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
                   className="p-4 bg-gradient-to-br from-white to-emerald-50/50 rounded-xl border border-emerald-100 shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-lg font-bold text-emerald-700 mb-1">{metric.value}</div>
-                  <div className="text-sm text-navy-600">{metric.description}</div>
+                  <div className="text-sm text-black">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -500,7 +500,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-blue-900 transition-colors">{profile.title}</h4>
-                  <p className="text-navy-600 leading-relaxed">{profile.description}</p>
+                  <p className="text-black leading-relaxed">{profile.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -524,7 +524,7 @@ export default function OptimizationOverview({ service }: OptimizationOverviewPr
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-blue-900 transition-colors">{overviewData.whoShouldUse.profiles[4].title}</h4>
-                    <p className="text-navy-600 leading-relaxed">{overviewData.whoShouldUse.profiles[4].description}</p>
+                    <p className="text-black leading-relaxed">{overviewData.whoShouldUse.profiles[4].description}</p>
                   </div>
                 </motion.div>
               );

@@ -271,7 +271,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
             <span className="bg-gradient-to-r from-navy-900 via-cyan-800 to-navy-900 bg-clip-text text-transparent">Find Setups</span>{' '}
             <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Automatically</span>
           </h2>
-          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Stop wasting hours checking charts. Let your screener find opportunities while you focus on trading.
           </p>
         </motion.div>
@@ -291,7 +291,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-cyan-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.whatItIs.title}
             </h3>
-            <p className="text-lg text-navy-600/90 leading-relaxed mb-8">
+            <p className="text-lg text-black leading-relaxed mb-8">
               {overviewData.whatItIs.description}
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -360,7 +360,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
                 <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-cyan-900 to-navy-900 bg-clip-text text-transparent mb-4">
                   {overviewData.whyScreen.title}
                 </h3>
-                <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+                <p className="text-lg text-black max-w-2xl mx-auto">
                   {overviewData.whyScreen.description}
                 </p>
               </div>
@@ -387,7 +387,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
                       </div>
                     </div>
                     <h4 className="text-lg font-bold text-navy-900 mb-2">{problem.title}</h4>
-                    <p className="text-base text-navy-600 leading-relaxed">{problem.description}</p>
+                    <p className="text-base text-black leading-relaxed">{problem.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -424,7 +424,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-emerald-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.alertDelivery.title}
             </h3>
-            <p className="text-lg text-navy-600/90 leading-relaxed mb-8">
+            <p className="text-lg text-black leading-relaxed mb-8">
               {overviewData.alertDelivery.description}
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -441,7 +441,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
                     <channel.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="text-lg font-bold text-navy-900 mb-1">{channel.name}</div>
-                  <div className="text-sm text-navy-600">{channel.description}</div>
+                  <div className="text-sm text-black">{channel.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -488,7 +488,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-cyan-900 transition-colors">{profile.title}</h4>
-                  <p className="text-navy-600 leading-relaxed">{profile.description}</p>
+                  <p className="text-black leading-relaxed">{profile.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -512,7 +512,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-cyan-900 transition-colors">{overviewData.whoShouldUse.profiles[4].title}</h4>
-                    <p className="text-navy-600 leading-relaxed">{overviewData.whoShouldUse.profiles[4].description}</p>
+                    <p className="text-black leading-relaxed">{overviewData.whoShouldUse.profiles[4].description}</p>
                   </div>
                 </motion.div>
               );

@@ -467,7 +467,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                     'from-cyan-600 to-blue-600'
                   } bg-clip-text text-transparent`}>{stat.value}</div>
                   <div className="text-sm lg:text-base font-semibold text-black mb-1">{stat.label}</div>
-                  <div className="text-xs lg:text-sm text-navy-500">{stat.description}</div>
+                  <div className="text-xs lg:text-sm text-black">{stat.description}</div>
                 </motion.div>
               ))}
 
@@ -487,7 +487,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                     <benefit.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="text-sm lg:text-base font-semibold text-navy-800 leading-tight mt-3 mb-1">{benefit.title}</div>
-                  <div className="text-xs lg:text-sm text-navy-500 leading-relaxed">{benefit.description}</div>
+                  <div className="text-xs lg:text-sm text-black leading-relaxed">{benefit.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -508,7 +508,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                     <benefit.icon className="w-4 h-4 text-white" />
                   </div>
                   <div className="text-sm font-semibold text-navy-800 mb-1">{benefit.title}</div>
-                  <div className="text-xs text-navy-500 leading-relaxed">{benefit.description}</div>
+                  <div className="text-xs text-black leading-relaxed">{benefit.description}</div>
                 </motion.div>
               ))}
             </div>

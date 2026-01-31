@@ -202,19 +202,19 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                 </motion.div>
 
                 {/* Service title */}
-                <h3 className="text-lg font-bold text-slate-900 mb-2 text-center group-hover:text-slate-800 transition-colors">
+                <h3 className="text-xl font-bold text-black mb-2 text-center transition-colors">
                   {service.shortTitle}
                 </h3>
 
                 {/* Powerful one-liner */}
                 <p
-                  className={`text-sm font-medium mb-3 text-center bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}
+                  className={`text-base font-medium mb-3 text-center bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}
                 >
                   {service.oneLiner}
                 </p>
 
                 {/* Tagline */}
-                <p className="text-slate-500 text-xs leading-relaxed flex-grow text-center">
+                <p className="text-black text-sm leading-relaxed flex-grow text-center">
                   {service.tagline}
                 </p>
 
@@ -222,10 +222,10 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                 <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-slate-100">
                   {service.stats.slice(0, 2).map((stat, idx) => (
                     <div key={idx} className="text-center">
-                      <div className={`text-base font-bold bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}>
+                      <div className={`text-lg font-bold bg-gradient-to-r ${service.gradientFrom} ${service.gradientTo} bg-clip-text text-transparent`}>
                         {stat.value}
                       </div>
-                      <div className="text-xs text-slate-400 mt-0.5 font-medium">
+                      <div className="text-sm text-black mt-0.5 font-medium">
                         {stat.label}
                       </div>
                     </div>

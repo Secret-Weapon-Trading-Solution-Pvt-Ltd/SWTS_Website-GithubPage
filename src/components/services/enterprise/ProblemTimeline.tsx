@@ -187,7 +187,7 @@ export default function ProblemTimeline({ service }: ProblemTimelineProps) {
                     <h3 className="font-semibold text-navy-900 text-base mb-2 leading-snug">
                       {problem.title}
                     </h3>
-                    <p className="text-navy-600 text-sm leading-relaxed">
+                    <p className="text-black text-sm leading-relaxed">
                       {problem.description}
                     </p>
                   </motion.div>
@@ -294,7 +294,7 @@ export default function ProblemTimeline({ service }: ProblemTimelineProps) {
                 <h3 className="font-semibold text-navy-900 text-sm mb-2">
                   {problem.title}
                 </h3>
-                <p className="text-navy-500 text-xs leading-relaxed">
+                <p className="text-black text-xs leading-relaxed">
                   {problem.description}
                 </p>
               </motion.div>

@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-20">
+    <section id="services" className="pt-10 pb-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -24,7 +24,7 @@ export default function ServicesGrid() {
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
             What We Build For You
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             From Pine Script indicators to full Python trading systems—we implement
             YOUR strategy across any platform. Pick what fits your needs.
           </p>
@@ -73,7 +73,7 @@ export default function ServicesGrid() {
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                   Not sure which service fits your needs?
                 </h3>
-                <p className="text-slate-400 max-w-xl text-lg">
+                <p className="text-white/90 max-w-xl text-lg">
                   Take our quick assessment. We'll understand your requirements
                   and recommend the right approach for YOUR trading goals.
                 </p>

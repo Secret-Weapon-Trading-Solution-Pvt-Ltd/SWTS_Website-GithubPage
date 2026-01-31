@@ -109,7 +109,7 @@ export default function ScreenerCapabilities({ service }: ScreenerCapabilitiesPr
             <span className="bg-gradient-to-r from-navy-900 via-cyan-800 to-navy-900 bg-clip-text text-transparent">Our Screener</span>{' '}
             <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Capabilities</span>
           </h2>
-          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Comprehensive scanning solutions that find opportunities before the crowd
           </p>
         </motion.div>
@@ -153,7 +153,7 @@ export default function ScreenerCapabilities({ service }: ScreenerCapabilitiesPr
                       </h3>
 
                       {/* Description */}
-                      <p className="text-base lg:text-lg text-navy-600 mb-5 leading-relaxed">
+                      <p className="text-base lg:text-lg text-black mb-5 leading-relaxed">
                         {capability.description}
                       </p>
 
@@ -167,7 +167,7 @@ export default function ScreenerCapabilities({ service }: ScreenerCapabilitiesPr
                             <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br ${capability.gradient} flex items-center justify-center`}>
                               <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
                             </div>
-                            <span className="text-base text-navy-700">
+                            <span className="text-base text-black">
                               {feature}
                             </span>
                           </div>
@@ -189,7 +189,7 @@ export default function ScreenerCapabilities({ service }: ScreenerCapabilitiesPr
           className="mt-10 flex justify-center"
         >
           <div className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-full border border-cyan-100">
-            <span className="text-navy-600 font-medium">All delivered with setup documentation and ongoing support</span>
+            <span className="text-black font-medium">All delivered with setup documentation and ongoing support</span>
             <motion.div
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}

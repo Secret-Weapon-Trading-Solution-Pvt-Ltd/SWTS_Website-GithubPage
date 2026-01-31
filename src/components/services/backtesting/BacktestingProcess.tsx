@@ -187,7 +187,7 @@ export default function BacktestingProcess({ service }: BacktestingProcessProps)
             {' '}
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 bg-clip-text text-transparent">Results</span>
           </h2>
-          <p className="text-xl text-navy-600/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             A straightforward process that transforms your trading rules into actionable performance data
           </p>
         </motion.div>
@@ -245,7 +245,7 @@ export default function BacktestingProcess({ service }: BacktestingProcessProps)
                     <h3 className="text-lg font-bold text-navy-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-base text-navy-600 leading-relaxed mb-3">
+                    <p className="text-base text-black leading-relaxed mb-3">
                       {step.description}
                     </p>
                     {step.duration && (
@@ -298,7 +298,7 @@ export default function BacktestingProcess({ service }: BacktestingProcessProps)
                         </span>
                       )}
                     </div>
-                    <p className="text-base text-navy-600">
+                    <p className="text-base text-black">
                       {step.description}
                     </p>
                   </div>
@@ -322,7 +322,7 @@ export default function BacktestingProcess({ service }: BacktestingProcessProps)
             <h3 className="text-xl lg:text-2xl font-bold text-navy-900 mb-2 text-center">
               Your Strategy, Validated
             </h3>
-            <p className="text-base lg:text-lg text-navy-600 text-center">
+            <p className="text-base lg:text-lg text-black text-center">
               Make informed decisions with confidence, backed by years of historical data
             </p>
           </div>

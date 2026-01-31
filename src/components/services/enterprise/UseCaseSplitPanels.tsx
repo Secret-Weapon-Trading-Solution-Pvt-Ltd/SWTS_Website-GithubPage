@@ -137,7 +137,7 @@ export default function UseCaseSplitPanels({ service }: UseCaseSplitPanelsProps)
           <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
             Case Studies & Outcomes
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             These aren't hypotheticals. These are real strategies we've built for traders like you,
             with measurable results that speak for themselves.
           </p>
@@ -203,7 +203,7 @@ export default function UseCaseSplitPanels({ service }: UseCaseSplitPanelsProps)
                       {useCase.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-navy-100 text-navy-600 text-sm font-medium"
+                          className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-navy-100 text-black text-sm font-medium"
                         >
                           <Tag className="w-3 h-3" />
                           {tag}
@@ -217,7 +217,7 @@ export default function UseCaseSplitPanels({ service }: UseCaseSplitPanelsProps)
                     </h3>
 
                     {/* Description */}
-                    <p className="text-lg text-navy-600 leading-relaxed mb-8">
+                    <p className="text-lg text-black leading-relaxed mb-8">
                       {useCase.description}
                     </p>
 
