@@ -43,6 +43,12 @@ import {
   AlertsCapabilities,
   AlertsProcess
 } from '@/components/services/alerts';
+// Paper Trading-specific enterprise components
+import {
+  PaperTradingOverview,
+  PaperTradingCapabilities,
+  PaperTradingProcess
+} from '@/components/services/papertrading';
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services';
 
 interface ServicePageProps {
@@ -103,7 +109,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const isScreener = service.slug === 'custom-screener';
   const isDashboard = service.slug === 'custom-dashboard';
   const isAlerts = service.slug === 'strategy-alerts';
-  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization || isScreener || isDashboard || isAlerts;
+  const isPaperTrading = service.slug === 'paper-trading';
+  const isEnterpriseLayout = isStrategyAutomation || isBacktesting || isOptimization || isScreener || isDashboard || isAlerts || isPaperTrading;
 
   return (
     <MainLayout>
@@ -175,6 +182,17 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Alerts Process - Timeline */}
           <AlertsProcess service={service} />
+        </>
+      ) : isPaperTrading ? (
+        <>
+          {/* Paper Trading Overview - Simulation Lab */}
+          <PaperTradingOverview service={service} />
+
+          {/* Paper Trading Capabilities - Feature cards */}
+          <PaperTradingCapabilities service={service} />
+
+          {/* Paper Trading Process - Vertical timeline */}
+          <PaperTradingProcess service={service} />
         </>
       ) : (
         <>
