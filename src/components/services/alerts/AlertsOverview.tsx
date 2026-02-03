@@ -436,7 +436,7 @@ export default function AlertsOverview({ service }: AlertsOverviewProps) {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full text-amber-700 text-sm font-semibold mb-4 border border-amber-200">
                   <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
-                  The Problem
+                  The Problems
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
                   {overviewData.whyAlerts.title}
@@ -501,7 +501,7 @@ export default function AlertsOverview({ service }: AlertsOverviewProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full text-emerald-700 text-sm font-semibold mb-5 border border-emerald-200">
               <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              Delivery Channels
+              The Solution
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
               {overviewData.deliveryChannels.title}

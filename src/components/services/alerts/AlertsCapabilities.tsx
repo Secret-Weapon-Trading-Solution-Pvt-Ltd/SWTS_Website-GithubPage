@@ -101,7 +101,7 @@ export default function AlertsCapabilities({ service }: AlertsCapabilitiesProps)
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 text-amber-700 rounded-full text-sm font-semibold mb-6 border border-amber-200/50 shadow-sm"
           >
             <Bell className="w-4 h-4" />
-            Alert Capabilities
+            What We Deliver
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 bg-clip-text text-transparent">Powerful Alert</span>

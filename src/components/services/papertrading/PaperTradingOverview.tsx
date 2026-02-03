@@ -350,7 +350,7 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-6 border border-emerald-200"
           >
             <FlaskConical className="w-4 h-4" />
-            Strategy Testing Lab
+            Understanding Paper Trading
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-navy-900">
             Test Without Risk
@@ -370,7 +370,7 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full text-emerald-700 text-sm font-semibold mb-5 border border-emerald-200">
               <Play className="w-4 h-4" />
-              The Concept
+              The Basics
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
               {overviewData.whatItIs.title}
@@ -422,7 +422,7 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full text-emerald-700 text-sm font-semibold mb-4 border border-emerald-200">
                 <Shield className="w-4 h-4" />
-                The Value
+                The Problems
               </div>
               <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
                 {overviewData.whyPaperTrade.title}
@@ -480,7 +480,7 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200">
               <BarChart3 className="w-4 h-4" />
-              Performance Metrics
+              The Solution
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
               {overviewData.whatYouGet.title}
@@ -507,7 +507,7 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="text-base font-bold text-navy-900">{metric.label}</div>
-                    <div className="text-sm text-slate-600">{metric.description}</div>
+                    <div className="text-sm text-black">{metric.description}</div>
                   </motion.div>
                 );
               })}

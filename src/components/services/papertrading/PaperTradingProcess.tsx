@@ -47,7 +47,7 @@ const processSteps = [
     icon: Play,
     title: "Live Simulation",
     description: "Run your strategy against live market data with simulated execution.",
-    duration: "2-4 weeks",
+    duration: "1-2 weeks",
   },
   {
     step: 4,
@@ -215,7 +215,7 @@ export default function PaperTradingProcess({ service }: PaperTradingProcessProp
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-emerald-500/10 text-emerald-700 rounded-full text-sm font-semibold mb-6 border border-emerald-200/50 shadow-sm"
           >
             <Clock className="w-4 h-4" />
-            Your Journey
+            Our Proven Process
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-slate-800 to-navy-900 bg-clip-text text-transparent">From Setup to</span>

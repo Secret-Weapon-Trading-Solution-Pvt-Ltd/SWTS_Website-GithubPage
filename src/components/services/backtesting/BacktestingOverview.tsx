@@ -546,7 +546,7 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-full text-amber-700 text-sm font-semibold mb-4 border border-amber-200/50">
                   <span className="w-2 h-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></span>
-                  The Hidden Risks
+                  The Problems
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent mb-4">
                   {overviewData.whyItMatters.title}
@@ -597,7 +597,7 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full text-emerald-700 text-sm font-semibold mb-5 border border-emerald-200/50 shadow-sm">
               <span className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
-              Key Metrics
+              The Solution
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-emerald-900 to-navy-800 bg-clip-text text-transparent mb-6">
               {overviewData.whatYouGet.title}

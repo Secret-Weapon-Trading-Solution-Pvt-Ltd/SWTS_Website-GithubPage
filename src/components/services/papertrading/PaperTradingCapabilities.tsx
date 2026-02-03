@@ -101,7 +101,7 @@ export default function PaperTradingCapabilities({ service }: PaperTradingCapabi
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-emerald-500/10 text-emerald-700 rounded-full text-sm font-semibold mb-6 border border-emerald-200/50 shadow-sm"
           >
             <FlaskConical className="w-4 h-4" />
-            Testing Capabilities
+            What We Deliver
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 bg-clip-text text-transparent">Production-Grade</span>
