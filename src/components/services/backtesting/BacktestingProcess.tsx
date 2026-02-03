@@ -52,7 +52,7 @@ const processSteps = [
   {
     step: 3,
     title: "Backtest Execution",
-    description: "Your rules tested with realistic slippage and costs.",
+    description: "Automated system simulates your strategy on historic data.",
     duration: "2-3 days",
     icon: FlaskConical,
   },
