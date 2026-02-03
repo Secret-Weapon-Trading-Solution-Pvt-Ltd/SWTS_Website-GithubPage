@@ -56,7 +56,7 @@ export const PlatformIntro: React.FC = () => {
           {/* Headline */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-3">
             End-to-End{' '}
-            <span className="text-teal-600">Trading Automation</span>
+            <span className="text-transparent bg-clip-text" style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)', WebkitBackgroundClip: 'text' }}>Trading Automation</span>
           </h2>
 
           {/* Subheadline */}

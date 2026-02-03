@@ -64,7 +64,7 @@ export const Services: React.FC = () => {
           <span className="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-full text-sm font-medium mb-4">
             Our Services
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 mb-4">
             End-to-End Trading Automation
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto">
