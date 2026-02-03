@@ -14,8 +14,9 @@ const footerLinks = {
   ],
   company: [
     { href: '/', label: 'Home' },
-    { href: '/services', label: 'All Services' },
-    { href: '/strategy-assessment', label: 'Free Assessment' },
+    { href: '/about/', label: 'About Us' },
+    { href: '/services/', label: 'All Services' },
+    { href: '/strategy-assessment/', label: 'Free Assessment' },
   ],
   legal: [
     { href: '/privacy', label: 'Privacy Policy' },
