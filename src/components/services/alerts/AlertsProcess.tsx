@@ -327,7 +327,9 @@ export default function AlertsProcess({ service }: AlertsProcessProps) {
           className="mt-12 text-center"
         >
           <a
-            href="/strategy-assessment"
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 group"
           >
             <span>Get Your Custom Alerts</span>

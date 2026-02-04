@@ -61,9 +61,9 @@ export const AboutHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl"
             >
-              With over a decade in trading and years of expertise in algo development,
+              Founded by <span className="text-teal-400 font-semibold">Swapnil Raykar</span>, with over a decade in trading and years of expertise in algo development,
               we specialize in creating innovative automated trading solutions using
-              AmiBroker and TradingView, delivering precision and consistency to serious traders.
+              Python, TradingView, AmiBroker, and other technologies, delivering precision and consistency to serious traders worldwide.
             </motion.p>
 
             {/* Stats Row */}

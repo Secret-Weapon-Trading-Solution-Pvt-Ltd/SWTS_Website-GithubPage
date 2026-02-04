@@ -361,7 +361,9 @@ export default function ScreenerProcess({ service }: ScreenerProcessProps) {
           className="mt-12 text-center"
         >
           <a
-            href="/strategy-assessment"
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:from-cyan-700 hover:via-blue-700 hover:to-cyan-700 transition-all duration-300 group"
           >
             <span>Get Your Custom Screener</span>

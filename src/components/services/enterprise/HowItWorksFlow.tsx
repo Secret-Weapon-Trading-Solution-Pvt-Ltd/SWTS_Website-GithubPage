@@ -274,7 +274,9 @@ export default function HowItWorksFlow({ service }: HowItWorksFlowProps) {
           className="mt-16 text-center"
         >
           <a
-            href="/strategy-assessment"
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-navy-800 text-white rounded-xl font-semibold hover:bg-navy-700 transition-all shadow-lg hover:shadow-xl group"
           >
             <span>Start Your Journey</span>

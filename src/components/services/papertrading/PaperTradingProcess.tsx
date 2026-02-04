@@ -371,7 +371,9 @@ export default function PaperTradingProcess({ service }: PaperTradingProcessProp
           className="mt-12 text-center"
         >
           <a
-            href="/strategy-assessment"
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold shadow-lg hover:bg-emerald-700 hover:shadow-xl transition-all duration-300 group"
           >
             <span>Start Paper Trading Setup</span>

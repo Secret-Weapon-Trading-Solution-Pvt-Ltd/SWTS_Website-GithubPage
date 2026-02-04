@@ -6,7 +6,7 @@ import { Eye, Target } from 'lucide-react';
 
 export const VisionMission: React.FC = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden mb-16 lg:mb-24">
 
       {/* Vision Section */}
       <div className="relative py-12 lg:py-16">
@@ -54,7 +54,7 @@ export const VisionMission: React.FC = () => {
                 We envision a future where every trader — from beginners to professionals —
                 has access to sophisticated automation tools that were once reserved for institutions.
               </p>
-              <p className="text-lg text-slate-800 leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Through cutting-edge technology and advanced algorithms, we aim to help traders
                 achieve consistent, disciplined results by removing emotional decision-making.
               </p>
@@ -92,7 +92,7 @@ export const VisionMission: React.FC = () => {
                 Our mission is to empower traders with advanced algorithmic solutions that
                 provide a significant competitive advantage in the market.
               </p>
-              <p className="text-lg text-slate-800 leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 We deliver tailored automation systems designed to meet each client's unique needs,
                 helping them stay ahead through discipline, precision, and technology.
               </p>

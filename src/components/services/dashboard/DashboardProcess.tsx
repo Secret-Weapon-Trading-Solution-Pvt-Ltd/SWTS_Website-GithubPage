@@ -341,7 +341,9 @@ export default function DashboardProcess({ service }: DashboardProcessProps) {
           className="mt-12 text-center"
         >
           <a
-            href="/strategy-assessment"
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-slate-700 text-white rounded-xl font-semibold shadow-lg hover:bg-slate-800 hover:shadow-xl transition-all duration-300 group"
           >
             <span>Start Your Dashboard Project</span>

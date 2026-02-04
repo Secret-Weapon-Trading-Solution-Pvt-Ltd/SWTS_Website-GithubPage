@@ -4,12 +4,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/utils';
-import { TrendingUp, Users, Award, Calendar } from 'lucide-react';
+import { TrendingUp, Users, Award, Calendar, Quote, ExternalLink } from 'lucide-react';
 
 const stats = [
   { icon: Calendar, value: '2014', label: 'Started Trading' },
   { icon: TrendingUp, value: '2019', label: 'Algo Development' },
   { icon: Award, value: '2021', label: 'Company Founded' },
+  { icon: Award, value: '2025', label: 'Became Pvt. Ltd.' },
   { icon: Users, value: '1000+', label: 'Projects Delivered' },
 ];
 
@@ -46,21 +47,58 @@ export const OurStory: React.FC = () => {
                 we understood what traders truly need — discipline, precision, and consistency.
               </p>
               <p className="text-lg text-slate-900 leading-relaxed">
-                By 2019, we transitioned into algorithmic trading, mastering AmiBroker AFL and TradingView
-                Pine Script development. In 2021, we founded Secret Weapon Trading Solution Pvt. Ltd. to
-                help traders automate their edge with professional-grade solutions.
+                By 2019, we transitioned into algorithmic trading, mastering Python, TradingView Pine Script,
+                AmiBroker AFL, and MetaTrader development. In 2021, we founded Secret Weapon Trading Solution
+                to help traders automate their edge with professional-grade solutions.
               </p>
               <p className="text-lg text-slate-900 leading-relaxed">
-                Today, with 1000+ projects delivered, we continue helping traders worldwide transform
-                their strategies into automated systems that execute with precision.
+                On 3rd April 2025, we became a Private Limited company, marking a significant milestone
+                in our journey. Today, with 1000+ projects delivered, we continue helping institutional clients,
+                professional traders, and retail investors worldwide transform their strategies into automated
+                systems that execute with precision.
               </p>
             </div>
+
+            {/* Founder Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 mb-8 border-l-4 border-teal-500"
+            >
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-teal-200" />
+              <p className="text-lg italic text-black mb-3">
+                "We take the burden off your shoulders, so you can focus on strategy."
+              </p>
+              <p className="text-sm font-semibold text-black">— Swapnil Raykar, Founder</p>
+            </motion.div>
+
+            {/* Featured In */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-8"
+            >
+              <span className="text-sm font-medium text-black uppercase tracking-wider mb-3 block">Featured In</span>
+              <a
+                href="https://www.financeoutlookindia.com/finance/vendor/secret-weapon-trading-solution-automate-your-strategies-to-trade-smarter-not-harder-cid-243.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-300 transition-all group"
+              >
+                <span className="font-semibold text-black group-hover:text-teal-700">Finance Outlook India</span>
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-teal-600" />
+              </a>
+            </motion.div>
 
             {/* Key Points */}
             <div className="space-y-3 mb-8">
               {[
                 'Decade of hands-on trading experience',
-                'Expert in AmiBroker AFL & TradingView Pine Script',
+                'Expert in Python, TradingView, AmiBroker & MetaTrader',
                 'Custom automation solutions for serious traders',
                 'Focus on precision, discipline & consistency',
               ].map((point, index) => (
@@ -73,7 +111,7 @@ export const OurStory: React.FC = () => {
                   className="flex items-center gap-3"
                 >
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 flex-shrink-0" />
-                  <span className="text-slate-700">{point}</span>
+                  <span className="text-black">{point}</span>
                 </motion.div>
               ))}
             </div>
@@ -92,7 +130,7 @@ export const OurStory: React.FC = () => {
                   <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-slate-800">{stat.label}</div>
+                  <div className="text-sm text-black">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
