@@ -31,9 +31,9 @@ export const HowItWorks: React.FC = () => {
         {/* ================================================================ */}
         <div className="text-center mb-4">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 mb-6">
+            <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-teal-600">
               Our Process
             </span>
           </div>
@@ -75,9 +75,9 @@ export const HowItWorks: React.FC = () => {
         <div className="mb-6 pt-4">
           {/* Section Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
-              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 mb-5">
+              <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-teal-600">
                 Get Started
               </span>
             </div>
