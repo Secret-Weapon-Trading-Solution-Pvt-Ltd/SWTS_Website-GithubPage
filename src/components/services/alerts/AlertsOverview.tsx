@@ -421,7 +421,7 @@ export default function AlertsOverview({ service }: AlertsOverviewProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative flex justify-center lg:order-last"
           >
-            <div className="relative w-full bg-gradient-to-br from-white via-amber-50/10 to-orange-50/20 rounded-xl p-1 border border-amber-100/30 shadow-sm overflow-hidden">
+            <div className="relative w-full bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50/50 rounded-xl p-1 border border-slate-200/60 shadow-md overflow-hidden">
               <AlertNotificationIllustration />
             </div>
           </motion.div>
