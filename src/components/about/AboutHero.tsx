@@ -63,7 +63,7 @@ export const AboutHero: React.FC = () => {
             >
               Founded by <span className="text-teal-400 font-semibold">Swapnil Raykar</span>, with over a decade in trading and years of expertise in algo development,
               we specialize in creating innovative automated trading solutions using
-              Python, TradingView, AmiBroker, and other technologies, delivering precision and consistency to serious traders worldwide.
+              python, Tradingview, Amibroker and couple of other technologies, delivering precision and consistency to serious traders worldwide.
             </motion.p>
 
             {/* Stats Row */}

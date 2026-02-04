@@ -4,14 +4,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/utils';
-import { TrendingUp, Users, Award, Calendar, Quote, ExternalLink } from 'lucide-react';
+import { TrendingUp, Award, Calendar, Quote, ExternalLink, Plane } from 'lucide-react';
 
 const stats = [
   { icon: Calendar, value: '2014', label: 'Started Trading' },
   { icon: TrendingUp, value: '2019', label: 'Algo Development' },
   { icon: Award, value: '2021', label: 'Company Founded' },
   { icon: Award, value: '2025', label: 'Became Pvt. Ltd.' },
-  { icon: Users, value: '1000+', label: 'Projects Delivered' },
 ];
 
 export const OurStory: React.FC = () => {
@@ -34,7 +33,7 @@ export const OurStory: React.FC = () => {
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               The Story Behind{' '}
-              <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
                 Secret Weapon
               </span>
             </h2>
@@ -52,8 +51,8 @@ export const OurStory: React.FC = () => {
                 to help traders automate their edge with professional-grade solutions.
               </p>
               <p className="text-lg text-slate-900 leading-relaxed">
-                On 3rd April 2025, we became a Private Limited company, marking a significant milestone
-                in our journey. Today, with 1000+ projects delivered, we continue helping institutional clients,
+                In 2025, we became a Private Limited company, marking a significant milestone
+                in our journey. Today, we continue helping institutional clients,
                 professional traders, and retail investors worldwide transform their strategies into automated
                 systems that execute with precision.
               </p>
@@ -116,23 +115,53 @@ export const OurStory: React.FC = () => {
               ))}
             </div>
 
-            {/* Stats Row */}
-            <div className="flex flex-wrap gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-black">{stat.label}</div>
-                </motion.div>
-              ))}
+            {/* Timeline Row with Airplane Journey */}
+            <div className="relative">
+              {/* Timeline milestones */}
+              <div className="flex items-center">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex items-center"
+                  >
+                    {/* Milestone */}
+                    <div className="flex flex-col items-center text-center px-2 sm:px-4">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center mb-2 shadow-lg shadow-teal-500/30">
+                        <span className="text-sm sm:text-base font-bold text-white">{stat.value || '🎉'}</span>
+                      </div>
+                      <div className="text-xs sm:text-sm text-black font-medium max-w-[80px] sm:max-w-[100px] leading-tight">{stat.label}</div>
+                    </div>
+                    {/* Dotted connector line with dots - show between items, not after last */}
+                    {index < stats.length - 1 && (
+                      <div className="hidden sm:flex items-center gap-1 px-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-300"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-300"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                      </div>
+                    )}
+                    {/* Airplane at the end */}
+                    {index === stats.length - 1 && (
+                      <motion.div
+                        initial={{ opacity: 0, x: 10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className="hidden sm:flex items-center ml-2"
+                      >
+                        <span className="w-1 h-1 rounded-full bg-teal-400"></span>
+                        <span className="w-1 h-1 rounded-full bg-teal-400 ml-1"></span>
+                        <Plane className="w-5 h-5 text-teal-600 ml-2 rotate-45" />
+                      </motion.div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
