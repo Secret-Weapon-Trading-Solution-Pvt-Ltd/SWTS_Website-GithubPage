@@ -36,6 +36,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_TELEGRAM_BOT_TOKEN: ${{ vars.TELEGRAM_BOT_TOKEN }}
+          NEXT_PUBLIC_TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll

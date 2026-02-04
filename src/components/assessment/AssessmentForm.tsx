@@ -8,6 +8,7 @@ import { calculateScore } from '@/lib/scoring';
 import { generateInsights, getNextSteps, generatePositiveInsight } from '@/lib/insights';
 import { storage } from '@/lib/utils';
 import { ArrowLeft, ArrowRight, Send, Shield, AlertCircle } from 'lucide-react';
+import { sendTelegramNotificationClient } from '@/lib/telegram';
 
 interface ContactInfo {
   name: string;
@@ -160,19 +161,15 @@ export const AssessmentForm: React.FC = () => {
         timestamp,
       };
 
-      // Send Telegram notification (don't block on failure)
+      // Send Telegram notification directly (don't block on failure)
       try {
-        await fetch('/api/notify', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: contactInfo.name,
-            email: contactInfo.email,
-            phone: contactInfo.phone || '',
-            score: score.percentage,
-            leadQuality: score.leadQuality,
-            timestamp,
-          }),
+        await sendTelegramNotificationClient({
+          name: contactInfo.name,
+          email: contactInfo.email,
+          phone: contactInfo.phone || '',
+          score: score.percentage,
+          leadQuality: score.leadQuality,
+          timestamp,
         });
       } catch (notifyErr) {
         // Don't fail the submission if notification fails
