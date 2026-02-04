@@ -10,9 +10,9 @@ import {
   FlaskConical,
   PlayCircle,
   Rocket,
-  ArrowRight,
   Clock
 } from 'lucide-react';
+import ContactCTA from '@/components/ui/ContactCTA';
 
 interface HowItWorksFlowProps {
   service: Service;
@@ -273,15 +273,7 @@ export default function HowItWorksFlow({ service }: HowItWorksFlowProps) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <a
-            href="https://wa.me/917083718306"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-navy-800 text-white rounded-xl font-semibold hover:bg-navy-700 transition-all shadow-lg hover:shadow-xl group"
-          >
-            <span>Start Your Journey</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          <ContactCTA buttonText="Start Your Journey" />
         </motion.div>
       </div>
     </section>

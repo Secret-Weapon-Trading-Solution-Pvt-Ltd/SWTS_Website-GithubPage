@@ -12,6 +12,7 @@ import {
   Clock,
   CheckCircle2
 } from 'lucide-react';
+import ContactCTA from '@/components/ui/ContactCTA';
 
 interface OptimizationProcessProps {
   service: Service;
@@ -336,16 +337,7 @@ export default function OptimizationProcess({ service }: OptimizationProcessProp
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <a
-            href="https://wa.me/917083718306"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-semibold shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-300 group"
-            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
-          >
-            <span>Start Your Optimization</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          <ContactCTA buttonText="Start Your Optimization" />
         </motion.div>
       </div>
     </section>
