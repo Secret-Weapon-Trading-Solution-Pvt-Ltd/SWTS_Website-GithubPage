@@ -103,7 +103,7 @@ export default function OptimizationCapabilities({ service }: OptimizationCapabi
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-navy-900 bg-clip-text text-transparent">Our Optimization</span>{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Capabilities</span>
+            <span className="text-teal-700">Capabilities</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Comprehensive optimization services that improve your strategy without overfitting

@@ -182,7 +182,7 @@ export default function AlertsProcess({ service }: AlertsProcessProps) {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-amber-800 to-navy-900 bg-clip-text text-transparent">From Idea to</span>
             {' '}
-            <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 bg-clip-text text-transparent">Live Alerts</span>
+            <span className="text-teal-700">Live Alerts</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             A simple process that transforms your trading conditions into 24/7 automated alerts
@@ -330,7 +330,8 @@ export default function AlertsProcess({ service }: AlertsProcessProps) {
             href="https://wa.me/917083718306"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300 group"
+            className="inline-flex items-center gap-3 px-8 py-4 text-white rounded-xl font-semibold shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-300 group"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             <span>Get Your Custom Alerts</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

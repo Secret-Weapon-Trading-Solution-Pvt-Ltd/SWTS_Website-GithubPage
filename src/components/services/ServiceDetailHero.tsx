@@ -76,7 +76,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-4 text-navy-800"
             >
               {service.title.split(' ')[0]}{' '}
-              <span className="text-blue-600">
+              <span className="text-teal-700">
                 {service.title.split(' ').slice(1).join(' ')}
               </span>
             </motion.h1>
@@ -100,7 +100,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             >
               <motion.a
                 href="/strategy-assessment"
-                className="inline-flex items-center justify-center w-fit px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl group bg-indigo-600 text-white hover:bg-indigo-700"
+                className="inline-flex items-center justify-center w-fit px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 group text-white"
+                style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >

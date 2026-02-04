@@ -107,7 +107,7 @@ export default function DashboardCapabilities({ service }: DashboardCapabilities
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-slate-800 to-navy-900 bg-clip-text text-transparent">Our Dashboard</span>{' '}
-            <span className="bg-gradient-to-r from-slate-600 via-gray-600 to-slate-600 bg-clip-text text-transparent">Capabilities</span>
+            <span className="text-teal-700">Capabilities</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Everything you need to monitor and manage your trading operations in one place

@@ -104,7 +104,7 @@ export default function BacktestingCapabilities({ service }: BacktestingCapabili
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-indigo-800 to-purple-900 bg-clip-text text-transparent">Our Backtesting</span>{' '}
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 bg-clip-text text-transparent">Capabilities</span>
+            <span className="text-teal-700">Capabilities</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Rigorous analysis that reveals the true potential of your trading strategy

@@ -271,7 +271,7 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-cyan-800 to-navy-900 bg-clip-text text-transparent">Find Setups</span>{' '}
-            <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">Automatically</span>
+            <span className="text-teal-700">Automatically</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Stop wasting hours checking charts. Let your screener find opportunities while you focus on trading.
@@ -551,7 +551,8 @@ export default function ScreenerOverview({ service }: ScreenerOverviewProps) {
             href="#how-it-works"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-600 text-white font-semibold rounded-2xl shadow-xl shadow-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/40 transition-all duration-300 group"
+            className="inline-flex items-center gap-3 px-10 py-5 text-white font-semibold rounded-2xl shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-300 group"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             See Our Process
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

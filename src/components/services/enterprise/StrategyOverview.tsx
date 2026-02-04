@@ -361,7 +361,7 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-navy-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">Transform Your</span>{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Trading</span>
+            <span className="text-teal-700">Trading</span>
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Everything you need to know about automating your trading strategy
@@ -526,11 +526,11 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-5 border border-indigo-200/50 shadow-sm">
-              <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 rounded-full text-teal-700 text-sm font-semibold mb-5 border border-teal-100 shadow-sm">
+              <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
               Ideal For
             </div>
-            <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-navy-800 to-indigo-900 bg-clip-text text-transparent mb-8">
+            <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-8">
               {overviewData.whoShouldUse.title}
             </h3>
             <div className="space-y-5">
@@ -542,17 +542,13 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex gap-5 items-start p-4 rounded-2xl bg-gradient-to-r from-white to-slate-50/80 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-100 transition-all duration-300 group cursor-default"
+                  className="flex gap-5 items-start p-4 rounded-2xl bg-white border border-teal-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300 group cursor-default"
                 >
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-lg bg-gradient-to-br ${
-                    index === 0 ? 'from-blue-500 to-indigo-600 shadow-blue-500/25' :
-                    index === 1 ? 'from-indigo-500 to-purple-600 shadow-indigo-500/25' :
-                    'from-purple-500 to-pink-600 shadow-purple-500/25'
-                  }`}>
-                    <profile.icon className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md bg-teal-50 border border-teal-100">
+                    <profile.icon className="w-7 h-7 text-teal-700" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-indigo-900 transition-colors">{profile.title}</h4>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-teal-700 transition-colors">{profile.title}</h4>
                     <p className="text-black leading-relaxed">{profile.description}</p>
                   </div>
                 </motion.div>
@@ -572,7 +568,8 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
             href="#how-it-works"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold rounded-2xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 group"
+            className="inline-flex items-center gap-3 px-10 py-5 text-white font-semibold rounded-2xl shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-300 group"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             See How It Works
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
