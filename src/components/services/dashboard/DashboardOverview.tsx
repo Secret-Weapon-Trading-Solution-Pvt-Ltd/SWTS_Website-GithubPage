@@ -451,9 +451,9 @@ export default function DashboardOverview({ service }: DashboardOverviewProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-slate-500/10 via-gray-500/10 to-slate-500/10 text-slate-700 rounded-full text-sm font-semibold mb-6 border border-slate-200/50 shadow-sm backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm backdrop-blur-sm"
           >
-            <span className="w-2 h-2 bg-gradient-to-r from-slate-500 to-gray-600 rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></span>
             Understanding Custom Dashboards
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -473,8 +473,8 @@ export default function DashboardOverview({ service }: DashboardOverviewProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-500/10 to-gray-500/10 rounded-full text-slate-700 text-sm font-semibold mb-5 border border-slate-200/50 shadow-sm">
-              <span className="w-2 h-2 bg-gradient-to-r from-slate-500 to-gray-600 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
               The Basics
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-slate-900 to-navy-800 bg-clip-text text-transparent mb-6">

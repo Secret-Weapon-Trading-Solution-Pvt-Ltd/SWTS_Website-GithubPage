@@ -98,9 +98,9 @@ export default function AlertsCapabilities({ service }: AlertsCapabilitiesProps)
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 text-amber-700 rounded-full text-sm font-semibold mb-6 border border-amber-200/50 shadow-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-slate-500/10 via-gray-500/10 to-slate-500/10 text-slate-700 rounded-full text-sm font-semibold mb-6 border border-slate-200/50 shadow-sm"
           >
-            <Bell className="w-4 h-4" />
+            <span className="w-2 h-2 bg-gradient-to-r from-slate-500 to-gray-600 rounded-full"></span>
             What We Deliver
           </motion.span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">

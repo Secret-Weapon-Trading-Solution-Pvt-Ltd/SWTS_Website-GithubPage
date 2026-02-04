@@ -453,9 +453,9 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-violet-500/10 text-indigo-700 rounded-full text-sm font-semibold mb-6 border border-indigo-200/50 shadow-sm backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm backdrop-blur-sm"
           >
-            <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></span>
             Understanding Strategy Backtesting
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -475,8 +475,8 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-5 border border-indigo-200/50 shadow-sm">
-              <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
               The Basics
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-indigo-900 to-navy-800 bg-clip-text text-transparent mb-6">
@@ -675,8 +675,8 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 rounded-full text-teal-700 text-sm font-semibold mb-5 border border-teal-100 shadow-sm">
-              <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-full text-violet-700 text-sm font-semibold mb-5 border border-violet-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full"></span>
               Ideal For
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-8">
@@ -691,13 +691,13 @@ export default function BacktestingOverview({ service }: BacktestingOverviewProp
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex gap-5 items-start p-4 rounded-2xl bg-white border border-teal-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300 group cursor-default"
+                  className="flex gap-5 items-start p-4 rounded-2xl bg-white border border-violet-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all duration-300 group cursor-default"
                 >
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md bg-teal-50 border border-teal-100">
-                    <profile.icon className="w-7 h-7 text-teal-700" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md bg-violet-50 border border-violet-100">
+                    <profile.icon className="w-7 h-7 text-violet-700" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-teal-700 transition-colors">{profile.title}</h4>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-violet-700 transition-colors">{profile.title}</h4>
                     <p className="text-black leading-relaxed">{profile.description}</p>
                   </div>
                 </motion.div>

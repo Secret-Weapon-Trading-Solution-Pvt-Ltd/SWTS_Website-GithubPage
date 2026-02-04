@@ -439,8 +439,8 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
           <div className="relative bg-gradient-to-br from-white via-white to-blue-50/30 rounded-2xl p-6 lg:p-8 shadow-lg shadow-blue-900/5 border border-slate-100 overflow-hidden">
             {/* Header */}
             <div className="relative text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full text-indigo-700 text-sm font-semibold mb-4 border border-indigo-200/50">
-                <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-full text-amber-700 text-sm font-semibold mb-4 border border-amber-200/50">
+                <span className="w-2 h-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></span>
                 The Problems
               </div>
               <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-3">

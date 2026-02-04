@@ -367,9 +367,9 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-6 border border-emerald-200"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 text-blue-700 rounded-full text-sm font-semibold mb-6 border border-blue-200/50 shadow-sm backdrop-blur-sm"
           >
-            <FlaskConical className="w-4 h-4" />
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></span>
             Understanding Paper Trading
           </motion.span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-navy-900">
@@ -388,8 +388,8 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full text-emerald-700 text-sm font-semibold mb-5 border border-emerald-200">
-              <Play className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
               The Basics
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
@@ -440,8 +440,8 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
         >
           <div className="relative bg-gradient-to-br from-emerald-50 via-green-50/50 to-emerald-50 rounded-3xl p-8 lg:p-12 border border-emerald-100">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full text-emerald-700 text-sm font-semibold mb-4 border border-emerald-200">
-                <Shield className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-full text-amber-700 text-sm font-semibold mb-4 border border-amber-200/50">
+                <span className="w-2 h-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></span>
                 The Problems
               </div>
               <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
@@ -498,8 +498,8 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200">
-              <BarChart3 className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full text-emerald-700 text-sm font-semibold mb-5 border border-emerald-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></span>
               The Solution
             </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
