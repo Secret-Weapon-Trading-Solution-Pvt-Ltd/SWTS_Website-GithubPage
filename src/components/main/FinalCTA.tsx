@@ -20,9 +20,9 @@ export const FinalCTA: React.FC = () => {
           <span className="section-label">The Next Step</span>
 
           {/* Main headline */}
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mt-4 mb-6">
-            Stop wondering.
-            <span className="block text-slate-800">Start knowing.</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight mt-4 mb-6">
+            <span className="text-teal-700">Stop wondering.</span>
+            <span className="block text-teal-700">Start knowing.</span>
           </h2>
 
           {/* Supporting text */}

@@ -169,9 +169,9 @@ export const WhyItWorks: React.FC = () => {
           }`}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-violet-200/50 shadow-sm mb-5">
-            <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-blue-500" />
-            <span className="text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-teal-200/50 shadow-sm mb-5">
+            <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-teal-600">
               Why It Works
             </span>
           </div>
