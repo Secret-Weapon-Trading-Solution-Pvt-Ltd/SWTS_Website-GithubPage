@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Service } from '@/data/services';
-import { Target, Users, Zap, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { Target, Users, Zap, TrendingUp, CheckCircle, ArrowRight, Brain, Clock, Moon, AlertTriangle, Gauge } from 'lucide-react';
 
 interface StrategyOverviewProps {
   service: Service;
@@ -294,11 +294,13 @@ const overviewData = {
   },
   whyItMatters: {
     title: "Why It Matters",
-    description: "Manual trading has inherent limitations—emotional interference, execution delays, and the impossibility of monitoring markets around the clock. Automation eliminates these barriers, letting your strategy perform exactly as designed, every time.",
-    stats: [
-      { value: "0", label: "Emotional Errors", description: "No fear, greed, or hesitation" },
-      { value: "24/7", label: "Market Coverage", description: "Never miss a trading opportunity" },
-      { value: "<500ms", label: "Execution Speed", description: "Faster than any manual trade" }
+    description: "Manual trading has inherent limitations that cost you money and opportunities every single day.",
+    problems: [
+      { icon: Brain, title: "Emotional Interference", description: "Fear, greed, and hesitation override your trading rules at critical moments" },
+      { icon: Clock, title: "Execution Delays", description: "By the time you manually place orders, optimal entry/exit points are gone" },
+      { icon: Moon, title: "Can't Monitor 24/7", description: "Markets move while you sleep—missing setups that happen outside your hours" },
+      { icon: AlertTriangle, title: "Inconsistent Execution", description: "Fatigue and distraction cause you to skip trades or break your own rules" },
+      { icon: Gauge, title: "Limited Scalability", description: "You can only watch and execute so many strategies manually at once" }
     ]
   },
   whoShouldUse: {
@@ -445,70 +447,34 @@ export default function StrategyOverview({ service }: StrategyOverviewProps) {
                 {overviewData.whyItMatters.title}
               </h3>
               <p className="text-base lg:text-lg text-black max-w-2xl mx-auto">
-                Automation eliminates emotional interference, execution delays, and enables 24/7 market monitoring.
+                {overviewData.whyItMatters.description}
               </p>
             </div>
 
-            {/* Stats + Benefits Combined Row */}
-            <div className="grid grid-cols-3 lg:grid-cols-5 gap-4">
-              {/* Stats */}
-              {overviewData.whyItMatters.stats.map((stat, index) => (
+            {/* Problems Grid */}
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
+              {overviewData.whyItMatters.problems.map((problem, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center p-4 bg-white rounded-xl border border-slate-100 shadow-sm"
+                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-md hover:shadow-lg transition-all duration-300 text-center"
                 >
-                  <div className={`text-2xl lg:text-3xl font-bold mb-3 bg-gradient-to-br ${
-                    index === 0 ? 'from-blue-600 to-indigo-600' :
-                    index === 1 ? 'from-indigo-600 to-purple-600' :
-                    'from-cyan-600 to-blue-600'
-                  } bg-clip-text text-transparent`}>{stat.value}</div>
-                  <div className="text-sm lg:text-base font-semibold text-black mb-1">{stat.label}</div>
-                  <div className="text-xs lg:text-sm text-black">{stat.description}</div>
-                </motion.div>
-              ))}
-
-              {/* Benefits */}
-              {overviewData.benefits.map((benefit, index) => (
-                <motion.div
-                  key={`benefit-${index}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (index + 3) * 0.1 }}
-                  className="hidden lg:flex flex-col items-center text-center p-4 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${
-                    index === 0 ? 'from-purple-500 to-indigo-600' : 'from-green-500 to-green-600'
-                  }`}>
-                    <benefit.icon className="w-5 h-5 text-white" />
+                  <div className="flex justify-center mb-4">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-br ${
+                      index === 0 ? 'from-amber-400 to-orange-500 shadow-amber-500/25' :
+                      index === 1 ? 'from-red-400 to-rose-500 shadow-red-500/25' :
+                      index === 2 ? 'from-violet-400 to-purple-500 shadow-violet-500/25' :
+                      index === 3 ? 'from-blue-400 to-indigo-500 shadow-blue-500/25' :
+                      'from-emerald-400 to-teal-500 shadow-emerald-500/25'
+                    }`}>
+                      <problem.icon className="w-7 h-7 text-white" />
+                    </div>
                   </div>
-                  <div className="text-sm lg:text-base font-semibold text-navy-800 leading-tight mt-3 mb-1">{benefit.title}</div>
-                  <div className="text-xs lg:text-sm text-black leading-relaxed">{benefit.description}</div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Mobile Benefits Grid */}
-            <div className="grid grid-cols-2 gap-3 mt-4 lg:hidden">
-              {overviewData.benefits.map((benefit, index) => (
-                <motion.div
-                  key={`benefit-mobile-${index}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col p-3 bg-white rounded-xl border border-slate-100 shadow-sm"
-                >
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-2 bg-gradient-to-br ${
-                    index === 0 ? 'from-purple-500 to-indigo-600' : 'from-green-500 to-green-600'
-                  }`}>
-                    <benefit.icon className="w-4 h-4 text-white" />
-                  </div>
-                  <div className="text-sm font-semibold text-navy-800 mb-1">{benefit.title}</div>
-                  <div className="text-xs text-black leading-relaxed">{benefit.description}</div>
+                  <h4 className="text-lg font-bold text-navy-900 mb-2">{problem.title}</h4>
+                  <p className="text-base text-black leading-relaxed">{problem.description}</p>
                 </motion.div>
               ))}
             </div>

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Service } from '@/data/services';
-import { FlaskConical, Shield, CheckCircle, ArrowRight, TrendingUp, AlertCircle, Eye, Play, BarChart3, Clock } from 'lucide-react';
+import { FlaskConical, Shield, CheckCircle, ArrowRight, TrendingUp, AlertCircle, Eye, Play, BarChart3, Clock, Ban, Bug, CircleHelp, Coins, Rocket, RefreshCw, Target } from 'lucide-react';
 
 interface PaperTradingOverviewProps {
   service: Service;
@@ -312,12 +312,12 @@ const overviewData = {
   },
   whyPaperTrade: {
     title: "Why Paper Trade First?",
-    description: "Backtests show what WOULD have happened. Paper trading shows what IS happening. It's the bridge between theory and live trading.",
-    reasons: [
-      { icon: Shield, title: "Validate Before Risk", description: "See your strategy perform in real conditions before committing capital" },
-      { icon: Eye, title: "Catch Edge Cases", description: "Live markets reveal issues that backtests miss—data gaps, execution quirks" },
-      { icon: TrendingUp, title: "Build Confidence", description: "Watch your strategy execute correctly builds trust to go live" },
-      { icon: AlertCircle, title: "Find & Fix Bugs", description: "Better to find issues with fake money than real money" }
+    description: "Going live without paper trading means risking real money on unproven execution.",
+    problems: [
+      { icon: Coins, title: "Risking Capital Blindly", description: "Putting real money on untested automation is gambling, not trading" },
+      { icon: CircleHelp, title: "Backtest Isn't Enough", description: "Historical data can't capture live market nuances, slippage, and execution delays" },
+      { icon: Bug, title: "Hidden Bugs Lurk", description: "Code issues only surface in live conditions—discover them with fake money, not real" },
+      { icon: Ban, title: "No Live Validation", description: "Without paper trading, you have no proof your strategy works in current market conditions" }
     ]
   },
   whatYouGet: {
@@ -328,6 +328,26 @@ const overviewData = {
       { label: "Win Rate", description: "Real-time accuracy" },
       { label: "Drawdown", description: "Risk monitoring" },
       { label: "Equity Curve", description: "Growth tracking" }
+    ]
+  },
+  idealFor: {
+    title: "Who Should Paper Trade?",
+    profiles: [
+      {
+        icon: Rocket,
+        title: "First-Time Automators",
+        description: "You've built or bought an automated strategy but have never deployed it on live markets before"
+      },
+      {
+        icon: RefreshCw,
+        title: "Strategy Updaters",
+        description: "You've modified your existing strategy and want to validate the changes before risking real capital"
+      },
+      {
+        icon: Target,
+        title: "Serious Traders",
+        description: "You believe in doing things right—testing thoroughly before committing money to any new system"
+      }
     ]
   }
 };
@@ -433,8 +453,8 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {overviewData.whyPaperTrade.reasons.map((reason, index) => {
-                const iconColors = ['bg-emerald-500', 'bg-blue-500', 'bg-violet-500', 'bg-amber-500'];
+              {overviewData.whyPaperTrade.problems.map((problem, index) => {
+                const iconColors = ['from-amber-400 to-orange-500 shadow-amber-500/25', 'from-red-400 to-rose-500 shadow-red-500/25', 'from-violet-400 to-purple-500 shadow-violet-500/25', 'from-blue-400 to-indigo-500 shadow-blue-500/25'];
                 return (
                   <motion.div
                     key={index}
@@ -445,12 +465,12 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
                     className="bg-white rounded-2xl p-5 border border-emerald-100 shadow-md hover:shadow-lg transition-all duration-300 text-center"
                   >
                     <div className="flex justify-center mb-4">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg ${iconColors[index]}`}>
-                        <reason.icon className="w-7 h-7 text-white" />
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-br ${iconColors[index]}`}>
+                        <problem.icon className="w-7 h-7 text-white" />
                       </div>
                     </div>
-                    <h4 className="text-lg font-bold text-navy-900 mb-2">{reason.title}</h4>
-                    <p className="text-base text-black leading-relaxed">{reason.description}</p>
+                    <h4 className="text-lg font-bold text-navy-900 mb-2">{problem.title}</h4>
+                    <p className="text-base text-black leading-relaxed">{problem.description}</p>
                   </motion.div>
                 );
               })}
@@ -514,6 +534,49 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             </div>
           </motion.div>
         </div>
+
+        {/* Ideal For Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14"
+        >
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-full text-violet-700 text-sm font-semibold mb-5 border border-violet-200/50 shadow-sm">
+              <span className="w-2 h-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full"></span>
+              Ideal For
+            </div>
+            <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-navy-900 via-navy-800 to-emerald-900 bg-clip-text text-transparent">
+              {overviewData.idealFor.title}
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {overviewData.idealFor.profiles.map((profile, index) => {
+              const iconColors = ['bg-emerald-500', 'bg-blue-500', 'bg-violet-500'];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="flex gap-5 items-start p-5 rounded-2xl bg-gradient-to-br from-white to-slate-50/80 border border-slate-100 shadow-md hover:shadow-lg hover:border-emerald-200 transition-all duration-300 group cursor-default"
+                >
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 shadow-lg ${iconColors[index]}`}>
+                    <profile.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-navy-900 mb-1 group-hover:text-emerald-900 transition-colors">{profile.title}</h4>
+                    <p className="text-black leading-relaxed">{profile.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
