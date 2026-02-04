@@ -430,7 +430,7 @@ const overviewData = {
       {
         icon: BarChart3,
         title: "Expert Traders",
-        description: "You want to validate and optimize your proven strategies with rigorous historical analysis"
+        description: "You backtest so your strategy stays reliable—validate results, confirm setups that seem good, and improve performance by learning from past market behavior."
       }
     ]
   }
