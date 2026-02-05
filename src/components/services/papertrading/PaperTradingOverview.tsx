@@ -388,10 +388,6 @@ export default function PaperTradingOverview({ service }: PaperTradingOverviewPr
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full text-blue-700 text-sm font-semibold mb-5 border border-blue-200/50 shadow-sm">
-              <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
-              The Basics
-            </div>
             <h3 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
               {overviewData.whatItIs.title}
             </h3>

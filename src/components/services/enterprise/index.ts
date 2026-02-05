@@ -11,5 +11,6 @@ export { default as HowItWorksFlow } from './HowItWorksFlow';
 export { default as StrategyOverview } from './StrategyOverview';
 export { default as CapabilitiesModern } from './CapabilitiesModern';
 export { default as ProcessFlowModern } from './ProcessFlowModern';
+export { default as StrategyIdealFor } from './StrategyIdealFor';
 export { default as UseCasesModern } from './UseCasesModern';
 export { default as CTAModern } from './CTAModern';

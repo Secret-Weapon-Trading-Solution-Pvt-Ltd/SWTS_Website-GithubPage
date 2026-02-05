@@ -11,7 +11,8 @@ import UseCases from '@/components/services/UseCases';
 import {
   StrategyOverview,
   CapabilitiesModern,
-  ProcessFlowModern
+  ProcessFlowModern,
+  StrategyIdealFor
 } from '@/components/services/enterprise';
 // Backtesting-specific enterprise components
 import {
@@ -127,6 +128,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Modern Process Flow with illustrations */}
           <ProcessFlowModern service={service} />
+
+          {/* Ideal For - Who Should Use This */}
+          <StrategyIdealFor />
         </>
       ) : isBacktesting ? (
         <>
