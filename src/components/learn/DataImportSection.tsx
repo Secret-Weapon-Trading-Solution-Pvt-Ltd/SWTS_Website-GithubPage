@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 import {
   Database,
   Fuel,
@@ -88,7 +89,7 @@ const DataImportSection: React.FC = () => {
           <div className="w-full lg:w-[45%] flex justify-center">
             <div className="bg-gradient-to-br from-teal-50 via-white to-cyan-50 border-2 border-teal-100 rounded-3xl p-6 lg:p-8 shadow-sm">
               <Image
-                src="/data-import.jpg"
+                src={getAssetPath('/data-import.jpg')}
                 alt="Data Import Illustration"
                 width={550}
                 height={550}

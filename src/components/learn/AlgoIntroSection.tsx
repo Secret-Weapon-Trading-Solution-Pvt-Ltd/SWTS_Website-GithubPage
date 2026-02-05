@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 import {
   Database,
   Brain,
@@ -85,7 +86,7 @@ const AlgoIntroSection: React.FC = () => {
           {/* RIGHT SIDE - Image */}
           <div className="w-full lg:w-[55%] flex items-center justify-center">
             <Image
-              src="/algotrading-intr0.jpg"
+              src={getAssetPath('/algotrading-intr0.jpg')}
               alt="Algo Trading Illustration"
               width={800}
               height={600}
