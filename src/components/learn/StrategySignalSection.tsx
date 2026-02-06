@@ -75,7 +75,7 @@ const StrategySignalSection: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-1">Step 02</p>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-black">
                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Strategy</span> & Signal
               </h2>
             </div>
@@ -84,7 +84,7 @@ const StrategySignalSection: React.FC = () => {
         </motion.div>
 
         {/* PART 1: Introduction - Left Right Layout */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
           {/* Left - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -128,7 +128,7 @@ const StrategySignalSection: React.FC = () => {
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm">{item.text}</h4>
+                    <h4 className="font-bold text-black text-sm">{item.text}</h4>
                     <p className="text-xs text-slate-600">{item.desc}</p>
                   </div>
                 </motion.div>
@@ -155,101 +155,150 @@ const StrategySignalSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* PART 2: Signal Flow */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Signal Generation Flow</h3>
-            <p className="text-slate-500">How your strategy processes data and generates signals</p>
-          </div>
+        {/* PART 2: Entry & Exit Rules */}
+        <div className="mb-20">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full mb-4">
+              <CheckCircle2 className="w-4 h-4 text-slate-600" />
+              <span className="text-sm font-semibold text-slate-700">Trading Rules</span>
+            </div>
+            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3">
+              Entry & Exit Rules
+            </h3>
+            <p className="text-slate-600 max-w-2xl mx-auto">Define when to enter and when to exit - the two most critical decisions in trading</p>
+          </motion.div>
 
-          <div className="bg-white rounded-3xl border-2 border-slate-200 shadow-sm p-8 lg:p-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              {[
-                { icon: Activity, title: 'Data Arrives', sub: 'New candle/tick', bgColor: 'bg-teal-100', textColor: 'text-teal-600' },
-                { icon: Brain, title: 'Strategy Checks', sub: 'Apply your rules', bgColor: 'bg-blue-100', textColor: 'text-blue-600' },
-                { icon: Target, title: 'Condition Match?', sub: 'Yes / No', bgColor: 'bg-violet-100', textColor: 'text-violet-600' },
-                { icon: Zap, title: 'Signal Output', sub: 'BUY / SELL / WAIT', bgColor: 'bg-emerald-100', textColor: 'text-emerald-600' },
-              ].map((step, idx, arr) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className={`w-20 h-20 lg:w-24 lg:h-24 rounded-2xl ${step.bgColor} flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                      <step.icon className={`w-10 h-10 lg:w-12 lg:h-12 ${step.textColor}`} />
+          <motion.div
+            className="grid lg:grid-cols-2 gap-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Entry Rule - Corner Ribbon Design */}
+            <div className="group relative">
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full group-hover:border-emerald-400">
+                {/* Corner ribbon fold effect */}
+                <div className="absolute top-0 right-0 w-24 h-24">
+                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-500 to-teal-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
+                  <div className="absolute top-3 right-3 text-white">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                </div>
+                {/* Decorative dots pattern */}
+                <div className="absolute bottom-4 left-4 flex gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-300" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                </div>
+                {/* Bottom gradient bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-300" />
+
+                <div className="relative p-8">
+                  {/* Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-200/50 group-hover:shadow-emerald-300/60 transition-shadow">
+                        <Target className="w-8 h-8 text-white" />
+                      </div>
                     </div>
-                    <h4 className="mt-4 font-bold text-slate-800">{step.title}</h4>
-                    <p className="text-sm text-slate-500">{step.sub}</p>
+                    <div>
+                      <h4 className="text-2xl font-bold text-black">Entry Rule</h4>
+                    </div>
                   </div>
-                  {idx < arr.length - 1 && (
-                    <>
-                      <ArrowRight className="w-8 h-8 text-slate-300 hidden lg:block" />
-                      <ArrowDown className="w-8 h-8 text-slate-300 lg:hidden" />
-                    </>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </motion.div>
 
-        {/* PART 3A: Entry & Exit Rules - Left Right */}
-        <motion.div
-          className="grid lg:grid-cols-2 gap-8 mb-20"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Entry Rule */}
-          <div className="group">
-            <div className="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow h-full">
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center">
-                  <Target className="w-8 h-8 text-emerald-600" />
+                  <p className="text-slate-700 mb-6 leading-relaxed">When to BUY? Define exact conditions that must be met before entering a trade.</p>
+
+                  {/* Items */}
+                  <div className="space-y-3">
+                    {[
+                      { text: 'Buy condition logic', icon: CheckCircle2 },
+                      { text: 'Indicator crossovers', icon: Activity },
+                      { text: 'Price action patterns', icon: TrendingUp },
+                      { text: 'Volume confirmation', icon: Zap }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-4 p-3 bg-emerald-50/50 rounded-xl border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 hover:shadow-md transition-all">
+                        <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md border border-slate-200">
+                          <item.icon className="w-5 h-5 text-black" />
+                        </div>
+                        <span className="text-black font-medium">{item.text}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold">ENTRY</span>
-              </div>
-              <h4 className="text-2xl font-bold text-slate-800 mb-2">Entry Rule</h4>
-              <p className="text-slate-600 mb-6">When to BUY? Define exact conditions that must be met before entering a trade.</p>
-              <div className="space-y-3">
-                {['Buy condition logic', 'Indicator crossovers', 'Price action patterns', 'Volume confirmation'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white border border-emerald-200 rounded-lg px-4 py-2">
-                    <TrendingUp className="w-5 h-5 text-emerald-500" />
-                    <span className="text-slate-700">{item}</span>
-                  </div>
-                ))}
               </div>
             </div>
-          </div>
 
-          {/* Exit Rule */}
-          <div className="group">
-            <div className="bg-rose-50 border-2 border-rose-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow h-full">
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center">
-                  <LogOut className="w-8 h-8 text-rose-600" />
+            {/* Exit Rule - Corner Ribbon Design */}
+            <div className="group relative">
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-pink-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative bg-white border-2 border-rose-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full group-hover:border-rose-400">
+                {/* Corner ribbon fold effect */}
+                <div className="absolute top-0 right-0 w-24 h-24">
+                  <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-rose-500 to-pink-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
+                  <div className="absolute top-3 right-3 text-white">
+                    <TrendingDown className="w-5 h-5" />
+                  </div>
                 </div>
-                <span className="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold">EXIT</span>
-              </div>
-              <h4 className="text-2xl font-bold text-slate-800 mb-2">Exit Rule</h4>
-              <p className="text-slate-600 mb-6">When to EXIT? Define stop loss, target, and limits to protect your capital.</p>
-              <div className="space-y-3">
-                {['Stop Loss (SL)', 'Target / Take Profit', 'Max trades per day', 'Daily loss limit'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white border border-rose-200 rounded-lg px-4 py-2">
-                    <TrendingDown className="w-5 h-5 text-rose-500" />
-                    <span className="text-slate-700">{item}</span>
+                {/* Decorative dots pattern */}
+                <div className="absolute bottom-4 left-4 flex gap-2">
+                  <div className="w-2 h-2 rounded-full bg-rose-300" />
+                  <div className="w-2 h-2 rounded-full bg-rose-400" />
+                  <div className="w-2 h-2 rounded-full bg-rose-500" />
+                </div>
+                {/* Bottom gradient bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-300" />
+
+                <div className="relative p-8">
+                  {/* Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-rose-200/50 group-hover:shadow-rose-300/60 transition-shadow">
+                        <LogOut className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold text-black">Exit Rule</h4>
+                    </div>
                   </div>
-                ))}
+
+                  <p className="text-slate-700 mb-6 leading-relaxed">When to EXIT? Define stop loss, target, and limits to protect your capital.</p>
+
+                  {/* Items */}
+                  <div className="space-y-3">
+                    {[
+                      { text: 'Stop Loss (SL)', icon: Target },
+                      { text: 'Target / Take Profit', icon: Zap },
+                      { text: 'Max trades per day', icon: Clock },
+                      { text: 'Daily loss limit', icon: Activity }
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-4 p-3 bg-rose-50/50 rounded-xl border border-rose-100 hover:border-rose-300 hover:bg-rose-50 hover:shadow-md transition-all">
+                        <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md border border-slate-200">
+                          <item.icon className="w-5 h-5 text-black" />
+                        </div>
+                        <span className="text-black font-medium">{item.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* PART 3B: Signal Types */}
+        {/* PART 3: Signal Generation - Left Right Layout */}
         <motion.div
           className="mb-20"
           initial={{ opacity: 0, y: 40 }}
@@ -257,81 +306,254 @@ const StrategySignalSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Signal Types</h3>
-            <p className="text-slate-500">Three possible outcomes from your strategy</p>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left - Text Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-full mb-6">
+                <Zap className="w-4 h-4 text-violet-600" />
+                <span className="text-sm font-semibold text-violet-700">Signal Pipeline</span>
+              </div>
+
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-4 leading-tight">
+                What is Signal Generation?
+              </h3>
+
+              <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+                Signal generation is the core process where your strategy analyzes incoming market data and decides whether to take action or wait.
+              </p>
+
+              <p className="text-base text-slate-600 mb-8 leading-relaxed">
+                When new data arrives, your predefined rules are checked. If conditions match, a signal is generated - either BUY, SELL, or NO TRADE. This happens automatically, without emotion or hesitation.
+              </p>
+
+              {/* Key Points - 2x2 Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { text: 'Automated decision', desc: 'No manual intervention', color: 'teal', icon: Brain },
+                  { text: 'Rule-based triggers', desc: 'Acts when conditions match', color: 'blue', icon: Target },
+                  { text: 'Instant execution', desc: 'Millisecond response', color: 'violet', icon: Zap },
+                  { text: 'Emotion-free', desc: 'Disciplined trading', color: 'emerald', icon: CheckCircle2 },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-5 bg-white border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-md transition-all">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
+                      item.color === 'teal' ? 'bg-teal-500' :
+                      item.color === 'blue' ? 'bg-blue-500' :
+                      item.color === 'violet' ? 'bg-violet-500' : 'bg-emerald-500'
+                    }`}>
+                      <item.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-black text-base">{item.text}</h4>
+                      <p className="text-sm text-slate-500">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right - Signal Flow Visual */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 rounded-3xl border-2 border-slate-200 shadow-xl p-6 lg:p-8 overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-violet-100/50 rounded-full blur-2xl" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-teal-100/50 rounded-full blur-2xl" />
+
+                {/* Header */}
+                <div className="relative text-center mb-6">
+                  <h4 className="text-lg font-bold text-black">Signal Generation Pipeline</h4>
+                  <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mt-2 rounded-full" />
+                </div>
+
+                {/* Flow Steps */}
+                <div className="relative space-y-3">
+                  {[
+                    { icon: Activity, title: 'Data Arrives', sub: 'New candle/tick received', color: 'teal' },
+                    { icon: Brain, title: 'Strategy Checks', sub: 'Apply your trading rules', color: 'blue' },
+                    { icon: Target, title: 'Condition Match?', sub: 'Evaluate: Yes or No', color: 'violet' },
+                    { icon: Zap, title: 'Signal Output', sub: 'BUY / SELL / WAIT', color: 'emerald' },
+                  ].map((step, idx, arr) => (
+                    <div key={idx} className="relative">
+                      {/* Connection line */}
+                      {idx < arr.length - 1 && (
+                        <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-3 bg-gradient-to-b from-slate-300 to-slate-200 z-0" />
+                      )}
+
+                      <div className={`relative p-4 rounded-xl border-2 transition-all hover:shadow-md ${
+                        step.color === 'teal' ? 'bg-teal-50 border-teal-200 hover:border-teal-400' :
+                        step.color === 'blue' ? 'bg-blue-50 border-blue-200 hover:border-blue-400' :
+                        step.color === 'violet' ? 'bg-violet-50 border-violet-200 hover:border-violet-400' :
+                        'bg-emerald-50 border-emerald-200 hover:border-emerald-400'
+                      }`}>
+                        {/* Top row: Logo - Title */}
+                        <div className="flex items-center justify-center gap-3 mb-2">
+                          {/* Icon */}
+                          <div className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md bg-white border border-slate-200">
+                            <step.icon className="w-6 h-6 text-black" />
+                          </div>
+
+                          {/* Title - larger font */}
+                          <h4 className="font-bold text-black text-base">{step.title}</h4>
+                        </div>
+
+                        {/* Explanation below - centered */}
+                        <p className="text-sm font-medium text-center text-black">{step.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
+        </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Entry Signal */}
-            <div className="bg-emerald-50 rounded-3xl border-2 border-emerald-200 p-8 text-center hover:shadow-xl hover:border-emerald-400 transition-all">
-              <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-10 h-10 text-emerald-600" />
-              </div>
-              <h4 className="text-xl font-bold text-emerald-700 mb-2">ENTRY</h4>
-              <p className="text-slate-500">All conditions met, time to enter the trade</p>
+        {/* PART 3B: Signal Types - Flowchart Style */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Flowchart Container */}
+          <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 rounded-3xl border-2 border-slate-200 shadow-xl p-6 lg:p-8">
+            {/* Main Heading - Center Top */}
+            <div className="text-center mb-4">
+              <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">
+                Signal Types
+              </h3>
+              <p className="text-base text-slate-600">Three possible outcomes from your strategy</p>
             </div>
 
-            {/* Exit Signal */}
-            <div className="bg-rose-50 rounded-3xl border-2 border-rose-200 p-8 text-center hover:shadow-xl hover:border-rose-400 transition-all">
-              <div className="w-20 h-20 rounded-full bg-rose-100 flex items-center justify-center mx-auto mb-4">
-                <TrendingDown className="w-10 h-10 text-rose-600" />
-              </div>
-              <h4 className="text-xl font-bold text-rose-700 mb-2">EXIT</h4>
-              <p className="text-slate-500">Close position - target hit or stop triggered</p>
-            </div>
+            {/* Flowchart with SVG lines */}
+            <div className="relative">
+              {/* SVG Connection Lines */}
+              <svg className="hidden md:block absolute top-0 left-0 w-full h-16 overflow-visible" preserveAspectRatio="none">
+                {/* Center vertical line from heading */}
+                <line x1="50%" y1="0" x2="50%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                {/* Horizontal line */}
+                <line x1="16.66%" y1="20" x2="83.33%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                {/* Left vertical line to Entry */}
+                <line x1="16.66%" y1="20" x2="16.66%" y2="40" stroke="#10b981" strokeWidth="2" />
+                {/* Center vertical line to Exit */}
+                <line x1="50%" y1="20" x2="50%" y2="40" stroke="#f43f5e" strokeWidth="2" />
+                {/* Right vertical line to No Trade */}
+                <line x1="83.33%" y1="20" x2="83.33%" y2="40" stroke="#64748b" strokeWidth="2" />
+              </svg>
 
-            {/* No Trade */}
-            <div className="bg-slate-50 rounded-3xl border-2 border-slate-200 p-8 text-center hover:shadow-xl hover:border-slate-400 transition-all">
-              <div className="w-20 h-20 rounded-full bg-slate-200 flex items-center justify-center mx-auto mb-4">
-                <MinusCircle className="w-10 h-10 text-slate-500" />
+              {/* Signal Type Cards */}
+              <div className="grid md:grid-cols-3 gap-4 pt-10 md:pt-12">
+                {/* Entry */}
+                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-md transition-all">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
+                      <TrendingUp className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="text-lg font-bold text-black">ENTRY</h4>
+                  </div>
+                  <p className="text-base text-black">All conditions met, enter the trade</p>
+                </div>
+
+                {/* Exit */}
+                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-rose-50 border-2 border-rose-200 hover:border-rose-400 hover:shadow-md transition-all">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md">
+                      <TrendingDown className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="text-lg font-bold text-black">EXIT</h4>
+                  </div>
+                  <p className="text-base text-black">Target hit or stop triggered</p>
+                </div>
+
+                {/* No Trade */}
+                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-slate-100 border-2 border-slate-300 hover:border-slate-400 hover:shadow-md transition-all">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center shadow-md">
+                      <MinusCircle className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="text-lg font-bold text-black">NO TRADE</h4>
+                  </div>
+                  <p className="text-base text-black">Conditions not met, wait</p>
+                </div>
               </div>
-              <h4 className="text-xl font-bold text-slate-600 mb-2">NO TRADE</h4>
-              <p className="text-slate-500">Conditions not met, wait for next setup</p>
             </div>
           </div>
         </motion.div>
 
         {/* PART 3C: Signal Timing - Interactive */}
-        <div>
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Signal Timing</h3>
-            <p className="text-slate-500">When should the signal generate? Choose your approach.</p>
-          </div>
+        <div className="mb-20">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full mb-4">
+              <Clock className="w-4 h-4 text-slate-600" />
+              <span className="text-sm font-semibold text-slate-700">Timing Decision</span>
+            </div>
+            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3">Signal Timing</h3>
+            <p className="text-lg text-black max-w-2xl mx-auto">When should the signal generate? Choose your approach based on speed vs accuracy trade-off.</p>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-5 gap-6 items-start">
+          <motion.div
+            className="grid lg:grid-cols-5 gap-6 items-start"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Timing Options - Left */}
             <div className="lg:col-span-2 space-y-4">
               {signalOptions.map((option) => (
                 <button
                   key={option.id}
                   onClick={() => setActiveSignal(option)}
-                  className={`w-full flex items-center gap-4 p-5 rounded-2xl border-2 text-left transition-all ${
+                  className={`group relative w-full flex items-center gap-4 p-5 rounded-2xl border-2 text-left transition-all overflow-hidden ${
                     activeSignal.id === option.id
                       ? option.color === 'teal'
-                        ? 'border-teal-400 bg-teal-50 shadow-lg'
+                        ? 'border-teal-400 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-lg'
                         : option.color === 'blue'
-                          ? 'border-blue-400 bg-blue-50 shadow-lg'
-                          : 'border-violet-400 bg-violet-50 shadow-lg'
-                      : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow'
+                          ? 'border-blue-400 bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg'
+                          : 'border-violet-400 bg-gradient-to-br from-violet-50 to-purple-50 shadow-lg'
+                      : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-md'
                   }`}
                 >
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${
+                  {/* Diagonal accent */}
+                  <div className={`absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 rotate-45 transition-all duration-300 ${
                     activeSignal.id === option.id
-                      ? option.color === 'teal' ? 'bg-teal-500' : option.color === 'blue' ? 'bg-blue-500' : 'bg-violet-500'
-                      : 'bg-slate-100'
+                      ? option.color === 'teal' ? 'bg-gradient-to-br from-teal-400 to-teal-500'
+                        : option.color === 'blue' ? 'bg-gradient-to-br from-blue-400 to-blue-500'
+                        : 'bg-gradient-to-br from-violet-400 to-violet-500'
+                      : 'bg-slate-100 group-hover:bg-slate-200'
+                  }`} />
+
+                  {/* Left accent bar */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${
+                    activeSignal.id === option.id
+                      ? option.color === 'teal' ? 'bg-teal-500'
+                        : option.color === 'blue' ? 'bg-blue-500'
+                        : 'bg-violet-500'
+                      : 'bg-transparent group-hover:bg-slate-300'
+                  }`} />
+
+                  <div className={`relative w-14 h-14 rounded-xl flex items-center justify-center shadow-md ${
+                    activeSignal.id === option.id
+                      ? option.color === 'teal' ? 'bg-gradient-to-br from-teal-500 to-teal-600' : option.color === 'blue' ? 'bg-gradient-to-br from-blue-500 to-blue-600' : 'bg-gradient-to-br from-violet-500 to-violet-600'
+                      : 'bg-slate-100 group-hover:bg-slate-200'
                   }`}>
-                    <option.icon className={`w-7 h-7 ${activeSignal.id === option.id ? 'text-white' : 'text-slate-400'}`} />
+                    <option.icon className={`w-7 h-7 ${activeSignal.id === option.id ? 'text-white' : 'text-slate-500'}`} />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-slate-800">{option.title}</h4>
+                  <div className="relative flex-1">
+                    <h4 className="font-bold text-black text-lg">{option.title}</h4>
                     <div className="flex gap-2 mt-1">
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                         option.speed === 'Moderate' ? 'bg-amber-100 text-amber-700' :
                         option.speed === 'Fast' ? 'bg-blue-100 text-blue-700' :
                         'bg-violet-100 text-violet-700'
                       }`}>{option.speed}</span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                         option.accuracy === 'High' ? 'bg-emerald-100 text-emerald-700' :
                         option.accuracy === 'Medium' ? 'bg-amber-100 text-amber-700' :
                         'bg-slate-100 text-slate-700'
@@ -344,48 +566,75 @@ const StrategySignalSection: React.FC = () => {
 
             {/* Details - Right */}
             <div className="lg:col-span-3">
-              <div className={`rounded-3xl p-8 h-full border-2 ${
-                activeSignal.color === 'teal' ? 'bg-teal-50 border-teal-200' :
-                activeSignal.color === 'blue' ? 'bg-blue-50 border-blue-200' :
-                'bg-violet-50 border-violet-200'
-              } shadow-sm`}>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-                    activeSignal.color === 'teal' ? 'bg-teal-100' :
-                    activeSignal.color === 'blue' ? 'bg-blue-100' : 'bg-violet-100'
+              <div className={`relative rounded-3xl p-8 h-full border-2 shadow-lg overflow-hidden ${
+                activeSignal.color === 'teal' ? 'bg-gradient-to-br from-teal-50 to-cyan-50 border-teal-200' :
+                activeSignal.color === 'blue' ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200' :
+                'bg-gradient-to-br from-violet-50 to-purple-50 border-violet-200'
+              }`}>
+                {/* Diagonal accent - top right */}
+                <div className={`absolute top-0 right-0 w-32 h-32 transform translate-x-16 -translate-y-16 rotate-45 ${
+                  activeSignal.color === 'teal' ? 'bg-gradient-to-br from-teal-400 to-teal-500' :
+                  activeSignal.color === 'blue' ? 'bg-gradient-to-br from-blue-400 to-blue-500' :
+                  'bg-gradient-to-br from-violet-400 to-violet-500'
+                }`} />
+
+                {/* Diagonal accent - bottom left */}
+                <div className={`absolute bottom-0 left-0 w-24 h-24 transform -translate-x-12 translate-y-12 rotate-45 opacity-50 ${
+                  activeSignal.color === 'teal' ? 'bg-gradient-to-br from-cyan-300 to-teal-400' :
+                  activeSignal.color === 'blue' ? 'bg-gradient-to-br from-indigo-300 to-blue-400' :
+                  'bg-gradient-to-br from-purple-300 to-violet-400'
+                }`} />
+
+                {/* Top accent line */}
+                <div className={`absolute top-0 left-0 right-0 h-1 ${
+                  activeSignal.color === 'teal' ? 'bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-500' :
+                  activeSignal.color === 'blue' ? 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500' :
+                  'bg-gradient-to-r from-violet-500 via-purple-500 to-violet-500'
+                }`} />
+
+                <div className="relative flex items-center gap-4 mb-6">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg ${
+                    activeSignal.color === 'teal' ? 'bg-gradient-to-br from-teal-500 to-teal-600' :
+                    activeSignal.color === 'blue' ? 'bg-gradient-to-br from-blue-500 to-blue-600' : 'bg-gradient-to-br from-violet-500 to-violet-600'
                   }`}>
-                    <activeSignal.icon className={`w-8 h-8 ${
-                      activeSignal.color === 'teal' ? 'text-teal-600' :
-                      activeSignal.color === 'blue' ? 'text-blue-600' : 'text-violet-600'
-                    }`} />
+                    <activeSignal.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-slate-800">{activeSignal.title}</h4>
+                    <h4 className="text-2xl font-bold text-black">{activeSignal.title}</h4>
                     <div className="flex gap-2 mt-2">
-                      <span className={`text-sm px-3 py-1 rounded-full ${
+                      <span className={`text-sm px-3 py-1 rounded-full font-semibold ${
                         activeSignal.color === 'teal' ? 'bg-teal-100 text-teal-700' :
                         activeSignal.color === 'blue' ? 'bg-blue-100 text-blue-700' : 'bg-violet-100 text-violet-700'
                       }`}>{activeSignal.speed}</span>
-                      <span className={`text-sm px-3 py-1 rounded-full ${
+                      <span className={`text-sm px-3 py-1 rounded-full font-semibold ${
                         activeSignal.color === 'teal' ? 'bg-teal-100 text-teal-700' :
                         activeSignal.color === 'blue' ? 'bg-blue-100 text-blue-700' : 'bg-violet-100 text-violet-700'
                       }`}>{activeSignal.accuracy} Accuracy</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-lg text-slate-600 mb-6">{activeSignal.desc}</p>
+                <p className="relative text-lg text-black mb-6">{activeSignal.desc}</p>
 
                 {/* Trade-off visual */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200">
+                <div className="relative bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+                  <p className="text-lg font-bold text-black text-center mb-4">Speed vs Accuracy Trade-off</p>
                   <div className="flex items-center justify-between">
                     <div className="text-center">
-                      <Clock className="w-6 h-6 mx-auto mb-1 text-slate-500" />
-                      <p className="text-sm text-slate-500">More Confirmed</p>
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 ${
+                        activeSignal.color === 'teal' ? 'bg-teal-100' :
+                        activeSignal.color === 'blue' ? 'bg-blue-100' : 'bg-violet-100'
+                      }`}>
+                        <Clock className={`w-5 h-5 ${
+                          activeSignal.color === 'teal' ? 'text-teal-600' :
+                          activeSignal.color === 'blue' ? 'text-blue-600' : 'text-violet-600'
+                        }`} />
+                      </div>
+                      <p className="text-sm font-medium text-black">More Confirmed</p>
                     </div>
                     <div className="flex-1 mx-4 relative">
-                      <div className="h-2 bg-slate-200 rounded-full" />
+                      <div className="h-3 bg-gradient-to-r from-emerald-200 via-amber-200 to-rose-200 rounded-full" />
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full shadow-lg transition-all ${
+                        className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full shadow-lg border-2 border-white transition-all ${
                           activeSignal.color === 'teal' ? 'bg-teal-500' :
                           activeSignal.color === 'blue' ? 'bg-blue-500' : 'bg-violet-500'
                         }`}
@@ -395,23 +644,37 @@ const StrategySignalSection: React.FC = () => {
                       />
                     </div>
                     <div className="text-center">
-                      <Zap className="w-6 h-6 mx-auto mb-1 text-slate-500" />
-                      <p className="text-sm text-slate-500">Faster Entry</p>
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 ${
+                        activeSignal.color === 'teal' ? 'bg-teal-100' :
+                        activeSignal.color === 'blue' ? 'bg-blue-100' : 'bg-violet-100'
+                      }`}>
+                        <Zap className={`w-5 h-5 ${
+                          activeSignal.color === 'teal' ? 'text-teal-600' :
+                          activeSignal.color === 'blue' ? 'text-blue-600' : 'text-violet-600'
+                        }`} />
+                      </div>
+                      <p className="text-sm font-medium text-black">Faster Entry</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Key Takeaway */}
-        <div className="mt-16 flex justify-center">
+        <motion.div
+          className="mt-16 flex justify-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="inline-flex items-center gap-3 px-8 py-4 bg-blue-50 border-2 border-blue-200 text-blue-700 rounded-full shadow-lg">
             <Brain className="w-6 h-6 text-blue-600" />
             <span className="font-semibold text-lg">Clearer strategy = Cleaner signals</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
