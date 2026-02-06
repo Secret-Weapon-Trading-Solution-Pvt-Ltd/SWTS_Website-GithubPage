@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { getAssetPath } from '@/lib/utils';
 import {
   Monitor,
@@ -73,18 +74,30 @@ const UIDecisionSection: React.FC = () => {
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-12">
+        <motion.div
+          className="flex items-center gap-4 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div>
             <p className="text-xs font-semibold text-violet-600 uppercase tracking-widest">Decision Point</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-black">The Interface Decision</h2>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-6" />
-        </div>
+        </motion.div>
 
         {/* Part 1: Introduction - Left Image, Right Content */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20">
           {/* Left - Image */}
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <Image
               src={getAssetPath('/ui-without-ui.jpg')}
               alt="UI vs No UI Decision"
@@ -93,10 +106,15 @@ const UIDecisionSection: React.FC = () => {
               className="w-full max-w-xl lg:max-w-2xl h-auto"
               priority
             />
-          </div>
+          </motion.div>
 
           {/* Right - Text Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 border border-violet-200 mb-6">
               <Eye className="w-4 h-4 text-violet-600" />
               <span className="text-sm font-semibold text-violet-700">After Strategy Signal</span>
@@ -119,22 +137,40 @@ const UIDecisionSection: React.FC = () => {
 
             {/* Quick Comparison Pills */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+              <motion.div
+                className="p-4 bg-slate-50 border border-slate-200 rounded-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+              >
                 <Terminal className="w-6 h-6 text-slate-600 mb-2" />
                 <p className="font-semibold text-slate-800">Without UI</p>
                 <p className="text-sm text-slate-500">Personal use, fast setup</p>
-              </div>
-              <div className="p-4 bg-teal-50 border border-teal-200 rounded-2xl">
+              </motion.div>
+              <motion.div
+                className="p-4 bg-teal-50 border border-teal-200 rounded-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+              >
                 <Monitor className="w-6 h-6 text-teal-600 mb-2" />
                 <p className="font-semibold text-slate-800">With UI</p>
                 <p className="text-sm text-slate-500">Teams, clients, visual</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Part 1B: With UI vs Without UI Comparison */}
-        <div className="mb-20 bg-gradient-to-br from-violet-100 via-indigo-50 to-teal-100 rounded-3xl border-2 border-violet-200/50 shadow-2xl p-6 lg:p-10 relative overflow-hidden">
+        <motion.div
+          className="mb-20 bg-gradient-to-br from-violet-100 via-indigo-50 to-teal-100 rounded-3xl border-2 border-violet-200/50 shadow-2xl p-6 lg:p-10 relative overflow-hidden"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {/* Decorative background elements */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-teal-300/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-violet-300/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -283,12 +319,18 @@ const UIDecisionSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Part 3B: Dashboard Options - Elegant Design */}
         <div className="mb-20">
           {/* Header */}
-          <div className="text-center mb-10">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-violet-50 border border-teal-200 rounded-full mb-4">
               <Layout className="w-4 h-4 text-teal-600" />
               <span className="text-sm font-semibold text-slate-700">Choose Your Dashboard</span>
@@ -297,12 +339,12 @@ const UIDecisionSection: React.FC = () => {
               Dashboard Types
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Select the right UI approach based on your project requirements</p>
-          </div>
+          </motion.div>
 
           {/* Dashboard Cards - Elegant Horizontal Layout */}
           <div className="relative grid md:grid-cols-3 gap-6 mb-8">
-            {dashboardTypes.map((dash) => (
-              <div
+            {dashboardTypes.map((dash, index) => (
+              <motion.div
                 key={dash.id}
                 onMouseEnter={() => setActiveDashboard(dash)}
                 className={`group relative overflow-hidden rounded-3xl text-center transition-all duration-500 cursor-pointer ${
@@ -310,6 +352,10 @@ const UIDecisionSection: React.FC = () => {
                     ? 'shadow-2xl scale-[1.02]'
                     : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'
                 }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Card Background */}
                 <div className={`absolute inset-0 transition-all duration-500 ${
@@ -382,18 +428,24 @@ const UIDecisionSection: React.FC = () => {
                     'bg-gradient-to-r from-orange-400 to-amber-400'
                   }`} />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Detail Panel - Elegant */}
-          <div className={`relative rounded-3xl overflow-hidden transition-all duration-500 shadow-xl ${
+          <motion.div
+            className={`relative rounded-3xl overflow-hidden transition-all duration-500 shadow-xl ${
             activeDashboard.color === 'teal'
               ? 'bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200'
               : activeDashboard.color === 'blue'
                 ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200'
                 : 'bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200'
-          }`}>
+          }`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             {/* Top accent bar */}
             <div className={`h-1.5 ${
               activeDashboard.color === 'teal' ? 'bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-400' :
@@ -459,14 +511,26 @@ const UIDecisionSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Part 4: Tech Stack Architecture */}
-        <div className="relative bg-white py-8 lg:py-12">
+        <motion.div
+          className="relative bg-white py-8 lg:py-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="relative z-10 grid lg:grid-cols-[1fr,auto,1fr] gap-0 items-center">
             {/* Left - Image with Title + Horizontal Line */}
-            <div className="flex items-center">
+            <motion.div
+              className="flex items-center"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="flex flex-col items-center bg-white flex-1">
                 <Image
                   src={getAssetPath('/tech-stack.jpg')}
@@ -487,7 +551,7 @@ const UIDecisionSection: React.FC = () => {
                 <div className="w-6 h-6 rounded-full bg-slate-800 shadow-lg z-10" />
                 <div className="w-20 h-1 bg-slate-800 -ml-1" />
               </div>
-            </div>
+            </motion.div>
 
             {/* Center - Branching Lines to Backend/Frontend */}
             <div className="hidden lg:flex items-center justify-center">
@@ -516,9 +580,21 @@ const UIDecisionSection: React.FC = () => {
             </div>
 
             {/* Right - Backend & Frontend Cards */}
-            <div className="flex flex-col gap-6 bg-white">
+            <motion.div
+              className="flex flex-col gap-6 bg-white"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               {/* Backend */}
-              <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden">
+              <motion.div
+                className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500" />
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-200">
@@ -542,10 +618,16 @@ const UIDecisionSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Frontend */}
-              <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden">
+              <motion.div
+                className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-teal-500 to-cyan-500" />
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-teal-200">
@@ -569,18 +651,24 @@ const UIDecisionSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Key Takeaway */}
-        <div className="mt-12 flex justify-center">
+        <motion.div
+          className="mt-12 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-violet-50 to-teal-50 border border-violet-200 rounded-2xl shadow-lg">
             <Monitor className="w-6 h-6 text-violet-600" />
             <span className="font-semibold text-slate-700">UI is not mandatory, but makes control easier for non-technical users</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
