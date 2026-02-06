@@ -14,6 +14,8 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   title: 'Secret Weapon Trading Solution Pvt. Ltd.',
   description:
@@ -30,9 +32,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Secret Weapon Trading Solution Pvt. Ltd.' }],
   icons: {
-    icon: '/logos/logo1.jpg',
-    shortcut: '/logos/logo1.jpg',
-    apple: '/logos/logo1.jpg',
+    icon: `${basePath}/logos/logo1.jpg`,
+    shortcut: `${basePath}/logos/logo1.jpg`,
+    apple: `${basePath}/logos/logo1.jpg`,
   },
   openGraph: {
     title: 'Secret Weapon Trading Solution Pvt. Ltd.',
