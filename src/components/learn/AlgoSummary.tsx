@@ -74,28 +74,30 @@ const AlgoSummary: React.FC = () => {
 
         {/* Visual Flow Summary */}
         <div className="mb-16">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-4">
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-6 lg:gap-4">
             {summaryPoints.map((point, idx) => (
               <React.Fragment key={point.step}>
                 {/* Main Node */}
-                <div className="relative flex flex-col items-center">
-                  <div className={`w-24 h-24 lg:w-28 lg:h-28 rounded-full flex items-center justify-center shadow-lg border-2 ${
-                    point.color === 'teal' ? 'bg-teal-50 border-teal-200' :
-                    point.color === 'blue' ? 'bg-blue-50 border-blue-200' :
-                    'bg-emerald-50 border-emerald-200'
-                  }`}>
-                    <point.icon className={`w-12 h-12 lg:w-14 lg:h-14 ${
-                      point.color === 'teal' ? 'text-teal-600' :
-                      point.color === 'blue' ? 'text-blue-600' :
-                      'text-emerald-600'
-                    }`} />
-                  </div>
-                  <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-lg ${
-                    point.color === 'teal' ? 'bg-teal-600' :
-                    point.color === 'blue' ? 'bg-blue-600' :
-                    'bg-emerald-600'
-                  }`}>
-                    {point.step.replace('0', '')}
+                <div className="flex flex-col items-center lg:self-start">
+                  <div className="relative">
+                    <div className={`w-24 h-24 lg:w-28 lg:h-28 rounded-full flex items-center justify-center shadow-lg border-2 ${
+                      point.color === 'teal' ? 'bg-teal-50 border-teal-200' :
+                      point.color === 'blue' ? 'bg-blue-50 border-blue-200' :
+                      'bg-emerald-50 border-emerald-200'
+                    }`}>
+                      <point.icon className={`w-12 h-12 lg:w-14 lg:h-14 ${
+                        point.color === 'teal' ? 'text-teal-600' :
+                        point.color === 'blue' ? 'text-blue-600' :
+                        'text-emerald-600'
+                      }`} />
+                    </div>
+                    <div className={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-lg ${
+                      point.color === 'teal' ? 'bg-teal-600' :
+                      point.color === 'blue' ? 'bg-blue-600' :
+                      'bg-emerald-600'
+                    }`}>
+                      {point.step.replace('0', '')}
+                    </div>
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-slate-800 text-center">{point.title}</h3>
 
@@ -133,10 +135,10 @@ const AlgoSummary: React.FC = () => {
 
                 {/* Arrow */}
                 {idx < summaryPoints.length - 1 && (
-                  <>
+                  <div className="lg:mt-12">
                     <ArrowRight className="w-8 h-8 text-slate-400 hidden lg:block" />
                     <ArrowDown className="w-8 h-8 text-slate-400 lg:hidden" />
-                  </>
+                  </div>
                 )}
               </React.Fragment>
             ))}
@@ -174,15 +176,7 @@ const AlgoSummary: React.FC = () => {
                         : 'text-emerald-600'
                   }`} />
                 </div>
-                <div
-                  className={`text-4xl font-black ${
-                    point.color === 'teal'
-                      ? 'text-teal-200'
-                      : point.color === 'blue'
-                        ? 'text-blue-200'
-                        : 'text-emerald-200'
-                  }`}
-                >
+                <div className="text-4xl font-black text-black/20">
                   {point.step}
                 </div>
               </div>
@@ -193,25 +187,66 @@ const AlgoSummary: React.FC = () => {
         </div>
 
         {/* Key Takeaways */}
-        <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 lg:p-10 mb-16 shadow-lg">
-          <h3 className="text-xl font-bold text-slate-800 text-center mb-8">Key Takeaways</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              'Algo trading = disciplined rule following, not magic profits',
-              'Data quality determines strategy success',
-              'Clear rules = clean signals',
-              'Execution is about confirmation, not just placing orders',
-              'UI decision affects deployment choice',
-              'Reliability matters as much as strategy',
-            ].map((point, idx) => (
-              <div
-                key={idx}
-                className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200"
-              >
-                <CheckCircle2 className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-600">{point}</span>
+        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 lg:p-12 mb-16 shadow-2xl overflow-hidden">
+          {/* Background decorations */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-56 h-56 bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.03]">
+            <div className="w-full h-full" style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)',
+              backgroundSize: '40px 40px'
+            }} />
+          </div>
+
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-4">
+                <Sparkles className="w-4 h-4 text-teal-400" />
+                <span className="text-sm font-semibold text-teal-300">Remember This</span>
               </div>
-            ))}
+              <h3 className="text-2xl lg:text-3xl font-bold text-white">Key Takeaways</h3>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                { text: 'Algo trading = disciplined rule following, not magic profits', icon: Brain, color: 'teal' },
+                { text: 'Data quality determines strategy success', icon: Database, color: 'blue' },
+                { text: 'Clear rules = clean signals', icon: Sparkles, color: 'violet' },
+                { text: 'Execution is about confirmation, not just placing orders', icon: Zap, color: 'amber' },
+                { text: 'UI decision affects deployment choice', icon: Monitor, color: 'cyan' },
+                { text: 'Reliability matters as much as strategy', icon: Server, color: 'emerald' },
+              ].map((point, idx) => (
+                <div
+                  key={idx}
+                  className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                      point.color === 'teal' ? 'bg-teal-500/20' :
+                      point.color === 'blue' ? 'bg-blue-500/20' :
+                      point.color === 'violet' ? 'bg-violet-500/20' :
+                      point.color === 'amber' ? 'bg-amber-500/20' :
+                      point.color === 'cyan' ? 'bg-cyan-500/20' :
+                      'bg-emerald-500/20'
+                    }`}>
+                      <point.icon className={`w-5 h-5 ${
+                        point.color === 'teal' ? 'text-teal-400' :
+                        point.color === 'blue' ? 'text-blue-400' :
+                        point.color === 'violet' ? 'text-violet-400' :
+                        point.color === 'amber' ? 'text-amber-400' :
+                        point.color === 'cyan' ? 'text-cyan-400' :
+                        'text-emerald-400'
+                      }`} />
+                    </div>
+                    <span className="text-slate-300 text-base leading-relaxed group-hover:text-white transition-colors">{point.text}</span>
+                  </div>
+                  {/* Number watermark */}
+                  <div className="absolute bottom-2 right-4 text-white/5 text-3xl font-black">
+                    {String(idx + 1).padStart(2, '0')}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

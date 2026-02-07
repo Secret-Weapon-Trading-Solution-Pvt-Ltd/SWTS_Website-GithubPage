@@ -433,11 +433,11 @@ const StrategySignalSection: React.FC = () => {
                 {/* Horizontal line */}
                 <line x1="16.66%" y1="20" x2="83.33%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
                 {/* Left vertical line to Entry */}
-                <line x1="16.66%" y1="20" x2="16.66%" y2="40" stroke="#10b981" strokeWidth="2" />
+                <line x1="16.66%" y1="20" x2="16.66%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
                 {/* Center vertical line to Exit */}
-                <line x1="50%" y1="20" x2="50%" y2="40" stroke="#f43f5e" strokeWidth="2" />
+                <line x1="50%" y1="20" x2="50%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
                 {/* Right vertical line to No Trade */}
-                <line x1="83.33%" y1="20" x2="83.33%" y2="40" stroke="#64748b" strokeWidth="2" />
+                <line x1="83.33%" y1="20" x2="83.33%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
               </svg>
 
               {/* Signal Type Cards */}

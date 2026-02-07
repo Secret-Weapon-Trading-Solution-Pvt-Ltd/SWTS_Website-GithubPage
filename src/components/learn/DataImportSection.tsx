@@ -155,9 +155,9 @@ const DataImportSection: React.FC = () => {
           {/* Data Type Cards - Elegant Design */}
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Real-time Data */}
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-teal-300 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              <div className="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border-2 border-teal-200 rounded-3xl p-8 hover:border-teal-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
+              <div className="relative h-full bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border-2 border-teal-200 rounded-3xl p-8 hover:border-teal-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
                 {/* Header */}
                 <div className="relative flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -223,9 +223,9 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Historical Data */}
-            <div className="group relative">
+            <div className="group relative h-full">
               <div className="absolute inset-0 bg-blue-300 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              <div className="relative bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-8 hover:border-blue-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
+              <div className="relative h-full bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-8 hover:border-blue-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
                 {/* Header */}
                 <div className="relative flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -301,39 +301,11 @@ const DataImportSection: React.FC = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
               Where Does <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Data</span> Come From?
             </h3>
-            <p className="text-slate-600 max-w-2xl mx-auto mb-8">Different sources provide data with varying quality, speed, and cost</p>
-
-            {/* Central connector circle */}
-            <div className="relative flex justify-center">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg z-10">
-                <Database className="w-8 h-8 text-white" />
-              </div>
-            </div>
-
-            {/* Connecting lines - Desktop */}
-            <div className="hidden lg:block absolute top-full left-1/2 -translate-x-1/2 w-[80%] h-16">
-              <svg className="w-full h-full" viewBox="0 0 800 60" preserveAspectRatio="none">
-                {/* Vertical line from center */}
-                <line x1="400" y1="0" x2="400" y2="20" stroke="url(#lineGrad)" strokeWidth="2" />
-                {/* Horizontal line */}
-                <line x1="100" y1="20" x2="700" y2="20" stroke="url(#lineGrad)" strokeWidth="2" />
-                {/* Three vertical lines down */}
-                <line x1="100" y1="20" x2="100" y2="60" stroke="#14b8a6" strokeWidth="2" />
-                <line x1="400" y1="20" x2="400" y2="60" stroke="#f59e0b" strokeWidth="2" />
-                <line x1="700" y1="20" x2="700" y2="60" stroke="#f43f5e" strokeWidth="2" />
-                <defs>
-                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#14b8a6" />
-                    <stop offset="50%" stopColor="#f59e0b" />
-                    <stop offset="100%" stopColor="#f43f5e" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <p className="text-slate-600 max-w-2xl mx-auto">Different sources provide data with varying quality, speed, and cost</p>
           </div>
 
-          {/* Three Connected Cards */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-8 lg:mt-12">
+          {/* Three Cards */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {/* Card 1 - Broker API */}
             <div className="group relative">
               {/* Top highlight bar - shows on hover */}
@@ -345,7 +317,7 @@ const DataImportSection: React.FC = () => {
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <span className="px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">Free/Low</span>
+                  <span className="px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">Cost: Free/Low</span>
                 </div>
 
                 {/* Icon */}
@@ -403,7 +375,7 @@ const DataImportSection: React.FC = () => {
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <span className="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">Medium</span>
+                  <span className="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-xs font-bold">Cost: Medium</span>
                 </div>
 
                 {/* Icon */}
@@ -461,7 +433,7 @@ const DataImportSection: React.FC = () => {
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <span className="px-3 py-1.5 bg-violet-100 text-violet-800 rounded-full text-xs font-bold">High</span>
+                  <span className="px-3 py-1.5 bg-violet-100 text-violet-800 rounded-full text-xs font-bold">Cost: High</span>
                 </div>
 
                 {/* Icon */}

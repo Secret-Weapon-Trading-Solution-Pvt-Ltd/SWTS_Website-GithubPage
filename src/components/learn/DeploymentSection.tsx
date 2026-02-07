@@ -202,20 +202,6 @@ const DeploymentSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Center - Person Image */}
-            <div className="hidden lg:flex flex-col justify-center items-center px-2">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-b from-amber-200/50 to-teal-200/50 rounded-full blur-2xl" />
-                <Image
-                  src={getAssetPath('/person.jpg')}
-                  alt="Decision Maker"
-                  width={220}
-                  height={340}
-                  className="relative h-auto drop-shadow-lg"
-                />
-              </div>
-              <p className="text-slate-500 text-sm font-medium mt-4 text-center">Which one fits<br/>your needs?</p>
-            </div>
 
             {/* Right Section - Server / VPS */}
             <div className="flex-1">
