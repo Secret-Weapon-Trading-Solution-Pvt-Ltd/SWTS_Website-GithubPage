@@ -57,15 +57,15 @@ const dashboardTypes = [
     tech: ['Python', 'PyQt/Tkinter'],
     complexity: 'Medium',
     color: 'orange',
-    features: ['Offline capable', 'Native performance', 'System tray', 'Local data'],
+    features: ['Native performance', 'System tray', 'Local data'],
   },
 ];
 
 const UIDecisionSection: React.FC = () => {
-  const [activeDashboard, setActiveDashboard] = useState(dashboardTypes[0]);
+  const [activeDashboard, setActiveDashboard] = useState(dashboardTypes[1]);
 
   return (
-    <section id="ui-decision" className="relative py-16 lg:py-24 bg-white overflow-hidden">
+    <section id="ui-decision" className="relative pt-4 pb-16 lg:pt-6 lg:pb-24 bg-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-50 rounded-full blur-3xl opacity-60 translate-x-1/2" />
@@ -138,26 +138,42 @@ const UIDecisionSection: React.FC = () => {
             {/* Quick Comparison Pills */}
             <div className="grid grid-cols-2 gap-4">
               <motion.div
-                className="p-4 bg-slate-50 border border-slate-200 rounded-2xl"
+                className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
-                <Terminal className="w-6 h-6 text-slate-600 mb-2" />
-                <p className="font-semibold text-slate-800">Without UI</p>
-                <p className="text-sm text-slate-500">Personal use, fast setup</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <Terminal className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="font-bold text-slate-800 text-lg">Without UI</p>
+                </div>
+                <ul className="space-y-1.5 text-sm text-slate-600">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0" />Personal use</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0" />Fast setup</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0" />Lightweight & simple</li>
+                </ul>
               </motion.div>
               <motion.div
-                className="p-4 bg-teal-50 border border-teal-200 rounded-2xl"
+                className="p-5 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                <Monitor className="w-6 h-6 text-teal-600 mb-2" />
-                <p className="font-semibold text-slate-800">With UI</p>
-                <p className="text-sm text-slate-500">Teams, clients, visual</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <Monitor className="w-5 h-5 text-white" />
+                  </div>
+                  <p className="font-bold text-slate-800 text-lg">With UI</p>
+                </div>
+                <ul className="space-y-1.5 text-sm text-slate-600">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />Teams & clients</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />Visual monitoring</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />User-friendly control</li>
+                </ul>
               </motion.div>
             </div>
           </motion.div>
@@ -232,9 +248,6 @@ const UIDecisionSection: React.FC = () => {
                   {[
                     'Higher development cost',
                     'More time to build',
-                    'Needs server hosting',
-                    'Regular maintenance',
-                    'Complex architecture',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
@@ -346,11 +359,11 @@ const UIDecisionSection: React.FC = () => {
             {dashboardTypes.map((dash, index) => (
               <motion.div
                 key={dash.id}
-                onMouseEnter={() => setActiveDashboard(dash)}
+                onClick={() => setActiveDashboard(dash)}
                 className={`group relative overflow-hidden rounded-3xl text-center transition-all duration-500 cursor-pointer ${
                   activeDashboard.id === dash.id
                     ? 'shadow-2xl scale-[1.02]'
-                    : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'
+                    : 'shadow-lg'
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

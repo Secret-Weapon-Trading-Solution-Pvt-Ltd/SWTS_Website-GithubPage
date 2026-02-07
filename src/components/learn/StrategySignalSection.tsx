@@ -662,19 +662,6 @@ const StrategySignalSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Key Takeaway */}
-        <motion.div
-          className="mt-16 flex justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-blue-50 border-2 border-blue-200 text-blue-700 rounded-full shadow-lg">
-            <Brain className="w-6 h-6 text-blue-600" />
-            <span className="font-semibold text-lg">Clearer strategy = Cleaner signals</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
