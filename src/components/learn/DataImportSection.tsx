@@ -299,7 +299,7 @@ const DataImportSection: React.FC = () => {
           {/* Header with connecting line */}
           <div className="relative text-center mb-16">
             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
-              Where Does <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Data</span> Come From?
+              Where Does Data Come From?
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Different sources provide data with varying quality, speed, and cost</p>
           </div>

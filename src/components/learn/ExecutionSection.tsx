@@ -452,7 +452,7 @@ const ExecutionSection: React.FC = () => {
                 <Bell className="w-4 h-4 text-violet-600" />
                 <span className="text-sm font-semibold text-violet-700">Stay Updated</span>
               </div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">Real-Time Notifications</h3>
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-2">Real-Time Notifications</h3>
               <p className="text-slate-600 max-w-2xl mx-auto">Never miss a trade event — get instant alerts on every channel</p>
             </motion.div>
           </div>
