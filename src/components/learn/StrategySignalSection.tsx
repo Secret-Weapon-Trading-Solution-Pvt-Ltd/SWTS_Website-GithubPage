@@ -14,7 +14,6 @@ import {
   Activity,
   TrendingUp,
   TrendingDown,
-  MinusCircle,
   ArrowRight,
   ArrowDown,
 } from 'lucide-react';
@@ -323,7 +322,7 @@ const StrategySignalSection: React.FC = () => {
               </p>
 
               <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                When new data arrives, your predefined rules are checked. If conditions match, a signal is generated - either BUY, SELL, or NO TRADE. This happens automatically, without emotion or hesitation.
+                When new data arrives, your predefined rules are checked. If conditions match, a signal is generated - either BUY or SELL. This happens automatically, without emotion or hesitation.
               </p>
 
               {/* Key Points - 2x2 Grid */}
@@ -421,7 +420,7 @@ const StrategySignalSection: React.FC = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">
                 Signal Types
               </h3>
-              <p className="text-base text-slate-600">Three possible outcomes from your strategy</p>
+              <p className="text-base text-slate-600">Two possible outcomes from your strategy</p>
             </div>
 
             {/* Flowchart with SVG lines */}
@@ -431,48 +430,51 @@ const StrategySignalSection: React.FC = () => {
                 {/* Center vertical line from heading */}
                 <line x1="50%" y1="0" x2="50%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
                 {/* Horizontal line */}
-                <line x1="16.66%" y1="20" x2="83.33%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="25%" y1="20" x2="75%" y2="20" stroke="#cbd5e1" strokeWidth="2" />
                 {/* Left vertical line to Entry */}
-                <line x1="16.66%" y1="20" x2="16.66%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
-                {/* Center vertical line to Exit */}
-                <line x1="50%" y1="20" x2="50%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
-                {/* Right vertical line to No Trade */}
-                <line x1="83.33%" y1="20" x2="83.33%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="25%" y1="20" x2="25%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
+                {/* Right vertical line to Exit */}
+                <line x1="75%" y1="20" x2="75%" y2="40" stroke="#cbd5e1" strokeWidth="2" />
               </svg>
 
               {/* Signal Type Cards */}
-              <div className="grid md:grid-cols-3 gap-4 pt-10 md:pt-12">
+              <div className="grid md:grid-cols-2 gap-6 pt-10 md:pt-12">
                 {/* Entry */}
-                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-md transition-all">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
-                      <TrendingUp className="w-5 h-5 text-white" />
+                <div className="flex flex-col p-6 rounded-2xl bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
+                      <TrendingUp className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="text-lg font-bold text-black">ENTRY</h4>
+                    <div>
+                      <h4 className="text-xl font-bold text-emerald-800">ENTRY Signal</h4>
+                      <p className="text-sm text-emerald-600 font-medium">Open a new position</p>
+                    </div>
                   </div>
-                  <p className="text-base text-black">All conditions met, enter the trade</p>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    When all your predefined conditions are satisfied simultaneously — indicators match, risk checks pass — the strategy generates an <span className="font-semibold text-emerald-700">Entry signal</span> to open a trade via broker API with calculated quantity and price.
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-emerald-200">
+                    <p className="text-xs text-emerald-600 font-medium uppercase tracking-wide">Result: BUY / SELL order sent to broker</p>
+                  </div>
                 </div>
 
                 {/* Exit */}
-                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-rose-50 border-2 border-rose-200 hover:border-rose-400 hover:shadow-md transition-all">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md">
-                      <TrendingDown className="w-5 h-5 text-white" />
+                <div className="flex flex-col p-6 rounded-2xl bg-rose-50 border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md">
+                      <TrendingDown className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="text-lg font-bold text-black">EXIT</h4>
-                  </div>
-                  <p className="text-base text-black">Target hit or stop triggered</p>
-                </div>
-
-                {/* No Trade */}
-                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-slate-100 border-2 border-slate-300 hover:border-slate-400 hover:shadow-md transition-all">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center shadow-md">
-                      <MinusCircle className="w-5 h-5 text-white" />
+                    <div>
+                      <h4 className="text-xl font-bold text-rose-800">EXIT Signal</h4>
+                      <p className="text-sm text-rose-600 font-medium">Close an existing position</p>
                     </div>
-                    <h4 className="text-lg font-bold text-black">NO TRADE</h4>
                   </div>
-                  <p className="text-base text-black">Conditions not met, wait</p>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    When your exit conditions trigger — stop-loss hit, target/take-profit reached, daily limit, time cutoff, or reversal signal — the strategy generates an <span className="font-semibold text-rose-700">Exit signal</span> to close the trade and protect your capital.
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-rose-200">
+                    <p className="text-xs text-rose-600 font-medium uppercase tracking-wide">Result: Position closed, PnL calculated</p>
+                  </div>
                 </div>
               </div>
             </div>
