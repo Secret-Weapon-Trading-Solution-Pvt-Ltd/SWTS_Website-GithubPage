@@ -25,22 +25,22 @@ const serverProviders = [
     id: 'aws',
     name: 'AWS EC2',
     desc: 'Amazon Web Services - most popular cloud, reliable, scalable. Good for production systems with auto-scaling needs.',
-    color: 'amber',
+    color: 'teal',
     features: ['Auto-scaling', 'Global regions', 'Pay as you go', 'High availability'],
   },
   {
-    id: 'digitalocean',
-    name: 'DigitalOcean',
-    desc: 'Simple, developer-friendly cloud. Fixed monthly pricing, easy to understand. Great for individual traders.',
+    id: 'gcloud',
+    name: 'Google Cloud',
+    desc: 'Google Cloud Platform - powerful computing with strong data analytics and AI/ML capabilities. Great for data-heavy trading systems.',
     color: 'blue',
-    features: ['Fixed pricing', 'Simple UI', 'Quick setup', 'Good docs'],
+    features: ['Big data tools', 'AI/ML integration', 'Global network', 'Competitive pricing'],
   },
   {
-    id: 'vultr',
-    name: 'Vultr / Linode',
-    desc: 'Budget-friendly VPS options with good performance. Perfect for cost-conscious algo trading setups.',
+    id: 'azure',
+    name: 'Microsoft Azure',
+    desc: 'Enterprise-grade cloud with seamless Windows integration. Ideal for teams already using Microsoft ecosystem and enterprise trading setups.',
     color: 'violet',
-    features: ['Low cost', 'SSD storage', 'Multiple locations', 'API access'],
+    features: ['Enterprise security', 'Hybrid cloud', 'Windows support', 'Compliance tools'],
   },
 ];
 
@@ -202,20 +202,6 @@ const DeploymentSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Center - Person Image */}
-            <div className="hidden lg:flex flex-col justify-center items-center px-2">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-b from-amber-200/50 to-teal-200/50 rounded-full blur-2xl" />
-                <Image
-                  src={getAssetPath('/person.jpg')}
-                  alt="Decision Maker"
-                  width={220}
-                  height={340}
-                  className="relative h-auto drop-shadow-lg"
-                />
-              </div>
-              <p className="text-slate-500 text-sm font-medium mt-4 text-center">Which one fits<br/>your needs?</p>
-            </div>
 
             {/* Right Section - Server / VPS */}
             <div className="flex-1">
@@ -279,74 +265,107 @@ const DeploymentSection: React.FC = () => {
                   <button
                     key={provider.id}
                     onClick={() => setActiveProvider(provider)}
-                    className={`w-full p-5 rounded-2xl border-2 text-left transition-all duration-300 ${
+                    className={`group relative w-full flex items-center gap-4 p-5 rounded-2xl border-2 text-left transition-all overflow-hidden ${
                       activeProvider.id === provider.id
-                        ? provider.color === 'amber'
-                          ? 'border-amber-400 bg-amber-50 shadow-lg'
+                        ? provider.color === 'teal'
+                          ? 'border-teal-400 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-lg'
                           : provider.color === 'blue'
-                            ? 'border-blue-400 bg-blue-50 shadow-lg'
-                            : 'border-violet-400 bg-violet-50 shadow-lg'
+                            ? 'border-blue-400 bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg'
+                            : 'border-violet-400 bg-gradient-to-br from-violet-50 to-purple-50 shadow-lg'
                         : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-md'
                     }`}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center transition-colors ${
-                        activeProvider.id === provider.id
-                          ? provider.color === 'amber' ? 'bg-amber-500' : provider.color === 'blue' ? 'bg-blue-500' : 'bg-violet-500'
-                          : 'bg-slate-100'
-                      }`}>
-                        <Cloud className={`w-7 h-7 ${activeProvider.id === provider.id ? 'text-white' : 'text-slate-400'}`} />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-slate-800">{provider.name}</h4>
-                        <p className="text-sm text-slate-500 line-clamp-1">{provider.desc.split('.')[0]}</p>
-                      </div>
-                      <ArrowRight className={`w-5 h-5 ${activeProvider.id === provider.id ? 'text-slate-600' : 'text-slate-300'}`} />
+                    {/* Diagonal accent */}
+                    <div className={`absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 rotate-45 transition-all duration-300 ${
+                      activeProvider.id === provider.id
+                        ? provider.color === 'teal' ? 'bg-gradient-to-br from-teal-400 to-teal-500'
+                          : provider.color === 'blue' ? 'bg-gradient-to-br from-blue-400 to-blue-500'
+                          : 'bg-gradient-to-br from-violet-400 to-violet-500'
+                        : 'bg-slate-100 group-hover:bg-slate-200'
+                    }`} />
+
+                    {/* Left accent bar */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${
+                      activeProvider.id === provider.id
+                        ? provider.color === 'teal' ? 'bg-teal-500'
+                          : provider.color === 'blue' ? 'bg-blue-500'
+                          : 'bg-violet-500'
+                        : 'bg-transparent group-hover:bg-slate-300'
+                    }`} />
+
+                    <div className={`relative w-14 h-14 rounded-xl flex items-center justify-center shadow-md ${
+                      activeProvider.id === provider.id
+                        ? provider.color === 'teal' ? 'bg-gradient-to-br from-teal-500 to-teal-600' : provider.color === 'blue' ? 'bg-gradient-to-br from-blue-500 to-blue-600' : 'bg-gradient-to-br from-violet-500 to-violet-600'
+                        : 'bg-slate-100 group-hover:bg-slate-200'
+                    }`}>
+                      <Cloud className={`w-7 h-7 ${activeProvider.id === provider.id ? 'text-white' : 'text-slate-500'}`} />
+                    </div>
+                    <div className="relative flex-1">
+                      <h4 className="font-bold text-black text-lg">{provider.name}</h4>
+                      <p className="text-sm text-slate-500 line-clamp-1">{provider.desc.split('.')[0]}</p>
                     </div>
                   </button>
                 ))}
               </div>
 
-              {/* Right - Detail Panel with Light Colors */}
+              {/* Right - Detail Panel */}
               <div className="lg:col-span-3">
-                <div className={`h-full rounded-3xl p-8 lg:p-10 transition-all duration-300 border-2 ${
-                  activeProvider.color === 'amber'
-                    ? 'bg-amber-50 border-amber-200'
+                <div className={`relative h-full rounded-3xl p-8 lg:p-10 border-2 shadow-lg overflow-hidden transition-all duration-300 ${
+                  activeProvider.color === 'teal'
+                    ? 'bg-gradient-to-br from-teal-50 to-cyan-50 border-teal-200'
                     : activeProvider.color === 'blue'
-                      ? 'bg-blue-50 border-blue-200'
-                      : 'bg-violet-50 border-violet-200'
+                      ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200'
+                      : 'bg-gradient-to-br from-violet-50 to-purple-50 border-violet-200'
                 }`}>
+                  {/* Diagonal accent - top right */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 transform translate-x-16 -translate-y-16 rotate-45 ${
+                    activeProvider.color === 'teal' ? 'bg-gradient-to-br from-teal-400 to-teal-500' :
+                    activeProvider.color === 'blue' ? 'bg-gradient-to-br from-blue-400 to-blue-500' :
+                    'bg-gradient-to-br from-violet-400 to-violet-500'
+                  }`} />
+
+                  {/* Diagonal accent - bottom left */}
+                  <div className={`absolute bottom-0 left-0 w-24 h-24 transform -translate-x-12 translate-y-12 rotate-45 opacity-50 ${
+                    activeProvider.color === 'teal' ? 'bg-gradient-to-br from-cyan-300 to-teal-400' :
+                    activeProvider.color === 'blue' ? 'bg-gradient-to-br from-indigo-300 to-blue-400' :
+                    'bg-gradient-to-br from-purple-300 to-violet-400'
+                  }`} />
+
+                  {/* Top accent line */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${
+                    activeProvider.color === 'teal' ? 'bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-500' :
+                    activeProvider.color === 'blue' ? 'bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500' :
+                    'bg-gradient-to-r from-violet-500 via-purple-500 to-violet-500'
+                  }`} />
+
                   {/* Header */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-                      activeProvider.color === 'amber' ? 'bg-amber-100' :
-                      activeProvider.color === 'blue' ? 'bg-blue-100' : 'bg-violet-100'
+                  <div className="relative flex items-center gap-4 mb-6">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg ${
+                      activeProvider.color === 'teal' ? 'bg-gradient-to-br from-teal-500 to-teal-600' :
+                      activeProvider.color === 'blue' ? 'bg-gradient-to-br from-blue-500 to-blue-600' : 'bg-gradient-to-br from-violet-500 to-violet-600'
                     }`}>
-                      <Cloud className={`w-8 h-8 ${
-                        activeProvider.color === 'amber' ? 'text-amber-600' :
-                        activeProvider.color === 'blue' ? 'text-blue-600' : 'text-violet-600'
-                      }`} />
+                      <Cloud className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-slate-800">{activeProvider.name}</h3>
+                      <h3 className="text-2xl font-bold text-black">{activeProvider.name}</h3>
                       <p className="text-slate-500">Cloud Provider</p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+                  <p className="relative text-lg text-black mb-8 leading-relaxed">
                     {activeProvider.desc}
                   </p>
 
                   {/* Features Grid */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="relative grid grid-cols-2 gap-3">
                     {activeProvider.features.map((feature, i) => (
-                      <div key={i} className={`flex items-center gap-2 px-4 py-3 bg-white rounded-xl border ${
-                        activeProvider.color === 'amber' ? 'border-amber-200' :
+                      <div key={i} className={`flex items-center gap-2 px-4 py-3 bg-white rounded-xl border shadow-sm ${
+                        activeProvider.color === 'teal' ? 'border-teal-200' :
                         activeProvider.color === 'blue' ? 'border-blue-200' : 'border-violet-200'
                       }`}>
                         <CheckCircle2 className={`w-5 h-5 flex-shrink-0 ${
-                          activeProvider.color === 'amber' ? 'text-amber-500' :
+                          activeProvider.color === 'teal' ? 'text-teal-500' :
                           activeProvider.color === 'blue' ? 'text-blue-500' : 'text-violet-500'
                         }`} />
                         <span className="text-slate-700 text-sm font-medium">{feature}</span>
@@ -436,23 +455,6 @@ const DeploymentSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Decision Summary */}
-        <div className="mt-12 flex justify-center">
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-lg">
-            <h4 className="text-lg font-bold text-slate-800 mb-4 text-center">Quick Decision Guide</h4>
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-xl">
-                <Laptop2 className="w-5 h-5 text-amber-600" />
-                <span className="text-amber-800 font-medium">Testing & Dev → PC OK</span>
-              </div>
-              <span className="text-slate-400 font-bold">vs</span>
-              <div className="flex items-center gap-2 px-4 py-2 bg-teal-50 border border-teal-200 rounded-xl">
-                <Cloud className="w-5 h-5 text-teal-600" />
-                <span className="text-teal-800 font-medium">Production → Server Better</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
