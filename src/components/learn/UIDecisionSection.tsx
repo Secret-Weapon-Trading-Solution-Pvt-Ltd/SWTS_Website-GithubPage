@@ -83,7 +83,7 @@ const UIDecisionSection: React.FC = () => {
         >
           <div>
             <p className="text-xs font-semibold text-violet-600 uppercase tracking-widest">Decision Point</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-black">The Interface Decision</h2>
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 leading-tight">The Interface Decision</h2>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent ml-6" />
         </motion.div>
@@ -120,8 +120,8 @@ const UIDecisionSection: React.FC = () => {
               <span className="text-sm font-semibold text-violet-700">After Strategy Signal</span>
             </div>
 
-            <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
-              Visual Dashboard or <span className="text-violet-600">Command Line</span>?
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+              Visual Dashboard or Command Line?
             </h3>
 
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
@@ -197,7 +197,7 @@ const UIDecisionSection: React.FC = () => {
               <Gauge className="w-4 h-4 text-violet-600" />
               <span className="text-sm font-semibold text-violet-700">Side-by-Side Comparison</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2">
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
               Compare Your Options
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Understanding the trade-offs helps you make the right choice</p>
@@ -334,7 +334,7 @@ const UIDecisionSection: React.FC = () => {
               <Layout className="w-4 h-4 text-teal-600" />
               <span className="text-sm font-semibold text-slate-700">Choose Your Dashboard</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3">
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
               Dashboard Types
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Select the right UI approach based on your project requirements</p>

@@ -77,11 +77,18 @@ const ExecutionSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div>
-            <p className="text-xs font-semibold text-emerald-600 uppercase tracking-widest">Step 03</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-black">Order Execution</h2>
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+              3
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-1">Step 03</p>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900">
+                <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Order</span> Execution
+              </h2>
+            </div>
           </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-emerald-200 to-transparent ml-6" />
+          <div className="flex-1 h-px bg-gradient-to-r from-teal-300 to-transparent ml-6" />
         </motion.div>
 
         {/* Part 1: Introduction - Left Image, Right Content */}
@@ -118,8 +125,8 @@ const ExecutionSection: React.FC = () => {
               <span className="text-sm font-semibold text-emerald-700">Signal to Trade</span>
             </div>
 
-            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4">
-              Signal Generated. <span className="text-emerald-600">Now What?</span>
+            <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+              Signal Generated. Now What?
             </h3>
 
             <p className="text-black text-lg leading-relaxed mb-6">
@@ -166,7 +173,7 @@ const ExecutionSection: React.FC = () => {
               <Zap className="w-4 h-4" />
               Execution Pipeline
             </motion.span>
-            <h2 className="text-2xl lg:text-3xl font-bold text-black mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
               What is an Execution Engine?
             </h2>
             <p className="text-base text-black max-w-3xl mx-auto leading-relaxed">
@@ -298,7 +305,7 @@ const ExecutionSection: React.FC = () => {
               <Activity className="w-4 h-4 text-blue-600" />
               <span className="text-sm font-semibold text-blue-700">Side-by-Side Comparison</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
               Choose Your Execution Mode
             </h3>
             <p className="text-black max-w-2xl mx-auto">Understanding both approaches helps you pick the right one for your trading</p>
@@ -645,8 +652,8 @@ const ExecutionSection: React.FC = () => {
                 Always Connected
               </div>
 
-              <h3 className="text-3xl lg:text-4xl font-bold text-black mb-4">
-                Every Trade Event, <span className="text-emerald-600">Instantly Delivered</span>
+              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+                Every Trade Event, Instantly Delivered
               </h3>
 
               <p className="text-black text-lg leading-relaxed mb-6">

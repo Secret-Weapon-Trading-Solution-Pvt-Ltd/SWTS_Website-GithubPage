@@ -89,7 +89,7 @@ const StrategySignalSection: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-1">Step 02</p>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-black">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900">
                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Strategy</span> & Signal
               </h2>
             </div>
@@ -110,7 +110,7 @@ const StrategySignalSection: React.FC = () => {
               <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse"></span>
               Your Trading Rules in Code
             </div>
-            <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-5 leading-tight">
+            <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Clear Rules = Clean Signals
             </h3>
             <p className="text-lg text-slate-700 mb-6 leading-relaxed">
@@ -183,7 +183,7 @@ const StrategySignalSection: React.FC = () => {
               <CheckCircle2 className="w-4 h-4 text-slate-600" />
               <span className="text-sm font-semibold text-slate-700">Trading Rules</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3">
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
               Entry & Exit Rules
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Define when to enter and when to exit - the two most critical decisions in trading</p>
@@ -328,7 +328,7 @@ const StrategySignalSection: React.FC = () => {
                 <span className="text-sm font-semibold text-violet-700">Signal Pipeline</span>
               </div>
 
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-4 leading-tight">
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 What is Signal Generation?
               </h3>
 
@@ -432,7 +432,7 @@ const StrategySignalSection: React.FC = () => {
           <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 rounded-3xl border-2 border-slate-200 shadow-xl p-6 lg:p-8">
             {/* Main Heading - Center Top */}
             <div className="text-center mb-4">
-              <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">
+              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
                 Signal Types
               </h3>
               <p className="text-base text-slate-600">Two possible outcomes from your strategy</p>
@@ -510,7 +510,7 @@ const StrategySignalSection: React.FC = () => {
               <Clock className="w-4 h-4 text-slate-600" />
               <span className="text-sm font-semibold text-slate-700">Timing Decision</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3">Signal Timing</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">Signal Timing</h3>
             <p className="text-lg text-black max-w-2xl mx-auto">When should the signal generate? Choose your approach based on speed vs accuracy trade-off.</p>
           </motion.div>
 

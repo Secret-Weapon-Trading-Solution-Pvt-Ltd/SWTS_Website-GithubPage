@@ -37,7 +37,7 @@ const DeploymentSection: React.FC = () => {
         >
           <div>
             <p className="text-xs font-semibold text-amber-600 uppercase tracking-widest">Infrastructure</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-black">Where Will It Run?</h2>
+            <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 leading-tight">Where Will It Run?</h2>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-amber-200 to-transparent ml-6" />
         </motion.div>
@@ -56,8 +56,8 @@ const DeploymentSection: React.FC = () => {
               <span className="text-sm font-semibold text-amber-700">Critical Infrastructure</span>
             </div>
 
-            <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-4">
-              Building is Not Enough - <span className="text-amber-600">Running 24/7</span> is the Real Challenge
+            <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+              Building is Not Enough - Running 24/7 is the Real Challenge
             </h3>
 
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
@@ -123,7 +123,7 @@ const DeploymentSection: React.FC = () => {
               <Server className="w-4 h-4 text-amber-600" />
               <span className="text-sm font-semibold text-amber-700">Side-by-Side Comparison</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-2">
+            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">
               Compare Your Options
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">Understanding the trade-offs helps you make the right choice</p>
@@ -276,7 +276,7 @@ const DeploymentSection: React.FC = () => {
 
             {/* Right - Content */}
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-slate-700 mb-4">
+              <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
                 Cost Optimization Tip
               </h3>
               <p className="text-slate-500 text-lg mb-6 leading-relaxed">

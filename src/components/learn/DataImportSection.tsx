@@ -147,7 +147,7 @@ const DataImportSection: React.FC = () => {
               <span className="text-sm font-semibold text-slate-700">Data Classification</span>
             </div>
             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
-              Market Data Comes in <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Two Types</span>
+              Market Data Comes in Two Types
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">One shows what's happening now, the other shows what happened before — both are essential for algo trading</p>
           </div>
