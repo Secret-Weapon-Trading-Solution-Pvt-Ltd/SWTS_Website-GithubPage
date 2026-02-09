@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Secret Weapon Trading Solution Pvt. Ltd.' }],
   icons: {
-    icon: `${basePath}/logos/logo1.jpg`,
-    shortcut: `${basePath}/logos/logo1.jpg`,
-    apple: `${basePath}/logos/logo1.jpg`,
+    icon: `${basePath}/logos/logo1.png`,
+    shortcut: `${basePath}/logos/logo1.png`,
+    apple: `${basePath}/logos/logo1.png`,
   },
   openGraph: {
     title: 'Secret Weapon Trading Solution Pvt. Ltd.',
