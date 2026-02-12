@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Phone, Mail, ArrowRight, Clock } from 'lucide-react';
 
 const WhatsAppIcon = () => (
@@ -25,11 +25,13 @@ const contactMethods = [
     value: '+91 70837 18306',
     action: 'Call Now',
     href: 'tel:+917083718306',
-    gradient: 'from-blue-600 to-blue-500',
+    gradient: 'from-blue-500 to-blue-600',
+    borderColor: 'border-l-blue-500',
     lightBg: 'bg-blue-50',
-    lightBorder: 'border-blue-100',
+    iconGradient: 'from-blue-500 to-blue-600',
     accentText: 'text-blue-600',
     iconColor: 'text-blue-600',
+    hoverBg: 'hover:bg-blue-50/50',
   },
   {
     id: 'whatsapp',
@@ -39,11 +41,13 @@ const contactMethods = [
     value: '+91 70837 18306',
     action: 'Open Chat',
     href: 'https://wa.me/917083718306',
-    gradient: 'from-green-600 to-emerald-500',
+    gradient: 'from-green-500 to-emerald-600',
+    borderColor: 'border-l-green-500',
     lightBg: 'bg-green-50',
-    lightBorder: 'border-green-100',
+    iconGradient: 'from-green-500 to-emerald-600',
     accentText: 'text-green-600',
-    iconColor: 'text-[#25D366]',
+    iconColor: 'text-white',
+    hoverBg: 'hover:bg-green-50/50',
     external: true,
   },
   {
@@ -55,10 +59,12 @@ const contactMethods = [
     action: 'Send Email',
     href: 'mailto:support@secretweapon.in',
     gradient: 'from-amber-500 to-orange-500',
+    borderColor: 'border-l-amber-500',
     lightBg: 'bg-amber-50',
-    lightBorder: 'border-amber-100',
+    iconGradient: 'from-amber-500 to-orange-500',
     accentText: 'text-amber-600',
-    iconColor: 'text-amber-600',
+    iconColor: 'text-white',
+    hoverBg: 'hover:bg-amber-50/50',
   },
   {
     id: 'telegram',
@@ -68,11 +74,13 @@ const contactMethods = [
     value: 'Join Channel',
     action: 'Subscribe',
     href: '/subscribe',
-    gradient: 'from-cyan-600 to-blue-500',
+    gradient: 'from-cyan-500 to-blue-500',
+    borderColor: 'border-l-cyan-500',
     lightBg: 'bg-cyan-50',
-    lightBorder: 'border-cyan-100',
+    iconGradient: 'from-cyan-500 to-blue-500',
     accentText: 'text-cyan-600',
-    iconColor: 'text-[#0088cc]',
+    iconColor: 'text-white',
+    hoverBg: 'hover:bg-cyan-50/50',
   },
 ];
 
@@ -81,23 +89,11 @@ export const ContactInfo: React.FC = () => {
 
   return (
     <section className="relative py-16 lg:py-20 bg-white overflow-hidden">
-      {/* Separator from hero */}
-      <div className="absolute top-0 left-0 right-0">
-        <div className="h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
-        <div className="flex justify-center -mt-3">
-          <div className="flex items-center gap-2 px-6 py-1.5 bg-white">
-            <div className="w-2 h-2 rounded-full bg-teal-400" />
-            <div className="w-8 h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full" />
-            <div className="w-2 h-2 rounded-full bg-blue-400" />
-          </div>
-        </div>
-      </div>
-
       {/* Background accents */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-50 rounded-full blur-3xl opacity-30 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50 rounded-full blur-3xl opacity-30 -translate-x-1/3" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-50 rounded-full blur-3xl opacity-20 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50 rounded-full blur-3xl opacity-20 -translate-x-1/3" />
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
 
         {/* Section Header */}
         <motion.div
@@ -119,12 +115,11 @@ export const ContactInfo: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Interactive Contact Strip */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 lg:rounded-3xl lg:border lg:border-slate-200 lg:overflow-hidden lg:shadow-soft-lg lg:bg-white">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {contactMethods.map((method, index) => {
             const IconComponent = method.icon;
             const isHovered = hoveredId === method.id;
-            const isLast = index === contactMethods.length - 1;
 
             return (
               <motion.a
@@ -139,28 +134,14 @@ export const ContactInfo: React.FC = () => {
                 onHoverStart={() => setHoveredId(method.id)}
                 onHoverEnd={() => setHoveredId(null)}
                 className={`
-                  group relative flex-1 p-6 lg:p-8 transition-all duration-500 cursor-pointer
-                  rounded-2xl lg:rounded-none
-                  ${!isLast ? 'lg:border-r lg:border-slate-100' : ''}
-                  ${isHovered ? `${method.lightBg}` : 'bg-white'}
-                  border border-slate-200 lg:border-0 lg:border-r
+                  group relative p-6 rounded-2xl bg-white border-l-4 ${method.borderColor}
+                  border border-slate-100 shadow-sm
+                  hover:shadow-md transition-all duration-300 cursor-pointer
+                  ${method.hoverBg}
                 `}
               >
-                {/* Top accent line on hover */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      exit={{ scaleX: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${method.gradient} origin-left hidden lg:block`}
-                    />
-                  )}
-                </AnimatePresence>
-
-                {/* Icon */}
-                <div className={`w-12 h-12 rounded-2xl ${method.lightBg} border ${method.lightBorder} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                {/* Gradient Icon Box */}
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${method.iconGradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                   <div className={method.iconColor}>
                     <IconComponent className="w-6 h-6" />
                   </div>

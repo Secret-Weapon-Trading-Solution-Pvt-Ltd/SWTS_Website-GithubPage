@@ -40,8 +40,10 @@ export const ContactForm: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <section className="py-16 lg:py-24 bg-slate-50">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <section id="contact-form" className="relative py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-teal-50/30 to-blue-50/30 overflow-hidden scroll-mt-20">
+        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-teal-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[350px] h-[350px] bg-blue-100/20 rounded-full blur-3xl" />
+        <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +54,7 @@ export const ContactForm: React.FC = () => {
               <CheckCircle2 className="w-10 h-10 text-teal-500" />
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-3">Your Email Client Should Open</h3>
-            <p className="text-slate-600 mb-8">
+            <p className="text-black mb-8">
               Please send the pre-filled email from your email client. We&apos;ll get back to you within 24 hours.
             </p>
             <button
@@ -68,8 +70,13 @@ export const ContactForm: React.FC = () => {
   }
 
   return (
-    <section className="py-16 lg:py-24 bg-slate-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <section id="contact-form" className="relative py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-teal-50/30 to-blue-50/30 overflow-hidden scroll-mt-20">
+      {/* Decorative blur orbs */}
+      <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-teal-100/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-blue-100/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-cyan-100/15 rounded-full blur-3xl -translate-x-1/2" />
+
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
           {/* Left Side - Info */}
@@ -87,7 +94,7 @@ export const ContactForm: React.FC = () => {
                 Trading Goals
               </span>
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <p className="text-lg text-black leading-relaxed mb-8">
               Share your trading strategy idea or automation needs, and we&apos;ll craft a solution
               tailored to your specific requirements.
             </p>
@@ -111,7 +118,7 @@ export const ContactForm: React.FC = () => {
                   <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-teal-600" />
                   </div>
-                  <span className="text-slate-700">{benefit}</span>
+                  <span className="text-black">{benefit}</span>
                 </motion.div>
               ))}
             </div>
@@ -125,7 +132,7 @@ export const ContactForm: React.FC = () => {
               className="mt-10 p-6 rounded-2xl bg-white border border-slate-200 shadow-soft"
             >
               <h4 className="font-bold text-slate-900 mb-2">Not sure what you need?</h4>
-              <p className="text-sm text-slate-600 mb-4">
+              <p className="text-sm text-black mb-4">
                 Take our free strategy assessment to get personalized recommendations.
               </p>
               <Link
@@ -145,7 +152,7 @@ export const ContactForm: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 lg:p-10 shadow-soft-lg border border-slate-100">
+            <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-slate-100/80">
               {/* Name Field */}
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
@@ -241,7 +248,7 @@ export const ContactForm: React.FC = () => {
                 <span>Send Message</span>
               </motion.button>
 
-              <p className="text-center text-xs text-slate-500 mt-4">
+              <p className="text-center text-xs text-black mt-4">
                 This will open your email client with a pre-filled message.
               </p>
             </form>

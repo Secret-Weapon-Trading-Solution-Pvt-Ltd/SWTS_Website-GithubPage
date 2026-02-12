@@ -40,15 +40,20 @@ const FAQItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border-b border-slate-100 last:border-b-0"
+      className={`border-b border-slate-100 last:border-b-0 transition-colors duration-300 ${isOpen ? 'bg-teal-50/30' : ''}`}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-5 text-left group"
+        className="w-full flex items-center justify-between py-5 px-4 text-left group"
       >
-        <span className="text-base font-semibold text-slate-800 pr-8 group-hover:text-blue-700 transition-colors">
-          {faq.question}
-        </span>
+        <div className="flex items-center gap-3 pr-8">
+          <span className={`text-xs font-bold w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${isOpen ? 'bg-gradient-to-br from-teal-500 to-cyan-500 text-white' : 'bg-slate-100 text-slate-400'}`}>
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <span className={`text-base font-semibold transition-colors ${isOpen ? 'text-teal-700' : 'text-slate-800 group-hover:text-blue-700'}`}>
+            {faq.question}
+          </span>
+        </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -66,7 +71,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-slate-600 leading-relaxed pr-12">
+            <p className="pb-5 pl-14 pr-12 text-black leading-relaxed">
               {faq.answer}
             </p>
           </motion.div>
@@ -78,8 +83,11 @@ const FAQItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
 
 export const ContactFAQ: React.FC = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <section className="relative py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-teal-50/30 overflow-hidden">
+      {/* Background orb */}
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-50/40 rounded-full blur-3xl translate-x-1/3" />
+
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left - Header */}
           <div className="lg:col-span-4">
@@ -90,14 +98,14 @@ export const ContactFAQ: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="lg:sticky lg:top-32"
             >
-              <div className="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-5">
-                <HelpCircle className="w-7 h-7 text-teal-600" />
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mb-5 shadow-sm">
+                <HelpCircle className="w-7 h-7 text-white" />
               </div>
               <span className="section-label">FAQ</span>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 Everything you need to know about working with us. Can&apos;t find your answer? Reach out directly.
               </p>
             </motion.div>

@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { MainLayout } from '@/components/layouts';
 import {
   ContactHero,
-  ContactInfo,
   ContactForm,
   ContactFAQ,
 } from '@/components/contact';
@@ -31,7 +30,6 @@ export default function ContactPage() {
   return (
     <MainLayout>
       <ContactHero />
-      <ContactInfo />
       <ContactForm />
       <ContactFAQ />
     </MainLayout>
