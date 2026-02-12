@@ -155,9 +155,8 @@ const DataImportSection: React.FC = () => {
           {/* Data Type Cards - Elegant Design */}
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Real-time Data */}
-            <div className="group relative h-full">
-              <div className="absolute inset-0 bg-teal-300 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              <div className="relative h-full bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border-2 border-teal-200 rounded-3xl p-8 hover:border-teal-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
+            <div className="relative h-full">
+              <div className="relative h-full bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border-2 border-teal-200 rounded-3xl p-8 overflow-hidden">
                 {/* Header */}
                 <div className="relative flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -223,9 +222,8 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Historical Data */}
-            <div className="group relative h-full">
-              <div className="absolute inset-0 bg-blue-300 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              <div className="relative h-full bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-8 hover:border-blue-300 transition-all duration-300 hover:shadow-xl overflow-hidden">
+            <div className="relative h-full">
+              <div className="relative h-full bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-8 overflow-hidden">
                 {/* Header */}
                 <div className="relative flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -307,13 +305,12 @@ const DataImportSection: React.FC = () => {
           {/* Three Cards */}
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {/* Card 1 - Broker API */}
-            <div className="group relative">
-              {/* Top highlight bar - shows on hover */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl transition-all duration-300 z-20 bg-transparent group-hover:bg-sky-600" />
+            <div className="relative">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-sky-600" />
 
-              <div className="relative bg-gradient-to-br from-sky-50 via-white to-cyan-50 rounded-3xl border-2 border-sky-200 p-6 lg:p-8 shadow-lg transition-all duration-300 overflow-hidden h-full group-hover:border-sky-500 group-hover:shadow-xl group-hover:shadow-sky-200/50">
+              <div className="relative bg-gradient-to-br from-sky-50 via-white to-cyan-50 rounded-3xl border-2 border-sky-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
                 {/* Diagonal accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-sky-400 to-sky-500 transform translate-x-12 -translate-y-12 rotate-45 transition-all duration-300 opacity-80 group-hover:opacity-100" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-sky-400 to-sky-500 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">
@@ -365,13 +362,12 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Card 2 - Data Vendors - Dark Blue Theme */}
-            <div className="group relative">
-              {/* Top highlight bar - shows on hover */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl transition-all duration-300 z-20 bg-transparent group-hover:bg-blue-900" />
+            <div className="relative">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-blue-900" />
 
-              <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl border-2 border-blue-200 p-6 lg:p-8 shadow-lg transition-all duration-300 overflow-hidden h-full group-hover:border-blue-600 group-hover:shadow-xl group-hover:shadow-blue-200/50">
+              <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl border-2 border-blue-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
                 {/* Diagonal accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 transform translate-x-12 -translate-y-12 rotate-45 transition-all duration-300 opacity-80 group-hover:opacity-100" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">
@@ -423,13 +419,12 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Card 3 - Direct Exchange - Violet Theme */}
-            <div className="group relative">
-              {/* Top highlight bar - shows on hover */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl transition-all duration-300 z-20 bg-transparent group-hover:bg-violet-900" />
+            <div className="relative">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-violet-900" />
 
-              <div className="relative bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-3xl border-2 border-violet-200 p-6 lg:p-8 shadow-lg transition-all duration-300 overflow-hidden h-full group-hover:border-violet-600 group-hover:shadow-xl group-hover:shadow-violet-200/50">
+              <div className="relative bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-3xl border-2 border-violet-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
                 {/* Diagonal accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-violet-600 to-violet-800 transform translate-x-12 -translate-y-12 rotate-45 transition-all duration-300 opacity-80 group-hover:opacity-100" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-violet-600 to-violet-800 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 
                 {/* Cost badge */}
                 <div className="absolute top-4 right-4 z-10">

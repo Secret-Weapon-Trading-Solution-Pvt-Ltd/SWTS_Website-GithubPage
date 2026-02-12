@@ -154,7 +154,7 @@ const DeploymentSection: React.FC = () => {
                 {/* Pros Column */}
                 <div className="flex-1 space-y-2">
                   {['No hosting cost', 'Full control', 'Easy debugging', 'Good for testing'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
                       <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
                       <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-white" />
@@ -166,7 +166,7 @@ const DeploymentSection: React.FC = () => {
                 {/* Cons Column */}
                 <div className="flex-1 space-y-2">
                   {['Sleep mode risk', 'Restart issues', 'Internet/power cuts', 'Not 24/7'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
                         <XCircle className="w-4 h-4 text-white" />
                       </div>
@@ -200,7 +200,7 @@ const DeploymentSection: React.FC = () => {
                 {/* Pros Column */}
                 <div className="flex-1 space-y-2">
                   {['Runs 24/7 reliably', 'No PC dependency', 'Remote access', 'Professional'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
                       <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
                       <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-white" />
@@ -212,7 +212,7 @@ const DeploymentSection: React.FC = () => {
                 {/* Cons Column */}
                 <div className="flex-1 space-y-2">
                   {['Monthly cost', 'Setup required', 'Tech knowledge'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
                         <XCircle className="w-4 h-4 text-white" />
                       </div>
@@ -244,7 +244,7 @@ const DeploymentSection: React.FC = () => {
               </div>
 
               {/* Server Timeline Visual */}
-              <div className="w-full bg-white rounded-2xl border border-emerald-200 p-5 shadow-md hover:shadow-lg transition-shadow">
+              <div className="w-full bg-white rounded-2xl border border-emerald-200 p-5 shadow-md">
                 <p className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">Server Schedule</p>
                 {/* Timeline bar */}
                 <div className="relative h-8 bg-emerald-50 rounded-full overflow-hidden mb-3">
@@ -263,11 +263,11 @@ const DeploymentSection: React.FC = () => {
 
               {/* Cost savings cards */}
               <div className="grid grid-cols-2 gap-3 w-full">
-                <div className="bg-white rounded-xl border border-emerald-200 p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl border border-emerald-200 p-4 text-center shadow-md">
                   <p className="text-3xl font-bold text-emerald-600">6.5h</p>
                   <p className="text-xs text-slate-500 mt-1">Active / day</p>
                 </div>
-                <div className="bg-white rounded-xl border border-emerald-200 p-4 text-center shadow-md hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl border border-emerald-200 p-4 text-center shadow-md">
                   <p className="text-3xl font-bold text-emerald-600">~70%</p>
                   <p className="text-xs text-slate-500 mt-1">Cost saved</p>
                 </div>
@@ -284,11 +284,11 @@ const DeploymentSection: React.FC = () => {
               </p>
 
               <div className="flex flex-wrap gap-4 mb-6">
-                <div className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl border border-emerald-200 shadow-sm">
                   <Calendar className="w-6 h-6 text-emerald-600" />
                   <span className="text-slate-600 font-semibold">Monday - Friday</span>
                 </div>
-                <div className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 px-5 py-3 bg-white rounded-xl border border-emerald-200 shadow-sm">
                   <Clock className="w-6 h-6 text-emerald-600" />
                   <span className="text-slate-600 font-semibold">9:00 AM - 3:30 PM</span>
                 </div>

@@ -132,7 +132,7 @@ const StrategySignalSection: React.FC = () => {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className={`flex items-center gap-3 p-4 bg-gradient-to-br ${item.bg} rounded-xl border ${item.border} shadow-sm hover:shadow-md transition-all`}
+                  className={`flex items-center gap-3 p-4 bg-gradient-to-br ${item.bg} rounded-xl border ${item.border} shadow-sm`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -197,11 +197,8 @@ const StrategySignalSection: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Entry Rule - Corner Ribbon Design */}
-            <div className="group relative">
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full group-hover:border-emerald-400">
+            <div className="relative">
+              <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden shadow-lg h-full">
                 {/* Corner ribbon fold effect */}
                 <div className="absolute top-0 right-0 w-24 h-24">
                   <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-500 to-teal-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
@@ -222,7 +219,7 @@ const StrategySignalSection: React.FC = () => {
                   {/* Header */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-200/50 group-hover:shadow-emerald-300/60 transition-shadow">
+                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-200/50">
                         <Target className="w-8 h-8 text-white" />
                       </div>
                     </div>
@@ -241,7 +238,7 @@ const StrategySignalSection: React.FC = () => {
                       { text: 'Price action patterns', icon: TrendingUp },
                       { text: 'Volume confirmation', icon: Zap }
                     ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 p-3 bg-emerald-50/50 rounded-xl border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 hover:shadow-md transition-all">
+                      <div key={i} className="flex items-center gap-4 p-3 bg-emerald-50/50 rounded-xl border border-emerald-100">
                         <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md border border-slate-200">
                           <item.icon className="w-5 h-5 text-black" />
                         </div>
@@ -254,11 +251,8 @@ const StrategySignalSection: React.FC = () => {
             </div>
 
             {/* Exit Rule - Corner Ribbon Design */}
-            <div className="group relative">
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-400/20 to-pink-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative bg-white border-2 border-rose-200 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full group-hover:border-rose-400">
+            <div className="relative">
+              <div className="relative bg-white border-2 border-rose-200 rounded-3xl overflow-hidden shadow-lg h-full">
                 {/* Corner ribbon fold effect */}
                 <div className="absolute top-0 right-0 w-24 h-24">
                   <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-rose-500 to-pink-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
@@ -279,7 +273,7 @@ const StrategySignalSection: React.FC = () => {
                   {/* Header */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-rose-200/50 group-hover:shadow-rose-300/60 transition-shadow">
+                      <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-rose-200/50">
                         <LogOut className="w-8 h-8 text-white" />
                       </div>
                     </div>
@@ -298,7 +292,7 @@ const StrategySignalSection: React.FC = () => {
                       { text: 'Max trades per day', icon: Clock },
                       { text: 'Daily loss limit', icon: Activity }
                     ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 p-3 bg-rose-50/50 rounded-xl border border-rose-100 hover:border-rose-300 hover:bg-rose-50 hover:shadow-md transition-all">
+                      <div key={i} className="flex items-center gap-4 p-3 bg-rose-50/50 rounded-xl border border-rose-100">
                         <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md border border-slate-200">
                           <item.icon className="w-5 h-5 text-black" />
                         </div>
@@ -348,7 +342,7 @@ const StrategySignalSection: React.FC = () => {
                   { text: 'Instant execution', desc: 'Millisecond response', color: 'violet', icon: Zap },
                   { text: 'Emotion-free', desc: 'Disciplined trading', color: 'emerald', icon: CheckCircle2 },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 bg-white border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-md transition-all">
+                  <div key={i} className="flex items-start gap-4 p-5 bg-white border-2 border-slate-200 rounded-xl">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
                       item.color === 'teal' ? 'bg-teal-500' :
                       item.color === 'blue' ? 'bg-blue-500' :
@@ -392,11 +386,11 @@ const StrategySignalSection: React.FC = () => {
                         <div className="absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-3 bg-gradient-to-b from-slate-300 to-slate-200 z-0" />
                       )}
 
-                      <div className={`relative p-4 rounded-xl border-2 transition-all hover:shadow-md ${
-                        step.color === 'teal' ? 'bg-teal-50 border-teal-200 hover:border-teal-400' :
-                        step.color === 'blue' ? 'bg-blue-50 border-blue-200 hover:border-blue-400' :
-                        step.color === 'violet' ? 'bg-violet-50 border-violet-200 hover:border-violet-400' :
-                        'bg-emerald-50 border-emerald-200 hover:border-emerald-400'
+                      <div className={`relative p-4 rounded-xl border-2 ${
+                        step.color === 'teal' ? 'bg-teal-50 border-teal-200' :
+                        step.color === 'blue' ? 'bg-blue-50 border-blue-200' :
+                        step.color === 'violet' ? 'bg-violet-50 border-violet-200' :
+                        'bg-emerald-50 border-emerald-200'
                       }`}>
                         {/* Top row: Logo - Title */}
                         <div className="flex items-center justify-center gap-3 mb-2">
@@ -455,7 +449,7 @@ const StrategySignalSection: React.FC = () => {
               {/* Signal Type Cards */}
               <div className="grid md:grid-cols-2 gap-6 pt-10 md:pt-12">
                 {/* Entry */}
-                <div className="flex flex-col p-6 rounded-2xl bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg transition-all">
+                <div className="flex flex-col p-6 rounded-2xl bg-emerald-50 border-2 border-emerald-200">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
                       <TrendingUp className="w-6 h-6 text-white" />
@@ -474,7 +468,7 @@ const StrategySignalSection: React.FC = () => {
                 </div>
 
                 {/* Exit */}
-                <div className="flex flex-col p-6 rounded-2xl bg-rose-50 border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg transition-all">
+                <div className="flex flex-col p-6 rounded-2xl bg-rose-50 border-2 border-rose-200">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md">
                       <TrendingDown className="w-6 h-6 text-white" />

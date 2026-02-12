@@ -138,14 +138,14 @@ const UIDecisionSection: React.FC = () => {
             {/* Quick Comparison Pills */}
             <div className="grid grid-cols-2 gap-4">
               <motion.div
-                className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 group"
+                className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center shadow-md">
                     <Terminal className="w-5 h-5 text-white" />
                   </div>
                   <p className="font-bold text-slate-800 text-lg">Without UI</p>
@@ -157,14 +157,14 @@ const UIDecisionSection: React.FC = () => {
                 </ul>
               </motion.div>
               <motion.div
-                className="p-5 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 group"
+                className="p-5 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-2xl shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-md">
                     <Monitor className="w-5 h-5 text-white" />
                   </div>
                   <p className="font-bold text-slate-800 text-lg">With UI</p>
@@ -234,7 +234,7 @@ const UIDecisionSection: React.FC = () => {
                     'Multi-user support',
                     'Real-time monitoring',
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
                       <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
                       <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-white" />
@@ -249,7 +249,7 @@ const UIDecisionSection: React.FC = () => {
                     'More time to build',
                     'Higher development cost',
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
                         <XCircle className="w-4 h-4 text-white" />
                       </div>
@@ -289,7 +289,7 @@ const UIDecisionSection: React.FC = () => {
                     'Simple config files',
                     'Personal use friendly',
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
                       <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
                       <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-4 h-4 text-white" />
@@ -307,7 +307,7 @@ const UIDecisionSection: React.FC = () => {
                     'Scattered monitoring',
                     'Single user mostly',
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
                         <XCircle className="w-4 h-4 text-white" />
                       </div>
@@ -492,10 +492,10 @@ const UIDecisionSection: React.FC = () => {
                   <p className="text-black text-sm font-bold mb-4">Key Features</p>
                   <div className="space-y-3">
                     {activeDashboard.features.map((feature, i) => (
-                      <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border transition-all hover:shadow-md ${
-                        activeDashboard.color === 'teal' ? 'border-teal-100 hover:border-teal-300' :
-                        activeDashboard.color === 'blue' ? 'border-blue-100 hover:border-blue-300' :
-                        'border-violet-100 hover:border-violet-300'
+                      <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border ${
+                        activeDashboard.color === 'teal' ? 'border-teal-100' :
+                        activeDashboard.color === 'blue' ? 'border-blue-100' :
+                        'border-violet-100'
                       }`}>
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
                           activeDashboard.color === 'teal' ? 'bg-teal-500' :
@@ -588,7 +588,7 @@ const UIDecisionSection: React.FC = () => {
             >
               {/* Backend */}
               <motion.div
-                className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden"
+                className="bg-white rounded-2xl p-6 shadow-xl relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -621,7 +621,7 @@ const UIDecisionSection: React.FC = () => {
 
               {/* Frontend */}
               <motion.div
-                className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow relative overflow-hidden"
+                className="bg-white rounded-2xl p-6 shadow-xl relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

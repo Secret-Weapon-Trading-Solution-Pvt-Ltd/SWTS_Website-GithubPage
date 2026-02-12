@@ -96,14 +96,14 @@ const AlgoIntroSection: React.FC = () => {
             {/* Benefits - 2x2 Grid */}
             <div className="grid grid-cols-2 gap-3">
               {[
-                { text: 'No Emotional Trading', icon: Shield, desc: 'Remove fear & greed', gradient: 'from-teal-500 to-cyan-500', bg: 'from-teal-50 to-cyan-50', border: 'border-teal-200 hover:border-teal-300' },
-                { text: '24/7 Rule Following', icon: Clock, desc: 'Consistent execution', gradient: 'from-blue-500 to-indigo-500', bg: 'from-blue-50 to-indigo-50', border: 'border-blue-200 hover:border-blue-300' },
-                { text: 'Faster Execution', icon: TrendingUp, desc: 'Millisecond orders', gradient: 'from-emerald-500 to-green-500', bg: 'from-emerald-50 to-green-50', border: 'border-emerald-200 hover:border-emerald-300' },
-                { text: 'Backtested Strategies', icon: BarChart3, desc: 'Data-driven decisions', gradient: 'from-violet-500 to-purple-500', bg: 'from-violet-50 to-purple-50', border: 'border-violet-200 hover:border-violet-300' },
+                { text: 'No Emotional Trading', icon: Shield, desc: 'Remove fear & greed', gradient: 'from-teal-500 to-cyan-500', bg: 'from-teal-50 to-cyan-50', border: 'border-teal-200' },
+                { text: '24/7 Rule Following', icon: Clock, desc: 'Consistent execution', gradient: 'from-blue-500 to-indigo-500', bg: 'from-blue-50 to-indigo-50', border: 'border-blue-200' },
+                { text: 'Faster Execution', icon: TrendingUp, desc: 'Millisecond orders', gradient: 'from-emerald-500 to-green-500', bg: 'from-emerald-50 to-green-50', border: 'border-emerald-200' },
+                { text: 'Backtested Strategies', icon: BarChart3, desc: 'Data-driven decisions', gradient: 'from-violet-500 to-purple-500', bg: 'from-violet-50 to-purple-50', border: 'border-violet-200' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className={`group relative p-4 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl cursor-default overflow-hidden bg-gradient-to-br ${item.bg} ${item.border}`}
+                  className={`relative p-4 rounded-2xl border-2 overflow-hidden bg-gradient-to-br ${item.bg} ${item.border}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -111,7 +111,7 @@ const AlgoIntroSection: React.FC = () => {
                 >
                   <div className="relative flex items-start gap-3">
                     {/* Colorful gradient icon container */}
-                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0 shadow-lg`}>
                       <item.icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="min-w-0">
@@ -180,9 +180,8 @@ const AlgoIntroSection: React.FC = () => {
 
               {/* Pillar 1: Data Import */}
               <div className="flex flex-col items-center">
-                <div className="relative group mb-4">
-                  <div className="absolute inset-0 bg-teal-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-teal-400 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-teal-200/50 group-hover:scale-105 transition-all duration-300">
+                <div className="relative mb-4">
+                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-teal-400 flex items-center justify-center shadow-xl">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center">
                       <Database className="w-8 h-8 lg:w-10 lg:h-10 text-teal-600" />
                     </div>
@@ -206,11 +205,11 @@ const AlgoIntroSection: React.FC = () => {
 
                 {/* Sub-branches */}
                 <div className="flex gap-3">
-                  <div className="px-4 py-3 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="px-4 py-3 bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-xl shadow-md">
                     <Database className="w-5 h-5 text-teal-600 mx-auto mb-1" />
                     <p className="text-xs font-semibold text-teal-700 text-center">Data Source</p>
                   </div>
-                  <div className="px-4 py-3 bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-200 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="px-4 py-3 bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-200 rounded-xl shadow-md">
                     <Database className="w-5 h-5 text-cyan-600 mx-auto mb-1" />
                     <p className="text-xs font-semibold text-cyan-700 text-center">Data Type</p>
                   </div>
@@ -224,9 +223,8 @@ const AlgoIntroSection: React.FC = () => {
 
               {/* Pillar 2: Strategy & Signal */}
               <div className="flex flex-col items-center">
-                <div className="relative group mb-4">
-                  <div className="absolute inset-0 bg-blue-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-200/50 group-hover:scale-105 transition-all duration-300">
+                <div className="relative mb-4">
+                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center shadow-xl">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
                       <Brain className="w-8 h-8 lg:w-10 lg:h-10 text-blue-600" />
                     </div>
@@ -250,11 +248,11 @@ const AlgoIntroSection: React.FC = () => {
 
                 {/* Sub-branches */}
                 <div className="flex gap-3">
-                  <div className="px-4 py-3 bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="px-4 py-3 bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 rounded-xl shadow-md">
                     <Monitor className="w-5 h-5 text-violet-600 mx-auto mb-1" />
                     <p className="text-xs font-semibold text-violet-700 text-center">UI Decision</p>
                   </div>
-                  <div className="px-4 py-3 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="px-4 py-3 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl shadow-md">
                     <Server className="w-5 h-5 text-amber-600 mx-auto mb-1" />
                     <p className="text-xs font-semibold text-amber-700 text-center">Deployment</p>
                   </div>
@@ -268,9 +266,8 @@ const AlgoIntroSection: React.FC = () => {
 
               {/* Pillar 3: Execution */}
               <div className="flex flex-col items-center">
-                <div className="relative group mb-4">
-                  <div className="absolute inset-0 bg-emerald-400 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-emerald-400 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-emerald-200/50 group-hover:scale-105 transition-all duration-300">
+                <div className="relative mb-4">
+                  <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white border-4 border-emerald-400 flex items-center justify-center shadow-xl">
                     <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center">
                       <Zap className="w-8 h-8 lg:w-10 lg:h-10 text-emerald-600" />
                     </div>
@@ -288,7 +285,7 @@ const AlgoIntroSection: React.FC = () => {
                 </div>
 
                 {/* Sub-branch */}
-                <div className="px-4 py-3 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div className="px-4 py-3 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-xl shadow-md">
                   <Bell className="w-5 h-5 text-pink-600 mx-auto mb-1" />
                   <p className="text-xs font-semibold text-pink-700 text-center">Notifications</p>
                 </div>
