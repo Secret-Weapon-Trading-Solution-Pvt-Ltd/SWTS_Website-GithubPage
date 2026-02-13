@@ -67,27 +67,24 @@ const TableOfContents: React.FC = () => {
   };
 
   return (
-    <nav className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 z-40">
-      <div className="bg-white/90 backdrop-blur-md border border-slate-200/60 rounded-2xl p-5 shadow-lg shadow-slate-200/50">
-        <p className="text-[10px] font-bold text-teal-600 uppercase tracking-wider mb-4 px-2">
+    <nav className="sticky top-16 z-40 bg-slate-50/95 backdrop-blur-sm border-b border-slate-200/60">
+      <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 py-2.5 flex items-center gap-2 overflow-x-auto">
+        <span className="text-[10px] font-bold text-teal-600 uppercase tracking-wider whitespace-nowrap mr-2">
           On This Page
-        </p>
-        <ul className="space-y-1">
-          {sections.map((section) => (
-            <li key={section.id}>
-              <button
-                onClick={() => scrollToSection(section.id)}
-                className={`block w-full text-left px-3 py-2 text-xs rounded-xl transition-all duration-200 ${
-                  activeSection === section.id
-                    ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-md'
-                    : 'text-black hover:text-slate-900 hover:bg-slate-50'
-                }`}
-              >
-                {section.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+        </span>
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => scrollToSection(section.id)}
+            className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-all duration-200 ${
+              activeSection === section.id
+                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+          >
+            {section.label}
+          </button>
+        ))}
       </div>
     </nav>
   );
@@ -619,39 +616,30 @@ const IdealUsers: React.FC = () => {
 // ============================================================================
 const CallToAction: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-10 lg:p-14 text-center overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
-      </div>
-
-      {/* Glow effects */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="relative">
-        <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-          Interested in a Similar System?
-        </h2>
-
-        <p className="text-black leading-relaxed max-w-xl mx-auto mb-8">
-          Custom signal detection systems can be built for different indicators, asset classes, or alert mechanisms based on your specific requirements.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/#contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold rounded-xl hover:from-teal-600 hover:to-cyan-600 transition-all shadow-xl shadow-teal-500/25"
+    <section className="relative bg-slate-50 border border-slate-200 rounded-2xl px-8 py-6 text-center overflow-hidden">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-center sm:text-left">
+          <h2 className="text-xl font-bold text-slate-900 mb-1">
+            Interested in a Similar System?
+          </h2>
+          <p className="text-black text-sm">
+            Custom signal detection systems can be built for different indicators, asset classes, or alert mechanisms.
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://wa.me/917083718306"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-6 py-3 text-white font-semibold rounded-xl shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             Discuss Your Requirements
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold border border-white/20 rounded-xl hover:bg-white/20 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 text-slate-700 font-semibold border border-slate-300 rounded-xl hover:bg-slate-100 transition-all whitespace-nowrap"
           >
             View Other Projects
           </Link>
@@ -667,10 +655,10 @@ const CallToAction: React.FC = () => {
 export default function CaseStudyEMACrossoverTechnical() {
   return (
     <>
-      {/* Sticky Table of Contents - Desktop Only */}
+      {/* Sticky Table of Contents */}
       <TableOfContents />
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-36 lg:pb-24">
+      <article className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 pt-28 pb-16 lg:pt-36 lg:pb-24">
         {/* Header */}
         <header className="relative text-center mb-20 pb-14 border-b border-slate-100">
           {/* Back Link */}
