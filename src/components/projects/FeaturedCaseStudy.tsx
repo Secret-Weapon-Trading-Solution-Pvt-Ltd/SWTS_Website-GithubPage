@@ -117,14 +117,14 @@ export const FeaturedCaseStudy: React.FC = () => {
 
                 {/* Context */}
                 {featured.details?.clientContext && (
-                  <p className="text-black mb-5 leading-relaxed text-[0.95rem]">
+                  <p className="text-lg text-black mb-5 leading-relaxed">
                     {featured.details.clientContext}
                   </p>
                 )}
 
                 {/* Challenge Preview */}
                 {featured.details?.challenge.description && (
-                  <p className="text-black text-sm mb-6 leading-relaxed">
+                  <p className="text-lg text-black mb-6 leading-relaxed">
                     <span className="font-semibold text-slate-700">The Challenge: </span>
                     {featured.details.challenge.description.slice(0, 160)}...
                   </p>

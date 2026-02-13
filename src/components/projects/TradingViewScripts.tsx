@@ -108,7 +108,7 @@ export const TradingViewScripts: React.FC = () => {
           <h2 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
             Premium Trading Indicators
           </h2>
-          <p className="text-black max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Professional-grade indicators powering thousands of traders worldwide
           </p>
         </div>

@@ -23,7 +23,7 @@ const ProjectOverview: React.FC = () => {
   return (
     <section className="mb-20">
       <SectionLabel label="Project Overview" />
-      <h2 className="text-2xl font-bold text-slate-900 mb-8">Overview</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-8 leading-tight">Overview</h2>
 
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gradient-to-br from-slate-50 to-slate-100/50 border border-slate-200/60 rounded-2xl p-8 mb-10">
         <div>
@@ -60,7 +60,7 @@ const ClientContext: React.FC = () => {
   return (
     <section className="mb-20">
       <SectionLabel label="Client Context" />
-      <h2 className="text-2xl font-bold text-slate-900 mb-8">Who Is This For?</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-8 leading-tight">Who Is This For?</h2>
 
       <p className="text-lg text-black leading-relaxed mb-10">
         Built for <span className="font-semibold text-slate-800">active cryptocurrency traders</span> who use
@@ -102,7 +102,7 @@ const ProblemStatement: React.FC = () => {
   return (
     <section className="mb-20">
       <SectionLabel label="The Problem" />
-      <h2 className="text-2xl font-bold text-slate-900 mb-6">Challenges We Solved</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-6 leading-tight">Challenges We Solved</h2>
 
       <div className="grid grid-cols-3 gap-3">
         {challenges.map((item, i) => (
@@ -127,9 +127,9 @@ const Solution: React.FC = () => {
   return (
     <section className="mb-20">
       <SectionLabel label="The Solution" />
-      <h2 className="text-2xl font-bold text-slate-900 mb-6">How It Works</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-6 leading-tight">How It Works</h2>
 
-      <p className="text-base text-black leading-relaxed mb-8">
+      <p className="text-lg text-black leading-relaxed mb-8">
         A <span className="font-semibold text-slate-800">self-hosted signal detection platform</span> that
         monitors your selected pairs, calculating <span className="font-semibold text-slate-800">9/20 EMAs</span> and
         detecting crossovers in real-time.
@@ -201,7 +201,7 @@ const SystemPreview: React.FC = () => {
   return (
     <section className="mb-20">
       <SectionLabel label="System Preview" />
-      <h2 className="text-2xl font-bold text-slate-900 mb-8">Platform Interface</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-8 leading-tight">Platform Interface</h2>
 
       <div className="space-y-4">
         {/* Main Screenshot */}
@@ -293,7 +293,8 @@ const CTASection: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/20"
+            className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-xl shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-200"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             Discuss Your Requirements
           </Link>
@@ -336,7 +337,8 @@ export default function CaseStudyEMACrossoverShort() {
             href="https://delta.secretweapon.in/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors shadow-xl shadow-teal-600/25"
+            className="inline-flex items-center gap-3 px-8 py-4 text-white font-semibold rounded-xl shadow-[0_4px_20px_rgba(0,137,123,0.25)] hover:shadow-[0_8px_30px_rgba(0,137,123,0.35)] hover:-translate-y-0.5 transition-all duration-200"
+            style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
