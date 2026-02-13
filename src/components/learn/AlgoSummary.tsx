@@ -134,17 +134,33 @@ const AlgoSummary: React.FC = () => {
                   </div>
                   {/* Title */}
                   <h3 className="mt-3 text-base lg:text-lg font-bold text-slate-800 text-center whitespace-nowrap">{step.title}</h3>
-                  {/* Sub branches */}
-                  <div className="flex items-start gap-5 mt-3">
-                    {step.subs.map((sub, i) => (
-                      <div key={i} className="flex flex-col items-center">
-                        <div className={`w-0.5 h-4 ${step.subColor.line}`} />
-                        <div className={`w-12 h-12 rounded-xl ${step.subColor.box} border-2 flex items-center justify-center`}>
-                          <sub.icon className={`w-6 h-6 ${step.subColor.icon}`} />
-                        </div>
-                        <p className={`text-sm ${step.subColor.text} font-bold mt-1.5 whitespace-nowrap`}>{sub.label}</p>
+                  {/* Sub branches with tree connector */}
+                  <div className="flex flex-col items-center mt-3">
+                    {/* Vertical stem from title down to horizontal bar */}
+                    <div className={`w-0.5 h-5 ${step.subColor.line}`} />
+                    {/* Horizontal bar + vertical drops to each sub */}
+                    <div className="relative">
+                      {/* Horizontal connector line from first sub center to last sub center */}
+                      {step.subs.length > 1 && (
+                        <div className={`absolute top-0 h-0.5 ${step.subColor.line}`}
+                          style={{
+                            left: 24,
+                            right: 24,
+                          }}
+                        />
+                      )}
+                      <div className="flex items-start gap-5">
+                        {step.subs.map((sub, i) => (
+                          <div key={i} className="flex flex-col items-center w-12">
+                            <div className={`w-0.5 h-4 ${step.subColor.line}`} />
+                            <div className={`w-12 h-12 rounded-xl ${step.subColor.box} border-2 flex items-center justify-center`}>
+                              <sub.icon className={`w-6 h-6 ${step.subColor.icon}`} />
+                            </div>
+                            <p className={`text-sm ${step.subColor.text} font-bold mt-1.5 whitespace-nowrap`}>{sub.label}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
 

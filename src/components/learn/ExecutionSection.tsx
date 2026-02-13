@@ -485,55 +485,55 @@ const ExecutionSection: React.FC = () => {
                 {/* Background */}
                 <rect x="0" y="0" width="520" height="400" fill="#F8FAFC" rx="16"/>
 
-                {/* Left column — Trade Events */}
+                {/* Left column — Trade Events (starting from top) */}
                 <motion.g initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                  <rect x="18" y="30" width="120" height="60" rx="12" fill="white" filter="url(#notifShadow)"/>
-                  <circle cx="48" cy="55" r="14" fill="url(#notifGrad1)"/>
-                  <path d="M43 55l3 3 7-7" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <rect x="18" y="30" width="120" height="52" rx="12" fill="white" filter="url(#notifShadow)"/>
+                  <circle cx="48" cy="56" r="14" fill="url(#notifGrad1)"/>
+                  <path d="M43 56l3 3 7-7" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
                   <text x="68" y="52" fill="#0F172A" fontSize="9" fontWeight="700">Signal</text>
                   <text x="68" y="64" fill="#64748B" fontSize="7">BUY NIFTY</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-                  <rect x="18" y="105" width="120" height="60" rx="12" fill="white" filter="url(#notifShadow)"/>
-                  <circle cx="48" cy="130" r="14" fill="url(#notifGrad2)"/>
-                  <path d="M42 130h12m-3-3l3 3-3 3" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                  <text x="68" y="127" fill="#0F172A" fontSize="9" fontWeight="700">Order Sent</text>
-                  <text x="68" y="139" fill="#64748B" fontSize="7">Via Broker API</text>
+                  <rect x="18" y="100" width="120" height="52" rx="12" fill="white" filter="url(#notifShadow)"/>
+                  <circle cx="48" cy="126" r="14" fill="url(#notifGrad2)"/>
+                  <path d="M42 126h12m-3-3l3 3-3 3" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <text x="68" y="122" fill="#0F172A" fontSize="9" fontWeight="700">Order Sent</text>
+                  <text x="68" y="134" fill="#64748B" fontSize="7">Via Broker API</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-                  <rect x="18" y="180" width="120" height="60" rx="12" fill="white" filter="url(#notifShadow)"/>
-                  <circle cx="48" cy="205" r="14" fill="url(#notifGrad3)"/>
-                  <circle cx="48" cy="205" r="6" fill="none" stroke="white" strokeWidth="2"/>
-                  <circle cx="48" cy="205" r="2" fill="white"/>
-                  <text x="68" y="202" fill="#0F172A" fontSize="9" fontWeight="700">SL/TP Set</text>
-                  <text x="68" y="214" fill="#64748B" fontSize="7">Protection Active</text>
+                  <rect x="18" y="170" width="120" height="52" rx="12" fill="white" filter="url(#notifShadow)"/>
+                  <circle cx="48" cy="196" r="14" fill="url(#notifGrad3)"/>
+                  <circle cx="48" cy="196" r="6" fill="none" stroke="white" strokeWidth="2"/>
+                  <circle cx="48" cy="196" r="2" fill="white"/>
+                  <text x="68" y="192" fill="#0F172A" fontSize="9" fontWeight="700">SL/TP Set</text>
+                  <text x="68" y="204" fill="#64748B" fontSize="7">Protection Active</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
-                  <rect x="18" y="255" width="120" height="60" rx="12" fill="white" filter="url(#notifShadow)"/>
-                  <circle cx="48" cy="280" r="14" fill="url(#notifGrad4)"/>
-                  <path d="M42 280h12M48 274v12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                  <text x="68" y="277" fill="#0F172A" fontSize="9" fontWeight="700">Closed</text>
-                  <text x="68" y="289" fill="#64748B" fontSize="7">+₹2,340 PnL</text>
+                  <rect x="18" y="240" width="120" height="52" rx="12" fill="white" filter="url(#notifShadow)"/>
+                  <circle cx="48" cy="266" r="14" fill="url(#notifGrad4)"/>
+                  <path d="M42 266h12M48 260v12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <text x="68" y="262" fill="#0F172A" fontSize="9" fontWeight="700">Closed</text>
+                  <text x="68" y="274" fill="#64748B" fontSize="7">+₹2,340 PnL</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
-                  <rect x="18" y="330" width="120" height="50" rx="12" fill="white" filter="url(#notifShadow)"/>
-                  <circle cx="48" cy="352" r="14" fill="url(#notifGrad5)"/>
-                  <path d="M43 349l10 0m-10 6l7 0" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                  <text x="68" y="349" fill="#0F172A" fontSize="9" fontWeight="700">Rejected</text>
-                  <text x="68" y="361" fill="#64748B" fontSize="7">With Reason</text>
+                  <rect x="18" y="310" width="120" height="52" rx="12" fill="white" filter="url(#notifShadow)"/>
+                  <circle cx="48" cy="336" r="14" fill="url(#notifGrad5)"/>
+                  <path d="M43 333l10 0m-10 6l7 0" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <text x="68" y="332" fill="#0F172A" fontSize="9" fontWeight="700">Rejected</text>
+                  <text x="68" y="344" fill="#64748B" fontSize="7">With Reason</text>
                 </motion.g>
 
                 {/* Dashed connecting lines — left to center phone */}
                 <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
-                  <path d="M142 60 L180 95" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M142 135 L180 145" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M142 210 L180 200" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M142 285 L180 260" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M142 355 L180 310" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M142 56 L190 120" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M142 126 L190 176" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M142 196 L190 232" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M142 266 L190 288" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M142 336 L190 337" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
                 </motion.g>
 
                 {/* Center — Phone mockup */}
@@ -579,52 +579,54 @@ const ExecutionSection: React.FC = () => {
 
                 {/* Dashed lines — phone to right delivery */}
                 <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }}>
-                  <path d="M340 100 L375 80" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M340 175 L375 160" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M340 240 L375 245" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
-                  <path d="M340 310 L375 325" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M330 120 L375 56" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M330 176 L375 126" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M330 232 L375 196" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M330 288 L375 266" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
+                  <path d="M330 337 L375 336" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="4,3"/>
                 </motion.g>
 
-                {/* Right column — Delivery channels */}
+                {/* Right column — Delivery channels (starting from top) */}
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
-                  <rect x="380" y="50" width="122" height="60" rx="12" fill="#EFF6FF" filter="url(#notifShadow)"/>
-                  <circle cx="406" cy="75" r="13" fill="#0088CC"/>
-                  <path d="M406 69l-6 3 1.5 1.5-0.5 3 2.5-2 3 2.5 5-8z" fill="white"/>
-                  <text x="424" y="72" fill="#1E40AF" fontSize="9" fontWeight="700">Telegram</text>
-                  <text x="424" y="84" fill="#64748B" fontSize="7">Instant delivery</text>
+                  <rect x="380" y="30" width="122" height="52" rx="12" fill="#EFF6FF" filter="url(#notifShadow)"/>
+                  <circle cx="406" cy="56" r="13" fill="#0088CC"/>
+                  <path d="M406 50l-6 3 1.5 1.5-0.5 3 2.5-2 3 2.5 5-8z" fill="white"/>
+                  <text x="424" y="52" fill="#1E40AF" fontSize="9" fontWeight="700">Telegram</text>
+                  <text x="424" y="64" fill="#64748B" fontSize="7">Instant delivery</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.55 }}>
-                  <rect x="380" y="125" width="122" height="60" rx="12" fill="#ECFDF5" filter="url(#notifShadow)"/>
-                  <circle cx="406" cy="150" r="13" fill="#25D366"/>
-                  <path d="M406 142c-4 0-7 3-7 7 0 1.2.3 2.4.9 3.4l-.9 3.4 3.5-.9c1 .5 2.1.8 3.3.8 4 0 7-3 7-7s-3-6.7-6.8-6.7z" fill="white" opacity="0.9"/>
-                  <text x="424" y="147" fill="#166534" fontSize="9" fontWeight="700">WhatsApp</text>
-                  <text x="424" y="159" fill="#64748B" fontSize="7">Quick updates</text>
+                  <rect x="380" y="100" width="122" height="52" rx="12" fill="#ECFDF5" filter="url(#notifShadow)"/>
+                  <circle cx="406" cy="126" r="13" fill="#25D366"/>
+                  <path d="M406 118c-4 0-7 3-7 7 0 1.2.3 2.4.9 3.4l-.9 3.4 3.5-.9c1 .5 2.1.8 3.3.8 4 0 7-3 7-7s-3-6.7-6.8-6.7z" fill="white" opacity="0.9"/>
+                  <text x="424" y="122" fill="#166534" fontSize="9" fontWeight="700">WhatsApp</text>
+                  <text x="424" y="134" fill="#64748B" fontSize="7">Quick updates</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.7 }}>
-                  <rect x="380" y="200" width="122" height="60" rx="12" fill="#FEF3C7" filter="url(#notifShadow)"/>
-                  <circle cx="406" cy="225" r="13" fill="#F59E0B"/>
-                  <rect x="399" y="221" width="14" height="9" rx="1.5" fill="none" stroke="white" strokeWidth="1.5"/>
-                  <path d="M399 221l7 5 7-5" fill="none" stroke="white" strokeWidth="1.5"/>
-                  <text x="424" y="222" fill="#B45309" fontSize="9" fontWeight="700">Email</text>
-                  <text x="424" y="234" fill="#64748B" fontSize="7">Detailed reports</text>
+                  <rect x="380" y="170" width="122" height="52" rx="12" fill="#FEF3C7" filter="url(#notifShadow)"/>
+                  <circle cx="406" cy="196" r="13" fill="#F59E0B"/>
+                  <rect x="399" y="192" width="14" height="9" rx="1.5" fill="none" stroke="white" strokeWidth="1.5"/>
+                  <path d="M399 192l7 5 7-5" fill="none" stroke="white" strokeWidth="1.5"/>
+                  <text x="424" y="192" fill="#B45309" fontSize="9" fontWeight="700">Email</text>
+                  <text x="424" y="204" fill="#64748B" fontSize="7">Detailed reports</text>
                 </motion.g>
 
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.85 }}>
-                  <rect x="380" y="275" width="122" height="60" rx="12" fill="#F0FDF4" filter="url(#notifShadow)"/>
-                  <circle cx="406" cy="300" r="13" fill="#10B981"/>
-                  <path d="M400 300h12M406 294v12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                  <text x="424" y="297" fill="#065F46" fontSize="9" fontWeight="700">SMS</text>
-                  <text x="424" y="309" fill="#64748B" fontSize="7">Critical alerts</text>
+                  <rect x="380" y="240" width="122" height="52" rx="12" fill="#F0FDF4" filter="url(#notifShadow)"/>
+                  <circle cx="406" cy="266" r="13" fill="#10B981"/>
+                  <path d="M400 266h12M406 260v12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <text x="424" y="262" fill="#065F46" fontSize="9" fontWeight="700">SMS</text>
+                  <text x="424" y="274" fill="#64748B" fontSize="7">Critical alerts</text>
                 </motion.g>
 
-                {/* Live badge top-right */}
-                <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1 }}>
-                  <rect x="380" y="350" width="122" height="35" rx="10" fill="#F5F3FF" filter="url(#notifShadow)"/>
-                  <circle cx="400" cy="367" r="8" fill="#8B5CF6"/>
-                  <rect x="396" y="364" width="8" height="6" rx="1" fill="white"/>
-                  <text x="414" y="370" fill="#6D28D9" fontSize="8" fontWeight="700">Dashboard</text>
+                {/* Dashboard channel */}
+                <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 1 }}>
+                  <rect x="380" y="310" width="122" height="52" rx="12" fill="#F5F3FF" filter="url(#notifShadow)"/>
+                  <circle cx="406" cy="336" r="13" fill="#8B5CF6"/>
+                  <rect x="399" y="332" width="14" height="9" rx="1.5" fill="white"/>
+                  <text x="424" y="332" fill="#6D28D9" fontSize="9" fontWeight="700">Dashboard</text>
+                  <text x="424" y="344" fill="#64748B" fontSize="7">Visual logs</text>
                 </motion.g>
               </svg>
             </motion.div>
