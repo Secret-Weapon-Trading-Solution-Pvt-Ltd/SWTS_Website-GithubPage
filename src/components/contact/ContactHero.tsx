@@ -19,10 +19,11 @@ const TelegramIcon = () => (
 const contactLinks = [
   {
     icon: Phone,
-    label: 'Call',
-    href: 'tel:+917083718306',
+    label: '+91 7083718306',
+    href: '#',
     gradient: 'from-blue-500 to-blue-600',
     hoverBg: 'hover:bg-blue-50',
+    noRedirect: true,
   },
   {
     icon: () => <WhatsAppIcon />,
@@ -142,18 +143,33 @@ export const ContactHero: React.FC = () => {
           >
             {contactLinks.map((link) => {
               const IconComponent = link.icon;
+              const content = (
+                <>
+                  <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${link.gradient} flex items-center justify-center text-white shadow-sm`}>
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700 hidden sm:block">{link.label}</span>
+                </>
+              );
+              const className = `group flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm ${link.hoverBg} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`;
+
+              if (link.noRedirect) {
+                return (
+                  <div key={link.label} className={`${className} cursor-default`}>
+                    {content}
+                  </div>
+                );
+              }
+
               return (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
-                  className={`group flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm ${link.hoverBg} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`}
+                  className={className}
                 >
-                  <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${link.gradient} flex items-center justify-center text-white shadow-sm`}>
-                    <IconComponent className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm font-semibold text-slate-700 hidden sm:block">{link.label}</span>
+                  {content}
                 </a>
               );
             })}
