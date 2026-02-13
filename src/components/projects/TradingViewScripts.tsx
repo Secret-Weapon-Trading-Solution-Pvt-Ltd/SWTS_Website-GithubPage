@@ -80,7 +80,7 @@ export const TradingViewScripts: React.FC = () => {
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28">
         {/* Section Header */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <span

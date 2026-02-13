@@ -42,7 +42,7 @@ export const ProjectsHero: React.FC = () => {
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-br from-teal-100/40 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gradient-to-tl from-slate-200/50 to-transparent rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28">
         {/* Section Header with abstract visual */}
         <div className="relative text-center max-w-3xl mx-auto">
           <DataFlowVisual />
