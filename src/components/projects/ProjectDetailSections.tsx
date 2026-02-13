@@ -252,7 +252,7 @@ export const ProjectDetailSections: React.FC<ProjectDetailSectionsProps> = ({ pr
             </blockquote>
             <div>
               <p className="font-semibold">{details.results.testimonial.author}</p>
-              <p className="text-sm text-black">{details.results.testimonial.role}</p>
+              <p className="text-sm text-slate-300">{details.results.testimonial.role}</p>
             </div>
           </div>
         )}

@@ -264,7 +264,7 @@ const CTASection: React.FC = () => {
           <h2 className="text-2xl font-bold text-white mb-3">
             Want to See the Technical Details?
           </h2>
-          <p className="text-black mb-8 max-w-md mx-auto">
+          <p className="text-slate-300 mb-8 max-w-md mx-auto">
             Explore architecture, infrastructure, performance metrics, and full visual documentation.
           </p>
           <Link
