@@ -170,7 +170,7 @@ const CTABackgroundPattern = () => (
 export const AssessmentExplanation: React.FC = () => {
   return (
     <section className="py-24 lg:py-32 bg-slate-50 relative" id="assessment">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28">
         {/* Section Header with abstract visual */}
         <div className="relative text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <DataFlowVisual />
