@@ -299,16 +299,16 @@ const DataImportSection: React.FC = () => {
             <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">
               Where Does Data Come From?
             </h3>
-            <p className="text-slate-600 max-w-2xl mx-auto">Different sources provide data with varying quality, speed, and cost</p>
+            <p className="text-slate-600 max-w-2xl mx-auto opacity-0 group-hover/datasrc:opacity-100 transition-opacity duration-300">Different sources provide data with varying quality, speed, and cost</p>
           </div>
 
           {/* Three Cards */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 group/datasrc">
             {/* Card 1 - Broker API */}
-            <div className="relative">
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-sky-600" />
+            <div className="relative group cursor-pointer hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 rounded-3xl">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-sky-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative bg-gradient-to-br from-sky-50 via-white to-cyan-50 rounded-3xl border-2 border-sky-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
+              <div className="relative bg-gradient-to-br from-sky-50 via-white to-cyan-50 rounded-3xl border-2 border-sky-200 group-hover:border-sky-300 p-6 lg:p-8 shadow-lg overflow-hidden h-full transition-all duration-500">
                 {/* Diagonal accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-sky-400 to-sky-500 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 
@@ -362,10 +362,10 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Card 2 - Data Vendors - Dark Blue Theme */}
-            <div className="relative">
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-blue-900" />
+            <div className="relative group cursor-pointer hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 rounded-3xl">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl border-2 border-blue-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
+              <div className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl border-2 border-blue-200 group-hover:border-blue-300 p-6 lg:p-8 shadow-lg overflow-hidden h-full transition-all duration-500">
                 {/* Diagonal accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 
@@ -419,10 +419,10 @@ const DataImportSection: React.FC = () => {
             </div>
 
             {/* Card 3 - Direct Exchange - Violet Theme */}
-            <div className="relative">
-              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-violet-900" />
+            <div className="relative group cursor-pointer hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 rounded-3xl">
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-3xl z-20 bg-violet-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-3xl border-2 border-violet-200 p-6 lg:p-8 shadow-lg overflow-hidden h-full">
+              <div className="relative bg-gradient-to-br from-violet-50 via-white to-purple-50 rounded-3xl border-2 border-violet-200 group-hover:border-violet-300 p-6 lg:p-8 shadow-lg overflow-hidden h-full transition-all duration-500">
                 {/* Diagonal accent */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-violet-600 to-violet-800 transform translate-x-12 -translate-y-12 rotate-45 opacity-80" />
 

@@ -347,7 +347,7 @@ const UIDecisionSection: React.FC = () => {
                 className={`group relative overflow-hidden rounded-3xl text-center transition-all duration-500 cursor-pointer ${
                   activeDashboard.id === dash.id
                     ? 'shadow-2xl scale-[1.02]'
-                    : 'shadow-lg'
+                    : 'shadow-lg hover:shadow-xl hover:scale-[1.03] hover:-translate-y-1'
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -360,7 +360,9 @@ const UIDecisionSection: React.FC = () => {
                     ? dash.color === 'teal' ? 'bg-gradient-to-br from-teal-500 via-teal-400 to-cyan-500' :
                       dash.color === 'blue' ? 'bg-gradient-to-br from-blue-500 via-blue-400 to-indigo-500' :
                       'bg-gradient-to-br from-violet-500 via-violet-400 to-purple-500'
-                    : 'bg-white'
+                    : dash.color === 'teal' ? 'bg-white group-hover:bg-teal-50' :
+                      dash.color === 'blue' ? 'bg-white group-hover:bg-blue-50' :
+                      'bg-white group-hover:bg-violet-50'
                 }`} />
 
                 {/* Decorative circles for selected */}

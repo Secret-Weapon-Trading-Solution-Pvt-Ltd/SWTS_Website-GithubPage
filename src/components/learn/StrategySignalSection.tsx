@@ -195,8 +195,8 @@ const StrategySignalSection: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Entry Rule - Corner Ribbon Design */}
-            <div className="relative">
-              <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden shadow-lg h-full">
+            <div className="relative cursor-pointer hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 rounded-3xl">
+              <div className="relative bg-white border-2 border-emerald-200 rounded-3xl overflow-hidden shadow-lg h-full transition-all duration-500">
                 {/* Corner ribbon fold effect */}
                 <div className="absolute top-0 right-0 w-24 h-24">
                   <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-500 to-teal-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
@@ -249,8 +249,8 @@ const StrategySignalSection: React.FC = () => {
             </div>
 
             {/* Exit Rule - Corner Ribbon Design */}
-            <div className="relative">
-              <div className="relative bg-white border-2 border-rose-200 rounded-3xl overflow-hidden shadow-lg h-full">
+            <div className="relative cursor-pointer hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 rounded-3xl">
+              <div className="relative bg-white border-2 border-rose-200 rounded-3xl overflow-hidden shadow-lg h-full transition-all duration-500">
                 {/* Corner ribbon fold effect */}
                 <div className="absolute top-0 right-0 w-24 h-24">
                   <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-rose-500 to-pink-500 transform origin-top-right" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
