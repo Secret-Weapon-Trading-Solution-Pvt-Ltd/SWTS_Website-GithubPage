@@ -312,7 +312,7 @@ const CTASection: React.FC = () => {
 export default function CaseStudyEMACrossoverShort() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50/50 via-white to-slate-50/30">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <article className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 pt-32 pb-20 lg:pt-40 lg:pb-28">
         {/* Hero Header */}
         <header className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-6">
