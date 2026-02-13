@@ -68,16 +68,17 @@ const ClientContext: React.FC = () => {
         and <span className="font-semibold text-slate-800">small trading desks</span> who need centralized signal monitoring.
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { icon: '🕐', title: '24/7 Markets' },
-          { icon: '📊', title: 'Multi-Timeframe' },
-          { icon: '📱', title: 'Mobile Alerts' },
-          { icon: '🔗', title: 'Delta Exchange' },
+          { icon: '🕐', title: '24/7 Markets', desc: 'Continuous monitoring across all crypto market hours without interruption', bg: 'bg-teal-50 border-teal-100' },
+          { icon: '📊', title: 'Multi-Timeframe', desc: 'Simultaneous analysis across 5 timeframes for comprehensive signal coverage', bg: 'bg-blue-50 border-blue-100' },
+          { icon: '📱', title: 'Mobile Alerts', desc: 'Instant Telegram notifications delivered directly to your phone', bg: 'bg-amber-50 border-amber-100' },
+          { icon: '🔗', title: 'Delta Exchange', desc: 'Purpose-built for Delta Exchange perpetual futures trading pairs', bg: 'bg-purple-50 border-purple-100' },
         ].map((item, i) => (
-          <div key={i} className="bg-white border border-slate-200/80 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-3xl mb-3">{item.icon}</div>
-            <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+          <div key={i} className={`border rounded-2xl p-6 lg:p-8 text-center shadow-sm hover:shadow-md transition-shadow ${item.bg}`}>
+            <div className="text-4xl mb-4">{item.icon}</div>
+            <p className="text-base font-bold text-slate-900 mb-2">{item.title}</p>
+            <p className="text-base text-black leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -94,6 +95,8 @@ const ProblemStatement: React.FC = () => {
     { title: 'Information Overload', desc: '5 timeframes × multiple symbols' },
     { title: 'Inconsistent Execution', desc: 'manual bias & fatigue' },
     { title: 'No Signal Freshness', desc: 'manual candle counting' },
+    { title: 'Delayed Reactions', desc: 'slow response to market shifts' },
+    { title: 'No Centralized View', desc: 'scattered across multiple tabs' },
   ];
 
   return (
@@ -101,7 +104,7 @@ const ProblemStatement: React.FC = () => {
       <SectionLabel label="The Problem" />
       <h2 className="text-2xl font-bold text-slate-900 mb-6">Challenges We Solved</h2>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         {challenges.map((item, i) => (
           <span
             key={i}
@@ -135,7 +138,7 @@ const Solution: React.FC = () => {
       {/* Flowchart */}
       <div className="relative py-4 mb-8 overflow-x-auto">
         {/* SVG Flowchart */}
-        <svg className="w-full h-auto min-w-[600px]" viewBox="0 0 800 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-auto min-w-[500px]" viewBox="0 0 800 140" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Connection Lines with Arrows */}
           <defs>
             <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
@@ -152,23 +155,23 @@ const Solution: React.FC = () => {
 
           {/* Node 1 - Rounded Rectangle */}
           <rect x="15" y="30" width="145" height="80" rx="12" fill="#F0FDFA" stroke="#0D9488" strokeWidth="2.5" />
-          <text x="87" y="62" textAnchor="middle" fill="#134E4A" fontSize="16" fontWeight="700">Configure</text>
-          <text x="87" y="85" textAnchor="middle" fill="#0D9488" fontSize="13" fontWeight="500">Watchlist</text>
+          <text x="87" y="62" textAnchor="middle" fill="#134E4A" fontSize="13" fontWeight="700">Configure</text>
+          <text x="87" y="82" textAnchor="middle" fill="#0D9488" fontSize="11" fontWeight="500">Watchlist</text>
 
           {/* Node 2 - Rounded Rectangle */}
           <rect x="225" y="30" width="145" height="80" rx="12" fill="#F0FDFA" stroke="#0D9488" strokeWidth="2.5" />
-          <text x="297" y="62" textAnchor="middle" fill="#134E4A" fontSize="16" fontWeight="700">Monitor</text>
-          <text x="297" y="85" textAnchor="middle" fill="#0D9488" fontSize="13" fontWeight="500">5 Timeframes</text>
+          <text x="297" y="62" textAnchor="middle" fill="#134E4A" fontSize="13" fontWeight="700">Monitor</text>
+          <text x="297" y="82" textAnchor="middle" fill="#0D9488" fontSize="11" fontWeight="500">5 Timeframes</text>
 
           {/* Node 3 - Diamond (Decision) */}
           <polygon points="500,10 580,70 500,130 420,70" fill="#FEF3C7" stroke="#D97706" strokeWidth="2.5" />
-          <text x="500" y="65" textAnchor="middle" fill="#92400E" fontSize="15" fontWeight="700">Detect</text>
-          <text x="500" y="85" textAnchor="middle" fill="#B45309" fontSize="11" fontWeight="500">Crossover?</text>
+          <text x="500" y="65" textAnchor="middle" fill="#92400E" fontSize="12" fontWeight="700">Detect</text>
+          <text x="500" y="82" textAnchor="middle" fill="#B45309" fontSize="9" fontWeight="500">Crossover?</text>
 
           {/* Node 4 - Pill Shape (Output) */}
           <rect x="625" y="30" width="155" height="80" rx="40" fill="#ECFDF5" stroke="#059669" strokeWidth="2.5" />
-          <text x="702" y="62" textAnchor="middle" fill="#064E3B" fontSize="16" fontWeight="700">Alert</text>
-          <text x="702" y="85" textAnchor="middle" fill="#059669" fontSize="13" fontWeight="500">Telegram</text>
+          <text x="702" y="62" textAnchor="middle" fill="#064E3B" fontSize="13" fontWeight="700">Alert</text>
+          <text x="702" y="82" textAnchor="middle" fill="#059669" fontSize="11" fontWeight="500">Telegram</text>
         </svg>
       </div>
 
