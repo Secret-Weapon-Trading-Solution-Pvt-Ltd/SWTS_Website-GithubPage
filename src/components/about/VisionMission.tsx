@@ -78,7 +78,7 @@ export const VisionMission: React.FC = () => {
               Vision &amp; Mission
             </span>
           </h2>
-          <p className="text-base lg:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base lg:text-lg text-black leading-relaxed max-w-3xl mx-auto">
             Our vision and mission guide every solution we build, ensuring we deliver meaningful impact to traders worldwide.
           </p>
         </motion.div>
@@ -139,8 +139,8 @@ export const VisionMission: React.FC = () => {
                         key={pIndex}
                         className={
                           pIndex === 0
-                            ? 'text-base lg:text-lg text-slate-900 leading-relaxed'
-                            : 'text-base lg:text-lg text-slate-700 leading-relaxed'
+                            ? 'text-base lg:text-lg text-black leading-relaxed'
+                            : 'text-base lg:text-lg text-black leading-relaxed'
                         }
                       >
                         {paragraph}

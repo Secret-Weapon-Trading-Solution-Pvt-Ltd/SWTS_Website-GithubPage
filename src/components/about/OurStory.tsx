@@ -140,17 +140,17 @@ export const OurStory: React.FC = () => {
 
             {/* Story Content */}
             <div className="space-y-4 mb-6">
-              <p className="text-base lg:text-lg text-slate-900 leading-relaxed">
+              <p className="text-base lg:text-lg text-black leading-relaxed">
                 Our journey began in 2014 as passionate traders, spending countless hours studying charts,
                 testing strategies, and learning the markets firsthand. Through years of hands-on experience,
                 we understood what traders truly need — discipline, precision, and consistency.
               </p>
-              <p className="text-base lg:text-lg text-slate-900 leading-relaxed">
+              <p className="text-base lg:text-lg text-black leading-relaxed">
                 By 2019, we transitioned into algorithmic trading, mastering Python, TradingView Pine Script,
                 AmiBroker AFL, and MetaTrader development. In 2021, we founded Secret Weapon Trading Solution
                 to help traders automate their edge with professional-grade solutions.
               </p>
-              <p className="text-base lg:text-lg text-slate-900 leading-relaxed">
+              <p className="text-base lg:text-lg text-black leading-relaxed">
                 In 2025, we became a Private Limited company, marking a significant milestone
                 in our journey. Today, we serve institutional clients,
                 professional traders, and retail investors worldwide.

@@ -64,7 +64,7 @@ export const AboutHero: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-slate-800 leading-relaxed mb-10 max-w-2xl"
+              className="text-lg sm:text-xl text-black leading-relaxed mb-10 max-w-2xl"
             >
               Founded by <span className="text-teal-600 font-semibold">Swapnil Raykar</span>, with over a decade in trading and years of expertise in algo development,
               we specialize in creating innovative automated trading solutions using
@@ -96,7 +96,7 @@ export const AboutHero: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold text-slate-900">{stat.value}</div>
-                    <div className="text-sm text-slate-600">{stat.label}</div>
+                    <div className="text-sm text-black">{stat.label}</div>
                   </div>
                 </motion.div>
               ))}
