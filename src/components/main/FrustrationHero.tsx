@@ -79,7 +79,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Hook/Headline */}
           <h2 className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10 3xl:mb-12">
             <span
-              className="block text-[24px] sm:text-[26px] lg:text-[26px] xl:text-[32px] 2xl:text-[38px] 3xl:text-[46px] 4xl:text-[56px] leading-[28px] sm:leading-[30px] lg:leading-[30px] xl:leading-[36px] 2xl:leading-[42px] 3xl:leading-[50px] 4xl:leading-[62px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block whitespace-nowrap text-[32px] sm:text-[36px] lg:text-[36px] xl:text-[46px] 2xl:text-[54px] 3xl:text-[64px] 4xl:text-[76px] leading-[36px] sm:leading-[40px] lg:leading-[40px] xl:leading-[50px] 2xl:leading-[58px] 3xl:leading-[68px] 4xl:leading-[82px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
                 fontWeight: 700,
@@ -90,7 +90,7 @@ export const FrustrationHero: React.FC = () => {
               We automate your strategy
             </span>
             <span
-              className="block mt-1 sm:mt-1.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-[24px] sm:text-[26px] lg:text-[26px] xl:text-[32px] 2xl:text-[38px] 3xl:text-[46px] 4xl:text-[56px] leading-[28px] sm:leading-[30px] lg:leading-[30px] xl:leading-[36px] 2xl:leading-[42px] 3xl:leading-[50px] 4xl:leading-[62px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block mt-1 sm:mt-1.5 lg:mt-0.5 xl:mt-1 2xl:mt-1 3xl:mt-1.5 text-[32px] sm:text-[36px] lg:text-[36px] xl:text-[46px] 2xl:text-[54px] 3xl:text-[64px] 4xl:text-[76px] leading-[36px] sm:leading-[40px] lg:leading-[40px] xl:leading-[50px] 2xl:leading-[58px] 3xl:leading-[68px] 4xl:leading-[82px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#1e293b',
                 fontWeight: 500,
