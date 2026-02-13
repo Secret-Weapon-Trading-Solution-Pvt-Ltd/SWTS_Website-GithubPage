@@ -50,18 +50,29 @@ export const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Only show navbar when at the top of the page (within 50px)
-      const atTop = window.scrollY <= 50;
-      setIsVisible(atTop);
+    let lastScrollY = window.scrollY;
 
-      // Close mobile menu when scrolling down
-      if (!atTop && isOpen) {
-        setIsOpen(false);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const atTop = currentScrollY <= 50;
+
+      if (atTop) {
+        // Always show at top
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling UP — show navbar
+        setIsVisible(true);
+      } else {
+        // Scrolling DOWN — hide navbar immediately
+        setIsVisible(false);
+        // Close mobile menu when hiding
+        if (isOpen) setIsOpen(false);
       }
+
+      lastScrollY = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
 
