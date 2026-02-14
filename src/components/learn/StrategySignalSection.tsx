@@ -286,9 +286,9 @@ const StrategySignalSection: React.FC = () => {
                   <div className="space-y-3">
                     {[
                       { text: 'Stop Loss (SL)', icon: Target },
+                      { text: 'Trailing Stoploss', icon: Activity },
                       { text: 'Target / Take Profit', icon: Zap },
-                      { text: 'Max trades per day', icon: Clock },
-                      { text: 'Daily loss limit', icon: Activity }
+                      { text: 'Daily loss limit', icon: Clock }
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-4 p-3 bg-rose-50/50 rounded-xl border border-rose-100">
                         <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-md border border-slate-200">

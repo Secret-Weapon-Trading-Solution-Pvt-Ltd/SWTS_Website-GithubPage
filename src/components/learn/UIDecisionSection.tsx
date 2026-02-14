@@ -168,7 +168,7 @@ const UIDecisionSection: React.FC = () => {
                   <p className="font-bold text-slate-800 text-lg">With UI</p>
                 </div>
                 <ul className="space-y-1.5 text-sm text-slate-600">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />Teams & clients</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />Teams & professional clients</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />Visual monitoring</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />User-friendly control</li>
                 </ul>
@@ -204,7 +204,65 @@ const UIDecisionSection: React.FC = () => {
           {/* Comparison Layout */}
           <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-center gap-6">
 
-            {/* Left Section - With UI */}
+            {/* Left Section - Without UI */}
+            <div className="flex-1">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-slate-600 to-slate-700 text-white text-center py-3 rounded-2xl font-bold text-lg shadow-lg mb-5">
+                <Terminal className="w-5 h-5 inline-block mr-2 -mt-1" />
+                Without UI
+              </div>
+
+              {/* Column Headers */}
+              <div className="flex gap-3 mb-3">
+                <div className="flex-1 text-center">
+                  <span className="text-sm font-bold text-teal-600 uppercase tracking-wide">Pros</span>
+                </div>
+                <div className="flex-1 text-center">
+                  <span className="text-sm font-bold text-rose-600 uppercase tracking-wide">Cons</span>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                {/* Pros Column */}
+                <div className="flex-1 space-y-2">
+                  {[
+                    'Fast setup & deployment',
+                    'Low cost to build',
+                    'Lightweight system',
+                    'Easy to maintain',
+                    'Personal use friendly',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
+                      <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
+                      <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Cons Column */}
+                <div className="flex-1 space-y-2">
+                  {[
+                    'Tech knowledge required',
+                    'No visual feedback',
+                    'Settings change harder',
+                    'Scattered monitoring',
+                    'Single user mostly',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
+                      <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
+                        <XCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+
+            {/* Right Section - With UI */}
             <div className="flex-1">
               {/* Header */}
               <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white text-center py-3 rounded-2xl font-bold text-lg shadow-lg mb-5">
@@ -246,64 +304,6 @@ const UIDecisionSection: React.FC = () => {
                   {[
                     'More time to build',
                     'Higher development cost',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
-                      <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
-                        <XCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-
-            {/* Right Section - Without UI */}
-            <div className="flex-1">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-slate-600 to-slate-700 text-white text-center py-3 rounded-2xl font-bold text-lg shadow-lg mb-5">
-                <Terminal className="w-5 h-5 inline-block mr-2 -mt-1" />
-                Without UI
-              </div>
-
-              {/* Column Headers */}
-              <div className="flex gap-3 mb-3">
-                <div className="flex-1 text-center">
-                  <span className="text-sm font-bold text-teal-600 uppercase tracking-wide">Pros</span>
-                </div>
-                <div className="flex-1 text-center">
-                  <span className="text-sm font-bold text-rose-600 uppercase tracking-wide">Cons</span>
-                </div>
-              </div>
-
-              <div className="flex gap-3">
-                {/* Pros Column */}
-                <div className="flex-1 space-y-2">
-                  {[
-                    'Fast setup & deployment',
-                    'Low cost to build',
-                    'Lightweight system',
-                    'Simple config files',
-                    'Personal use friendly',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm">
-                      <span className="text-slate-700 font-medium text-sm flex-1">{item}</span>
-                      <div className="w-6 h-6 rounded-md bg-teal-500 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-white" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Cons Column */}
-                <div className="flex-1 space-y-2">
-                  {[
-                    'Tech knowledge required',
-                    'No visual feedback',
-                    'Settings change harder',
-                    'Scattered monitoring',
-                    'Single user mostly',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-2 bg-white p-3 rounded-xl border border-rose-200 shadow-sm">
                       <div className="w-6 h-6 rounded-md bg-rose-500 flex items-center justify-center flex-shrink-0">
