@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const FrustrationHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#E8EDF2] xl:bg-transparent">
+    <section className="relative h-svh xl:min-h-screen xl:h-auto flex items-center overflow-hidden bg-[#E8EDF2] xl:bg-transparent">
       {/* Light background gradient - matching image background (desktop only) */}
       <div
         className="absolute inset-0 hidden xl:block"
@@ -33,8 +33,8 @@ export const FrustrationHero: React.FC = () => {
         className="absolute inset-0 bg-no-repeat animate-fade-in xl:hidden"
         style={{
           backgroundImage: `url(${getAssetPath('/bg_new.png')})`,
-          backgroundSize: '150% 110%',
-          backgroundPosition: 'right 35%',
+          backgroundSize: '150% auto',
+          backgroundPosition: 'right 55%',
           animationDuration: '1s',
           animationDelay: '0.3s',
           animationFillMode: 'both'
@@ -45,7 +45,7 @@ export const FrustrationHero: React.FC = () => {
       <div
         className="absolute inset-0 xl:hidden"
         style={{
-          background: 'linear-gradient(180deg, rgba(232,237,242,0.98) 0%, rgba(232,237,242,0.92) 25%, rgba(232,237,242,0.4) 40%, transparent 55%, transparent 100%)'
+          background: 'linear-gradient(180deg, rgba(232,237,242,0.98) 0%, rgba(232,237,242,0.95) 30%, rgba(232,237,242,0.6) 50%, transparent 65%, transparent 100%)'
         }}
       />
       <div
@@ -56,7 +56,7 @@ export const FrustrationHero: React.FC = () => {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1440px] 2xl:max-w-[1600px] 3xl:max-w-[1920px] 4xl:max-w-[2400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 pt-24 pb-6 xl:py-32 2xl:py-40 3xl:py-48 min-h-screen xl:min-h-0 flex flex-col xl:block justify-start">
+      <div className="relative z-10 w-full h-full max-w-[1440px] 2xl:max-w-[1600px] 3xl:max-w-[1920px] 4xl:max-w-[2400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 pt-24 pb-6 xl:py-32 2xl:py-40 3xl:py-48 flex flex-col xl:block justify-start">
         <div className="max-w-lg lg:max-w-xl 2xl:max-w-2xl 3xl:max-w-3xl 4xl:max-w-4xl">
 
           {/* Micro label with accent line */}
@@ -79,7 +79,7 @@ export const FrustrationHero: React.FC = () => {
           {/* Hook/Headline */}
           <h2 className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10 3xl:mb-12">
             <span
-              className="block whitespace-nowrap text-[32px] sm:text-[36px] lg:text-[36px] xl:text-[46px] 2xl:text-[54px] 3xl:text-[64px] 4xl:text-[76px] leading-[36px] sm:leading-[40px] lg:leading-[40px] xl:leading-[50px] 2xl:leading-[58px] 3xl:leading-[68px] 4xl:leading-[82px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
+              className="block xl:whitespace-nowrap text-[32px] sm:text-[36px] lg:text-[36px] xl:text-[46px] 2xl:text-[54px] 3xl:text-[64px] 4xl:text-[76px] leading-[36px] sm:leading-[40px] lg:leading-[40px] xl:leading-[50px] 2xl:leading-[58px] 3xl:leading-[68px] 4xl:leading-[82px] tracking-[-0.02em] opacity-0 animate-fade-in-up"
               style={{
                 color: '#0F172A',
                 fontWeight: 700,
@@ -149,7 +149,7 @@ export const FrustrationHero: React.FC = () => {
 
         {/* CTA Group - Mobile & Tablet (at bottom) */}
         <div
-          className="flex xl:hidden flex-col items-stretch gap-3 mt-auto pb-6 opacity-0 animate-fade-in-up"
+          className="flex xl:hidden flex-col items-stretch gap-3 mt-auto opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}
         >
           {/* Primary CTA Button - Assessment */}
@@ -166,7 +166,7 @@ export const FrustrationHero: React.FC = () => {
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
 
-          {/* Secondary CTA Button */}
+          {/* Secondary CTA Button - See How It Works */}
           <Link
             href="/#how-it-works"
             className="group inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-black rounded-xl
