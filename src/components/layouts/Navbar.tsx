@@ -24,6 +24,7 @@ const activeGradientStyle = { background: 'linear-gradient(135deg, #1565C0 0%, #
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
@@ -55,6 +56,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const atTop = currentScrollY <= 50;
+      setIsAtTop(atTop);
 
       if (atTop) {
         // Always show at top
@@ -90,12 +92,12 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Logo - Top Left */}
+      {/* Logo - Top Left (only visible when at top of page) */}
       <Link
         href="/"
         className={cn(
           'fixed top-5 sm:top-6 lg:top-7 2xl:top-8 3xl:top-10 left-4 sm:left-6 lg:left-10 xl:left-12 2xl:left-16 3xl:left-24 4xl:left-32 z-50 transition-all duration-500 group',
-          isVisible
+          isAtTop
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         )}
