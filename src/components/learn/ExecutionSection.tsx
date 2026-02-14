@@ -590,7 +590,9 @@ const ExecutionSection: React.FC = () => {
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
                   <rect x="380" y="30" width="122" height="52" rx="12" fill="#EFF6FF" filter="url(#notifShadow)"/>
                   <circle cx="406" cy="56" r="13" fill="#0088CC"/>
-                  <path d="M406 50l-6 3 1.5 1.5-0.5 3 2.5-2 3 2.5 5-8z" fill="white"/>
+                  <g transform="translate(397, 47) scale(0.75)">
+                    <path d="M20.3 3.7L2.5 11.2c-1.2.5-1.2 1.1-.2 1.4l4.5 1.4 10.5-6.6c.5-.3.9-.1.6.2l-8.5 7.7-.3 4.7c.5 0 .7-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.8l2.9-13.7c.3-1.2-.5-1.7-1.3-1.3z" fill="white"/>
+                  </g>
                   <text x="424" y="52" fill="#1E40AF" fontSize="9" fontWeight="700">Telegram</text>
                   <text x="424" y="64" fill="#64748B" fontSize="7">Instant delivery</text>
                 </motion.g>
@@ -598,7 +600,10 @@ const ExecutionSection: React.FC = () => {
                 <motion.g initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.55 }}>
                   <rect x="380" y="100" width="122" height="52" rx="12" fill="#ECFDF5" filter="url(#notifShadow)"/>
                   <circle cx="406" cy="126" r="13" fill="#25D366"/>
-                  <path d="M406 118c-4 0-7 3-7 7 0 1.2.3 2.4.9 3.4l-.9 3.4 3.5-.9c1 .5 2.1.8 3.3.8 4 0 7-3 7-7s-3-6.7-6.8-6.7z" fill="white" opacity="0.9"/>
+                  <g transform="translate(397, 117) scale(0.75)">
+                    <path d="M12.1 2C6.5 2 2 6.5 2 12.1c0 1.8.5 3.4 1.3 4.9l-1.4 5 5.1-1.3c1.4.8 3 1.2 4.7 1.2h0c5.5-.1 10.3-4.7 10.3-10 0-5.5-4.5-9.9-10-9.9z" fill="white" opacity="0.95"/>
+                    <path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.3-1.6-.1-.2 0-.3.1-.5.1-.1.2-.2.3-.4.1-.1.1-.2.2-.3.1-.2 0-.3 0-.4-.1-.1-.5-1.2-.7-1.6-.2-.5-.4-.4-.5-.4H9c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.4 3.8 3.4 2.2 1 2.2.6 2.6.6.4 0 1.3-.5 1.5-1 .2-.5.2-1 .1-1-.1-.1-.2-.2-.5-.3z" fill="#25D366"/>
+                  </g>
                   <text x="424" y="122" fill="#166534" fontSize="9" fontWeight="700">WhatsApp</text>
                   <text x="424" y="134" fill="#64748B" fontSize="7">Quick updates</text>
                 </motion.g>
