@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Quote, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const RoadmapVisual: React.FC = () => {
   return (
@@ -165,7 +165,6 @@ export const OurStory: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="relative bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 mb-6 border-l-4 border-teal-500"
             >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-teal-200" />
               <p className="text-lg italic text-black mb-3">
                 &quot;We take the burden off your shoulders, so you can focus on strategy.&quot;
               </p>
