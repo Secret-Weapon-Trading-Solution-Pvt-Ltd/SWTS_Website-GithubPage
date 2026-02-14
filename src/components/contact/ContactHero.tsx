@@ -151,15 +151,15 @@ export const ContactHero: React.FC = () => {
                   <span className="text-sm font-semibold text-slate-700 hidden sm:block">{link.label}</span>
                 </>
               );
-              const className = `group flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm ${link.hoverBg} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`;
-
               if (link.noRedirect) {
                 return (
-                  <div key={link.label} className={`${className} cursor-default`}>
+                  <div key={link.label} className="group flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm cursor-default">
                     {content}
                   </div>
                 );
               }
+
+              const className = `group flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-sm ${link.hoverBg} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`;
 
               return (
                 <a
