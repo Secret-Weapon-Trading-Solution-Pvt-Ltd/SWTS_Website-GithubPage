@@ -8,7 +8,7 @@ const RoadmapVisual: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[480px]">
       <svg
-        viewBox="0 0 870 560"
+        viewBox="-50 40 920 530"
         fill="none"
         className="absolute inset-0 w-full h-full"
         preserveAspectRatio="xMidYMid meet"
