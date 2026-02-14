@@ -107,16 +107,16 @@ export const Navbar: React.FC = () => {
             <Image
               src={getAssetPath('/logos/logo1.png')}
               alt="SWTS Logo"
-              width={64}
+              width={92}
               height={64}
-              className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 2xl:w-20 2xl:h-20 3xl:w-24 3xl:h-24 4xl:w-28 4xl:h-28 drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
+              className="w-[68px] h-12 sm:w-[80px] sm:h-14 lg:w-[92px] lg:h-16 2xl:w-[115px] 2xl:h-20 3xl:w-[138px] 3xl:h-24 4xl:w-[161px] 4xl:h-28 drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-lg sm:text-xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl font-bold italic leading-tight tracking-tight drop-shadow-sm bg-gradient-to-r from-[#2196F3] to-[#1565C0] bg-clip-text text-transparent">
+            <span className="text-xl sm:text-2xl lg:text-[28px] 2xl:text-[34px] 3xl:text-4xl 4xl:text-5xl font-bold italic leading-tight tracking-tight drop-shadow-sm bg-gradient-to-r from-[#2196F3] to-[#1565C0] bg-clip-text text-transparent">
               Secret Weapon
             </span>
-            <span className="text-[10px] sm:text-xs lg:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium leading-tight tracking-[0.15em] text-[#00897B]">
+            <span className="text-[11px] sm:text-sm lg:text-[15px] 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium leading-tight tracking-[0.15em] text-[#00897B]">
               TRADING SOLUTION PVT. LTD.
             </span>
           </div>
