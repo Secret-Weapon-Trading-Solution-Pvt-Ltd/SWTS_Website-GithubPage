@@ -13,97 +13,100 @@ const RoadmapVisual: React.FC = () => {
         className="absolute inset-0 w-full h-full"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* Road surface - perspective trapezoid, extended right */}
+        {/* Road surface - perspective: broad bottom-left, narrow upper-right */}
         <path
-          d="M 0 500 L 140 405 L 870 215 L 870 315 L 140 480 Z"
-          fill="#334155"
+          d="M -30 560 L -10 430 L 870 340 L 870 385 Z"
+          fill="#3D4A5C"
         />
-        {/* Road edge - darker bottom */}
+        {/* Road darker bottom edge */}
         <path
-          d="M 0 500 L 140 480 L 870 315 L 870 335 L 130 500 Z"
-          fill="#1E293B"
+          d="M -30 560 L 870 385 L 870 400 L -40 580 Z"
+          fill="#2D3748"
         />
 
-        {/* Dashed center line */}
-        <line x1="50" y1="475" x2="160" y2="438" stroke="#94A3B8" strokeWidth="2" strokeDasharray="12 8" />
-        <line x1="170" y1="434" x2="360" y2="383" stroke="#94A3B8" strokeWidth="2" strokeDasharray="12 8" />
-        <line x1="370" y1="379" x2="580" y2="325" stroke="#94A3B8" strokeWidth="2" strokeDasharray="12 8" />
-        <line x1="590" y1="321" x2="870" y2="250" stroke="#94A3B8" strokeWidth="2" strokeDasharray="12 8" />
+        {/* Dashed center line - exactly centered between top and bottom road edges */}
+        <line x1="0" y1="492" x2="140" y2="471" stroke="#CBD5E1" strokeWidth="2.5" strokeDasharray="16 10" />
+        <line x1="155" y1="468" x2="350" y2="440" stroke="#CBD5E1" strokeWidth="2.2" strokeDasharray="14 9" />
+        <line x1="365" y1="437" x2="560" y2="409" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="12 8" />
+        <line x1="575" y1="406" x2="870" y2="363" stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="10 7" />
 
-        {/* Pole bases (small ellipses on road) */}
-        <ellipse cx="100" cy="455" rx="8" ry="3" fill="#475569" />
-        <ellipse cx="310" cy="400" rx="8" ry="3" fill="#475569" />
-        <ellipse cx="520" cy="350" rx="8" ry="3" fill="#475569" />
-        <ellipse cx="740" cy="296" rx="8" ry="3" fill="#475569" />
+        {/* Pole bases on road */}
+        <ellipse cx="140" cy="448" rx="10" ry="4" fill="#4A5568" />
+        <ellipse cx="350" cy="408" rx="8" ry="3.5" fill="#4A5568" />
+        <ellipse cx="560" cy="378" rx="7" ry="3" fill="#4A5568" />
+        <ellipse cx="770" cy="358" rx="6" ry="2.5" fill="#4A5568" />
 
-        {/* Flag poles */}
-        <line x1="100" y1="455" x2="100" y2="290" stroke="#9CA3AF" strokeWidth="3" strokeLinecap="round" />
-        <line x1="310" y1="400" x2="310" y2="200" stroke="#9CA3AF" strokeWidth="3" strokeLinecap="round" />
-        <line x1="520" y1="350" x2="520" y2="145" stroke="#9CA3AF" strokeWidth="3" strokeLinecap="round" />
-        <line x1="740" y1="296" x2="740" y2="95" stroke="#9CA3AF" strokeWidth="3" strokeLinecap="round" />
+        {/* Flag poles - taller near viewer, shorter far away */}
+        <line x1="140" y1="448" x2="140" y2="250" stroke="#A0AEC0" strokeWidth="4" strokeLinecap="round" />
+        <line x1="350" y1="408" x2="350" y2="230" stroke="#A0AEC0" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="560" y1="378" x2="560" y2="220" stroke="#A0AEC0" strokeWidth="3" strokeLinecap="round" />
+        <line x1="770" y1="358" x2="770" y2="260" stroke="#A0AEC0" strokeWidth="2.5" strokeLinecap="round" />
 
         {/* Pole caps */}
-        <circle cx="100" cy="290" r="4" fill="#D1D5DB" />
-        <circle cx="310" cy="200" r="4" fill="#D1D5DB" />
-        <circle cx="520" cy="145" r="4" fill="#D1D5DB" />
-        <circle cx="740" cy="95" r="4" fill="#D1D5DB" />
+        <circle cx="140" cy="250" r="5" fill="#CBD5E1" />
+        <circle cx="350" cy="230" r="4.5" fill="#CBD5E1" />
+        <circle cx="560" cy="220" r="4" fill="#CBD5E1" />
+        <circle cx="770" cy="260" r="3.5" fill="#CBD5E1" />
 
         {/* Flag 1 - 2014 (violet) */}
-        <path d="M 100 290 L 100 320 L 168 313 L 168 283 Z" fill="url(#flag1)" />
+        <path d="M 140 250 L 140 290 L 220 284 L 220 244 Z" fill="url(#flag1)" />
         {/* Flag 2 - 2019 (orange) */}
-        <path d="M 310 200 L 310 233 L 380 225 L 380 192 Z" fill="url(#flag2)" />
+        <path d="M 350 230 L 350 266 L 422 261 L 422 225 Z" fill="url(#flag2)" />
         {/* Flag 3 - 2021 (sky) */}
-        <path d="M 520 145 L 520 178 L 590 170 L 590 137 Z" fill="url(#flag3)" />
+        <path d="M 560 220 L 560 253 L 625 249 L 625 216 Z" fill="url(#flag3)" />
         {/* Flag 4 - 2025 (teal) */}
-        <path d="M 740 95 L 740 128 L 810 121 L 810 88 Z" fill="url(#flag4)" />
+        <path d="M 770 260 L 770 288 L 828 285 L 828 257 Z" fill="url(#flag4)" />
 
         {/* Year text on flags */}
-        <text x="130" y="305" fill="white" fontSize="13" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2014</text>
-        <text x="341" y="215" fill="white" fontSize="13" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2019</text>
-        <text x="551" y="160" fill="white" fontSize="13" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2021</text>
-        <text x="771" y="110" fill="white" fontSize="13" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2025</text>
+        <text x="177" y="269" fill="white" fontSize="16" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2014</text>
+        <text x="383" y="248" fill="white" fontSize="15" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2019</text>
+        <text x="590" y="237" fill="white" fontSize="13" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2021</text>
+        <text x="797" y="274" fill="white" fontSize="12" fontWeight="700" textAnchor="middle" dominantBaseline="middle">2025</text>
 
-        {/* Label card backgrounds - staircase pattern above flags, well spaced */}
-        <rect x="20" y="170" width="160" height="105" rx="8" fill="white" stroke="#8B5CF6" strokeWidth="1.2" opacity="0.95" />
-        <rect x="230" y="78" width="160" height="100" rx="8" fill="white" stroke="#F97316" strokeWidth="1.2" opacity="0.95" />
-        <rect x="440" y="14" width="160" height="105" rx="8" fill="white" stroke="#0EA5E9" strokeWidth="1.2" opacity="0.95" />
-        <rect x="660" y="0" width="170" height="82" rx="8" fill="white" stroke="#14B8A6" strokeWidth="1.2" opacity="0.95" />
+        {/* Label 1 - Started Trading (above left) */}
+        <rect x="30" y="90" width="170" height="105" rx="8" fill="white" stroke="#8B5CF6" strokeWidth="1.5" opacity="0.95" />
+        <text x="115" y="115" fill="#7C3AED" fontSize="17" fontWeight="700" textAnchor="middle">Started Trading</text>
+        <text x="115" y="142" fill="#1E293B" fontSize="14" textAnchor="middle">Studying charts</text>
+        <text x="115" y="164" fill="#1E293B" fontSize="14" textAnchor="middle">&amp; mastering markets.</text>
+        {/* Connector line from card to pole */}
+        <line x1="115" y1="195" x2="140" y2="250" stroke="#8B5CF6" strokeWidth="1.2" strokeDasharray="4 3" />
 
-        {/* Label 1 - Started Trading */}
-        <text x="100" y="193" fill="#7C3AED" fontSize="17" fontWeight="700" textAnchor="middle">Started Trading</text>
-        <text x="100" y="222" fill="#1E293B" fontSize="15" textAnchor="middle">Studying charts</text>
-        <text x="100" y="244" fill="#1E293B" fontSize="15" textAnchor="middle">&amp; mastering markets.</text>
+        {/* Label 2 - Algo Development (above) */}
+        <rect x="260" y="70" width="170" height="105" rx="8" fill="white" stroke="#F97316" strokeWidth="1.5" opacity="0.95" />
+        <text x="345" y="95" fill="#EA580C" fontSize="17" fontWeight="700" textAnchor="middle">Algo Development</text>
+        <text x="345" y="122" fill="#1E293B" fontSize="14" textAnchor="middle">Python, Pine Script</text>
+        <text x="345" y="144" fill="#1E293B" fontSize="14" textAnchor="middle">&amp; AFL mastery.</text>
+        <line x1="345" y1="175" x2="350" y2="230" stroke="#F97316" strokeWidth="1.2" strokeDasharray="4 3" />
 
-        {/* Label 2 - Algo Development */}
-        <text x="310" y="100" fill="#EA580C" fontSize="17" fontWeight="700" textAnchor="middle">Algo Development</text>
-        <text x="310" y="128" fill="#1E293B" fontSize="15" textAnchor="middle">Python, Pine Script</text>
-        <text x="310" y="148" fill="#1E293B" fontSize="15" textAnchor="middle">&amp; AFL mastery.</text>
+        {/* Label 3 - Company Founded (above) */}
+        <rect x="475" y="55" width="170" height="110" rx="8" fill="white" stroke="#0EA5E9" strokeWidth="1.5" opacity="0.95" />
+        <text x="560" y="80" fill="#0284C7" fontSize="17" fontWeight="700" textAnchor="middle">Company Founded</text>
+        <text x="560" y="107" fill="#1E293B" fontSize="14" textAnchor="middle">Automating traders&apos;</text>
+        <text x="560" y="129" fill="#1E293B" fontSize="14" textAnchor="middle">edge worldwide.</text>
+        <line x1="560" y1="165" x2="560" y2="220" stroke="#0EA5E9" strokeWidth="1.2" strokeDasharray="4 3" />
 
-        {/* Label 3 - Company Founded */}
-        <text x="520" y="37" fill="#0284C7" fontSize="17" fontWeight="700" textAnchor="middle">Company Founded</text>
-        <text x="520" y="66" fill="#1E293B" fontSize="15" textAnchor="middle">Automating traders&apos;</text>
-        <text x="520" y="88" fill="#1E293B" fontSize="15" textAnchor="middle">edge worldwide.</text>
-
-        {/* Label 4 - Became Pvt. Ltd. */}
-        <text x="745" y="21" fill="#0D9488" fontSize="16" fontWeight="700" textAnchor="middle">Became Pvt. Ltd.</text>
-        <text x="745" y="48" fill="#1E293B" fontSize="15" textAnchor="middle">Serving clients</text>
-        <text x="745" y="68" fill="#1E293B" fontSize="15" textAnchor="middle">worldwide.</text>
+        {/* Label 4 - Became Pvt. Ltd. (above road) */}
+        <rect x="670" y="110" width="180" height="105" rx="8" fill="white" stroke="#14B8A6" strokeWidth="1.5" opacity="0.95" />
+        <text x="760" y="135" fill="#0D9488" fontSize="17" fontWeight="700" textAnchor="middle">Became Pvt. Ltd.</text>
+        <text x="760" y="162" fill="#1E293B" fontSize="14" textAnchor="middle">Serving clients</text>
+        <text x="760" y="184" fill="#1E293B" fontSize="14" textAnchor="middle">worldwide.</text>
+        <line x1="770" y1="215" x2="770" y2="245" stroke="#14B8A6" strokeWidth="1.2" strokeDasharray="4 3" />
 
         {/* Gradient definitions */}
         <defs>
-          <linearGradient id="flag1" x1="100" y1="305" x2="168" y2="305">
+          <linearGradient id="flag1" x1="140" y1="269" x2="220" y2="269">
             <stop offset="0%" stopColor="#8B5CF6" />
             <stop offset="100%" stopColor="#7C3AED" />
           </linearGradient>
-          <linearGradient id="flag2" x1="310" y1="215" x2="380" y2="215">
+          <linearGradient id="flag2" x1="350" y1="248" x2="422" y2="248">
             <stop offset="0%" stopColor="#F97316" />
             <stop offset="100%" stopColor="#EA580C" />
           </linearGradient>
-          <linearGradient id="flag3" x1="520" y1="160" x2="590" y2="160">
+          <linearGradient id="flag3" x1="560" y1="237" x2="625" y2="237">
             <stop offset="0%" stopColor="#0EA5E9" />
             <stop offset="100%" stopColor="#2563EB" />
           </linearGradient>
-          <linearGradient id="flag4" x1="740" y1="110" x2="810" y2="110">
+          <linearGradient id="flag4" x1="770" y1="274" x2="828" y2="274">
             <stop offset="0%" stopColor="#14B8A6" />
             <stop offset="100%" stopColor="#0D9488" />
           </linearGradient>
