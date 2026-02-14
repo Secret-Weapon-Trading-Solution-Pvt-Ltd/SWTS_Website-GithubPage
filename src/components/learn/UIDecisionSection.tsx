@@ -44,7 +44,7 @@ const dashboardTypes = [
     tech: ['Python', 'PyQt/Tkinter'],
     complexity: 'Medium',
     color: 'blue',
-    features: ['Native performance', 'System tray', 'Local data'],
+    features: ['No browser needed', 'Custom notifications', 'Fast & lightweight'],
   },
   {
     id: 'professional',
