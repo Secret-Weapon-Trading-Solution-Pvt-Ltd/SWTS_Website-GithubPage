@@ -15,7 +15,7 @@ const getHeroImage = (slug: string): string => {
   const imageMap: Record<string, string> = {
     'strategy-backtesting': '/strategy-backtesting.jpg',
     'strategy-optimization': '/strategy-optimization.jpg',
-    'custom-screener': '/custom-screeer-ema-crossover.png',
+    'custom-screener': '/custom-screener-new.png',
     'custom-dashboard': '/custom-dashboard.jpg',
     'strategy-alerts': '/strategy-alert.jpg',
     'paper-trading': '/paper-trading.jpg',
