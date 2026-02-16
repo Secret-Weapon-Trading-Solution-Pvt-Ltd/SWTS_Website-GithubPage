@@ -171,7 +171,7 @@ export const OurStory: React.FC = () => {
               <p className="text-lg italic text-black mb-3">
                 &quot;We take the burden off your shoulders, so you can focus on strategy.&quot;
               </p>
-              <p className="text-sm font-semibold text-black">— Swapnil Raykar, Founder</p>
+              <p className="text-sm font-semibold text-black">— Mr. Swapnil Raykar, Founder</p>
             </motion.div>
 
             {/* Featured In */}
