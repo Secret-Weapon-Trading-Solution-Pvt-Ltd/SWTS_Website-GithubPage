@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, User, Mail, MessageSquare, Briefcase, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Send, User, Mail, Phone, MessageSquare, Briefcase, CheckCircle2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const serviceOptions = [
@@ -20,6 +20,7 @@ export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: '',
   });
@@ -31,7 +32,7 @@ export const ContactForm: React.FC = () => {
     // Build mailto link with form data
     const subject = encodeURIComponent(`Contact: ${formData.service || 'General Inquiry'}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nService Interest: ${formData.service}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService Interest: ${formData.service}\n\nMessage:\n${formData.message}`
     );
 
     window.location.href = `mailto:support@secretweapon.in?subject=${subject}&body=${body}`;
@@ -186,6 +187,25 @@ export const ContactForm: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="you@example.com"
+                    className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Phone Field */}
+              <div className="mb-6">
+                <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                  Phone Number <span className="text-red-400">*</span>
+                </label>
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="+91 98765 43210"
                     className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 transition-all"
                   />
                 </div>
