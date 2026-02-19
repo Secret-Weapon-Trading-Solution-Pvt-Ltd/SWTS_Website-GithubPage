@@ -179,6 +179,8 @@ export const AssessmentForm: React.FC = () => {
           score: score.percentage,
           leadQuality: score.leadQuality,
           timestamp,
+          answers,
+          questions: allQuestions,
         });
       } catch (notifyErr) {
         // Don't fail the submission if notification fails

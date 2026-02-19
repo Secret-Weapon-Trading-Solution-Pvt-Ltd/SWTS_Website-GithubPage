@@ -85,6 +85,8 @@ export async function sendTelegramNotificationClient(data: {
   score: number;
   leadQuality: 'high' | 'medium' | 'low';
   timestamp: string;
+  answers?: { questionId: string; value: string | string[] }[];
+  questions?: { id: string; question: string; options?: { value: string; label: string }[] }[];
 }): Promise<boolean> {
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_IDS) {
     console.warn('Telegram credentials not configured');
@@ -159,21 +161,35 @@ export function formatLeadNotification(data: {
   score: number;
   leadQuality: 'high' | 'medium' | 'low';
   timestamp: string;
+  answers?: { questionId: string; value: string | string[] }[];
+  questions?: { id: string; question: string; options?: { value: string; label: string }[] }[];
 }): string {
-  const qualityEmoji = data.leadQuality === 'high' ? '🔥' : data.leadQuality === 'medium' ? '⚡' : '📊';
   const qualityText = data.leadQuality === 'high' ? 'HIGH' : data.leadQuality === 'medium' ? 'MEDIUM' : 'LOW';
 
+  let qaSection = '';
+  if (data.answers && data.questions) {
+    const qaLines = data.answers.map((answer, index) => {
+      const question = data.questions?.find(q => q.id === answer.questionId);
+      if (!question) return '';
+      const answerValue = Array.isArray(answer.value) ? answer.value.join(', ') : answer.value;
+      const selectedOption = question.options?.find(o => o.value === answerValue);
+      const answerLabel = selectedOption ? selectedOption.label : answerValue;
+      return `*Q${index + 1}: ${escapeMarkdown(question.question)}*\nA: ${escapeMarkdown(answerLabel)}`;
+    }).filter(Boolean);
+    qaSection = `\n\n--- RESPONSES ---\n\n${qaLines.join('\n\n')}`;
+  }
+
   return `
-${qualityEmoji} *New Assessment Lead* ${qualityEmoji}
+*New Assessment Lead*
 
-👤 *Name:* ${escapeMarkdown(data.name)}
-📧 *Email:* ${escapeMarkdown(data.email)}
-${data.phone ? `📱 *Phone:* ${escapeMarkdown(data.phone)}` : ''}
+*Name:* ${escapeMarkdown(data.name)}
+*Email:* ${escapeMarkdown(data.email)}
+${data.phone ? `*Phone:* ${escapeMarkdown(data.phone)}` : ''}
 
-📊 *Score:* ${data.score}/100
-🎯 *Lead Quality:* ${qualityText}
+*Score:* ${data.score}/100
+*Lead Quality:* ${qualityText}
 
-🕐 *Time:* ${new Date(data.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST
+*Time:* ${new Date(data.timestamp).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST${qaSection}
 
 ---
 _SWTS Strategy Assessment_
