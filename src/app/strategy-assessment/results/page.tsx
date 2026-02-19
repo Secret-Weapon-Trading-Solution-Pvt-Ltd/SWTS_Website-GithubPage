@@ -26,18 +26,18 @@ interface AssessmentResult {
 const getScoreHook = (score: number, quality: LeadQuality) => {
   if (quality === 'high') {
     return {
-      hook: "You're closer than most. But close isn't profitable.",
-      subtext: "Your foundation is solid. Now it's about eliminating the remaining execution gaps.",
+      hook: "Your Strategy is Strong. Let's Make It Unstoppable.",
+      subtext: "You've built a solid edge. With the right automation, you can scale it with precision and consistency.",
     };
   } else if (quality === 'medium') {
     return {
-      hook: "You know what to do. You just can't do it consistently.",
-      subtext: "This is the most dangerous place to be—skilled enough to win, undisciplined enough to lose.",
+      hook: "Good Instincts. Now Let's Build a System Around Them.",
+      subtext: "You have the knowledge — what's missing is a framework that executes without hesitation, every single time.",
     };
   } else {
     return {
-      hook: "The market doesn't care about your potential.",
-      subtext: "Raw truth: you're not ready for automation yet. But that's fixable.",
+      hook: "Every Expert Trader Started Exactly Where You Are.",
+      subtext: "The right foundation today sets you up for consistent, automated profits tomorrow.",
     };
   }
 };
