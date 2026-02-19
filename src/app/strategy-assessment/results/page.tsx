@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { LandingLayout } from '@/components/layouts';
 import { storage } from '@/lib/utils';
 import { ScoreResult, Insight, NextStep, Answer, LeadQuality } from '@/types';
-import { ArrowRight, Calendar, MessageCircle, BookOpen, AlertTriangle, TrendingUp, Target } from 'lucide-react';
+import { ArrowRight, Calendar, MessageCircle, BookOpen, AlertTriangle, TrendingUp, Target, Phone } from 'lucide-react';
 
 interface ContactInfo {
   name: string;
@@ -133,19 +133,19 @@ export default function ResultsPage() {
 
   return (
     <LandingLayout>
-      <div className="min-h-screen bg-slate-50 py-12 px-4">
-        <div className="max-w-3xl mx-auto">
+      <div className="min-h-screen bg-slate-50 py-12 px-6 sm:px-10 lg:px-16 xl:px-20">
+        <div className="w-full max-w-7xl mx-auto">
 
           {/* Aggressive Header Hook */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 text-amber-600 mb-4">
               <AlertTriangle className="w-5 h-5" />
-              <span className="text-sm font-medium uppercase tracking-wide">Your Results</span>
+              <span className="text-base font-medium uppercase tracking-wide">Your Results</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
+            <h1 className="text-4xl sm:text-5xl font-bold text-slate-950 mb-4">
               {scoreHook.hook}
             </h1>
-            <p className="text-lg text-black max-w-xl mx-auto">
+            <p className="text-xl text-slate-950 max-w-2xl mx-auto">
               {scoreHook.subtext}
             </p>
           </div>
@@ -154,15 +154,15 @@ export default function ResultsPage() {
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
-                <p className="text-xs uppercase tracking-wide text-black mb-1">
+                <p className="text-sm uppercase tracking-wide text-slate-950 mb-1">
                   Automation Readiness Score
                 </p>
-                <p className="text-sm text-black mb-2">
+                <p className="text-base text-slate-950 mb-2">
                   {firstName ? `${firstName}, this` : 'This'} score reflects how prepared your trading approach is for systematic automation.
                 </p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-6xl font-bold text-slate-900">{result.score.percentage}</span>
-                  <span className="text-2xl text-black">/100</span>
+                  <span className="text-2xl text-slate-950">/100</span>
                 </div>
               </div>
               <div className={`px-6 py-3 rounded-xl text-center ${
@@ -170,9 +170,9 @@ export default function ResultsPage() {
                   ? 'bg-emerald-50 text-emerald-700'
                   : result.score.leadQuality === 'medium'
                     ? 'bg-amber-50 text-amber-700'
-                    : 'bg-slate-100 text-black'
+                    : 'bg-slate-100 text-slate-950'
               }`}>
-                <p className="text-sm font-medium">
+                <p className="text-base font-medium">
                   {result.score.leadQuality === 'high'
                     ? 'High Readiness'
                     : result.score.leadQuality === 'medium'
@@ -196,7 +196,7 @@ export default function ResultsPage() {
                   style={{ width: `${result.score.percentage}%` }}
                 />
               </div>
-              <div className="flex justify-between text-xs text-black mt-2">
+              <div className="flex justify-between text-sm text-slate-950 mt-2">
                 <span>0 - Not Ready</span>
                 <span>100 - Automation Ready</span>
               </div>
@@ -208,9 +208,9 @@ export default function ResultsPage() {
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-2">
                 <Target className="w-5 h-5 text-blue-600" />
-                <h2 className="text-xl font-semibold text-slate-900">Key Insights</h2>
+                <h2 className="text-2xl font-semibold text-slate-950">Key Insights</h2>
               </div>
-              <p className="text-sm text-black mb-6">Personalized observations based on your responses.</p>
+              <p className="text-base text-slate-950 mb-6">Personalized observations based on your responses.</p>
               <div className="space-y-4">
                 {result.insights.map((insight, index) => (
                   <div
@@ -228,9 +228,9 @@ export default function ResultsPage() {
                          <TrendingUp className="w-4 h-4" />}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-900 mb-1">{insight.title}</h3>
-                        <p className="text-black text-sm mb-2">{insight.description}</p>
-                        <p className="text-xs text-black italic">
+                        <h3 className="text-lg font-semibold text-slate-950 mb-1">{insight.title}</h3>
+                        <p className="text-slate-950 text-base mb-2">{insight.description}</p>
+                        <p className="text-sm text-slate-950 italic">
                           {insight.priority === 'high'
                             ? 'Why this matters: Addressing this gap can significantly improve your execution consistency.'
                             : insight.priority === 'medium'
@@ -246,42 +246,57 @@ export default function ResultsPage() {
           )}
 
           {/* CTA Section */}
-          <div className="text-center mb-4">
-            <p className="text-sm text-black">Based on your results, here's the most effective next step.</p>
-          </div>
-          <div className="bg-slate-900 rounded-2xl p-8 lg:p-10 text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-3">
-              {segmentedCTA.title}
-            </h3>
-            <p className="text-black mb-8 max-w-lg mx-auto">
-              {segmentedCTA.subtitle}
-            </p>
+          <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-10 lg:p-14 text-center mb-8 border border-slate-700/50">
+            {/* Subtle glow accent */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-teal-500/10 blur-3xl rounded-full" />
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="flex flex-col items-center">
+            <div className="relative z-10">
+              <p className="text-xs uppercase tracking-widest text-teal-400 font-medium mb-4">Your Next Step</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+                {segmentedCTA.title}
+              </h3>
+              <p className="text-slate-300 mb-10 max-w-md mx-auto leading-relaxed">
+                {segmentedCTA.subtitle}
+              </p>
+
+              <div className="flex flex-col items-center gap-6">
+                {/* Primary CTA */}
+                <div className="flex flex-col items-center gap-3">
+                  <a
+                    href={segmentedCTA.primaryCTA.href}
+                    className="group inline-flex items-center gap-3 px-10 py-4 text-white rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                    style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
+                  >
+                    <CTAIcon className="w-5 h-5" />
+                    {segmentedCTA.primaryCTA.text}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <p className="text-sm text-slate-400">
+                    Discuss your assessment and execution gaps in a 30-minute call.
+                  </p>
+                </div>
+
+                {/* Phone Number */}
                 <a
-                  href={segmentedCTA.primaryCTA.href}
-                  className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:bg-slate-100 transition-colors"
+                  href="tel:+917083718306"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-slate-800 border border-slate-600 rounded-full hover:border-teal-500/50 transition-all"
                 >
-                  <CTAIcon className="w-5 h-5" />
-                  {segmentedCTA.primaryCTA.text}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-white font-semibold tracking-wide">+91 7083718306</span>
                 </a>
-                <p className="text-xs text-black mt-3">
-                  Discuss your assessment and execution gaps in a 30-minute call.
-                </p>
-              </div>
-              <a
-                href={segmentedCTA.secondaryCTA.href}
-                className="inline-flex items-center gap-2 px-8 py-4 text-black hover:text-white transition-colors"
-              >
-                {segmentedCTA.secondaryCTA.text}
-              </a>
-            </div>
 
-            {segmentedCTA.urgency && (
-              <p className="mt-6 text-sm text-black">{segmentedCTA.urgency}</p>
-            )}
+
+              </div>
+
+              {segmentedCTA.urgency && (
+                <p className="mt-8 text-sm text-slate-400 flex items-center justify-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                  {segmentedCTA.urgency}
+                </p>
+              )}
+            </div>
           </div>
 
           {/* Retake */}
@@ -291,14 +306,14 @@ export default function ResultsPage() {
                 storage.clearAssessmentData();
                 router.push('/strategy-assessment');
               }}
-              className="text-sm text-black hover:text-black transition-colors"
+              className="text-base text-slate-500 hover:text-slate-800 transition-colors underline underline-offset-4"
             >
               Retake Assessment
             </button>
           </div>
 
           {/* Disclaimer */}
-          <div className="mt-12 text-center text-xs text-black">
+          <div className="mt-12 text-center text-sm text-slate-950">
             <p>
               This assessment provides educational insights only. Trading involves risk.
               Past performance does not guarantee future results.

@@ -109,6 +109,15 @@ export const AssessmentForm: React.FC = () => {
       setError('Please enter a valid email address');
       return false;
     }
+    if (!contactInfo.phone.trim()) {
+      setError('Please enter your phone number');
+      return false;
+    }
+    const phoneRegex = /^[\d\s\-+()]{10,}$/;
+    if (!phoneRegex.test(contactInfo.phone)) {
+      setError('Please enter a valid phone number');
+      return false;
+    }
     return true;
   };
 
@@ -264,7 +273,7 @@ export const AssessmentForm: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Phone <span className="text-black text-xs font-normal">(Optional)</span>
+                  Phone <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="tel"
@@ -272,6 +281,7 @@ export const AssessmentForm: React.FC = () => {
                   onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
                   placeholder="+91 98765 43210"
                   className="w-full px-4 py-3 text-slate-900 bg-slate-50 border border-slate-200 rounded-xl focus:border-blue-500 focus:bg-white focus:outline-none transition-all placeholder:text-black"
+                  required
                 />
               </div>
             </div>

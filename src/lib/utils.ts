@@ -28,7 +28,7 @@ export const isValidEmail = (email: string): boolean => {
 
 // Phone validation (basic)
 export const isValidPhone = (phone: string): boolean => {
-  if (!phone) return true; // Phone is optional
+  if (!phone) return false;
   const phoneRegex = /^[\d\s\-+()]{10,}$/;
   return phoneRegex.test(phone);
 };
