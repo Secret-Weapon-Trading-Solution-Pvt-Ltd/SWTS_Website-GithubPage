@@ -24,7 +24,7 @@ export const AboutHero: React.FC = () => {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0.6) 38%, rgba(255,255,255,0.15) 50%, transparent 60%)'
+            background: 'linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.95) 25%, rgba(255,255,255,0.85) 38%, rgba(255,255,255,0.4) 52%, transparent 65%)'
           }}
         />
       </div>
@@ -32,7 +32,7 @@ export const AboutHero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 w-full min-h-[calc(100vh-7rem)] flex items-center">
         <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 2xl:px-28 py-16 lg:py-24">
-          <div className="max-w-2xl">
+          <div className="max-w-[38rem]">
             {/* Label */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -67,9 +67,7 @@ export const AboutHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg text-black font-normal leading-[1.8] mb-12"
             >
-              Founded by <span className="text-teal-700 font-semibold">Mr. Swapnil Raykar</span>, with over a decade in trading and years of expertise in algo development,
-              we specialize in creating innovative automated trading solutions using
-              python, Tradingview, Amibroker and couple of other technologies, delivering precision and consistency to serious traders worldwide.
+              Founded by <span className="text-teal-700 font-semibold">Mr. Swapnil Raykar</span>, with over a decade in trading and years of expertise in algo development, we specialize in creating innovative automated trading solutions using Python, Tradingview, Amibroker and couple of other technologies, delivering precision and consistency to serious traders worldwide.
             </motion.p>
 
             {/* Stats Row */}
