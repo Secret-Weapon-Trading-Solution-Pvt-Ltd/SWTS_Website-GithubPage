@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendTelegramMessage, sendTelegramContact, formatLeadNotification } from '@/lib/telegram';
+import { sendTelegramMessage, formatLeadNotification } from '@/lib/telegram';
 import { getSubscribers } from '@/lib/subscribers';
 
 interface AssessmentData {
@@ -39,9 +39,9 @@ export async function POST(request: NextRequest) {
       if (success) sent++;
       else failed++;
 
-      // Follow up with a contact card (clickable phone number) if phone is available
+      // Follow up with clickable phone number if available
       if (data.phone?.trim()) {
-        await sendTelegramContact(chatId, data.phone.trim(), ' ');
+        await sendTelegramMessage(chatId, data.phone.trim(), 'Markdown');
       }
     }
 

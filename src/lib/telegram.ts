@@ -122,15 +122,14 @@ export async function sendTelegramNotificationClient(data: {
       const msgResult = await msgResponse.json();
       if (msgResult.ok) successCount++;
 
-      // Follow up with a contact card (clickable phone number) if phone is available
+      // Follow up with clickable phone number if available
       if (data.phone?.trim()) {
-        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendContact`, {
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             chat_id: chatId,
-            phone_number: data.phone.trim(),
-            first_name: ' ',
+            text: data.phone.trim(),
           }),
         });
       }
