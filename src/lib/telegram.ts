@@ -124,12 +124,14 @@ export async function sendTelegramNotificationClient(data: {
 
       // Follow up with clickable phone number if available
       if (data.phone?.trim()) {
+        const phone = data.phone.trim();
         await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             chat_id: chatId,
-            text: data.phone.trim(),
+            text: phone,
+            entities: [{ type: 'phone_number', offset: 0, length: phone.length }],
           }),
         });
       }
