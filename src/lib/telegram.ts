@@ -198,5 +198,5 @@ _SWTS Strategy Assessment_
 
 // Escape special characters for Telegram Markdown
 function escapeMarkdown(text: string): string {
-  return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&');
+  return text.replace(/[_*[\]()~`>#+=|{}!-]/g, '\\$&');
 }
