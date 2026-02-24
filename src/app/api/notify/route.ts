@@ -30,11 +30,6 @@ export async function POST(request: NextRequest) {
     // Format the notification message
     const message = formatLeadNotification(data);
 
-    // Split name for contact card
-    const nameParts = data.name.trim().split(/\s+/);
-    const firstName = nameParts[0] || data.name;
-    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : undefined;
-
     // Send to all subscribers
     let sent = 0;
     let failed = 0;
@@ -44,9 +39,9 @@ export async function POST(request: NextRequest) {
       if (success) sent++;
       else failed++;
 
-      // Follow up with a contact card (has built-in Call button) if phone is available
+      // Follow up with a contact card (clickable phone number) if phone is available
       if (data.phone?.trim()) {
-        await sendTelegramContact(chatId, data.phone.trim(), firstName, lastName);
+        await sendTelegramContact(chatId, data.phone.trim(), ' ');
       }
     }
 
