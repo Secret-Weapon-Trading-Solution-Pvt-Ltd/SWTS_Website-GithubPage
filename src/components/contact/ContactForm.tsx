@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, User, Mail, Phone, MessageSquare, Briefcase, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Send, User, Mail, Phone, MessageSquare, Briefcase, CheckCircle2, ArrowRight, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+import { sendContactFormToTelegram } from '@/lib/telegram';
 
 const serviceOptions = [
   'Algo Strategy Development',
@@ -25,18 +26,26 @@ export const ContactForm: React.FC = () => {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
 
-    // Build mailto link with form data
-    const subject = encodeURIComponent(`Contact: ${formData.service || 'General Inquiry'}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService Interest: ${formData.service}\n\nMessage:\n${formData.message}`
-    );
-
-    window.location.href = `mailto:support@secretweapon.in?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
+    try {
+      const success = await sendContactFormToTelegram(formData);
+      if (success) {
+        setIsSubmitted(true);
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -54,9 +63,9 @@ export const ContactForm: React.FC = () => {
             <div className="w-20 h-20 rounded-full bg-teal-50 flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 className="w-10 h-10 text-teal-500" />
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-3">Your Email Client Should Open</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-3">Message Sent Successfully</h3>
             <p className="text-black mb-8">
-              Please send the pre-filled email from your email client. We&apos;ll get back to you within 24 hours.
+              We&apos;ve received your message and will get back to you within 24 hours.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -256,21 +265,35 @@ export const ContactForm: React.FC = () => {
                 </div>
               </div>
 
+              {/* Error */}
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-red-600 text-sm">{error}</p>
+                </div>
+              )}
+
               {/* Submit Button */}
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 whileHover={{ scale: 1.01, y: -1 }}
                 whileTap={{ scale: 0.99 }}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full flex items-center justify-center gap-3 px-8 py-4 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
                 style={{ background: 'linear-gradient(135deg, #1565C0 0%, #00897B 100%)' }}
               >
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </>
+                )}
               </motion.button>
-
-              <p className="text-center text-xs text-black mt-4">
-                This will open your email client with a pre-filled message.
-              </p>
             </form>
           </motion.div>
         </div>

@@ -186,6 +186,83 @@ _SWTS Strategy Assessment_
   `.trim();
 }
 
+// Client-side function to send contact form data to Telegram
+export async function sendContactFormToTelegram(data: {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+}): Promise<boolean> {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_IDS) {
+    console.warn('Telegram credentials not configured');
+    return false;
+  }
+
+  const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+  const message = `
+*New Contact Form Message*
+
+*Name:* ${escapeMarkdown(data.name)}
+*Email:* ${escapeMarkdown(data.email)}
+*Phone:* ${escapeMarkdown(data.phone)}
+${data.service ? `*Service Interest:* ${escapeMarkdown(data.service)}` : ''}
+
+*Message:*
+${escapeMarkdown(data.message)}
+
+*Time:* ${timestamp} IST
+
+---
+_SWTS Contact Form_
+  `.trim();
+
+  const chatIds = TELEGRAM_CHAT_IDS.split(',').map(id => id.trim()).filter(id => id);
+
+  if (chatIds.length === 0) {
+    console.warn('No Telegram chat IDs configured');
+    return false;
+  }
+
+  let successCount = 0;
+
+  for (const chatId of chatIds) {
+    try {
+      const msgResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'Markdown',
+        }),
+      });
+
+      const msgResult = await msgResponse.json();
+      if (msgResult.ok) successCount++;
+
+      // Follow up with clickable phone number
+      if (data.phone?.trim()) {
+        const phone = data.phone.trim();
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: phone,
+            entities: [{ type: 'phone_number', offset: 0, length: phone.length }],
+          }),
+        });
+      }
+    } catch (error) {
+      console.error(`Failed to send contact form to ${chatId}:`, error);
+    }
+  }
+
+  return successCount > 0;
+}
+
 // Escape special characters for Telegram Markdown (basic mode)
 function escapeMarkdown(text: string): string {
   return text.replace(/[_*`\[\]]/g, '\\$&');
